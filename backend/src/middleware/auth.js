@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { COOKIE_NAME } from '../lib/constants';
+import { COOKIE_NAME } from '../lib/constants.js';
 const JWT_SECRET = process.env.JWT_SECRET || 'secretkey';
 
 // Middleware to check authentication based on JWT token in cookies
