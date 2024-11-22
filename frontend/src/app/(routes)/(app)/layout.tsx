@@ -1,13 +1,9 @@
-import AuthLock from "@/components/wrappers/auth-lock";
+import AuthLock from "@/components/wrappers/auth-lock"
 
 export default function RootLayout({
-    children,
+	children,
 }: Readonly<{
-    children: React.ReactNode;
+	children: React.ReactNode
 }>) {
-    return (
-        <AuthLock>
-            {children}
-        </AuthLock>
-    )
+	return <AuthLock>{children}</AuthLock>
 }

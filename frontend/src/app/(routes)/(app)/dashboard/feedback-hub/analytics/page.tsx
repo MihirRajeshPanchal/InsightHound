@@ -1,6 +1,3 @@
-
 export default function Page() {
-    return (
-        <div>analytics</div>
-    )
+	return <div>analytics</div>
 }

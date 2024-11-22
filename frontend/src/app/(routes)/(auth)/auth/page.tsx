@@ -1,7 +1,5 @@
-import { Auth } from "@/components/custom/auth";
+import { Auth } from "@/components/custom/auth"
 
 export default function Page() {
-    return (
-        <Auth />
-    )
+	return <Auth />
 }
