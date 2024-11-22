@@ -1,5 +1,5 @@
 from aihounds.constants.keywords import KEYWORD_PROMPT
-from aihounds.constants.keywords import openai_llm
+from aihounds.constants.hound import openai_llm
 from aihounds.models.keywords import KeywordsResponse
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser

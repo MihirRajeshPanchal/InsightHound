@@ -1,15 +1,4 @@
-from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-from aihounds.repository.repository import MongoDBClient
-import os
-
-load_dotenv()
-
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-DATABASE_URL = os.getenv("DATABASE_URL")
-
-openai_llm = ChatOpenAI(temperature=0, model_name="gpt-4o")
 
 KEYWORD_PROMPT = ChatPromptTemplate.from_template("""
 Analyze the following vision, mission, description, domain of the startup and create a JSON-format database schema using this structure:
@@ -41,5 +30,3 @@ Guidelines:
 """
 )
 
-DATABASE_NAME = "insight-hound-test"
-mongo_client = MongoDBClient(DATABASE_URL , DATABASE_NAME)

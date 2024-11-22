@@ -1,7 +1,7 @@
-from fastapi import APIRouter
 from aihounds.models.keywords import StartupRequest, KeywordsResponse
 from aihounds.services.keywords import generate_keywords
-from aihounds.constants.keywords import mongo_client
+from aihounds.constants.hound import mongo_client
+from fastapi import APIRouter
 
 router = APIRouter()
 
