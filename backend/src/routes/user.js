@@ -79,10 +79,10 @@ router.post('/signup', async (req, res) => {
 
     const token = jwt.sign({ id: newUser.id, email: newUser.email }, JWT_SECRET, { expiresIn: '1d' });
 
-    res.cookie(COOKIE_NAME, token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
+    // res.cookie(COOKIE_NAME, token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
 
     const { password: _, ...userWithoutPassword } = newUser;
-    return res.status(201).json(userWithoutPassword);
+    return res.status(201).json({user:userWithoutPassword, token});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred during signup' });
@@ -108,10 +108,10 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '1d' });
 
-    res.cookie(COOKIE_NAME, token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
+    // res.cookie(COOKIE_NAME, token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
 
     const { password: _, ...userWithoutPassword } = user;
-    return res.json(userWithoutPassword);
+    return res.json({user: userWithoutPassword, token});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred during login' });
@@ -127,7 +127,7 @@ router.get('/getMe', authMiddleware, async (req, res) => {
     }
 
     const { password: _, ...userWithoutPassword } = user;
-    res.json(userWithoutPassword);
+    res.json({user: userWithoutPassword});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while fetching user data' });

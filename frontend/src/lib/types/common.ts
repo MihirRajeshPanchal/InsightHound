@@ -4,3 +4,5 @@ export interface NavLinkProps {
     href: string;
     name: string;
 }
+
+export type TNoParams = Record<string, never>
