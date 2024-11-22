@@ -1,11 +1,13 @@
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from aihounds.repository.repository import MongoDBClient
 import os
 
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 openai_llm = ChatOpenAI(temperature=0, model_name="gpt-4o")
 
@@ -38,3 +40,6 @@ Guidelines:
 - Generate keywords which would be searched by users to find the startup.
 """
 )
+
+DATABASE_NAME = "insight-hound-test"
+mongo_client = MongoDBClient(DATABASE_URL , DATABASE_NAME)
