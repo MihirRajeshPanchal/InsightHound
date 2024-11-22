@@ -5,7 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'secretkey';
 // Middleware to check authentication based on JWT token in cookies
 const authMiddleware = async (req, res, next) => {
   try {
-    const token = req.cookies[COOKIE_NAME];
+    const token = req.headers[COOKIE_NAME];
     if (!token) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
