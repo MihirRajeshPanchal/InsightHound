@@ -12,16 +12,16 @@ export const RightArrow = (props: SVGAttributes<SVGElement>) => (
 		<path
 			d="M5.5 12.5H19.5"
 			stroke="#E4DED8"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
 		/>
 		<path
 			d="M12.5 5.5L19.5 12.5L12.5 19.5"
 			stroke="#E4DED8"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
 		/>
 	</svg>
 )
