@@ -19,6 +19,7 @@ Guidelines:
 - Generate a comprehensive company object based on the contents identified in the text.
 - Ensure that the company object is structured correctly.
 - IF YOU DONT KNOW THE VALUE OF A FIELD, LEAVE IT AS NULL
+- Domain can only be "Technology", "Education", "Finance", "Healthcare", "Retail", "Real Estate", "Agriculture", "Manufacturing", "Transportation", "Logistics", "Hospitality", "Entertainment", "Media", "Telecommunications", "Energy", "Utilities", "Construction", "Automotive", "Government", "Non-profit", "Others"
 """
 )
 
