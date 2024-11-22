@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function Error() {
     const router = useRouter();
     useEffect(() => {
-        router.replace("/");
+        // router.replace("/");
     }, [router])
 
     return (<></>)

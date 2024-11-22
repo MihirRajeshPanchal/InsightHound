@@ -12,6 +12,7 @@ import React from 'react'
 import { user } from '@prisma/client'
 import { setToken } from '@/lib/utils/token'
 import BackButton from '@/components/ui/back-button'
+import Link from 'next/link'
 
 type FormType = {
     email: string
@@ -39,7 +40,7 @@ export const Auth = () => {
         })
         if (resp.data?.token) {
             setToken(resp.data.token)
-            router.push("/dashboard")
+            router.push("/onboarding")
         }
     }
     return (
@@ -92,12 +93,16 @@ const Tab1 = ({ form }: { form: UseFormReturn<FormType> }) => (
             <div className="border-b border-neutral-300 dark:border-neutral-800"></div>
         </div>
         <div className="mt-6 flex w-full flex-col gap-4">
-            <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
-                <IconBrandGoogleFilled /> <div>Continue with Google</div>
-            </Button>
-            <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
-                <IconBrandAppleFilled /> <div>Continue with Google</div>
-            </Button>
+            <Link href="/oauth">
+                <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
+                    <IconBrandGoogleFilled /> <div>Continue with Google</div>
+                </Button>
+            </Link>
+            <Link href="/oauth">
+                <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
+                    <IconBrandAppleFilled /> <div>Continue with Apple</div>
+                </Button>
+            </Link>
         </div>
     </div>
 )
@@ -142,12 +147,16 @@ const Tab2 = ({ form }: { form: UseFormReturn<FormType> }) => (
             <div className="border-b border-neutral-300 dark:border-neutral-800"></div>
         </div>
         <div className="mt-6 flex w-full flex-col gap-4">
-            <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
-                <IconBrandGoogleFilled /> <div>Continue with Google</div>
-            </Button>
-            <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
-                <IconBrandAppleFilled /> <div>Continue with Google</div>
-            </Button>
+            <Link href="/oauth">
+                <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
+                    <IconBrandGoogleFilled /> <div>Continue with Google</div>
+                </Button>
+            </Link>
+            <Link href="/oauth">
+                <Button type="button" className="font-regular flex h-10 w-full items-center justify-center gap-2 rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-950">
+                    <IconBrandAppleFilled /> <div>Continue with Apple</div>
+                </Button>
+            </Link>
         </div>
     </div>
 )

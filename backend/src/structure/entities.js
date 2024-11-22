@@ -41,6 +41,14 @@ export const companyEntity = {
     "type": "string"
   },
   {
+    "name": "valuation",
+    "type": "number"
+  },
+  {
+    "name": "domain",
+    "type": "string"
+  },
+  {
     "name": "props",
     "type": "string"
   }
