@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/wrappers/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
-import Navbar from "@/components/custom/navbar";
+import { UserProvider } from "@/lib/hooks/use-auth";
 
 const font = Space_Grotesk({
   subsets: ["latin"],
@@ -26,18 +26,20 @@ export default function RootLayout({
         className={`${font.className} antialiased`}
       >
         <TooltipProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Toaster />
-            <div className="flex flex-col min-h-screen">
-              <Navbar />
-              {children}
-            </div>
-          </ThemeProvider>
+          <UserProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Toaster />
+              <div className="flex flex-col min-h-screen">
+                {/* <Navbar /> */}
+                {children}
+              </div>
+            </ThemeProvider>
+          </UserProvider>
         </TooltipProvider>
       </body>
     </html>
