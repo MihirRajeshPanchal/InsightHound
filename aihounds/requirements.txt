@@ -4,3 +4,4 @@ fastapi[all]
 requests
 python-dotenv
 scrapetube
+pymongo
