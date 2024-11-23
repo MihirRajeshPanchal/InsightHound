@@ -10,9 +10,9 @@ export const Account: React.FC<{
 	setCurrentTab: Dispatch<SetStateAction<0 | 1>>
 }> = ({ currentTab = 0, firstTab, secondTab, setCurrentTab }) => {
 	return (
-		<div className="flex w-full max-w-[430px] flex-col gap-2">
+		<div className="flex w-full max-w-[430px] flex-col gap-2 bg-text/5 border-[3px] border-text/20 rounded-[2rem] p-4 relative text-text">
 			<Switch currentTab={currentTab} setTab={setCurrentTab} />
-			<div className="overflow-hidden rounded-xl border border-neutral-200 p-2 shadow-sm dark:border-neutral-900">
+			<div className="overflow-hidden rounded-xl p-2 shadow-sm">
 				{currentTab === 0 && firstTab}
 				{currentTab === 1 && secondTab}
 			</div>
@@ -25,7 +25,7 @@ const Switch: React.FC<{
 	currentTab: number
 }> = ({ setTab, currentTab }) => (
 	<div
-		className={`relative flex w-full items-center rounded-lg bg-neutral-100 py-1 text-neutral-900 dark:bg-neutral-800 dark:text-white`}
+		className={`relative flex w-full items-center rounded-lg bg-neutral-100 py-1 text-neutral-900 dark:bg-text/20 dark:text-white`}
 	>
 		<motion.div
 			transition={{

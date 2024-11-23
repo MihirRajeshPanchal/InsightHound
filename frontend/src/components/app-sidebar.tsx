@@ -13,7 +13,6 @@ import {
 	SidebarMenuItem,
 	SidebarRail,
 } from "@/components/ui/sidebar"
-import { FramerLogoIcon } from "@radix-ui/react-icons"
 
 const data = {
 	versions: ["1.0.1"],
@@ -91,8 +90,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
 		<Sidebar {...props}>
 			<SidebarHeader>
-				<div className="flex gap-2 font-semibold text-lg items-center p-2">
-					<FramerLogoIcon className="size-6" />
+				<div className="flex gap-2 font-semibold text-lg items-end leading-none p-2">
+					{/* <FramerLogoIcon className="size-6" /> */}
+					<img src="/logo.png" alt="Logo" className="h-6" />
 					Insight Hound
 				</div>
 				<SearchForm />

@@ -52,10 +52,10 @@ export const Auth = () => {
 	}
 	return (
 		<>
-			<BackButton className="w-fit mt-24 ml-24" />
+			<BackButton className="w-fit mt-4 lg:mt-24 ml-4 lg:ml-24" />
 			<form
 				onSubmit={form.handleSubmit(onSubmit)}
-				className="flex w-full flex-col items-center justify-start px-24"
+				className="mt-6 flex w-full flex-col items-center justify-start px-2 lg:px-24"
 			>
 				<Account
 					firstTab={<Tab1 form={form} />}
@@ -80,7 +80,7 @@ const Tab1 = ({ form }: { form: UseFormReturn<FormType> }) => (
 			<Input
 				placeholder="milindpithadia@gmail.com"
 				type="text"
-				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none focus:ring-2 focus:ring-neutral-800 dark:border-neutral-800 dark:placeholder-neutral-500"
+				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none transition-shadow focus:ring-2 focus:ring-neutral-800 dark:border-text/20 dark:placeholder-text/55"
 				{...form.register("email")}
 			/>
 		</div>
@@ -91,24 +91,24 @@ const Tab1 = ({ form }: { form: UseFormReturn<FormType> }) => (
 			<Input
 				type="password"
 				placeholder="Password"
-				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none focus:ring-2 focus:ring-neutral-800 dark:border-neutral-800 dark:placeholder-neutral-500"
+				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none transition-shadow focus:ring-2 focus:ring-neutral-800 dark:border-text/20 dark:placeholder-text/55"
 				{...form.register("password")}
 			/>
 		</div>
 		<div className="mt-2.5 w-full">
 			<Button
 				type="submit"
-				className="h-10 w-full rounded-md bg-neutral-900 font-medium text-white dark:bg-white dark:text-neutral-950"
+				className="h-10 w-full rounded-md bg-neutral-900 font-medium text-white dark:bg-accent dark:text-text"
 			>
 				Submit
 			</Button>
 		</div>
 
 		<div className="relative mt-6 w-full">
-			<div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-neutral-400 dark:bg-black dark:text-neutral-500">
+			<div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-neutral-400 dark:text-text text-lg">
 				Or
 			</div>
-			<div className="border-b border-neutral-300 dark:border-neutral-800"></div>
+			<div className="border-b border-neutral-300 dark:border-text/10"></div>
 		</div>
 		<div className="mt-6 flex w-full flex-col gap-4">
 			<Link href="/oauth">
@@ -143,7 +143,7 @@ const Tab2 = ({ form }: { form: UseFormReturn<FormType> }) => (
 			<Input
 				placeholder="milindpithadia@gmail.com"
 				type="text"
-				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none focus:ring-2 focus:ring-neutral-800 dark:border-neutral-800 dark:placeholder-neutral-500"
+				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none transition-shadow focus:ring-2 focus:ring-neutral-800 dark:border-text/20 dark:placeholder-text/55"
 				{...form.register("email")}
 			/>
 		</div>
@@ -154,24 +154,24 @@ const Tab2 = ({ form }: { form: UseFormReturn<FormType> }) => (
 			<Input
 				type="password"
 				placeholder="Password"
-				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none focus:ring-2 focus:ring-neutral-800 dark:border-neutral-800 dark:placeholder-neutral-500"
+				className="mt-1 h-10 w-full rounded-md border px-1 placeholder-neutral-400 outline-none transition-shadow focus:ring-2 focus:ring-neutral-800 dark:border-text/20 dark:placeholder-text/55"
 				{...form.register("password")}
 			/>
 		</div>
 		<div className="mt-2.5 w-full">
 			<Button
 				type="submit"
-				className="h-10 w-full rounded-md bg-neutral-900 font-medium text-white dark:bg-white dark:text-neutral-950"
+				className="h-10 w-full rounded-md bg-neutral-900 font-medium text-white dark:bg-accent dark:text-text"
 			>
 				Submit
 			</Button>
 		</div>
 
 		<div className="relative mt-6 w-full">
-			<div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-neutral-400 dark:bg-black dark:text-neutral-500">
+			<div className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-2 text-neutral-400 dark:text-text text-lg">
 				Or
 			</div>
-			<div className="border-b border-neutral-300 dark:border-neutral-800"></div>
+			<div className="border-b border-neutral-300 dark:border-text/10"></div>
 		</div>
 		<div className="mt-6 flex w-full flex-col gap-4">
 			<Link href="/oauth">
