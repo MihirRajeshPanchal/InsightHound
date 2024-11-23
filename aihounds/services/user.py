@@ -18,7 +18,9 @@ class UserService():
                 return {"message":"Company not found"}
             else:
                 for company in company_data:
+
                     company['companyId']=str(company['companyId'])
+                    del company['props']['org_similarity_list']
                 return company_data
     
 

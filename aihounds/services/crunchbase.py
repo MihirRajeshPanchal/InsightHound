@@ -51,6 +51,7 @@ class CrunchBaseService:
             # with concurrent.futures.ThreadPoolExecutor() as executor:
             
             if company.get("props",None) is not None:
+                del company['props']['org_similarity_list']
                 return company
             else:
                 print("ELSE")
@@ -60,8 +61,7 @@ class CrunchBaseService:
                 for permalink in rival_names:
                     background_tasks.add_task(self.create_rivals_data, permalink, company_id)
             company = self.mongoclient.read("company",company_id)
-
-
+            del company['props']['org_similarity_list']
             return company
         except Exception as e:
             print(f"Error: {e}")
