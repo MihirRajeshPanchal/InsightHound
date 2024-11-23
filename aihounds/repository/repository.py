@@ -6,6 +6,7 @@ import json
 from aihounds.models.user import User, PyObjectId
 from aihounds.models.company import Company
 import os
+from bson import ObjectId
 from dotenv import load_dotenv
 load_dotenv()
 T = TypeVar('T')
@@ -52,6 +53,14 @@ class MongooseRepository(Generic[T, K]):
     def get_by_query(self, column_name: str, value: Any) -> Optional[K]:
         try:
             data = self.collection.find_one({column_name: value})
+            return data
+        except PyMongoError as e:
+            print(f"Get Error: {e}")
+            return None
+        
+    def get_by_id(self, _id: str) -> Optional[K]:
+        try:
+            data = self.collection.find_one({'_id': ObjectId(_id)})
             return data
         except PyMongoError as e:
             print(f"Get Error: {e}")
