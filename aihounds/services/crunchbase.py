@@ -2,7 +2,7 @@ import requests
 from aihounds.models.crunchbase import CrunchBaseCompany
 from aihounds.models.user import User
 from aihounds.models.company import Company
-from aihounds.repository.repository import MongooseRepository
+from aihounds.repository.mongo import MongooseRepository
 import os
 import json
 class CrunchBaseService:
