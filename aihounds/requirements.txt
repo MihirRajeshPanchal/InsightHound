@@ -1,0 +1,6 @@
+langchain
+langchain_openai
+fastapi[all]
+requests
+python-dotenv
+scrapetube
