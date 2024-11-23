@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from pydantic import BaseModel
-from typing import Optional, Type, TypeVar, Any, Dict
+from typing import Optional, TypeVar, Any, Dict, List
 
 T = TypeVar("T", bound=BaseModel)
 
@@ -27,6 +27,18 @@ class MongoDBClient:
             document["_id"] = str(document["_id"]) 
         return document
 
+    def read_by_key_value(self, collection_name: str, key: str, value: Any) -> List[Dict[str, Any]]:
+        try:
+            collection = self._get_collection(collection_name)
+            documents = collection.find({key: value})
+            result = []
+            for doc in documents:
+                doc["_id"] = str(doc["_id"])
+                result.append(doc)
+            return result
+        except Exception as e:
+            return None
+        
     def update(self, collection_name: str, document_id: str, update_data: Dict[str, Any]) -> bool:
         collection = self._get_collection(collection_name)
         result = collection.update_one(
