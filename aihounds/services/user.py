@@ -1,6 +1,4 @@
-
 from aihounds.constants.hound import mongo_client
-from fastapi.encoders import jsonable_encoder
 
 class UserService():
     def __init__(self):
