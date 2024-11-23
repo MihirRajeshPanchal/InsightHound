@@ -10,6 +10,6 @@ class CrunchBaseCompany(BaseModel):
     current_advisors_image_list:Optional[List[Any]]=None
     org_funding_total:Optional[Any]=None
     org_num_investors:Optional[int]=None
-    org_similiarity_org_list:Optional[List[Any]]=None
-    company_financial_highlights:Optional[Any]=None
-    investment_list:Optional[List[Any]]=None
+    org_similarity_list:Optional[List[Any]]=None
+    company_financials_highlights:Optional[Any]=None
+    investors_list:Optional[List[Any]]=None
