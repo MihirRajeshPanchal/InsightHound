@@ -49,8 +49,7 @@ class CrunchBaseService:
             rival_names=list(rival_names)
             rival_names=rival_names[:3]
             # with concurrent.futures.ThreadPoolExecutor() as executor:
-            for permalink in rival_names:
-                background_tasks.add_task(self.create_rivals_data, permalink, company_id)
+            
             if company.get("props",None) is not None:
                 return company
             else:
@@ -58,6 +57,8 @@ class CrunchBaseService:
                 data=self.get_company_details(company['name'].lower()
                 )
                 self.mongoclient.update("company",company_id,{"props" : data.model_dump()})
+                for permalink in rival_names:
+                    background_tasks.add_task(self.create_rivals_data, permalink, company_id)
             company = self.mongoclient.read("company",company_id)
 
 
