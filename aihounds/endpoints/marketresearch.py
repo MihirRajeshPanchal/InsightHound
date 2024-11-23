@@ -10,7 +10,7 @@ router = APIRouter()
 async def get_marketresearch(request: StartupRequest):
     questions_data  = mongo_client.read_by_key_value("questionnaire", key= "id", value=request.id)
     if questions_data:
-        return QuestionnaireSchema(questions=questions_data["questions"])
+        return QuestionnaireSchema(questions=questions_data[0]["questions"])
     else:
         questions_data = mongo_client.read("company", request.id)
         questions = generate_questionnaire(
