@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from aihounds.endpoints import keywords, onboard
-
+from aihounds.endpoints import keywords, onboard, youtube
+from aihounds.endpoints.crunchbase import crunchbase_router 
+from aihounds.endpoints.user import user_router
 app = FastAPI()
 
 app.add_middleware(
@@ -14,6 +15,9 @@ app.add_middleware(
 
 app.include_router(keywords.router)
 app.include_router(onboard.router)
+app.include_router(crunchbase_router)
+app.include_router(youtube.router)
+app.include_router(user_router)
 
 @app.get("/")
 def root():

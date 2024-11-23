@@ -1,6 +1,6 @@
-'use server'
+"use server"
 
-import { TNoParams } from '@/lib/types/common'
+import { TNoParams } from "@/lib/types/common"
 
 export type FetchRequestParams<
 	ResponseDataT = TNoParams,
@@ -12,13 +12,13 @@ export type FetchRequestParams<
 	body?: BodyParamsT
 	defaultData?: ResponseDataT
 	headers?: Headers
-	method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'
+	method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
 	onError?: (error: Error) => void
 	query?: QueryParamsT
 	throwOnError?: boolean
 	url: string
-	urlParams?: UrlParamsT,
-    token?: string | null
+	urlParams?: UrlParamsT
+	token?: string | null
 }
 
 type FetchResponseResult<ResponseDataT = TNoParams> =
@@ -46,7 +46,7 @@ export async function fetchAPI<
 		UrlParamsT,
 		BodyParamsT,
 		QueryParamsT
-	>
+	>,
 ): Promise<FetchResponseResult<ResponseDataT>> {
 	const {
 		url,
@@ -59,14 +59,14 @@ export async function fetchAPI<
 		defaultData,
 		throwOnError,
 		baseUrl,
-        token
+		token,
 	} = params
 
 	const BASE_URL = baseUrl ?? process.env.NEXT_PUBLIC_BACKEND_URL
 	// const API_KEY = process.env.NEXT_PUBLIC_BACKEND_API_KEY || ''
 
 	if (!BASE_URL) {
-		throw new Error('Backend URL not set in env!')
+		throw new Error("Backend URL not set in env!")
 	}
 
 	let resolvedUrl = BASE_URL + url
@@ -78,24 +78,22 @@ export async function fetchAPI<
 	}
 
 	const queryStr = new URLSearchParams(
-		query as Record<string, string>
+		query as Record<string, string>,
 	).toString()
 	if (queryStr) {
 		resolvedUrl += `?${queryStr}`
 	}
 
-
-
 	try {
 		const response = await fetch(resolvedUrl, {
 			method,
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 				// 'API-Key': API_KEY,
-                "token" : token || "",
+				token: token || "",
 				...headers,
 			},
-			...(method !== 'GET' && method !== 'DELETE'
+			...(method !== "GET" && method !== "DELETE"
 				? { body: JSON.stringify(body) }
 				: {}),
 			next: {
@@ -104,7 +102,7 @@ export async function fetchAPI<
 		})
 
 		const responseData = (await response.json()) as ResponseDataT
-        console.log({ responseData, response: response.status })
+		console.log({ responseData, response: response.status })
 
 		return {
 			success: true,

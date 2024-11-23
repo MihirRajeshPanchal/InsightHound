@@ -1,5 +1,7 @@
+import AudienceInsights from "@/components/custom/audience-insight";
+
 export default function Page() {
-    return (
-        <div>Welcome to audience-insights Page</div>
-    )
+	return (
+		<AudienceInsights />
+	)
 }

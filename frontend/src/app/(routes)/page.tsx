@@ -2,6 +2,7 @@ import { RightArrow } from "@/assets/svgs"
 import FeatureCard from "@/components/custom/feature-card"
 import { features } from "@/components/custom/feature-card/features"
 import Lenis from "@/components/wrappers/lenis"
+import Link from "next/link"
 
 export default function Landing() {
 	return (
@@ -50,15 +51,17 @@ export default function Landing() {
 							opportunities, analyze competitors, and connect with
 							your target audience like never before.
 						</p>
-						<button className="group | grid *:[grid-area:1/-1] border border-text/20 rounded-full">
-							<div className="grid h-full grid-cols-[calc(100%_-_55px)_1fr] group-hover:grid-cols-[0%_1fr] transition-[grid-template-columns] duration-300">
-								<span className="col-start-2 bg-accent rounded-full"></span>
-							</div>
-							<span className="grid gap-6 place-items-center grid-cols-[1fr_auto] text-2xl font-medium px-4 py-2">
-								Get Started
-								<RightArrow className="-rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-							</span>
-						</button>
+						<Link href="/dashboard">
+							<button className="group | grid *:[grid-area:1/-1] border border-text/20 rounded-full">
+								<div className="grid h-full grid-cols-[calc(100%_-_55px)_1fr] group-hover:grid-cols-[0%_1fr] transition-[grid-template-columns] duration-300">
+									<span className="col-start-2 bg-accent rounded-full"></span>
+								</div>
+								<span className="grid gap-6 place-items-center grid-cols-[1fr_auto] text-2xl font-medium px-4 py-2">
+									Get Started
+									<RightArrow className="-rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+								</span>
+							</button>
+						</Link>
 					</section>
 					<section className="features | space-y-16 lg:space-y-36 py-8">
 						{features.map((item, idx) => (
