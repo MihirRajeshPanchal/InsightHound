@@ -5,7 +5,6 @@ import authMiddleware from '../middleware/auth.js';
 import { parseBody } from '../lib/helpers.js';
 import { userEntity } from '../structure/entities.js';
 const prisma = new PrismaClient();
-import { COOKIE_NAME } from '../lib/constants.js';
 const router = express.Router();
 
 // CRUD API for user
@@ -20,12 +19,12 @@ router.get('/', authMiddleware, async (req, res) => {
 });
 
 
-router.put('/:id', authMiddleware, async (req, res) => {
+router.patch('/:id', authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
     const parsedBody = parseBody(req.body, userEntity.attributes);
     const user = await prisma.user.update({
-      where: { id: Number(id) },
+      where: { id },
        data: parsedBody,
     });
     res.json(user);
@@ -39,7 +38,7 @@ router.delete('/:id', authMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
     const user = await prisma.user.delete({
-      where: { id: Number(id) },
+      where: { id: id },
     });
     res.json(user);
   } catch (error) {

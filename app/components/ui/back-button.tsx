@@ -1,8 +1,10 @@
 'use dom';
-import React from 'react';
-import { Button } from './button';
+import '~/global.css';
+import { useRouter } from 'expo-router';
 import { ArrowLeft } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
+
+import { Button } from './button';
 
 export default function BackButton({ className }: { className?: string }) {
   const router = useRouter();

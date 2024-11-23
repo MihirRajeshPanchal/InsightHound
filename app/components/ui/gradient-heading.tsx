@@ -1,8 +1,11 @@
-import React from 'react';
+'use dom';
+import '~/global.css';
+
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 const headingVariants = cva('tracking-tight pb-3 bg-clip-text text-transparent', {
   variants: {

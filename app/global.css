@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Clash Grotesk';
+    src: url('//cdn.fontshare.com/wf/5TRO2J3HJNIQODLQ4CTSMGSLAWSE5YUY/GHXENXHZCDIOE5E73364PNNASRNO3JVW/GLZTRU2GIKPV5HYT3E6HDLWOXAWPNZDV.woff2') format('woff2'),
+         url('//cdn.fontshare.com/wf/5TRO2J3HJNIQODLQ4CTSMGSLAWSE5YUY/GHXENXHZCDIOE5E73364PNNASRNO3JVW/GLZTRU2GIKPV5HYT3E6HDLWOXAWPNZDV.woff') format('woff'),
+         url('//cdn.fontshare.com/wf/5TRO2J3HJNIQODLQ4CTSMGSLAWSE5YUY/GHXENXHZCDIOE5E73364PNNASRNO3JVW/GLZTRU2GIKPV5HYT3E6HDLWOXAWPNZDV.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
+
+* {
+    font-family: 'Clash Grotesk', sans-serif !important;
+}

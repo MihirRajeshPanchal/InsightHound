@@ -1,29 +1,27 @@
 'use dom';
-import { user } from '@prisma/client';
+import '~/global.css';
 import { IconBrandAppleFilled, IconBrandGoogleFilled } from '@tabler/icons-react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { Link } from 'expo-router';
 import React from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
 
 import { Account } from './account';
 
-import BackButton from '@/components/ui/back-button';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { TNoParams } from '@/lib/types/common';
-import { fetchAPI } from '@/lib/utils/fetch-api';
-import { setToken } from '@/lib/utils/token';
+import BackButton from '~/components/ui/back-button';
+import { Button } from '~/components/ui/button';
+import { Input } from '~/components/ui/input';
+import { Label } from '~/components/ui/label';
+import { TNoParams } from '~/lib/types/common';
+import { user } from '~/lib/types/prisma';
+import { fetchAPI } from '~/lib/utils/fetch-api';
 
 type FormType = {
   email: string;
   password: string;
 };
 
-export const Auth = () => {
+const Auth = ({ afterAuth }: { afterAuth: (str: string) => Promise<void> }) => {
   const [tab, setTab] = React.useState<0 | 1>(0);
-  const router = useRouter();
   const form = useForm<FormType>({
     defaultValues: {
       email: '',
@@ -45,16 +43,16 @@ export const Auth = () => {
       body: data,
     });
     if (resp.data?.token) {
-      setToken(resp.data.token);
-      router.push('/onboarding');
+      console.log('setting token');
+      await afterAuth(resp.data?.token);
     }
   }
   return (
-    <>
-      <BackButton className="ml-24 mt-24 w-fit" />
+    <div className="flex w-[100vw] flex-col gap-4 p-6">
+      <BackButton className=" w-fit" />
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex w-full flex-col items-center justify-start px-24">
+        className="flex w-full flex-col items-center justify-start ">
         <Account
           firstTab={<Tab1 form={form} />}
           secondTab={<Tab2 form={form} />}
@@ -62,12 +60,12 @@ export const Auth = () => {
           setCurrentTab={setTab}
         />
       </form>
-    </>
+    </div>
   );
 };
 
 const Tab1 = ({ form }: { form: UseFormReturn<FormType> }) => (
-  <div className="flex w-full flex-col items-start justify-start gap-4 rounded-xl p-3 pb-4">
+  <div className="flex flex-col items-start justify-start gap-4 rounded-xl p-3 pb-4">
     <div>
       <h1 className="font-font text-lg">Sign in to your account</h1>
     </div>
@@ -185,3 +183,5 @@ const Tab2 = ({ form }: { form: UseFormReturn<FormType> }) => (
     </div>
   </div>
 );
+
+export default Auth;

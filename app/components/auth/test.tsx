@@ -1,10 +1,12 @@
 'use dom';
+import '~/global.css';
+import { Button } from '../ui/button';
 
 export default function test() {
   return (
     <div>
       hii
-      <button>click me</button>
+      <Button variant="outline">click me</Button>
     </div>
   );
 }
