@@ -21,3 +21,7 @@ export const DOMAINS = [
 	"Non-profit",
 	"Others",
 ]
+
+export const mapDefaults = {
+	zoom: 10,
+  };
