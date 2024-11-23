@@ -95,6 +95,27 @@ class MongooseRepository(Generic[T, K]):
         except PyMongoError as e:
             print(f"Append to Props Error: {e}")
             return None
+        
+    def find_company_name_by_user_id(self, user_id: str) -> Optional[str]:
+        try:
+            user_data = self.collection.find_one({'_id': ObjectId(user_id)})
+            print(f"User Data: {user_data}")
+            if not user_data or 'companyId' not in user_data:
+                print(f"No companyId found for user with id: {user_id}")
+                return None
+
+            company_id = user_data['companyId']
+            company_collection = self.db['company']
+            company_data = company_collection.find_one({'_id': ObjectId(company_id)})
+            print(f"Company Data: {company_data}")
+            if not company_data or 'name' not in company_data:
+                print(f"No company found with id: {company_id}")
+                return None
+
+            return company_data
+        except PyMongoError as e:
+            print(f"Find Company Name Error: {e}")
+            return None
 
     def close(self):
         self.client.close()
