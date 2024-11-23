@@ -1,16 +1,15 @@
-
 export interface MapProps {
-    card: MapCard;
-  }
+	card: MapCard
+}
 
 export interface MapCard {
-    coord: {
-        lat: number;
-        lng: number;
-        int: number;
-    }
+	coord: {
+		lat: number
+		lng: number
+		int: number
+	}
 }
 
 export interface MapComponentProps {
-    data: MapCard[];
+	data: MapCard[]
 }
