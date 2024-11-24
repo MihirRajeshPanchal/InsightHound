@@ -5,7 +5,7 @@ from aihounds.endpoints.crunchbase import crunchbase_router
 from aihounds.endpoints.user import user_router
 from aihounds.endpoints.agent import api_router
 from aihounds.services.agent import LangGraphAgent
-
+from aihounds.endpoints.outreach import outreach_router
 app = FastAPI()
 
 app.add_middleware(
@@ -24,6 +24,7 @@ app.include_router(user_router)
 app.include_router(marketresearch.router)
 app.include_router(marketsegment.router)
 app.include_router(api_router)
+app.include_router(outreach_router)
 
 @app.get("/")
 def root():
