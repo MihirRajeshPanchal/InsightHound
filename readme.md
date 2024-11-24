@@ -1,5 +1,11 @@
 <h1 align="center" id="title">🐾 InsightHounds </h1>
 
+<div align="center">
+
+https://github.com/user-attachments/assets/1efe5fc7-465c-456b-852d-fa5e00dfa559
+
+</div>
+
 ## 🌟 Overview
 
 **AI Market Edge Research Agent** is an advanced AI system designed to assist startups in solving critical business challenges. It provides **data-driven insights**, actionable strategies, and practical recommendations to help startups:  
@@ -19,6 +25,17 @@
 - [👥 Contributors](#contributors)
 
 ---
+<h2>🚀 Demo</h2>
+
+<div align="center">
+ 
+
+
+https://github.com/user-attachments/assets/c3ef2612-8370-446a-9c4e-4c113c8ccb13
+
+
+
+</div>
 
 ## 📸 Project Screenshots
 
