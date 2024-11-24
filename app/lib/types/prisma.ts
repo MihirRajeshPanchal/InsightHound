@@ -14,4 +14,4 @@ export interface Company {
   mission?: string;
   valuation?: string;
   domain?: string;
-}
+} 

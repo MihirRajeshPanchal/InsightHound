@@ -98,4 +98,4 @@ export function InterestSlider({
     </View>
   );
 }
- 
+  

@@ -27,7 +27,7 @@ export const mapDefaults = {
 };
 
 export const BACKEND_URL = 'http://192.168.29.122:5001';
-
+export const FASTAPI_URL = 'https://djdawgs-100x-buildathon.onrender.com'
 export const font = {
   bold: { fontFamily: 'ClashGrotesk_700' },
   regular: { fontFamily: 'ClashGrotesk_400' },

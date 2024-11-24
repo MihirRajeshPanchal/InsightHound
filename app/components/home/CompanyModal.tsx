@@ -107,4 +107,4 @@ export const CompanyModal = ({ company, visible, onClose }: CompanyModalProps) =
       </View>
     </Modal>
   );
-};
+}; 
