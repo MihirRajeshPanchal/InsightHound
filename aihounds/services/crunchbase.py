@@ -39,16 +39,16 @@ class CrunchBaseService:
             company_id = user.get('companyId')
             company = self.mongoclient.read("company",company_id)
             rival_names = set()
-            data=company['props']['org_similarity_list']
-            for item in data:
-                if 'target' in item and 'permalink' in item['target']:
-                    
-                    rival_names.add(item['target']['permalink'])
-            
-            print("Rival names:", list(rival_names))
-            rival_names=list(rival_names)
-            rival_names=rival_names[:3]
-            # with concurrent.futures.ThreadPoolExecutor() as executor:
+            if company.get("props",None) is not None:
+                data=company['props']['org_similarity_list']
+                for item in data:
+                    if 'target' in item and 'permalink' in item['target']:
+                        
+                        rival_names.add(item['target']['permalink'])
+                
+                print("Rival names:", list(rival_names))
+                rival_names=list(rival_names)
+                rival_names=rival_names[:3]
             
             if company.get("props",None) is not None:
                 del company['props']['org_similarity_list']
@@ -58,6 +58,18 @@ class CrunchBaseService:
                 data=self.get_company_details(company['name'].lower()
                 )
                 self.mongoclient.update("company",company_id,{"props" : data.model_dump()})
+                company = self.mongoclient.read("company",company_id)
+            rival_names = set()
+            if company.get("props",None) is not None:
+                data=company['props']['org_similarity_list']
+                for item in data:
+                    if 'target' in item and 'permalink' in item['target']:
+                        
+                        rival_names.add(item['target']['permalink'])
+                
+                print("Rival names:", list(rival_names))
+                rival_names=list(rival_names)
+                rival_names=rival_names[:3]
                 for permalink in rival_names:
                     background_tasks.add_task(self.create_rivals_data, permalink, company_id)
             company = self.mongoclient.read("company",company_id)
