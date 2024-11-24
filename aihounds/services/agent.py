@@ -66,6 +66,6 @@ class LangGraphAgent:
     def process_message(self, message: str,user_id:str, config: Dict[str, Any] = None) -> Any:
         if config is None:
             config = {"configurable": {"thread_id": "1"}}
-        events = self.graph.stream({"messages": [("user", message)],"user_id":user_id}, config, stream_mode="values")
+        events = self.graph.invoke({"messages": [("user", message)],"user_id":user_id}, config, stream_mode="values")
         return events
 
