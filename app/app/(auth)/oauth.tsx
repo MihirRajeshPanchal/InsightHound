@@ -1,5 +1,5 @@
 import Oauth from '~/components/auth/oauth';
 
-export default function OAuthComponent() {
+export default function OAuth() {
   return <Oauth />;
 }
