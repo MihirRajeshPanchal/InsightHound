@@ -1,4 +1,4 @@
-# AI Market Edge Research Agent
+# InsightHounds
 
 ## Overview
 
@@ -10,6 +10,44 @@ AI Market Edge Research Agent is an advanced AI system designed to assist startu
 - [Installation](#installation)
 - [Technologies](#technologies)
 - [Contributors](#contributors)
+
+<h2>Project Screenshots:</h2>
+
+<table>
+  <tr>
+    <td colspan="2" align="center"><img src="https://github.com/user-attachments/assets/52708d66-1c4b-4a60-85db-0a891e2ba095" alt="" width="50%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/2f0c3233-b0e2-45bf-a3ee-06e2f10615b3" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/e94f5a74-4a2c-4bb8-866e-0ac4d530627c" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/cf1c6be9-615f-4f8a-b10d-dbc84a15ba68" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/a6a426e2-c5d3-44c1-b75e-74b03d3f6463" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/b8e3c11e-693b-4781-ad68-e4bb263f8cb5" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/0d375014-a1ca-4d76-bc3e-54417da2ee1d" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/6df4ed34-2193-4047-82f0-310f2dc57032" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/45d1d98f-6204-4bca-81ea-24ca3f7164b2" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/e978d1ec-8062-479a-afab-c66d0f26b976" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/a10e08d0-a575-40cb-b84e-912a1719cf0d" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="" alt="https://github.com/user-attachments/assets/c26dc4e2-fdc2-4682-8a30-8bb7a4ebd452" width="100%"></td>
+    <td><img src="" alt="https://github.com/user-attachments/assets/33b6c32b-3a67-4b2a-8d7b-3e84d0e18953" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/a10e08d0-a575-40cb-b84e-912a1719cf0d" alt="" width="100%"></td>
+    <td><img src="" alt="" width="100%"></td>
+  </tr>
+
+</table>
+
 
 ## Project-Features
 
