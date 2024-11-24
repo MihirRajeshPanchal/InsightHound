@@ -1,8 +1,8 @@
-import { MapComponentProps } from "@/lib/types/map"
+import { CoordinateDataApiResponse } from "@/lib/types/api"
 import dynamic from "next/dynamic"
 import { useMemo } from "react"
 
-export default function Map({ data }: MapComponentProps) {
+export default function Map({ data }: { data: CoordinateDataApiResponse }) {
 	const MapComponent = useMemo(
 		() => dynamic(() => import("./client"), { ssr: false }),
 		[],

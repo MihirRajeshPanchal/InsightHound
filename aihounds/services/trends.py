@@ -4,7 +4,7 @@ from serpapi import GoogleSearch
 def get_trends_search(query):
     params = {
     "engine": "google_trends",
-    "q": "coffee",
+    "q": query,
     "geo": "IN",
     "region": "CITY",
     "data_type": "GEO_MAP_0",

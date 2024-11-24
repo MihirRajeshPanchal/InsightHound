@@ -1,12 +1,12 @@
 import { mapDefaults } from "@/lib/constants"
-import { MapProps } from "@/lib/types/map"
+import { CoordinateData } from "@/lib/types/api"
 import React, { useEffect } from "react"
 import { useMap } from "react-leaflet"
 
-export default function MapUtilities({ card }: MapProps) {
+export default function MapUtilities({ card }: { card: CoordinateData }) {
 	const map = useMap()
 	useEffect(() => {
-		map.setView([card.coord.lat, card.coord.lng], mapDefaults.zoom)
+		map.setView([card.coordinates.lat, card.coordinates.lng], mapDefaults.zoom)
 	}, [card, map])
 	return <></>
 }

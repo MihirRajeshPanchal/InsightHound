@@ -7,4 +7,5 @@ router = APIRouter()
 @router.post("/trends")
 def generate_trends(request: TrendsQueryRequest):
     result = get_trends_search(request.query)
+    print(result, request.query)
     return result

@@ -4,26 +4,27 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
 import "leaflet-defaulticon-compatibility"
-import { MapComponentProps } from "@/lib/types/map"
 import { mapDefaults } from "@/lib/constants"
 import MapUtilities from "./util"
 import { HeatmapLayerFactory } from "@vgrid/react-leaflet-heatmap-layer"
+import { CoordinateDataApiResponse } from "@/lib/types/api"
 
 const HeatmapLayer = HeatmapLayerFactory<[number, number, number]>()
 
-const MapComponent = ({ data }: MapComponentProps) => {
+const MapComponent = ({ data }: { data: CoordinateDataApiResponse }) => {
 	const zoom = mapDefaults.zoom
 	const mappedData: [number, number, number][] = data.map((d) => [
-		d.coord.lat,
-		d.coord.lng,
-		d.coord.int,
+		d.coordinates.lat,
+		d.coordinates.lng,
+		d.extracted_value / 100,
 	])
 
 	return (
 		<MapContainer
-			center={data[0].coord}
+			center={data[0].coordinates}
 			zoom={zoom}
 			scrollWheelZoom={true}
+			dragging={true}
 			style={{ height: "100%", width: "100%" }}
 		>
 			<TileLayer
@@ -32,23 +33,23 @@ const MapComponent = ({ data }: MapComponentProps) => {
 			/>
 			<MapUtilities card={data[0]} />
 			<Marker
-				position={[data[0].coord.lat, data[0].coord.lng]}
+				position={[data[0].coordinates.lat, data[0].coordinates.lng]}
 				draggable={true}
 			>
 				<Popup>You&apos;re here</Popup>
 			</Marker>
 			{data
-				.sort((a, b) => b.coord.int - a.coord.int)
-				.slice(0, 20)
+				// .sort((a, b) => b.extracted_value - a.extracted_value)
+				// .slice(0, 20)
 				.map((d, i) => (
 					<Marker
-						opacity={d.coord.int}
+						opacity={d.extracted_value / 100}
 						autoPan={false}
 						key={i}
-						position={[d.coord.lat, d.coord.lng]}
+						position={[d.coordinates.lat, d.coordinates.lng]}
 					>
 						<Popup>
-							{d.coord.int.toFixed(2)}% people interested
+							{(d.extracted_value / 100).toFixed(2)}% people interested
 						</Popup>
 					</Marker>
 				))}
