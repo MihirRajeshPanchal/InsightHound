@@ -10,6 +10,8 @@ AI Market Edge Research Agent is an advanced AI system designed to assist startu
 - [Installation](#installation)
 - [Technologies](#technologies)
 - [Contributors](#contributors)
+- 
+
 
 <h2>Project Screenshots:</h2>
 
@@ -27,7 +29,7 @@ AI Market Edge Research Agent is an advanced AI system designed to assist startu
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/b8e3c11e-693b-4781-ad68-e4bb263f8cb5" alt="" width="100%"></td>
-    <td><img src="https://github.com/user-attachments/assets/0d375014-a1ca-4d76-bc3e-54417da2ee1d" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/ef01b5b7-bb68-4c43-b006-cb8f19c3dddc" alt="" width="100%"></td>
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/6df4ed34-2193-4047-82f0-310f2dc57032" alt="" width="100%"></td>
@@ -35,18 +37,15 @@ AI Market Edge Research Agent is an advanced AI system designed to assist startu
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/e978d1ec-8062-479a-afab-c66d0f26b976" alt="" width="100%"></td>
-    <td><img src="https://github.com/user-attachments/assets/a10e08d0-a575-40cb-b84e-912a1719cf0d" alt="" width="100%"></td>
+    <td><img src="https://github.com/user-attachments/assets/8e5d3400-2ec9-40b9-83e9-78922bff391f" alt="" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="" alt="https://github.com/user-attachments/assets/c26dc4e2-fdc2-4682-8a30-8bb7a4ebd452" width="100%"></td>
-    <td><img src="" alt="https://github.com/user-attachments/assets/33b6c32b-3a67-4b2a-8d7b-3e84d0e18953" width="100%"></td>
-  </tr>
-  <tr>
+    <td><img src="https://github.com/user-attachments/assets/0d375014-a1ca-4d76-bc3e-54417da2ee1d" alt="" width="100%"></td>
     <td><img src="https://github.com/user-attachments/assets/a10e08d0-a575-40cb-b84e-912a1719cf0d" alt="" width="100%"></td>
-    <td><img src="" alt="" width="100%"></td>
   </tr>
 
 </table>
+
 
 
 ## Project-Features
