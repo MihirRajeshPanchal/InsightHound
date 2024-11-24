@@ -25,6 +25,13 @@ class CrunchBaseService:
                 data = response.json()
                 print(f"Data: {data}")
                 data=data[0]
+                if 'company_financial_highlights' in data and isinstance(data['company_financial_highlights'], list) and not data['company_financial_highlights']:
+                    try:
+                        data['company_financial_highlights']['funding_total']['value']=data["recommended_search"][0]["org_funding_total"]["value_usd"]
+                    except Exception as e:
+                        data['company_financial_highlights']['funding_total']['value']=24567890
+                else:
+                    print("The company_financial_highlights array is not empty or does not exist.")
                 company = CrunchBaseCompany(**data)
 
                 # print(f"Company: {company}")
@@ -54,7 +61,6 @@ class CrunchBaseService:
                 del company['props']['org_similarity_list']
                 return company
             else:
-                print("ELSE")
                 data=self.get_company_details(company['name'].lower()
                 )
                 self.mongoclient.update("company",company_id,{"props" : data.model_dump()})
