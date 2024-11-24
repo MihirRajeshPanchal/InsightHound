@@ -4,8 +4,8 @@ from langchain.text_splitter import CharacterTextSplitter
 ONBOARD_PROMPT = ChatPromptTemplate.from_template("""
 Analyze the following vision, mission, description, domain of the startup and create a JSON-format company object using this structure:
 {{
-    "name": "Generated Schema",
-    "description": "Schema generated from PDF content",
+    "name": "Name of the starup",
+    "description": "Brief description of the startup",
     "vision": "The vision of the startup",
     "mission": "The mission of the startup",
     "valuation": "The valuation of the startup",

@@ -1,6 +1,5 @@
 from tavily import TavilyClient
 import os
-from langchain.adapters.openai import convert_openai_messages
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage
 from langgraph.checkpoint.memory import MemorySaver

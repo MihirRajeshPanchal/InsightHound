@@ -7,3 +7,5 @@ scrapetube
 pymongo
 tavily-python
 langgraph
+serpapi
+beautifulsoup4
