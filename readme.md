@@ -1,4 +1,4 @@
-<h1 align="center" id="title">🐾 InsightHounds </h1>
+<h1 align="center" id="title">🐾 InsightHounds 🐾</h1>
 
 <div align="center">
 
