@@ -12,12 +12,14 @@
   app.use(cookieParser()); 
   app.use(cors());
 
-  // Route for user
   import userRouter from './routes/user.js';
   app.use('/user', userRouter);
-  // Route for company
+
   import companyRouter from './routes/company.js';
   app.use('/company', companyRouter);
+
+  import apiRouter from './routes/api.js';
+  app.use('/api', apiRouter);
   
   const port = process.env.PORT || 3000
   app.listen(port, () => {

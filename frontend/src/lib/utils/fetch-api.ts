@@ -21,7 +21,7 @@ export type FetchRequestParams<
 	token?: string | null
 }
 
-type FetchResponseResult<ResponseDataT = TNoParams> =
+export type FetchResponseResult<ResponseDataT = TNoParams> =
 	| {
 			data: ResponseDataT
 			error: null
@@ -77,6 +77,8 @@ export async function fetchAPI<
 			.replace(`[${key}]`, value.toString())
 	}
 
+	console.log({ resolvedUrl })
+
 	const queryStr = new URLSearchParams(
 		query as Record<string, string>,
 	).toString()
@@ -101,8 +103,9 @@ export async function fetchAPI<
 			},
 		})
 
+		console.log({response: response.status })
 		const responseData = (await response.json()) as ResponseDataT
-		console.log({ responseData, response: response.status })
+		console.log({ responseData})
 
 		return {
 			success: true,
