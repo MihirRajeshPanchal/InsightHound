@@ -14,7 +14,6 @@ import {
 	SidebarRail,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
-import dynamic from "next/dynamic"
 
 const data = {
 	versions: ["1.0.1"],

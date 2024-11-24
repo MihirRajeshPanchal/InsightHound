@@ -46,7 +46,7 @@ export const features: Feature[] = [
 		],
 	},
 	{
-		image: "/images/feature-dashboard.webp",
+		image: "/images/feature-competitor.webp",
 		featureTitle: "Public Feedback Hub",
 		featurePoints: [
 			{
@@ -64,7 +64,7 @@ export const features: Feature[] = [
 		],
 	},
 	{
-		image: "/images/feature-heatmap.webp",
+		image: "/images/feature-segment.webp",
 		featureTitle: "Strategic Insights Generator",
 		featurePoints: [
 			{

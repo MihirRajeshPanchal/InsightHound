@@ -18,6 +18,7 @@ export default function SurveyResultsCharts({ surveyData }: { surveyData: MockRe
                         color: COLORS[index % COLORS.length],
                     }
                     return acc
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 }, {} as any)
 
                 return (

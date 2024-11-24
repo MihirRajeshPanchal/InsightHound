@@ -12,17 +12,25 @@ export default function Landing() {
 					<img src="logo.png" alt="Logo" className="w-full max-w-6" />
 					<nav className="content-center">
 						<ul className="flex items-center gap-4 lg:gap-8">
-							<li className="text-lg font-medium">Home</li>
-							<li className="text-lg ~font-medium text-text/65">
-								About us
-							</li>
-							<li className="text-lg ~font-medium text-text/65">
-								Services
-							</li>
+							<a href="#home">
+								<li className="text-lg font-medium">Home</li>
+							</a>
+							<a target="_blank" href="https://varad.xyz/contact">
+								<li className="text-lg ~font-medium text-text/65">
+									Contact us
+								</li>
+							</a>
+							<a href="#features">
+								<li className="text-lg ~font-medium text-text/65">
+									Services
+								</li>
+							</a>
 							<li>
-								<button className="text-lg font-medium bg-accent px-4 py-1 rounded-lg">
-									Get Started
-								</button>
+								<Link href="/dashboard">
+									<button className="text-lg font-medium bg-accent px-4 py-1 rounded-lg">
+										Get Started
+									</button>
+								</Link>
 							</li>
 						</ul>
 					</nav>
@@ -32,7 +40,7 @@ export default function Landing() {
 						<div className="ignoreThisDiv | absolute w-[15vw] min-w-40 aspect-[10] [--aspect:0.25] animate-[aspectAnimate_1.5s_forwards] rounded-[100%] skew-x-[30deg] top-0 -translate-y-1/2 left-0 -translate-x-1/2 bg-[radial-gradient(hsl(0,0%,100%,15%),hsl(0,0%,100%,0%))] blur-[96px]"></div>
 						<div className="ignoreThisDiv | absolute w-[15vw] min-w-40 aspect-[10] [--aspect:0.25] animate-[aspectAnimate_1.5s_forwards] rounded-[100%] -skew-x-[30deg] top-0 -translate-y-2/3 right-0 translate-x-1/2 bg-[radial-gradient(hsl(0,0%,100%,15%),hsl(0,0%,100%,0%))] blur-[96px]"></div>
 
-						<div className="heroChips | flex flex-wrap justify-center gap-2 items-center select-none">
+						<div id="home" className="heroChips | flex flex-wrap justify-center gap-2 items-center select-none">
 							<span className="text-xs lg:text-base px-3 py-1 bg-[radial-gradient(hsl(var(--text)/20%),hsl(var(--text)/0%))] border border-text/20 rounded-full">
 								Tracking Trends
 							</span>
@@ -63,7 +71,7 @@ export default function Landing() {
 							</button>
 						</Link>
 					</section>
-					<section className="features | space-y-16 lg:space-y-36 py-8">
+					<section id="features" className="features | space-y-16 lg:space-y-36 py-8">
 						{features.map((item, idx) => (
 							<FeatureCard key={idx} item={item} />
 						))}
