@@ -112,7 +112,7 @@ https://github.com/user-attachments/assets/c3ef2612-8370-446a-9c4e-4c113c8ccb13
 
 ---
 
-### 🤖 4. Langgraph AI Assistant  
+### 🤖 4. LangGraph AI Assistant  
 
 💡 Integrates with **MongoDB** and **Tavily** to provide real-time market insights.  
 
