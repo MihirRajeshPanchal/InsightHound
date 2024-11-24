@@ -95,35 +95,70 @@ We later use these data in our dashboard so that the founders can know what to p
 
 ---
 
-## Installation
+## 🛠️ Installation Steps:</h2>
 
-### Prerequisites
+## 1. Clone the repo
 
-- Python 3.8+
-- MongoDB
-- FastAPI
-- Uvicorn
+```
+git clone https://github.com/vaxad/DjDawgs_100X_Buildathon
+```
 
-### Steps
+## 2. Install dependencies
 
-1. Clone the repository:
+### Frontend
 
-   ```sh
-   git clone https://github.com/yourusername/marketedge-ai.git
-   cd marketedge-ai
+```
+cd frontend 
+npm i
+```
+### Backend (Nodejs)
 
-   ```
+```
+cd backend
+npm i
+```
 
-2. Start the backend:
+### Backend (FastAPI)
 
-3. Start python-backend:
-   Create an .env in sample backend folder according to ai.env.sample
-   ```sh
-   cd aihounds && pip install -r requirements.txt
-   cd ..
-   uvicorn aihounds.app:app --reload
-   ```
+```
+cd aihounds
+pip install -r requirements.txt
+```
 
+### React Native Applications
+
+```
+cd app
+npm i
+```
+
+## 3. Run the project
+
+### Frontend
+
+```
+cd frontend
+npm run dev
+```
+### Backend (Nodejs)
+
+```
+cd backend
+npm run dev
+```
+
+### Backend (FastAPI)
+
+```
+uvicorn aihounds.app:app --reload
+```
+
+### React Native Applications
+
+```
+cd app
+npx expo start
+```
 ## Technologies
 
 ### Technologies Used for this project:
@@ -145,3 +180,9 @@ Our Team DJDawgs consists of the following individuals:
 </a>
 </p>
 </br>
+
+<div align="center">
+
+### Show some ❤️ by starring this awesome Repository!
+
+</div>
