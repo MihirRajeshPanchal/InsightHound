@@ -16,7 +16,7 @@ async def create_typeform_definition(survey_request: SurveyRequest) -> dict:
             "language": "en",
             "progress_bar": "percentage",
             "show_progress_bar": True,
-            "show_typeform_branding": True,  # Changed to True to work with free/basic plans
+            "show_typeform_branding": True,  
             "is_public": True
         },
         "fields": [

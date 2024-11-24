@@ -19,10 +19,9 @@ async def create_typeform(survey_request: SurveyRequest):
         )
 
     try:
-        # Create Typeform definition
+
         typeform_data = await create_typeform_definition(survey_request)
 
-        # Make request to Typeform API
         async with httpx.AsyncClient() as client:
             response = await client.post(
                 TYPEFORM_API_URL,
@@ -31,10 +30,9 @@ async def create_typeform(survey_request: SurveyRequest):
                     "Authorization": f"Bearer {TYPEFORM_API_TOKEN}",
                     "Content-Type": "application/json"
                 },
-                timeout=30.0  # Added timeout
+                timeout=30.0
             )
 
-            # Log the response for debugging
             print(f"Typeform API Response: {response.status_code}")
             print(f"Response body: {response.text}")
 

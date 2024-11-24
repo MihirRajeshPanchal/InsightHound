@@ -11,7 +11,7 @@ class Question(BaseModel):
 
 class SurveyRequest(BaseModel):
     questions: List[Question]
-    title: Optional[str] = "Social Media Platform Survey"
+    title: Optional[str] = "InsightHounds Survey"
 
 class TypeformResponse(BaseModel):
     form_url: str
