@@ -23,6 +23,7 @@ export default function DashboardBreadCrumb() {
 		reports: "Comprehensive analytics",
 		"competitor-mapping": "Identify and analyze your competitors",
 		"custom-recommendations": "Receive personalized action plans",
+		"audience-outreach": "Engage with your audience",
 	}
 	function getPath(i: number): string {
 		return "/" + path.slice(0, i + 1).join("/")

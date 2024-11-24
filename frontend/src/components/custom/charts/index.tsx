@@ -49,15 +49,15 @@ export function Charts() {
 						<CardTitle className="text-4xl tabular-nums">
 							12,584{" "}
 							<span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
-								steps
+								outreach
 							</span>
 						</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ChartContainer
 							config={{
-								steps: {
-									label: "Steps",
+								outreach: {
+									label: "outreach",
 									color: "hsl(var(--chart-1))",
 								},
 							}}
@@ -71,37 +71,37 @@ export function Charts() {
 								data={[
 									{
 										date: "2024-01-01",
-										steps: 2000,
+										outreach: 2000,
 									},
 									{
 										date: "2024-01-02",
-										steps: 2100,
+										outreach: 2100,
 									},
 									{
 										date: "2024-01-03",
-										steps: 2200,
+										outreach: 2200,
 									},
 									{
 										date: "2024-01-04",
-										steps: 1300,
+										outreach: 1300,
 									},
 									{
 										date: "2024-01-05",
-										steps: 1400,
+										outreach: 1400,
 									},
 									{
 										date: "2024-01-06",
-										steps: 2500,
+										outreach: 2500,
 									},
 									{
 										date: "2024-01-07",
-										steps: 1600,
+										outreach: 1600,
 									},
 								]}
 							>
 								<Bar
-									dataKey="steps"
-									fill="var(--color-steps)"
+									dataKey="outreach"
+									fill="var(--color-outreach)"
 									radius={5}
 									fillOpacity={0.6}
 									activeBar={<Rectangle fillOpacity={0.8} />}
@@ -145,7 +145,7 @@ export function Charts() {
 								>
 									<Label
 										position="insideBottomLeft"
-										value="Average Steps"
+										value="Average outreach"
 										offset={10}
 										fill="hsl(var(--foreground))"
 									/>
@@ -167,14 +167,14 @@ export function Charts() {
 							<span className="font-medium text-foreground">
 								53,305
 							</span>{" "}
-							steps.
+							outreach.
 						</CardDescription>
 						<CardDescription>
 							You need{" "}
 							<span className="font-medium text-foreground">
 								12,584
 							</span>{" "}
-							more steps to reach your goal.
+							more outreach to reach your goal.
 						</CardDescription>
 					</CardFooter>
 				</Card>
@@ -184,20 +184,20 @@ export function Charts() {
 				>
 					<CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
 						<div>
-							<CardDescription>Resting HR</CardDescription>
+							<CardDescription>Downloads</CardDescription>
 							<CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
 								62
 								<span className="text-sm font-normal tracking-normal text-muted-foreground">
-									bpm
+
 								</span>
 							</CardTitle>
 						</div>
 						<div>
-							<CardDescription>Variability</CardDescription>
+							<CardDescription>Via website</CardDescription>
 							<CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
 								35
 								<span className="text-sm font-normal tracking-normal text-muted-foreground">
-									ms
+
 								</span>
 							</CardTitle>
 						</div>
@@ -205,8 +205,8 @@ export function Charts() {
 					<CardContent className="flex flex-1 items-center">
 						<ChartContainer
 							config={{
-								resting: {
-									label: "Resting",
+								downloads: {
+									label: "Downloads",
 									color: "hsl(var(--chart-1))",
 								},
 							}}
@@ -222,31 +222,31 @@ export function Charts() {
 								data={[
 									{
 										date: "2024-01-01",
-										resting: 62,
+										downloads: 62,
 									},
 									{
 										date: "2024-01-02",
-										resting: 72,
+										downloads: 72,
 									},
 									{
 										date: "2024-01-03",
-										resting: 35,
+										downloads: 35,
 									},
 									{
 										date: "2024-01-04",
-										resting: 62,
+										downloads: 62,
 									},
 									{
 										date: "2024-01-05",
-										resting: 52,
+										downloads: 52,
 									},
 									{
 										date: "2024-01-06",
-										resting: 62,
+										downloads: 62,
 									},
 									{
 										date: "2024-01-07",
-										resting: 70,
+										downloads: 70,
 									},
 								]}
 							>
@@ -274,15 +274,15 @@ export function Charts() {
 									}}
 								/>
 								<Line
-									dataKey="resting"
+									dataKey="downloads"
 									type="natural"
-									fill="var(--color-resting)"
-									stroke="var(--color-resting)"
+									fill="var(--color-downloads)"
+									stroke="var(--color-downloads)"
 									strokeWidth={2}
 									dot={false}
 									activeDot={{
-										fill: "var(--color-resting)",
-										stroke: "var(--color-resting)",
+										fill: "var(--color-downloads)",
+										stroke: "var(--color-downloads)",
 										r: 4,
 									}}
 								/>
@@ -316,7 +316,7 @@ export function Charts() {
 					<CardHeader>
 						<CardTitle>Progress</CardTitle>
 						<CardDescription>
-							You&apos;re average more steps a day this year than
+							You&apos;re average more outreach a day this year than
 							last year.
 						</CardDescription>
 					</CardHeader>
@@ -325,13 +325,13 @@ export function Charts() {
 							<div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
 								12,453
 								<span className="text-sm font-normal text-muted-foreground">
-									steps/day
+									outreach/day
 								</span>
 							</div>
 							<ChartContainer
 								config={{
-									steps: {
-										label: "Steps",
+									outreach: {
+										label: "outreach",
 										color: "hsl(var(--chart-1))",
 									},
 								}}
@@ -349,13 +349,13 @@ export function Charts() {
 									data={[
 										{
 											date: "2024",
-											steps: 12435,
+											outreach: 12435,
 										},
 									]}
 								>
 									<Bar
-										dataKey="steps"
-										fill="var(--color-steps)"
+										dataKey="outreach"
+										fill="var(--color-outreach)"
 										radius={4}
 										barSize={32}
 									>
@@ -373,7 +373,7 @@ export function Charts() {
 										tickCount={1}
 										hide
 									/>
-									<XAxis dataKey="steps" type="number" hide />
+									<XAxis dataKey="outreach" type="number" hide />
 								</BarChart>
 							</ChartContainer>
 						</div>
@@ -381,13 +381,13 @@ export function Charts() {
 							<div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
 								10,103
 								<span className="text-sm font-normal text-muted-foreground">
-									steps/day
+									outreach/day
 								</span>
 							</div>
 							<ChartContainer
 								config={{
-									steps: {
-										label: "Steps",
+									outreach: {
+										label: "outreach",
 										color: "hsl(var(--muted))",
 									},
 								}}
@@ -405,13 +405,13 @@ export function Charts() {
 									data={[
 										{
 											date: "2023",
-											steps: 10103,
+											outreach: 10103,
 										},
 									]}
 								>
 									<Bar
-										dataKey="steps"
-										fill="var(--color-steps)"
+										dataKey="outreach"
+										fill="var(--color-outreach)"
 										radius={4}
 										barSize={32}
 									>
@@ -429,7 +429,7 @@ export function Charts() {
 										tickCount={1}
 										hide
 									/>
-									<XAxis dataKey="steps" type="number" hide />
+									<XAxis dataKey="outreach" type="number" hide />
 								</BarChart>
 							</ChartContainer>
 						</div>
@@ -440,23 +440,22 @@ export function Charts() {
 					x-chunk="charts-01-chunk-3"
 				>
 					<CardHeader className="p-4 pb-0">
-						<CardTitle>Walking Distance</CardTitle>
+						<CardTitle>Average orders</CardTitle>
 						<CardDescription>
-							Over the last 7 days, your distance walked and run
-							was 12.5 miles per day.
+							Over the last 7 days, your orders were 12.5 orders per day.
 						</CardDescription>
 					</CardHeader>
 					<CardContent className="flex flex-row items-baseline gap-4 p-4 pt-0">
 						<div className="flex items-baseline gap-1 text-3xl font-bold tabular-nums leading-none">
-							12.5
+							12.5K
 							<span className="text-sm font-normal text-muted-foreground">
-								miles/day
+								orders/day
 							</span>
 						</div>
 						<ChartContainer
 							config={{
-								steps: {
-									label: "Steps",
+								outreach: {
+									label: "outreach",
 									color: "hsl(var(--chart-1))",
 								},
 							}}
@@ -473,37 +472,37 @@ export function Charts() {
 								data={[
 									{
 										date: "2024-01-01",
-										steps: 2000,
+										outreach: 2000,
 									},
 									{
 										date: "2024-01-02",
-										steps: 2100,
+										outreach: 2100,
 									},
 									{
 										date: "2024-01-03",
-										steps: 2200,
+										outreach: 2200,
 									},
 									{
 										date: "2024-01-04",
-										steps: 1300,
+										outreach: 1300,
 									},
 									{
 										date: "2024-01-05",
-										steps: 1400,
+										outreach: 1400,
 									},
 									{
 										date: "2024-01-06",
-										steps: 2500,
+										outreach: 2500,
 									},
 									{
 										date: "2024-01-07",
-										steps: 1600,
+										outreach: 1600,
 									},
 								]}
 							>
 								<Bar
-									dataKey="steps"
-									fill="var(--color-steps)"
+									dataKey="outreach"
+									fill="var(--color-outreach)"
 									radius={2}
 									fillOpacity={0.2}
 									activeIndex={6}
@@ -528,7 +527,7 @@ export function Charts() {
 						<ChartContainer
 							config={{
 								move: {
-									label: "Move",
+									label: "Orders",
 									color: "hsl(var(--chart-1))",
 								},
 								stand: {
@@ -553,19 +552,19 @@ export function Charts() {
 									{
 										activity: "stand",
 										value: (8 / 12) * 100,
-										label: "8/12 hr",
+										label: "8/12 received",
 										fill: "var(--color-stand)",
 									},
 									{
 										activity: "exercise",
 										value: (46 / 60) * 100,
-										label: "46/60 min",
+										label: "46/60 shipped",
 										fill: "var(--color-exercise)",
 									},
 									{
 										activity: "move",
 										value: (245 / 360) * 100,
-										label: "245/360 kcal",
+										label: "245/360 delivered",
 										fill: "var(--color-move)",
 									},
 								]}
@@ -598,12 +597,12 @@ export function Charts() {
 						<div className="flex w-full items-center gap-2">
 							<div className="grid flex-1 auto-rows-min gap-0.5">
 								<div className="text-xs text-muted-foreground">
-									Move
+									Orders
 								</div>
 								<div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
 									562
 									<span className="text-sm font-normal text-muted-foreground">
-										kcal
+										del
 									</span>
 								</div>
 							</div>
@@ -613,12 +612,12 @@ export function Charts() {
 							/>
 							<div className="grid flex-1 auto-rows-min gap-0.5">
 								<div className="text-xs text-muted-foreground">
-									Exercise
+									Packages
 								</div>
 								<div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
 									73
 									<span className="text-sm font-normal text-muted-foreground">
-										min
+										ship
 									</span>
 								</div>
 							</div>
@@ -628,12 +627,12 @@ export function Charts() {
 							/>
 							<div className="grid flex-1 auto-rows-min gap-0.5">
 								<div className="text-xs text-muted-foreground">
-									Stand
+									Shipment
 								</div>
 								<div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
 									14
 									<span className="text-sm font-normal text-muted-foreground">
-										hr
+										rec
 									</span>
 								</div>
 							</div>
@@ -650,34 +649,34 @@ export function Charts() {
 						<div className="grid items-center gap-2">
 							<div className="grid flex-1 auto-rows-min gap-0.5">
 								<div className="text-sm text-muted-foreground">
-									Move
+									Downloads
 								</div>
 								<div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-									562/600
+									562
 									<span className="text-sm font-normal text-muted-foreground">
-										kcal
+										feedbacks
 									</span>
 								</div>
 							</div>
 							<div className="grid flex-1 auto-rows-min gap-0.5">
 								<div className="text-sm text-muted-foreground">
-									Exercise
+									Ratings
 								</div>
 								<div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-									73/120
+									4/5
 									<span className="text-sm font-normal text-muted-foreground">
-										min
+										stars
 									</span>
 								</div>
 							</div>
 							<div className="grid flex-1 auto-rows-min gap-0.5">
 								<div className="text-sm text-muted-foreground">
-									Stand
+									Clicks
 								</div>
 								<div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-									8/12
+									89
 									<span className="text-sm font-normal text-muted-foreground">
-										hr
+										active users
 									</span>
 								</div>
 							</div>
@@ -685,7 +684,7 @@ export function Charts() {
 						<ChartContainer
 							config={{
 								move: {
-									label: "Move",
+									label: "Orders",
 									color: "hsl(var(--chart-1))",
 								},
 								exercise: {
@@ -748,9 +747,9 @@ export function Charts() {
 					x-chunk="charts-01-chunk-6"
 				>
 					<CardHeader className="p-4 pb-0">
-						<CardTitle>Active Energy</CardTitle>
+						<CardTitle>Active Orders</CardTitle>
 						<CardDescription>
-							You&apos;re burning an average of 754 calories per
+							You&apos;re burning an average of 754 orders per
 							day. Good job!
 						</CardDescription>
 					</CardHeader>
@@ -758,12 +757,12 @@ export function Charts() {
 						<div className="flex items-baseline gap-2 text-3xl font-bold tabular-nums leading-none">
 							1,254
 							<span className="text-sm font-normal text-muted-foreground">
-								kcal/day
+								delivered/day
 							</span>
 						</div>
 						<ChartContainer
 							config={{
-								calories: {
+								orders: {
 									label: "Calories",
 									color: "hsl(var(--chart-1))",
 								},
@@ -781,37 +780,37 @@ export function Charts() {
 								data={[
 									{
 										date: "2024-01-01",
-										calories: 354,
+										orders: 354,
 									},
 									{
 										date: "2024-01-02",
-										calories: 514,
+										orders: 514,
 									},
 									{
 										date: "2024-01-03",
-										calories: 345,
+										orders: 345,
 									},
 									{
 										date: "2024-01-04",
-										calories: 734,
+										orders: 734,
 									},
 									{
 										date: "2024-01-05",
-										calories: 645,
+										orders: 645,
 									},
 									{
 										date: "2024-01-06",
-										calories: 456,
+										orders: 456,
 									},
 									{
 										date: "2024-01-07",
-										calories: 345,
+										orders: 345,
 									},
 								]}
 							>
 								<Bar
-									dataKey="calories"
-									fill="var(--color-calories)"
+									dataKey="orders"
+									fill="var(--color-orders)"
 									radius={2}
 									fillOpacity={0.2}
 									activeIndex={6}
@@ -833,9 +832,9 @@ export function Charts() {
 					x-chunk="charts-01-chunk-7"
 				>
 					<CardHeader className="space-y-0 pb-0">
-						<CardDescription>Time in Bed</CardDescription>
+						<CardDescription>Time spent on App</CardDescription>
 						<CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
-							8
+							1
 							<span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
 								hr
 							</span>
@@ -930,7 +929,7 @@ export function Charts() {
 									content={<ChartTooltipContent hideLabel />}
 									formatter={(value) => (
 										<div className="flex min-w-[120px] items-center text-xs text-muted-foreground">
-											Time in bed
+											Time on app
 											<div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
 												{value}
 												<span className="font-normal text-muted-foreground">
