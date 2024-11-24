@@ -5,7 +5,8 @@ import { ThemeProvider } from "@/components/wrappers/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "sonner"
 import { UserProvider } from "@/hooks/use-auth"
-import QueryProviderWrapper from "@/components/wrappers/query-provider"
+import dynamic from "next/dynamic"
+const QueryProviderWrapper = dynamic(() => import("@/components/wrappers/query-provider"), { ssr: false })
 
 const clashGrotesk = localFont({
 	src: "../fonts/ClashGrotesk-Variable.woff2",

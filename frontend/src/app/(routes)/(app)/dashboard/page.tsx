@@ -1,10 +1,9 @@
-"use client"
-import { Charts } from "@/components/custom/charts"
-// import { useAuth } from '@/lib/hooks/use-auth'
+import dynamic from "next/dynamic"
 import React from "react"
 
+const Charts = dynamic(() => import("@/components/custom/charts"), { ssr: false })
+
 export default function Page() {
-	// const { user } = useAuth();
 	return (
 		<div>
 			<Charts />

@@ -29,10 +29,10 @@ export default function FeedbackHub() {
     const { data: formData } = useQuery({
         queryKey: ["feedback-form", user?.companyId],
         queryFn: async () => {
-            const response = await fetchAPI<{ form_url: string }, TNoParams, QuestionsData["questions"]>({
+            const response = await fetchAPI<{ form_url: string }, TNoParams, QuestionsData>({
                 url: "/typeform",
                 method: "POST",
-                body: data?.questions || [],
+                body: data || { questions: [] },
                 baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
             })
             return response.data
@@ -43,8 +43,8 @@ export default function FeedbackHub() {
         return <Loading />
     }
     return (
-        <div className="min-h-screen bg-gradient-to-br flex items-center justify-center p-4">
-            {formData && <a href={formData.form_url}><Button>Go to form <ArrowTopRightIcon /></Button></a>}
+        <div className="flex flex-col gap-4 p-4">
+            {formData && <a target="_blank" className="self-end mr-4" href={formData.form_url}><Button className="px-6">Go to form <ArrowTopRightIcon /></Button></a>}
             <QuestionnaireCard questions={data.questions} />
         </div>
     )

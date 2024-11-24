@@ -13,6 +13,8 @@ import {
 	SidebarMenuItem,
 	SidebarRail,
 } from "@/components/ui/sidebar"
+import Link from "next/link"
+import dynamic from "next/dynamic"
 
 const data = {
 	versions: ["1.0.1"],
@@ -94,11 +96,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
 		<Sidebar {...props}>
 			<SidebarHeader>
-				<div className="flex gap-2 font-semibold text-lg items-end leading-none p-2">
-					{/* <FramerLogoIcon className="size-6" /> */}
-					<img src="/logo.png" alt="Logo" className="h-6" />
-					Insight Hound
-				</div>
+				<Link href="/">
+					<div className="flex gap-2 font-semibold text-lg items-end leading-none p-2">
+						{/* <FramerLogoIcon className="size-6" /> */}
+						<img src="/logo.png" alt="Logo" className="h-6" />
+						InsightHound
+					</div>
+				</Link>
 				<SearchForm />
 			</SidebarHeader>
 			<SidebarContent>

@@ -21,6 +21,6 @@ export default function Page() {
 		},
 		enabled: !!user,
 	})
-	console.log({ data, user })
+
 	return <AudienceInsights keywords={data?.keywords || []} />
 }
