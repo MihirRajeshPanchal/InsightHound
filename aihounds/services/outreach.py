@@ -91,7 +91,7 @@ class LinkedinOutreach:
         profile_identifier=self.extract_profile_identifier(linkedin_url)
         provider_id,headline=self.get_provider_id(account_id,profile_identifier)
         print(message)
-        # return self.send_message(account_id,provider_id,message)
+        return self.send_message(account_id,provider_id,message)
     
     def send_message_to_all(self,account_id,user_id,domain,linkedin_urls):
         try:
