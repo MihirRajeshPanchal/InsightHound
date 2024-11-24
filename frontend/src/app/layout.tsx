@@ -4,6 +4,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/wrappers/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "sonner"
+import { UserProvider } from "@/hooks/use-auth"
+import QueryProviderWrapper from "@/components/wrappers/query-provider"
 
 const clashGrotesk = localFont({
 	src: "../fonts/ClashGrotesk-Variable.woff2",
@@ -26,18 +28,22 @@ export default function RootLayout({
 				className={`${clashGrotesk.variable} [font-family:var(--font-CG)] antialiased`}
 			>
 				<TooltipProvider>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-						disableTransitionOnChange
-					>
-						<Toaster />
-						<div className="rootWrapper">
-							{/* <Navbar /> */}
-							{children}
-						</div>
-					</ThemeProvider>
+					<QueryProviderWrapper>
+						<UserProvider>
+							<ThemeProvider
+								attribute="class"
+								defaultTheme="system"
+								enableSystem
+								disableTransitionOnChange
+							>
+								<Toaster />
+								<div className="rootWrapper">
+									{/* <Navbar /> */}
+									{children}
+								</div>
+							</ThemeProvider>
+						</UserProvider>
+					</QueryProviderWrapper>
 				</TooltipProvider>
 			</body>
 		</html>

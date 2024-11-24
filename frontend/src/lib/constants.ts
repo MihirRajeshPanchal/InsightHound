@@ -23,5 +23,5 @@ export const DOMAINS = [
 ]
 
 export const mapDefaults = {
-	zoom: 10,
+	zoom: 5,
 }

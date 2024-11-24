@@ -1,3 +1,6 @@
-export default function Page() {
-	return <div>Welcome to competitor-mapping Page</div>
+import CompetitorMapping from "@/components/custom/competitor-mapping";
+
+export default async function Page() {
+
+	return <CompetitorMapping />
 }

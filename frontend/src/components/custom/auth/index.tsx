@@ -47,7 +47,7 @@ export const Auth = () => {
 		})
 		if (resp.data?.token) {
 			setToken(resp.data.token)
-			router.push("/onboarding")
+			router.push(tab === 0 ? "/dashboard" : "/onboarding")
 		}
 	}
 	return (
