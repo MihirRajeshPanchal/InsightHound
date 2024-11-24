@@ -24,9 +24,9 @@ class LinkedinOutreach:
             soup = BeautifulSoup(response.content, 'html.parser')
             texts = soup.stripped_strings
             chain = prompt_template | openai_llm
-            print(' '.join(texts))
+            data=' '.join(texts)
             try:
-                persona = chain.invoke({"texts": ' '.join(texts)})
+                persona = chain.invoke({"texts": data})
             except Exception as e:
                 print(e)
             print(persona.content)
@@ -91,7 +91,7 @@ class LinkedinOutreach:
         profile_identifier=self.extract_profile_identifier(linkedin_url)
         provider_id,headline=self.get_provider_id(account_id,profile_identifier)
         print(message)
-        return self.send_message(account_id,provider_id,message)
+        # return self.send_message(account_id,provider_id,message)
     
     def send_message_to_all(self,account_id,user_id,domain,linkedin_urls):
         try:
