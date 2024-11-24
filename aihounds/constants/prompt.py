@@ -12,13 +12,13 @@ Also recomend their rival's weakness and how the user company can achieve succes
 
 prompt_template = ChatPromptTemplate.from_messages([
             ("system",
-             "You are given information about a company's home page. I want you to write a detailed persona and value proposition for the company.Also Include customer success stories if any.Do not make up any information"),
+             "You are given information about a company's home page. Output company name and a detailed product description .Also Include customer success stories if any.Do not make up any information"),
             ("human", "{texts}")
         ])
 
 
 generate_message_prompt = ChatPromptTemplate.from_messages([
             ("system",
-             "You are given information about a company's home page and some other important stuff as its valuation and rivals .Given all this information draft a linkedin message as a CEO  to send to VC's for funding.Make a generic draft and do not use any VC  name or any other variable like [Your Name]  , [VC Name].Make sure you do not do this.Do not add anything which is not included.You should not include any variable in your message"),
-            ("human", "Persona of the Company :{persona}, Other provided information: {props}")
+             "Generate a document which can be shared to  VCS  as a CEO  to send to VC's for funding of 1M$.Do not include any contact details .Only include relevant information about your company.Do not include any variables such as your name or vc name"),
+            ("human", "Persona of Company including name , product description :{persona}, Other provided information: {props}")
         ])
