@@ -6,3 +6,12 @@ export type user = {
   companyId: string | null;
   createdAt: Date;
 };
+
+export interface Company {
+  name: string;
+  description: string;
+  vision?: string;
+  mission?: string;
+  valuation?: string;
+  domain?: string;
+}

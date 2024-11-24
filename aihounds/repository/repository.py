@@ -51,3 +51,13 @@ class MongoDBClient:
         collection = self._get_collection(collection_name)
         result = collection.delete_one({"_id": ObjectId(document_id)})
         return result.deleted_count > 0
+    
+    def read_all(self, collection_name: str) -> List[Dict[str, Any]]:
+        """Fetch all documents from the specified collection."""
+        collection = self._get_collection(collection_name)
+        documents = collection.find()
+        result = []
+        for doc in documents:
+            doc["_id"] = str(doc["_id"])
+            result.append(doc)
+        return result

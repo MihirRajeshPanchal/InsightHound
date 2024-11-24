@@ -36,3 +36,4 @@ export const font = {
   light: { fontFamily: 'ClashGrotesk_300' },
   extralight: { fontFamily: 'ClashGrotesk_200' },
 };
+ 

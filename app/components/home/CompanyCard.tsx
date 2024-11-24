@@ -18,11 +18,11 @@ import Animated, {
   runOnJS,
 } from "react-native-reanimated";
 import { Feather } from "@expo/vector-icons";
-import { Paper } from "~/types/paper";
-import { PaperModal } from "~/components/papers/PaperModal";
+import { Company } from "~/lib/types/prisma";
+import { CompanyModal } from "~/components/home/CompanyModal";
 
-interface PaperCardProps {
-  paper: Paper;
+interface CompanyCardProps {
+  company: Company;
   onSwipe: (direction: "left" | "right") => void;
   style?: any;
   isLoadingMore?: boolean;
@@ -36,15 +36,15 @@ const CARD_HEIGHT = SCREEN_HEIGHT * 0.7;
 const CARD_PADDING = SCREEN_WIDTH * 0.05;
 const TITLE_MAX_HEIGHT = SCREEN_HEIGHT * 0.15;
 const BUTTON_HEIGHT = 50;
-const ABSTRACT_MAX_HEIGHT = SCREEN_HEIGHT * 0.45 - BUTTON_HEIGHT;
+const CONTENT_MAX_HEIGHT = SCREEN_HEIGHT * 0.45 - BUTTON_HEIGHT;
 
-export function PaperCard({
-  paper,
+export function CompanyCard({
+  company,
   onSwipe,
   style,
   isLoadingMore,
-}: PaperCardProps) {
-  if (!paper.abstract || paper.abstract.trim() === "") {
+}: CompanyCardProps) {
+  if (!company.description || company.description.trim() === "") {
     return null;
   }
 
@@ -85,7 +85,7 @@ export function PaperCard({
 
   const handleTextLayout = (event: any) => {
     const lineHeight = 20;
-    const maxLines = Math.floor(ABSTRACT_MAX_HEIGHT / lineHeight);
+    const maxLines = Math.floor(CONTENT_MAX_HEIGHT / lineHeight);
     setIsTextTruncated(event.nativeEvent.lines.length > maxLines);
   };
 
@@ -111,21 +111,44 @@ export function PaperCard({
                 adjustsFontSizeToFit
                 minimumFontScale={0.5}
               >
-                {paper.title || "Untitled Paper"}
+                {company.name}
               </Text>
+              {company.valuation && (
+                <Text className="text-sm text-gray-600 mt-1">
+                  Valuation: {company.valuation}
+                </Text>
+              )}
             </View>
 
             <View className="flex-1" style={{ marginBottom: BUTTON_HEIGHT }}>
-              <Text className="font-semibold text-gray-700 mb-2">Abstract</Text>
+              <Text className="font-semibold text-gray-700 mb-2">Description</Text>
               <Text
                 className="text-gray-600 leading-relaxed"
-                style={{ maxHeight: ABSTRACT_MAX_HEIGHT }}
-                numberOfLines={Math.floor(ABSTRACT_MAX_HEIGHT / 20)}
+                style={{ maxHeight: CONTENT_MAX_HEIGHT }}
+                numberOfLines={Math.floor(CONTENT_MAX_HEIGHT / 20)}
                 ellipsizeMode="tail"
                 onTextLayout={handleTextLayout}
               >
-                {paper.abstract}
+                {company.description}
               </Text>
+
+              {(company.mission || company.vision) && (
+                <View className="mt-4">
+                  {company.mission && (
+                    <View className="mb-2">
+                      <Text className="font-semibold text-gray-700">Mission</Text>
+                      <Text className="text-gray-600">{company.mission}</Text>
+                    </View>
+                  )}
+                  {company.vision && (
+                    <View>
+                      <Text className="font-semibold text-gray-700">Vision</Text>
+                      <Text className="text-gray-600">{company.vision}</Text>
+                    </View>
+                  )}
+                </View>
+              )}
+
               {isTextTruncated && (
                 <TouchableOpacity
                   onPress={() => setModalVisible(true)}
@@ -160,8 +183,8 @@ export function PaperCard({
         </Animated.View>
       </PanGestureHandler>
 
-      <PaperModal
-        paper={paper}
+      <CompanyModal
+        company={company}
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
       />

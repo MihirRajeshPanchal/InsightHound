@@ -28,7 +28,7 @@ export default function RootLayout() {
     <View className="flex-1">
       <UserProvider>
         <Stack screenOptions={{ headerShown: false }} />
-        {/* <AuthLock /> */}
+        <AuthLock />
       </UserProvider>
     </View>
   );
