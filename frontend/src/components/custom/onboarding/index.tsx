@@ -31,6 +31,7 @@ import { TNoParams } from "@/lib/types/common"
 import { useRouter } from "next/navigation"
 import { DOMAINS } from "@/lib/constants"
 import React from "react"
+import { useAuth } from "@/hooks/use-auth"
 
 const formSchema = z.object({
 	name: z.string(),
@@ -44,6 +45,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>
 export default function OnboardingForm() {
+	const { user } = useAuth()
 	const formRef = React.useRef<HTMLFormElement>(null)
 
 	const router = useRouter()
@@ -58,6 +60,7 @@ export default function OnboardingForm() {
 
 	async function onSubmit(values: FormValues) {
 		try {
+			if (!user) return
 			const token = getToken()
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const { document, ...rest } = values
@@ -75,7 +78,13 @@ export default function OnboardingForm() {
 			})
 			console.log({ res })
 			if (!res.data?.error) {
+				await fetchAPI({
+					url: `/self/${user.id}`,
+					method: "GET",
+					baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
+				})
 				toast.success("Form submitted successfully")
+				toast.success("Cooking up your dashboard!")
 				router.push("/dashboard")
 			}
 		} catch (error) {

@@ -5,6 +5,7 @@ import { fetchAPI } from '@/lib/utils/fetch-api';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { CompanyCard } from './company-card';
+import Loading from '@/components/loading';
 
 export default function MarketIntelligence() {
     const { user } = useAuth();
@@ -20,10 +21,13 @@ export default function MarketIntelligence() {
         },
         enabled: !!user,
     })
+    if (!data) {
+        return <Loading />
+    }
     return (
         <div className='flex flex-col gap-6 p-6'>
             <h2 className='font-bold text-2xl'>Market Intelligence</h2>
-            {data && <CompanyCard company={data} />}
+            <CompanyCard company={data} />
         </div>
     )
 }

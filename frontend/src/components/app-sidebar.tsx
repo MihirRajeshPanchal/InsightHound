@@ -58,8 +58,8 @@ const data = {
 					url: "/dashboard/audience-outreach"
 				},
 				{
-					title: "Custom Recommendations",
-					url: "/dashboard/custom-recommendations",
+					title: "Audience Segmentation",
+					url: "/dashboard/audience-segments",
 				},
 			],
 		},

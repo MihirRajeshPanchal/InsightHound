@@ -49,7 +49,7 @@ export default function AudienceOutreachForm() {
         if (!user) return;
         try {
             console.log(values);
-            const resp = await fetchAPI({
+            await fetchAPI({
                 url: "/linkedin",
                 method: "POST",
                 body: {
@@ -59,12 +59,7 @@ export default function AudienceOutreachForm() {
                 },
                 baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
             })
-            console.log({ resp });
-            // toast(
-            //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            //         <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-            //     </pre>
-            // );
+            toast.success("Outreach messages sent on linkedin!");
         } catch (error) {
             console.error("Form submission error", error);
             toast.error("Failed to submit the form. Please try again.");

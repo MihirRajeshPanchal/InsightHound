@@ -17,13 +17,14 @@ export default function DashboardBreadCrumb() {
 		dashboard: "Building your startup",
 		"market-intelligence": "Real-time market trends",
 		"audience-insights": "Understanding your audience",
-		"feedback-hub": "View ratings and feedback from the public",
+		"feedback-hub": "Get a pulse on your audience",
 		analytics: "Get Insights",
 		"strategic-insights": "Strategic Insights",
 		reports: "Comprehensive analytics",
 		"competitor-mapping": "Identify and analyze your competitors",
 		"custom-recommendations": "Receive personalized action plans",
 		"audience-outreach": "Engage with your audience",
+		"audience-segments": "Segment your audience",
 	}
 	function getPath(i: number): string {
 		return "/" + path.slice(0, i + 1).join("/")

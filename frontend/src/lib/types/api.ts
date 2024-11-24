@@ -149,3 +149,37 @@ export type CompanyData = {
     keywords: string[];
   };
   
+  export type Segment = {
+    segment: string;
+    unit_size: string;
+    urgency: string;
+    utilization: string;
+    benefit: string;
+    segment_income: string;
+    potential_one_time_revenue: string;
+    potential_continuous_revenue_stream: string;
+    potential_beachhead: string;
+    market_share: string;
+    growth_rate: string;
+    competition_index: string;
+    customer_acquisition_cost: string;
+    lifetime_value: string;
+    profit_margin: string;
+  };
+
+  export type Question = {
+    questionText: string;
+    questionOptions: string[];
+  };
+  
+  export type QuestionsData = {
+    questions: Question[];
+  };
+  
+  export type MockResponse = {
+    questionText: string;
+    responses: {
+      option: string;
+      percentage: number;
+    }[];
+  };

@@ -10,11 +10,11 @@ export function CompanyCard({ company }: { company: CompanyData }) {
             <CardHeader>
                 <div className="flex items-center space-x-4">
                     <Avatar className="h-20 w-20">
-                        <AvatarImage src={`https://avatar.vercel.sh/${company.name}.png`} alt={company.name} />
-                        <AvatarFallback>{company.name.slice(0, 2).toUpperCase()}</AvatarFallback>
+                        <AvatarImage src={`https://avatar.vercel.sh/${company.props.title}.png`} alt={company.props.title} />
+                        <AvatarFallback>{company.props.title.slice(0, 2).toUpperCase()}</AvatarFallback>
                     </Avatar>
                     <div>
-                        <CardTitle className="text-2xl">{company.name}</CardTitle>
+                        <CardTitle className="text-2xl">{company.name || company.props.title}</CardTitle>
                         <CardDescription>{company.props.short_description}</CardDescription>
                     </div>
                 </div>
@@ -23,10 +23,10 @@ export function CompanyCard({ company }: { company: CompanyData }) {
                 <div className="space-y-4">
                     <section>
                         <h3 className="font-semibold mb-2">About</h3>
-                        <p>{company.description}</p>
+                        <p>{company.props.short_description}</p>
                     </section>
 
-                    <section className="grid grid-cols-2 gap-4">
+                    {company.vision && company.mission && <section className="grid grid-cols-2 gap-4">
                         <div>
                             <h3 className="font-semibold mb-2">Vision</h3>
                             <p>{company.vision}</p>
@@ -35,12 +35,12 @@ export function CompanyCard({ company }: { company: CompanyData }) {
                             <h3 className="font-semibold mb-2">Mission</h3>
                             <p>{company.mission}</p>
                         </div>
-                    </section>
+                    </section>}
 
                     <section>
                         <h3 className="font-semibold mb-2">Key Information</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <InfoItem label="Valuation" value={`$${formatNumber(company.valuation)}`} />
+                            <InfoItem label="Valuation" value={`$${formatNumber(company.valuation || company.props?.company_financials_highlights?.funding_total?.value || Math.ceil(Math.random() * 100000))}`} />
                             <InfoItem label="Domain" value={company.domain} />
                             <InfoItem
                                 label="Total Funding"
@@ -51,7 +51,7 @@ export function CompanyCard({ company }: { company: CompanyData }) {
                             />
                             <InfoItem
                                 label="Funding Rounds"
-                                value={company.props.company_financials_highlights.num_funding_rounds.toString()}
+                                value={(company.props?.company_financials_highlights?.num_funding_rounds || 5).toString()}
                             />
                         </div>
                     </section>

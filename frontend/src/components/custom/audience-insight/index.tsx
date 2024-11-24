@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/u
 import { useQuery } from "@tanstack/react-query"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import { TNoParams } from "@/lib/types/common"
+import Loading from "@/components/loading"
 
 export default function AudienceInsights({ keywords }: KeywordsResponse) {
 	const [selectedKeyword, setSelectedKeyword] = useState<string>(keywords[0])
@@ -29,7 +30,9 @@ export default function AudienceInsights({ keywords }: KeywordsResponse) {
 		enabled: !!selectedKeyword
 	})
 
-	console.log({ trendsData })
+	if (!keywords.length) {
+		return <Loading />
+	}
 	return (
 		<div className="flex flex-row gap-6 p-4">
 			<Map data={trendsData || [{ coordinates: { lat: 72.03, lng: 19.03 }, extracted_value: 0, location: "Mumbai", max_value_index: 0, value: "0" }]} />
