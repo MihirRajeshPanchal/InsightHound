@@ -187,6 +187,12 @@ uvicorn aihounds.app:app --reload
 npx expo start
 ```
 
+### 4️⃣. Website Credentials
+
+- **Website**: [Insight Hound](https://insight-hound.vercel.app/)
+- **Email**: `varad@gmail.com`
+- **Password**: `12345678`
+
 ---
 
 ## 💻 Technologies  
