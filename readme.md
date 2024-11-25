@@ -203,8 +203,8 @@ npx expo start
 
 Our team **DJDawgs**:  
 <p align="start">
-<a  href="https://github.com/vaxad/DJDAWGS_100X_BUILDATHON/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vaxad/DJDAWGS_100X_BUILDATHON" alt="Contributors"/>
+<a  href="https://github.com/vaxad/DjDawgs_100X_Buildathon/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vaxad/DjDawgs_100X_Buildathon" alt="Contributors"/>
 </a>
 </p>
 
