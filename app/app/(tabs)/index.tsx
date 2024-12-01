@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { useState, useEffect } from "react";
 import { InterestSlider } from "~/components/home/InterestSlider";
 import { CompanyCard } from "~/components/home/CompanyCard";
-import { DOMAINS, BACKEND_URL} from "~/lib/constants";
+import { DOMAINS, BACKEND_URL, FASTAPI_URL } from "~/lib/constants";
 import { Company } from "~/lib/types/prisma";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
@@ -16,7 +16,7 @@ export default function Home() {
   const fetchCompanies = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${BACKEND_URL}/getObjects`, {
+      const response = await fetch(`${FASTAPI_URL}/getObjects`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export default function Home() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-  
+
       const textResponse = await response.text();
       console.log("Response Body:", textResponse);
 
@@ -65,7 +65,7 @@ export default function Home() {
     <GestureHandlerRootView className="flex-1">
       <View className="flex-1 bg-gray-50">
         <Stack.Screen options={{ title: "AppHound" }} />
-        
+
         <InterestSlider
           interests={DOMAINS}
           selectedInterest={selectedInterest}

@@ -48,7 +48,7 @@ export default function AudienceOutreachForm() {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         if (!user) return;
         try {
-            console.log(values);
+            toast.loading("Sending outreach messages on linkedin...");
             await fetchAPI({
                 url: "/linkedin",
                 method: "POST",
