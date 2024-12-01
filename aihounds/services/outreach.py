@@ -79,24 +79,25 @@ class LinkedinOutreach:
             print(e)
             return None
         
-    def generate_and_send_message(self,account_id,user_id,domain,linkedin_url):
+    def generate_message(self,user_id,domain):
         user=self.mongoose_client.read("user",user_id)
         companyId=user.get("companyId")
         company=self.mongoose_client.read("company",companyId)
-
         persona=self.get_text(domain)
         chain=generate_message_prompt | openai_llm
         message=chain.invoke({"props":company.get('props'),"persona":persona})
         message=message.content
+        return message
+    
+    def send_message_linkedin(self,account_id,message,linkedin_url):
         profile_identifier=self.extract_profile_identifier(linkedin_url)
         provider_id,headline=self.get_provider_id(account_id,profile_identifier)
-        print(message)
         return self.send_message(account_id,provider_id,message)
     
-    def send_message_to_all(self,account_id,user_id,domain,linkedin_urls):
+    def send_message_to_all(self,account_id,message,linkedin_urls):
         try:
             for url in linkedin_urls:
-                self.generate_and_send_message(account_id,user_id,domain,url)
+                self.send_message_linkedin(account_id,message,url)
             return "Messages sent successfully"
         except Exception as e:
             return e
