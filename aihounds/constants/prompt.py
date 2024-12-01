@@ -19,6 +19,6 @@ prompt_template = ChatPromptTemplate.from_messages([
 
 generate_message_prompt = ChatPromptTemplate.from_messages([
             ("system",
-             "Generate a document which can be shared to  VCS  as a CEO  to send to VC's for funding of 1M$.Do not include any contact details .Only include relevant information about your company.Do not include any variables such as your name or vc name"),
+             "Generate a document which can be shared to  VCS  as a CEO  to send to VC's for funding of 1M$.Do not include any contact details .Only include relevant information about your company.Do not include any variables such as your name or vc name No Markdown or HTML give in text format"),
             ("human", "Persona of Company including name , product description :{persona}, Other provided information: {props}")
         ])
