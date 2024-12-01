@@ -1,10 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from aihounds.endpoints import keywords, marketsegment, mongodb, onboard, trends, typeform, youtube, marketresearch, email
+from aihounds.endpoints import kanban, keywords, marketsegment, mongodb, onboard, trends, typeform, youtube, marketresearch, email
 from aihounds.endpoints.crunchbase import crunchbase_router 
 from aihounds.endpoints.user import user_router
 from aihounds.endpoints.agent import api_router
-from aihounds.services.agent import LangGraphAgent
 from aihounds.endpoints.outreach import outreach_router
 app = FastAPI()
 
@@ -29,6 +28,7 @@ app.include_router(trends.router)
 app.include_router(mongodb.router)
 app.include_router(email.router)
 app.include_router(typeform.router)
+app.include_router(kanban.router)
 
 @app.get("/")
 def root():
