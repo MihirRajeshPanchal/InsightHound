@@ -55,6 +55,10 @@ const data = {
 					url: "/dashboard/audience-insights",
 				},
 				{
+					title: "Bulk Mailing",
+					url: "/dashboard/bulk-mail",
+				},
+				{
 					title: "Audience Outreach",
 					url: "/dashboard/audience-outreach"
 				},
