@@ -78,13 +78,13 @@ export default function OnboardingForm() {
 			})
 			console.log({ res })
 			if (!res.data?.error) {
+				toast.success("Form submitted successfully")
+				toast.success("Cooking up your dashboard!")
 				await fetchAPI({
 					url: `/self/${user.id}`,
 					method: "GET",
 					baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 				})
-				toast.success("Form submitted successfully")
-				toast.success("Cooking up your dashboard!")
 				router.push("/dashboard")
 			}
 		} catch (error) {
@@ -94,6 +94,7 @@ export default function OnboardingForm() {
 	}
 
 	async function handleUpload(file: File) {
+		toast("Scanning Document!")
 		const formData = new FormData()
 		formData.append("document", file)
 		const url = process.env.NEXT_PUBLIC_FLASK_URL
