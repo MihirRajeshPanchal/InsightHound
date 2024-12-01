@@ -17,3 +17,4 @@ class InterestByRegionData(BaseModel):
     
 class TrendsQueryRequest(BaseModel):
     query: str
+    geo: str = Field(default="IN")

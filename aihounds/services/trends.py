@@ -2,11 +2,11 @@ from aihounds.constants.hound import SERPAPI_KEY
 from serpapi import GoogleSearch
 
 
-def get_trends_search(query):
+def get_trends_search(query,geo):
     params = {
         "engine": "google_trends",
         "q": query,
-        "geo": "IN",
+        "geo": geo,
         "region": "CITY",
         "data_type": "GEO_MAP_0",
         "api_key": SERPAPI_KEY
