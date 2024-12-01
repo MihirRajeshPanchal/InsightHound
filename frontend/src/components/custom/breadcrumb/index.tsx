@@ -20,6 +20,7 @@ export default function DashboardBreadCrumb() {
 		"feedback-hub": "Get a pulse on your audience",
 		analytics: "Get Insights",
 		"strategic-insights": "Strategic Insights",
+		"bulk-mail": "Bulk Mailing",
 		reports: "Comprehensive analytics",
 		"competitor-mapping": "Identify and analyze your competitors",
 		"custom-recommendations": "Receive personalized action plans",
