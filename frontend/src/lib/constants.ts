@@ -1,3 +1,5 @@
+import { CardType, ColumnTypeEnum } from "./types/kanban";
+
 export const DOMAINS = [
 	"Technology",
 	"Education",
@@ -116,3 +118,34 @@ export const locationsRecord: Record<string, string> = {
 "US-WI": "Wisconsin",
 "US-WY": "Wyoming",
   } as const;
+
+
+  export const DEFAULT_CARDS: CardType[] = [
+    // BACKLOG
+    { title: "Look into render bug in dashboard", id: "1", column: ColumnTypeEnum.BACKLOG },
+    { title: "SOX compliance checklist", id: "2", column: ColumnTypeEnum.BACKLOG },
+    { title: "[SPIKE] Migrate to Azure", id: "3", column: ColumnTypeEnum.BACKLOG },
+    { title: "Document Notifications service", id: "4", column: ColumnTypeEnum.BACKLOG },
+    // TODO
+    {
+        title: "Research DB options for new microservice",
+        id: "5",
+        column: ColumnTypeEnum.TODO,
+    },
+    { title: "Postmortem for outage", id: "6", column: ColumnTypeEnum.TODO, },
+    { title: "Sync with product on Q3 roadmap", id: "7", column: ColumnTypeEnum.TODO, },
+
+    // DOING
+    {
+        title: "Refactor context providers to use Zustand",
+        id: "8",
+        column: ColumnTypeEnum.IN_PROGRESS,
+    },
+    { title: "Add logging to daily CRON", id: "9", column: ColumnTypeEnum.IN_PROGRESS },
+    // DONE
+    {
+        title: "Set up DD dashboards for Lambda listener",
+        id: "10",
+        column: ColumnTypeEnum.DONE,
+    },
+];

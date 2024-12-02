@@ -26,6 +26,7 @@ export default function DashboardBreadCrumb() {
 		"custom-recommendations": "Receive personalized action plans",
 		"audience-outreach": "Engage with your audience",
 		"audience-segments": "Segment your audience",
+		"hound-board": "Plot your roadmap",
 	}
 	function getPath(i: number): string {
 		return "/" + path.slice(0, i + 1).join("/")
