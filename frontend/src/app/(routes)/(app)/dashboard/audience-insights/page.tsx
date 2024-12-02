@@ -11,7 +11,11 @@ export default function Page() {
 	const { data } = useQuery({
 		queryKey: ["keywords", user?.companyId],
 		queryFn: async () => {
-			const response = await fetchAPI<KeywordsResponse, TNoParams, { id: string }>({
+			const response = await fetchAPI<
+				KeywordsResponse,
+				TNoParams,
+				{ id: string }
+			>({
 				url: "/keywords",
 				method: "POST",
 				body: { id: user?.companyId || "" },

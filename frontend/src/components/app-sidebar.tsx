@@ -60,7 +60,7 @@ const data = {
 				},
 				{
 					title: "Linkedin Campaign",
-					url: "/dashboard/audience-outreach"
+					url: "/dashboard/audience-outreach",
 				},
 				{
 					title: "Market Positioning",

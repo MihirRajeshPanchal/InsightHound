@@ -7,7 +7,9 @@ import {
 	SidebarTrigger,
 } from "@/components/ui/sidebar"
 import dynamic from "next/dynamic"
-const LogoutBtn = dynamic(() => import("@/components/ui/logout-btn"), { ssr: false })
+const LogoutBtn = dynamic(() => import("@/components/ui/logout-btn"), {
+	ssr: false,
+})
 
 export default function RootLayout({
 	children,
@@ -21,7 +23,10 @@ export default function RootLayout({
 				<header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 bg-accent/5">
 					<div className="flex w-full items-center">
 						<SidebarTrigger className="-ml-1" />
-						<Separator orientation="vertical" className="mr-2 h-4" />
+						<Separator
+							orientation="vertical"
+							className="mr-2 h-4"
+						/>
 						<DashboardBreadCrumb />
 					</div>
 					<LogoutBtn />

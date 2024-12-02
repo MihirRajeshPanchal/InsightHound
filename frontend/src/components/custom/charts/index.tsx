@@ -120,7 +120,7 @@ export default function Charts() {
 									tickMargin={4}
 									tickFormatter={(value) => {
 										return new Date(
-											value
+											value,
 										).toLocaleDateString("en-US", {
 											weekday: "short",
 										})
@@ -133,7 +133,7 @@ export default function Charts() {
 											hideIndicator
 											labelFormatter={(value) => {
 												return new Date(
-													value
+													value,
 												).toLocaleDateString("en-US", {
 													day: "numeric",
 													month: "long",
@@ -194,18 +194,14 @@ export default function Charts() {
 							<CardDescription>Downloads</CardDescription>
 							<CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
 								62
-								<span className="text-sm font-normal tracking-normal text-muted-foreground">
-
-								</span>
+								<span className="text-sm font-normal tracking-normal text-muted-foreground"></span>
 							</CardTitle>
 						</div>
 						<div>
 							<CardDescription>Via website</CardDescription>
 							<CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
 								35
-								<span className="text-sm font-normal tracking-normal text-muted-foreground">
-
-								</span>
+								<span className="text-sm font-normal tracking-normal text-muted-foreground"></span>
 							</CardTitle>
 						</div>
 					</CardHeader>
@@ -274,7 +270,7 @@ export default function Charts() {
 									tickMargin={8}
 									tickFormatter={(value) => {
 										return new Date(
-											value
+											value,
 										).toLocaleDateString("en-US", {
 											weekday: "short",
 										})
@@ -299,7 +295,7 @@ export default function Charts() {
 											indicator="line"
 											labelFormatter={(value) => {
 												return new Date(
-													value
+													value,
 												).toLocaleDateString("en-US", {
 													day: "numeric",
 													month: "long",
@@ -323,8 +319,8 @@ export default function Charts() {
 					<CardHeader>
 						<CardTitle>Progress</CardTitle>
 						<CardDescription>
-							You&apos;re average more outreach a day this year than
-							last year.
+							You&apos;re average more outreach a day this year
+							than last year.
 						</CardDescription>
 					</CardHeader>
 					<CardContent className="grid gap-4">
@@ -380,7 +376,11 @@ export default function Charts() {
 										tickCount={1}
 										hide
 									/>
-									<XAxis dataKey="outreach" type="number" hide />
+									<XAxis
+										dataKey="outreach"
+										type="number"
+										hide
+									/>
 								</BarChart>
 							</ChartContainer>
 						</div>
@@ -436,7 +436,11 @@ export default function Charts() {
 										tickCount={1}
 										hide
 									/>
-									<XAxis dataKey="outreach" type="number" hide />
+									<XAxis
+										dataKey="outreach"
+										type="number"
+										hide
+									/>
 								</BarChart>
 							</ChartContainer>
 						</div>
@@ -449,7 +453,8 @@ export default function Charts() {
 					<CardHeader className="p-4 pb-0">
 						<CardTitle>Average orders</CardTitle>
 						<CardDescription>
-							Over the last 7 days, your orders were 12.5 orders per day.
+							Over the last 7 days, your orders were 12.5 orders
+							per day.
 						</CardDescription>
 					</CardHeader>
 					<CardContent className="flex flex-row items-baseline gap-4 p-4 pt-0">

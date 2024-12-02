@@ -1,8 +1,9 @@
-import dynamic from "next/dynamic";
+import dynamic from "next/dynamic"
 
-const HoundReport = dynamic(() => import("@/components/custom/hound-report"), { ssr: false });
+const HoundReport = dynamic(() => import("@/components/custom/hound-report"), {
+	ssr: false,
+})
 export default function Page() {
-
 	const html = `<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -218,9 +219,7 @@ export default function Page() {
 			  </tbody>
 			</table>
 		</body>
-	</html>`;
+	</html>`
 
-	return (
-		<HoundReport html={html} />
-	)
+	return <HoundReport html={html} />
 }
