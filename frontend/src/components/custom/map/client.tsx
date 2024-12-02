@@ -49,7 +49,7 @@ const MapComponent = ({ data }: { data: CoordinateDataApiResponse }) => {
 						position={[d.coordinates.lat, d.coordinates.lng]}
 					>
 						<Popup>
-							{(d.extracted_value).toFixed(2)}% people interested
+							{d.extracted_value.toFixed(2)}% people interested
 						</Popup>
 					</Marker>
 				))}

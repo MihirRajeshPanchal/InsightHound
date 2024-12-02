@@ -9,7 +9,7 @@ import { getToken } from "../lib/utils/token"
 const UserContext = createContext<{
 	user: user | null
 	setUser: (user: user | null) => void
-}>({ user: null, setUser: () => { } })
+}>({ user: null, setUser: () => {} })
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 	const [user, setUser] = useState<user | null>(null)

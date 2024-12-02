@@ -103,9 +103,9 @@ export async function fetchAPI<
 			},
 		})
 
-		console.log({response: response.status })
+		console.log({ response: response.status })
 		const responseData = (await response.json()) as ResponseDataT
-		console.log({ responseData})
+		console.log({ responseData })
 
 		return {
 			success: true,

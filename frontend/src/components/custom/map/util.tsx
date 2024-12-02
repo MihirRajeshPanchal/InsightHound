@@ -6,7 +6,10 @@ import { useMap } from "react-leaflet"
 export default function MapUtilities({ card }: { card: CoordinateData }) {
 	const map = useMap()
 	useEffect(() => {
-		map.setView([card.coordinates.lat, card.coordinates.lng], mapDefaults.zoom)
+		map.setView(
+			[card.coordinates.lat, card.coordinates.lng],
+			mapDefaults.zoom,
+		)
 	}, [card, map])
 	return <></>
 }

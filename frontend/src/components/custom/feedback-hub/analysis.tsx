@@ -10,26 +10,30 @@ import { useQuery } from "@tanstack/react-query"
 import SurveyResultsCharts from "./charts"
 
 export default function FeedbackAnalysis() {
-    const { user } = useAuth()
+	const { user } = useAuth()
 
-    const { data: questionsData } = useQuery({
-        queryKey: ["feedback-hub", user?.companyId],
-        queryFn: async () => {
-            const response = await fetchAPI<QuestionsData, TNoParams, { id: string }>({
-                url: "/marketresearch",
-                method: "POST",
-                body: { id: user?.companyId || "" },
-                baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
-            })
-            return response.data
-        },
-        enabled: !!user,
-    })
-    const data = questionsData ? generateMockResponses(questionsData.questions) : null
-    if (!data) {
-        return <Loading />
-    }
-    return (
-        <SurveyResultsCharts surveyData={data} />
-    )
+	const { data: questionsData } = useQuery({
+		queryKey: ["feedback-hub", user?.companyId],
+		queryFn: async () => {
+			const response = await fetchAPI<
+				QuestionsData,
+				TNoParams,
+				{ id: string }
+			>({
+				url: "/marketresearch",
+				method: "POST",
+				body: { id: user?.companyId || "" },
+				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
+			})
+			return response.data
+		},
+		enabled: !!user,
+	})
+	const data = questionsData
+		? generateMockResponses(questionsData.questions)
+		: null
+	if (!data) {
+		return <Loading />
+	}
+	return <SurveyResultsCharts surveyData={data} />
 }

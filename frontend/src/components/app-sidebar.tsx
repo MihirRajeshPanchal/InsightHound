@@ -33,15 +33,15 @@ const data = {
 			url: "#",
 			items: [
 				{
-					title: "Market Intelligence",
+					title: "About and Feed",
 					url: "/dashboard/market-intelligence",
 				},
 				{
-					title: "Competitor Mapping",
+					title: "Competitor Comparison",
 					url: "/dashboard/competitor-mapping",
 				},
 				{
-					title: "Strategic Insights",
+					title: "HoundBot",
 					url: "/dashboard/strategic-insights",
 				},
 			],
@@ -51,19 +51,19 @@ const data = {
 			url: "#",
 			items: [
 				{
-					title: "Audience Insights",
+					title: "Trends Heatmap",
 					url: "/dashboard/audience-insights",
 				},
 				{
-					title: "Bulk Mailing",
+					title: "Marketing Campaign",
 					url: "/dashboard/bulk-mail",
 				},
 				{
-					title: "Audience Outreach",
-					url: "/dashboard/audience-outreach"
+					title: "Linkedin Campaign",
+					url: "/dashboard/audience-outreach",
 				},
 				{
-					title: "Audience Segmentation",
+					title: "Market Positioning",
 					url: "/dashboard/audience-segments",
 				},
 			],
@@ -73,11 +73,11 @@ const data = {
 			url: "#",
 			items: [
 				{
-					title: "Feedback Hub",
+					title: "Marketing Questionnaire",
 					url: "/dashboard/feedback-hub",
 				},
 				{
-					title: "Feedback Analytics",
+					title: "Market Analytics",
 					url: "/dashboard/feedback-hub/analytics",
 				},
 			],
@@ -87,7 +87,11 @@ const data = {
 			url: "#",
 			items: [
 				{
-					title: "Reports",
+					title: "HoundBoard",
+					url: "/dashboard/hound-board",
+				},
+				{
+					title: "HoundReport",
 					url: "/dashboard/reports",
 				},
 			],

@@ -6,7 +6,10 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "sonner"
 import { UserProvider } from "@/hooks/use-auth"
 import dynamic from "next/dynamic"
-const QueryProviderWrapper = dynamic(() => import("@/components/wrappers/query-provider"), { ssr: false })
+const QueryProviderWrapper = dynamic(
+	() => import("@/components/wrappers/query-provider"),
+	{ ssr: false },
+)
 
 const clashGrotesk = localFont({
 	src: "../fonts/ClashGrotesk-Variable.woff2",
@@ -15,10 +18,14 @@ const clashGrotesk = localFont({
 
 export const metadata: Metadata = {
 	title: "Insight Hound",
-	description: "Uncover powerful data-driven insights with Insight Hound. Analyze trends, visualize patterns, and optimize strategies with our intuitive and user-friendly platform.",
+	description:
+		"Uncover powerful data-driven insights with Insight Hound. Analyze trends, visualize patterns, and optimize strategies with our intuitive and user-friendly platform.",
 	applicationName: "Insight Hound",
 	authors: [
-		{ name: "DjDawgs", url: "https://github.com/vaxad/DjDawgs_100X_Buildathon" },
+		{
+			name: "DjDawgs",
+			url: "https://github.com/vaxad/DjDawgs_100X_Buildathon",
+		},
 	],
 	generator: "Insight Hound Data Analysis Engine",
 	keywords: [
