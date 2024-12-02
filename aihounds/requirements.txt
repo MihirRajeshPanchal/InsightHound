@@ -11,3 +11,4 @@ serpapi
 beautifulsoup4
 langchain_community
 google-search-results
+python-dateutil
