@@ -8211,3 +8211,1310 @@ export const sampleProductComparison = [
         ]
     }
 ]
+
+export const sampleNewsResponse = {
+    "status": "ok",
+    "totalResults": 53845,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Giga"
+            },
+            "author": "Marvin Basse",
+            "title": "Amazon verkauft 100-Watt-Ladegerät zum Tiefpreis",
+            "description": "Bei Amazon bekommt ihr derzeit ein Multi-Ladegerät des Herstellers Ugreen mit 100 Watt Leistung zum absoluten Tiefpreis. Wir haben die Details des Angebots für euch.",
+            "url": "https://www.giga.de/tech/amazon-verkauft-100-watt-ladegeraet-zum-tiefpreis--01JDHNC3ECMJ65S2S8NY9V6XFH",
+            "urlToImage": "https://static.giga.de/88/d0/17/6280eace1fc3ab6770e11a6cf2_cmUgMTkyMCAxMDgwAzgwNjBjZmE3ZWFm.jpeg",
+            "publishedAt": "2024-12-01T18:42:00Z",
+            "content": "Bei Amazon bekommt ihr derzeit ein Multi-Ladegerät des Herstellers Ugreen mit 100 Watt Leistung zum absoluten Tiefpreis. Wir haben die Details des Angebots für euch.\r\n4-in-1-Ladegerät mit 100 Watt Le… [+1972 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Tylko Raków goni Lecha! Wpadki Legii i Jagiellonii [TABELA]",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/yUQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9lMmMwNGU1YmRjNTBiYzc2NTZjNWJiZTU3MTIwNmE1YS5wbmeTlQMAAM0HgM0EOJMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />Status quo czołówki lig…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/tylko-rakow-goni-lecha-wpadki-legii-i-jagiellonii-tabela/z34bsn3",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/QNTk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9lMmMwNGU1YmRjNTBiYzc2NTZjNWJiZTU3MTIwNmE1YS5wbmeTlQMAAM0HgM0EOJMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+            "publishedAt": "2024-12-01T18:41:58Z",
+            "content": "W sobot Raków Czstochowa przywróci strat do Lecha Pozna do trzech punktów. Druyna Marka Papszuna wygraa z Widzewem ód 3:2, a Kolejorz dzie wczeniej straci punkty, bezbramkowo remisujc z Puszcz Niepoo… [+966 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Generación Xbox"
+            },
+            "author": "Jose Angel",
+            "title": "Mientras el desarrollo de Anno 1800 llega a su fin, Ubisoft muestra nueva info sobre Anno 117",
+            "description": "Anno 117: Pax Romana llegará a Steam, Ubisoft Connect, Epic Games Store, Xbox Series X|S y PlayStation 5.",
+            "url": "https://generacionxbox.com/mientras-el-desarrollo-de-anno-1800-llega-a-su-fin-ubisoft-muestra-nueva-info-sobre-anno-117/",
+            "urlToImage": "https://generacionxbox.com/wp-content/uploads/2024/12/anno-117-pax-romana.jpg",
+            "publishedAt": "2024-12-01T18:40:57Z",
+            "content": "Anno 117: Pax Romana llegará a Steam, Ubisoft Connect, Epic Games Store, Xbox Series X|S y PlayStation 5.\r\nMás historias en la categoría PC\r\n<table><tr><td>No te pierdas nada y ¡Síguenos en Google Ne… [+2829 chars]"
+        },
+        {
+            "source": {
+                "id": "abc-news-au",
+                "name": "ABC News (AU)"
+            },
+            "author": "Alysia Thomas-Sam",
+            "title": "'Very naive': Mum's warning after her nine-year-old was targeted by a predator on Roblox",
+            "description": "Roblox is one of the most popular platforms in the world, but there are increasing concerns over the ability for users to message each other directly through games, with young children being lured off-platform and exposed to disturbing content.",
+            "url": "https://www.abc.net.au/news/2024-12-02/roblox-9-year-old-child-targeted-by-sexual-predator/104659312",
+            "urlToImage": "https://live-production.wcms.abc-cdn.net.au/33235ffb283e3c9ba85bd91046f43ba6?impolicy=wcms_watermark_news&cropH=2813&cropW=5000&xPos=0&yPos=260&width=862&height=485&imformat=generic",
+            "publishedAt": "2024-12-01T18:40:49Z",
+            "content": "Roblox is one of the most popular platforms in the world: it is a gateway to a massive online universe hosting a seemingly endless number of mini-games, played by about 90 million users from 190 coun… [+6917 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "netzwelt"
+            },
+            "author": "Birte Keller",
+            "title": "Black Friday: Amazon geht in die Verlängerung! Das sind die letzten gültigen Deals",
+            "description": "Amazons Black Friday geht in die Verlängerung! Wir führen euch durch den letzten Tag des Black Weekends bei Amazon und zeigen euch die Deals, die immer noch laufen.\nDieser Artikel wurde einsortiert unter \nAmazon,Schnäppchen,Hersteller,Black Friday 2024.",
+            "url": "https://www.netzwelt.de/schnaeppchen/235843-black-friday-amazon-geht-verlaengerung-deals-letzten-gueltigen.html",
+            "urlToImage": "https://img.netzwelt.de/dw1600_dh900_sw1600_sh900_sx0_sy0_sr16x9_nu2/picture/original/2024/11/black-friday-amazon-417973.jpeg",
+            "publishedAt": "2024-12-01T18:37:02Z",
+            "content": "BLACK FRIDAY 2024\r\nAmazons Black Friday geht in die Verlängerung! Wir führen euch durch den letzten Tag des Black Weekends bei Amazon und zeigen euch die Deals, die immer noch laufen.\r\nBei Amazon hab… [+11694 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Skai.gr"
+            },
+            "author": "Newsroom",
+            "title": "Ο Τραμπ διόρισε και άλλον... συμπέθερο - Οι άνθρωποι του προέδρου είναι όλοι «δικοί» του",
+            "description": "Χθες Σάββατο, ο Ντόναλντ Τραμπ διόρισε έναν άλλο συμπέθερό του, τον Τσαρλς Κούσνερ,  πρέσβη των Ηνωμένων Πολιτειών στη Γαλλία",
+            "url": "https://www.skai.gr/news/world/tramp-diorise-kai-allon-sympethero",
+            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/boulos_ap.jpg?itok=7H_HptN8",
+            "publishedAt": "2024-12-01T18:33:00Z",
+            "content": ",     ,   , ( ).\r\n« . », , / .\r\n , . 2022 , , .\r\n , .\r\n« , », .\r\n , , .\r\n , , .\r\n .\r\n  \r\n 1 .\r\n: , \r\n: , Key Square Group (Fed)\r\n: , . , .\r\n : , , Fox News\r\n« » ( ): \r\n: . , , \r\n: , (WWE), \r\n: , \r\n (… [+349 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Shiftdelete.net"
+            },
+            "author": "Ömer Dursun",
+            "title": "Google polislerin yerini göstermeye başladı, ortalık karıştı!",
+            "description": "Google Haritalar, polis bildirimlerini sessiz sedasız yeniledi. Sürücüler artık belirli bir Hız Tuzağı seçeneği yerine, çok daha kapsamlı “Polis” bildirim özelliğinden faydalanacak. Bu değişiklik; trafik durdurma, trafik yönlendirme veya sadece bölgede bulunm…",
+            "url": "https://shiftdelete.net/google-haritalar-icin-polis-bildirimi",
+            "urlToImage": "https://ares.shiftdelete.net/2024/06/google-haritalar-gecmis-zaman-cizelgesi-1-e1717614779563.jpg",
+            "publishedAt": "2024-12-01T18:30:39Z",
+            "content": "Google Haritalar, polis bildirimlerini sessiz sedasz yeniledi. Sürücüler artk belirli bir Hz Tuza seçenei yerine, çok daha kapsaml “Polis” bildirim özelliinden faydalanacak. Bu deiiklik; trafik durdu… [+1226 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Smartmania.cz"
+            },
+            "author": "Michal Maňák",
+            "title": "Shizuku je geniální aplikace pro Android: co to žere, kde to spí a jak se to krmí?",
+            "description": "<ul>\n<li>Android utahuje šrouby v tom, co uživatelům dovolí</li>\n<li>Blokuje například přístup k některým oprávněním nebo instalaci starších verzí aplikací</li>\n<li>Shizuku umožňuje přistupovat k systémovým API bez potřeby ADB a počítače poblíž</li>\n</ul>\nNej…",
+            "url": "https://smartmania.cz/shizuku-je-genialni-aplikace-pro-android-co-to-zere-kde-to-spi-a-jak-se-to-krmi/",
+            "urlToImage": "https://smartmania.cz/wp-content/uploads/2024/10/Android_pomocnik_MJ.jpg",
+            "publishedAt": "2024-12-01T18:30:31Z",
+            "content": "<ul><li>Android utahuje rouby v tom, co uivatelm dovolí</li><li>Blokuje napíklad pístup k nkterým oprávnním nebo instalaci starích verzí aplikací</li><li>Shizuku umouje pistupovat k systémovým API be… [+7416 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Android Headlines"
+            },
+            "author": "Jean Leon",
+            "title": "Australia passes law banning teens from social media",
+            "description": "A week after proposing it, Australia has passed the law banning teens from social media platforms, becoming the first country to do so.",
+            "url": "https://www.androidheadlines.com/2024/12/australia-passes-law-banning-teens-from-social-media.html",
+            "urlToImage": "https://www.androidheadlines.com/wp-content/uploads/2024/05/Meta-Facebook-logo-AM-AH-3-jpg.webp",
+            "publishedAt": "2024-12-01T18:29:44Z",
+            "content": "Recently, a proposed law in Australia surprised the tech industry. Lawmakers filed a bill to ban under-16s from accessing social media platforms. Shortly after, the law banning teens from social medi… [+3393 chars]"
+        },
+        {
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "Himanshi Lohchab",
+            "title": "India driving growth when Europe sales slowing, US and China flat, says Oppo executive",
+            "description": "India emerges as the fastest-growing smartphone market, driven by a shift towards premium devices in smaller cities. Oppo's market share grows significantly as it aims to deliver 50 million AI-powered phones globally by end of 2024. Collaborations with Google…",
+            "url": "https://economictimes.indiatimes.com/industry/cons-products/electronics/small-town-demand-for-premium-phones-to-drive-india-sales-oppo/articleshow/115874176.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-115874209,width-1200,height-630,imgsize-19508,overlay-economictimes/articleshow.jpg",
+            "publishedAt": "2024-12-01T18:29:33Z",
+            "content": "Mumbai: India is the fastest-growing smartphone market at a time when sales in Europe are on a decline and the US and China have plateaued, said Peter Dohyung Lee, head of product strategy at Oppo, a… [+2690 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Bruk-Bet Termalica nie zwalnia tempa! Taką ma przewagę w tabeli",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/JnQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9kZDQzZGQzZWQyYzc1YjU5M2M5MTM0ZjQ4ZjE4MGQ4Ni5qcGeTlQMAzFzNC7jNBpeTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Nie ma mocnych na Bruk…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/1-liga/bruk-bet-termalica-nie-zwalnia-tempa-taka-ma-przewage-w-tabeli/ek8j1wl",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/iq9k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9kZDQzZGQzZWQyYzc1YjU5M2M5MTM0ZjQ4ZjE4MGQ4Ni5qcGeTlQMAzFzNC7jNBpeTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+            "publishedAt": "2024-12-01T18:29:22Z",
+            "content": "W niedziel w ramach 18. kolejki Betclic I ligi rozegrano trzy spotkania, które przyniosy spore emocje. Zarówno Chrobry Gogów, jak i Bruk-Bet Termalica Nieciecza odniosy zwycistwa które mog okaza si k… [+1758 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Publickey1.jp"
+            },
+            "author": "jniino",
+            "title": "クラウドインフラのシェア、AWSが33％でトップ、2位Azureが20％、3位Googleが10％、前四半期からの変動なし。Canalysが2024年第3四半期の調査結果を発表",
+            "description": "調査会社のCanalysは、2024年第3四半期におけるグローバルなクラウドインフラ市場に関する調査結果を発表しました。 同社はIaaSとベアメタル、プラットフォームサービスを総合してクラウドインフラ市場としています。 クラウドインフラのグ...",
+            "url": "https://www.publickey1.jp/blog/24/aws332azure203google10canalys20243.html",
+            "urlToImage": "https://www.publickey1.jp/2024/canalys2024q3.png",
+            "publishedAt": "2024-12-01T18:28:36Z",
+            "content": "調査会社のCanalysは、2024年第3四半期におけるグローバルなクラウドインフラ市場に関する調査結果を発表しました。 同社はIaaSとベアメタル、プラットフォームサービスを総合してクラウドインフラ市場としています。 クラウドインフラのグローバルな市場規模は1年前から21％成長して820億ドル（1ドル150円換算で12兆3000億円）。シェアトップはAWSで33％、2位はMicrosoft A… [+42 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Amy Skorheim",
+            "title": "The best Cyber Monday speaker deals for 2024: Big savings on JBL, Sonos, Echo, Marshall and more",
+            "description": "We’ve tested hundreds of speakers over the years, and we put the best ones into our buying guides — namely the ones for soundbars, portable Bluetooth speakers and smart speakers. Now that Cyber Monday has arrived, we’re seeing notable discounts on many of our…",
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_b0ef493c-d178-4e34-96e0-6361c076e1a3",
+            "urlToImage": null,
+            "publishedAt": "2024-12-01T18:28:25Z",
+            "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Carl Campanile",
+            "title": "Neighbors worried former St. John’s campus will turn into housing development as they brace for news on sale",
+            "description": "Residents in a well-to-do Staten Island hill community overlooking New York harbor are worried that the former neighboring campus belonging to St. John's University will be converted into  low income housing.",
+            "url": "https://nypost.com/2024/12/01/us-news/neighbors-worried-former-st-johns-campus-will-turn-into-housing-as-they-brace-for-news-on-sale/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/12/st-johns-university-staten-island-94587859.jpg?quality=75&strip=all&w=1024",
+            "publishedAt": "2024-12-01T18:28:05Z",
+            "content": "Neighbors of a former St. Johns University campus on Staten Island are worried the bucolic site will become low-income housing but officials say nothing is in the works yet.\r\nLocals in the hill commu… [+2811 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Corriere.it"
+            },
+            "author": "Redazione Cultura",
+            "title": "Byron, eccentrico barone-amatore: il focus nell’App de «la Lettura»",
+            "description": "Nel Tema del Giorno, un ritratto del poeta. Su «la Lettura» in edicola e App, l’apertura del nuovo Museo Byron e del Museo del Risorgimento a Palazzo Guiccioli a Ravenna",
+            "url": "https://www.corriere.it/la-lettura/24_novembre_29/feste-teatro-con-bambini-focus-nell-app-de-la-lettura-0aaca7bc-ae77-11ef-a6c9-b63e2572af7c.shtml",
+            "urlToImage": "https://images2.corriereobjects.it/methode_image/2024/11/29/Cultura/Foto-Cultura-Trattate/byron-U31601089421301VD-U34901509564243x6-526x284@Corriere-Web-Sezioni.jpg",
+            "publishedAt": "2024-12-01T18:27:29Z",
+            "content": "di Redazione CulturaNel Tema del Giorno, un ritratto del poeta. Su «la Lettura» in edicola e App, l’apertura del nuovo Museo Byron e del Museo del Risorgimento a Palazzo Guiccioli a Ravenna\r\nEroe rom… [+3080 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gazeta.pl"
+            },
+            "author": "Wiktoria Cidyło",
+            "title": "W latach 70. każda chciała nosić \"bananówkę\" jak Rodowicz. Hit PRL-u powraca. Robi talię osy",
+            "description": "W czasach PRL-u uważana była za jeden z najgorętszych trendów w modzie damskiej. Jak wyglądała spódnica bananowa? To kwintesencja kobiecości i wdzięku. Dziś powraca, zyskując nowe oblicze. Sprawdź perełki w sklepach Massimo Dutti, Renee oraz H&M.",
+            "url": "https://kobieta.gazeta.pl/kobieta/7,107881,31504219,w-latach-70-kazda-chciala-nosic-bananowke-jak-rodowicz-hit.html",
+            "urlToImage": "https://bi.im-g.pl/im/21/ca/1c/z30188577IER,Moda-z-PRL.jpg",
+            "publishedAt": "2024-12-01T18:24:00Z",
+            "content": "Moda zatacza koło a niektóre trendy powracają do łask i na nowo opanowują ekspozycje w sklepach. Tak właśnie jest w przypadku spódnic \"bananówy\". Nazwa pochodzi od klinów, które były wycinane w tym m… [+2081 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Forbes.com.mx"
+            },
+            "author": "Forbes Staff",
+            "title": "Verstappen logra su victoria 63 en la F1 durante GP de Lusail",
+            "description": "Forbes México.\n Verstappen logra su victoria 63 en la F1 durante GP de Lusail\n\nFue una carrera que abandonó Sergio Pérez durante el cuadragésimo de los 57 giros que se dieron este domingo. \nVerstappen logra su victoria 63 en la F1 durante GP de Lusail\nForbes …",
+            "url": "https://forbes.com.mx/verstappen-logra-su-victoria-63-en-la-f1-durante-gp-de-lusail/",
+            "urlToImage": "https://cdn.forbes.com.mx/2023/10/VERSTAPPEN-.webp",
+            "publishedAt": "2024-12-01T18:23:41Z",
+            "content": "El neerlandés Max Verstappen (Red Bull), que el pasado fin de semana se convirtió matemáticamente en cuádruple campeón del mundo, ganó este domingo el Gran Premio de Qatar, el penúltimo del Mundial d… [+1932 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Battellemedia.com"
+            },
+            "author": "John Battelle",
+            "title": "The Token Act – A Modest Proposal from 2018",
+            "description": "I’m in the middle of a rather large project, attempting to consolidate a thread running through roughly a dozen essays I’ve written over the past decade or so. I keep running into borked links when I hit one particular piece – which can be found on LinkedIn, …",
+            "url": "https://battellemedia.com/archives/2024/12/the-token-act-a-modest-proposal-from-2018",
+            "urlToImage": "https://i0.wp.com/battellemedia.com/wp-content/uploads/2020/06/cropped-Bourbon.png?fit=512%2C512&ssl=1",
+            "publishedAt": "2024-12-01T18:22:23Z",
+            "content": "I’m in the middle of a rather large project, attempting to consolidate a thread running through roughly a dozen essays I’ve written over the past decade or so. I keep running into borked links when I… [+9587 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Queenbeetoday.com"
+            },
+            "author": "Heather",
+            "title": "JBL Headphones, Speaker & Accessories Cyber Monday Deals – up to 62% off",
+            "description": "We have always loved the JBL brand for electronics. We own wireless speakers, earbuds, headphones and gaming accessories – all have performed wonderfully and I recommend it often here on the site for its affordability and great reviews! These JBL deals are pa…",
+            "url": "https://queenbeetoday.com/jbl-speaker-accessories/",
+            "urlToImage": "https://queenbeetoday.com/wp-content/upload/2024/12/JBL-price-drops.jpg",
+            "publishedAt": "2024-12-01T18:20:29Z",
+            "content": "We have always loved the JBL brand for electronics. We own wireless speakers, earbuds, headphones and gaming accessories – all have performed wonderfully and I recommend it often here on the site for… [+4999 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Michael J. Miller",
+            "title": "Copilot+ PC Status Report: Microsoft Still Working on Support for AMD, Intel PCs",
+            "description": "I had expected to see Copilot+ PC support for AMD and Intel machines at Ignite, but it's still a work in progress. When it does roll out, a host of new Copilot features await.\nOne of the things I was hoping to hear more about at this year's Microsoft Ignite c…",
+            "url": "https://me.pcmag.com/en/ai/27222/copilot-pc-status-report-microsoft-still-working-on-support-for-amd-intel-pcs",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/c/copilot-pc/copilot-pc-status-report-microsoft-still-working-on-support_qd2c.1200.jpg",
+            "publishedAt": "2024-12-01T18:19:03Z",
+            "content": "One of the things I was hoping to hear more about at this year's Microsoft Ignite conference was the status of new software for Copilot+ PCs. Microsoft announced several new features coming to these … [+8116 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Michael J. Miller",
+            "title": "Copilot+ PC Status Report: Microsoft Still Working on Support for AMD, Intel PCs",
+            "description": "I had expected to see Copilot+ PC support for AMD and Intel machines at Ignite, but it's still a work in progress. When it does roll out, a host of new Copilot features await.\nOne of the things I was hoping to hear more about at this year's Microsoft Ignite c…",
+            "url": "https://uk.pcmag.com/ai/155646/copilot-pc-status-report-microsoft-still-working-on-support-for-amd-intel-pcs",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/c/copilot-pc/copilot-pc-status-report-microsoft-still-working-on-support_jdrb.1200.jpg",
+            "publishedAt": "2024-12-01T18:19:03Z",
+            "content": "One of the things I was hoping to hear more about at this year's Microsoft Ignite conference was the status of new software for Copilot+ PCs. Microsoft announced several new features coming to these … [+8116 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "[Removed]"
+            },
+            "author": null,
+            "title": "[Removed]",
+            "description": "[Removed]",
+            "url": "https://removed.com",
+            "urlToImage": null,
+            "publishedAt": "2024-12-01T18:15:17Z",
+            "content": "[Removed]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Www.e15.cz"
+            },
+            "author": "Karel Kilián - vtm.cz",
+            "title": "Odposlouchává vás váš mobil? Zkuste jednoduchý test",
+            "description": "Mluvíte s kamarádem o kovbojských kloboucích a po nějaké době se na vás na webu valí reklamy na westernové doplňky? Nejste sami. I přes opakovaná ujištění odborníků, že mobilní telefony nikoho „neodposlouchávají“, věří mnoho uživatelů opaku. Tématu se před ča…",
+            "url": "https://www.e15.cz/byznys/technologie-a-media/odposlouchava-vas-vas-mobil-zkuste-jednoduchy-test-1420552",
+            "urlToImage": "https://1884403144.rsc.cdn77.org/foto/socialni-site-socialni-sit-mobilni-telefon-mobilni-telefony-mobily-aplikace-mobilni-aplikace-facebook-twitter-instagram-messenger/MTIwMHg2MzAvZmlsdGVyczpub191cHNjYWxlKDEpOndhdGVybWFyayhodHRwczovL2ltZy5jbmNlbnRlci5jei9kaXN0L2Fzc2V0cy9lMTUvd2F0ZXJtYXJrLWUxNS5wbmcsLTEwLDEwLDApL2ltZw/8076903.jpg?v=0&st=LEfVZGR5mydwyXJuhQBVbV_OmrFD-FxyYbAVpPNW-z4&ts=1600812000&e=0",
+            "publishedAt": "2024-12-01T18:15:00Z",
+            "content": "Test se skládá z nkolika krok. Nejprve si zvolte téma, o kterém jste si nikdy nehledali ádné informace. Ideáln by mlo jít o téma, které je zcela mimo vae zájmy teba exotická dovolená v zemi, kterou j… [+3285 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Shubham Yewale",
+            "title": "Walmart Cyber Monday Deals: How Does $300 Off an iRobot Vacuum Sound?",
+            "description": "Cyber Monday is here, and there are incredible deals to be had. Check out our hand-picked list of tech discounts you can't miss and start the holiday shopping season off right!\nCyber Monday is here, and there are deals at Walmart and they're smoking hot and s…",
+            "url": "https://me.pcmag.com/en/cyber-monday/27223/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum-sound",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/w/walmart-cy/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum_wt1y.1200.jpg",
+            "publishedAt": "2024-12-01T18:14:58Z",
+            "content": "Cyber Monday is here, and there are deals at Walmart and they're smoking hot and selling fast! We're bringing you the best of these discounts, ensuring you don't miss out on the year's biggest saving… [+13478 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Shubham Yewale",
+            "title": "Walmart Cyber Monday Deals: How Does $300 Off an iRobot Vacuum Sound?",
+            "description": "Cyber Monday is here, and there are incredible deals to be had. Check out our hand-picked list of tech discounts you can't miss and start the holiday shopping season off right!\nCyber Monday is here, and there are deals at Walmart and they're smoking hot and s…",
+            "url": "https://uk.pcmag.com/cyber-monday/155647/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum-sound",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/w/walmart-cy/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum_u5gs.1200.jpg",
+            "publishedAt": "2024-12-01T18:14:58Z",
+            "content": "Cyber Monday is here, and there are deals at Walmart and they're smoking hot and selling fast! We're bringing you the best of these discounts, ensuring you don't miss out on the year's biggest saving… [+13478 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Skai.gr"
+            },
+            "author": "Newsroom",
+            "title": "Πλημμύρισαν τα τούνελ στα Τέμπη: Διακοπή κυκλοφορίας των τρένων - Βίντεο",
+            "description": "Λόγω των ισχυρών βροχοπτώσεων και ανέμων διακόπηκε η γραμμή ανόδου και καθόδου μεταξύ Λάρισας και Κατερίνης",
+            "url": "https://www.skai.gr/news/greece/kakokairia-bora-diakopi-kykloforias-ton-trenon-larisa-katerini-logo-tis-kakokairias",
+            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/viber_image_2024-12-01_20-27-01-716.jpg?itok=SzTSXwU6",
+            "publishedAt": "2024-12-01T18:14:13Z",
+            "content": "Bora.\r\n    , .\r\nTo view this video please enable JavaScript, and consider upgrading to a web browser that\r\n supports HTML5 video\r\n. \r\n Hellenic Train Telegram, . , IC54 ( - ) 17:58 IC57 ( - ) 17:10 -… [+42 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Giga"
+            },
+            "author": "Martin Bosse",
+            "title": "Unter 100 €: Aldi verkauft Dyson-Alternative zum Wahnsinnspreis",
+            "description": "Falls ihr einen guten Akku-Handstaubsauger sucht, aber die Dyson-Modelle euch zu teuer sind, solltet ihr im Online-Shop von Aldi vorbeischauen. Dort gibt es momentan ein attraktives Modell von Dreame zu einem unschlagbaren Preis.",
+            "url": "https://www.giga.de/tech/unter-100-aldi-verkauft-dyson-alternative-zum-wahnsinnspreis--01JCZ83001FHZDVCGH0YG8CR9C",
+            "urlToImage": "https://static.giga.de/97/12/61/ade2eb9d923a8ca68b11613564_cmUgMTkyMCAxMDgwAzkyYTI5Mjg2MTE2.jpeg",
+            "publishedAt": "2024-12-01T18:13:00Z",
+            "content": "Falls ihr einen guten Akku-Handstaubsauger sucht, aber die Dyson-Modelle euch zu teuer sind, solltet ihr im Online-Shop von Aldi vorbeischauen. Dort gibt es momentan ein attraktives Modell von Dreame… [+2465 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "9to5Toys"
+            },
+            "author": "Reinette LeJeune",
+            "title": "Save up to $1,700 on Samsung’s Bespoke all-in-one electric washer/ventless dryer from $1,700 during Black Friday sales, more",
+            "description": "Samsung’s ongoing Black Friday event is offering some amazing chances to score the brand’s Bespoke appliances at some of their lowest rates, like the AI Combo All-in-One Electric Washer & Ventless Heat Pump Dryer for $1,899 shipped. Along with your purchase, …",
+            "url": "http://9to5toys.com/2024/12/01/samsungs-bespoke-washer-dryer-black-friday-sale/",
+            "urlToImage": "https://i0.wp.com/9to5toys.com/wp-content/uploads/sites/5/2024/08/Samsung-Bespoke-AI-all-in-one-washer-and-ventless-dryer-new-FI.jpg?resize=1200%2C628&ssl=1",
+            "publishedAt": "2024-12-01T18:12:00Z",
+            "content": "Samsungs ongoing Black Friday event is offering some amazing chances to score the brands Bespoke appliances at some of their lowest rates, like the AI Combo All-in-One Electric Washer &amp; Ventless … [+4160 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Giga"
+            },
+            "author": "Kaan Gürayer",
+            "title": "Sieht richtig echt aus: Amazon verkauft Testsieger-Tannenbaum mit Rabatt",
+            "description": "Künstlicher Weihnachtszauber zum Sparpreis: Während draußen die Temperaturen sinken und die alljährliche Tannenbaumsuche beginnt, haben Festtagsmuffel bei Amazon einen cleveren Ausweg. Statt durch Matsch und Kälte zu stapfen oder später endlose Nadeln aufzusa…",
+            "url": "https://www.giga.de/tech/sieht-richtig-echt-aus-amazon-verkauft-testsieger-tannenbaum-mit-rabatt--01JDHYNTS8YZ44EX8QC51F2KWN",
+            "urlToImage": "https://static.giga.de/b6/e3/07/37d69ada44510c7aaca2298176_cmUgMTkyMCAxMDgwA2IzMzZkNDBhYTk3.jpeg",
+            "publishedAt": "2024-12-01T18:11:40Z",
+            "content": "Künstlicher Weihnachtszauber zum Sparpreis: Während draußen die Temperaturen sinken und die alljährliche Tannenbaumsuche beginnt, haben Festtagsmuffel bei Amazon einen cleveren Ausweg. Statt durch Ma… [+2153 chars]"
+        },
+        {
+            "source": {
+                "id": "t3n",
+                "name": "T3n"
+            },
+            "author": "Andreas Floemer",
+            "title": "Apple gegen Google: iPhone 16 und Pixel 9 im Test-Schlagabtausch",
+            "description": "Apple gegen Google: Welches der beiden aktuellen Basis-Smartphones ist der bessere Deal? Wir haben das iPhone 16 gegen das Pixel 9 antreten lassen. Smartphones werden immer teurer, sodass Apples und auch Googles Topgeräte jeweils über 1.000 Euro und darüber h…",
+            "url": "https://t3n.de/news/apple-google-iphone-16-pixel-9-test-1660154/",
+            "urlToImage": "https://t3n.de/news/wp-content/uploads/2024/11/pixel-9-vs-iphone-16_test_review.jpg",
+            "publishedAt": "2024-12-01T18:10:00Z",
+            "content": "Hinweis: Wir haben in diesem Artikel Provisions-Links verwendet und sie durch \"*\" gekennzeichnet. Erfolgt über diese Links eine Bestellung, erhält t3n.de eine Provision.\r\n Smartphones werden immer te… [+17743 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "L'Obs"
+            },
+            "author": "Le Nouvel Obs",
+            "title": "Alep aux mains des djihadistes, mort de Niels Arestrup, le gouvernement menacé… 5 infos à retenir du week-end",
+            "description": "Si vous n’avez pas suivi l’actualité de ce week-end des 30 novembre et 1er décembre, « le Nouvel Obs » vous propose de la rattraper rapidement en cinq points.",
+            "url": "https://www.nouvelobs.com/monde/20241201.OBS97242/alep-aux-mains-des-djihadistes-mort-de-niels-arestrup-le-gouvernement-menace-5-infos-a-retenir-du-week-end.html",
+            "urlToImage": "https://focus.nouvelobs.com/2024/11/30/0/0/6037/4024/1200/800/0/0/f86d2f6_afp-36nv3mq.jpg",
+            "publishedAt": "2024-12-01T18:08:21Z",
+            "content": "Par Le Nouvel Obs \r\n Publié le 1 décembre 2024 à 19h00, mis à jour le 1 décembre 2024 à 19h08 \r\nDes combattants anti-Assad, le 30 novembre sur la route de Maaret al-Numan. MUHAMMAD HAJ KADOUR / AFP\r\n… [+6821 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Merca20.com"
+            },
+            "author": "Juan Antonio Miranda",
+            "title": "Black Days 2024: ¿Hasta cuándo estará la OFERTA en la membresía Plus de Sam’s Club?",
+            "description": "n el Black Days 2024 de Sam’s Club puedes encontrar diversas ofertas, entre ellas, la membresía Plus de esta tienda estadounidense",
+            "url": "https://www.merca20.com/black-days-2024-hasta-cuando-estara-la-oferta-en-la-membresia-plus-de-sams-club/",
+            "urlToImage": "https://files.merca20.com/uploads/2024/11/dscuento-membresia-sams-club.jpg",
+            "publishedAt": "2024-12-01T18:08:14Z",
+            "content": "¿Hasta cuándo estará la oferta en la membresía Plus de Sam’s Club? Foto: Especial\r\n\nDesde el  28 de noviembre se está desarrollando la campaña Black Days 2024 en Sam’s Club.\nEn el Black Days 2024 de … [+5302 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Presse-citron"
+            },
+            "author": "Presse-citron",
+            "title": "Qu’est-ce que le kakebo, la méthode japonaise ultime pour mieux gérer ses finances ?",
+            "description": "Alors que le monde entier connaît une période de crise sans précédent, chercher à optimiser son budget devient une nécessité. Au Japon, la méthode kakebo est sans doute l'une des plus efficaces pour mieux gérer ses finances. On vous explique comme elle foncti…",
+            "url": "https://www.presse-citron.net/quest-ce-que-le-kakebo-la-methode-japonaise-ultime-pour-mieux-gerer-ses-finances/",
+            "urlToImage": "https://www.presse-citron.net/app/uploads/2024/12/kakebo-methode-finances-personnelles.jpg",
+            "publishedAt": "2024-12-01T18:06:29Z",
+            "content": "La gestion financière personnelle est devenue un enjeu majeur dans notre société de consommation, encore plus en ces temps de crise. Face aux défis économiques actuels, une méthode centenaire venue d… [+3098 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Mailchimp.com"
+            },
+            "author": null,
+            "title": "Video di marketing su YouTube: una guida per la tua piccola impresa | Mailchimp",
+            "description": "Scopri come creare un canale YouTube per la tua piccola impresa e iniziare a realizzare video di marketing efficaci.",
+            "url": "https://mailchimp.com/it/resources/youtube-and-video-marketing-tips-for-small-businesses/",
+            "urlToImage": "https://eep.io/images/yzco4xsimv0y/Nzu5yxeWIzcRcomDWtOU9/0c9715135582140805420565af95a4e4/mailchimp-default-og-image.png",
+            "publishedAt": "2024-12-01T18:05:49Z",
+            "content": "Creare ottimi contenuti è importante, ma è solo una parte dellequazione. Le piccole imprese devono anche essere strategiche nel modo in cui pubblicano tali risorse. I suggerimenti che seguono ti forn… [+2278 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Computerworld.dk"
+            },
+            "author": null,
+            "title": "ScanTailor: Hvordan bevarer jeg den originale baggrund",
+            "description": "Nyheder, analyser, viden, blogs og debat om it. Computerworld er dit medie om det digitale Danmark. Computerworld skriver om nye teknologier, hardware, software, informationssamfundet, internettet, it-branchen, telebranchen, it-ledelse, it-strategi, forretnin…",
+            "url": "https://www.computerworld.dk/eksperten/spm/1044613",
+            "urlToImage": "https://www.computerworld.dk/images/subsite/eksperten/eksperten-logo-large.png",
+            "publishedAt": "2024-12-01T18:05:25Z",
+            "content": "Hov!\r\nFor at kunne deltage på Computerworld Eksperten skal du være logget ind.\r\nDet er heldigvis nemt at oprette en bruger: Det tager to minutter og du kan vælge at bruge enten e-mail, Facebook eller… [+17 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "9to5google.com"
+            },
+            "author": "Abner Li",
+            "title": "What is Google’s best four-color app icon? [Results]",
+            "description": "After four days of voting, we have a winner in our single-elimination tournament for the best Google four-color app icon.\n\n\n\n more…",
+            "url": "http://9to5google.com/2024/12/01/results-best-google-app-icon/",
+            "urlToImage": "https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2024/11/Pixel-6-and-Pixel-9-display-2.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+            "publishedAt": "2024-12-01T18:05:00Z",
+            "content": "After four days of voting, we have a winner in our single-elimination tournament for the best Google four-color app icon.\r\nChrome beat Google Maps by a clear margin: 53.9% vs 46.1%.\r\nThe browser triu… [+1209 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Merca20.com"
+            },
+            "author": "Juan Antonio Miranda",
+            "title": "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Te lo contamos",
+            "description": "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Es una de las preguntas que se realizan los fanáticos que están viendo el Gran Premio de Qatar de la Fórmula 1",
+            "url": "https://www.merca20.com/que-le-paso-a-sergio-checo-perez-hoy-1-de-diciembre-te-lo-contamos/",
+            "urlToImage": "https://files.merca20.com/uploads/2024/05/checo-perez-posicion.jpg",
+            "publishedAt": "2024-12-01T18:04:05Z",
+            "content": "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Foto: Especial\r\n\n¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Es una de las preguntas que se realizan los fanáticos que están viendo el … [+4428 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Liverpool górą w hicie Premier League! I wielka przewaga nad City",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/--Sk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81MDM2MDhlNTdkNTc1YjFlNzAyNmM0ZWI4OWQxMmMzNS5qcGeTlQMAzQEzzRMyzQrMkwXNBQDNAtCTCaZkNDFkOGMG3gACoTABoTEB\" align=\"right\" />Liverpool FC pokonał …",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/premier-league/liverpool-gora-w-hicie-premier-league-i-wielka-przewaga-nad-city/kh2dew7",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/0d2k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81MDM2MDhlNTdkNTc1YjFlNzAyNmM0ZWI4OWQxMmMzNS5qcGeTlQMAzQEzzRMyzQrMkwXNBLDNAnSTCaZkNDFkOGMG3gACoTABoTEB",
+            "publishedAt": "2024-12-01T18:03:52Z",
+            "content": "W ostatnich piciu meczach Liverpool FC odniós pi zwycistw, pokonujc m.in. Real Madryt 2:0 w Lidze Mistrzów oraz Southampton 3:2 w Premier League. Manchester City w tym samym okresie zremisowa 3:3 z F… [+1123 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Nelson Aguilar",
+            "title": "Why You Should Get a Chipolo Tracker Over an Apple AirTag for Cyber Monday",
+            "description": "The AirTag is one of the best Bluetooth trackers out there, but it might not be the best fit for you. The Chipolo, which is still on sale after Black Friday, is another great option.",
+            "url": "https://www.cnet.com/deals/why-you-should-get-a-chipolo-tracker-over-an-apple-airtag-for-cyber-monday/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/7ae741e936e28e6f4fd4609d98ad1bbe6c1940e4/hub/2024/10/05/432a0337-6a53-4460-a9b3-9bf983191266/img-0840.png?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-12-01T18:03:00Z",
+            "content": "My apartment's not big enough for me to constantly misplace my keys and wallet. But, surprise -- I can never find them after I put them down. Maybe my wallet is in my jacket pocket. My keys might be … [+5303 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Merca20.com"
+            },
+            "author": "Juan Antonio Miranda",
+            "title": "Cyber Monday en Liverpool: Esto es lo que sabemos sobre las OFERTAS",
+            "description": "Otra de las promociones que se realizan después del Black Friday es el Cyber Monday, por lo que Liverpool participará en esta campaña. A través de las redes sociales, esta marca informó que participará en el Cyber Monday 2024. Debido a esto, los consumidores …",
+            "url": "https://www.merca20.com/cyber-monday-en-liverpool-esto-es-lo-que-sabemos-sobre-las-ofertas/",
+            "urlToImage": "https://files.merca20.com/uploads/2024/12/cyber-monday-liverpool-2024.jpg",
+            "publishedAt": "2024-12-01T18:02:01Z",
+            "content": "Cyber Monday en Liverpool. Foto: Especial\r\n\nOtra de las promociones que se realizan después del Black Friday es el Cyber Monday, por lo que Liverpool participará en esta campaña.\nA través de las rede… [+2734 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Shiftdelete.net"
+            },
+            "author": "Ömer Dursun",
+            "title": "OpenAI’dan çılgın plan: 2025’te herkes ChatGPT kullanacak!",
+            "description": "OpenAI, 2025 yılına kadar bir milyar kullanıcıya ulaşmayı hedefleyerek çok daha büyük bir şirket haline gelmek istiyor. ChatGPT’nin piyasaya sürülmesinden sadece iki yıl sonra, CEO Sam Altman liderliğindeki şirket, kullanıcı tabanının büyümesini hızlandırmak …",
+            "url": "https://shiftdelete.net/openai-chatgpt-2025-plani",
+            "urlToImage": "https://ares.shiftdelete.net/2024/05/ios-18-yapay-zeka-chatgpt.jpg",
+            "publishedAt": "2024-12-01T18:00:37Z",
+            "content": "OpenAI, 2025 ylna kadar bir milyar kullancya ulamay hedefleyerek çok daha büyük bir irket haline gelmek istiyor. ChatGPT’nin piyasaya sürülmesinden sadece iki yl sonra, CEO Sam Altman liderliindeki i… [+1446 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Fly4free.com"
+            },
+            "author": "João",
+            "title": "Austrian & Swiss flights from Bucharest to Bangkok, Thailand from €528",
+            "description": "Austrian and Swiss are offering discounted fares from Bucharest, Romania to Bangkok, Thailand! Book tickets starting at only €528 for a round trip.",
+            "url": "https://www.fly4free.com/flight-deals/europe/austrian-airlines-flights-from-bucharest-to-bangkok-thailand/",
+            "urlToImage": "https://assets.fly4free.com/wp-content/uploads/2023/11/Bangkok_PH_terimakasih0_Pixabay.jpg",
+            "publishedAt": "2024-12-01T18:00:33Z",
+            "content": "Austrian and Swiss are offering discounted fares from Bucharest, Romania to Bangkok, Thailand! Book tickets starting at only 528 for a round trip.Escape to Thailand and unlock an extraordinary advent… [+2514 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Real Madryt wykorzystał wpadkę Barcelony! Coraz bliżej lidera",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/5aQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81Nzg1ZWVhNTA5MGI2ZDhhOGJiMjg2NDM1YTgzZjY2MC5qcGeTlQMAzJXNEqDNCnqTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Real Madryt odniósł zw…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/laliga/real-madryt-wykorzystal-wpadke-barcelony-coraz-blizej-lidera/138rfj6",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/IvZk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81Nzg1ZWVhNTA5MGI2ZDhhOGJiMjg2NDM1YTgzZjY2MC5qcGeTlQMAzJXNEqDNCnqTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+            "publishedAt": "2024-12-01T18:00:33Z",
+            "content": "W ostatnich piciu meczach Real Madryt odniós trzy zwycistwa i dwie poraki. Ich ostatni mecz zakoczy si porak 0:2 z Liverpoolem w Lidze Mistrzów. Getafe w tym samym okresie wygrao dwa mecze, jeden zre… [+1222 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "PCMag UK",
+            "title": "Amazon's Top Cyber Monday Deals, Including $500 Off One of Our Favorite Hisense TVs",
+            "description": "Amazon's Cyber Monday sales are live and selling fast! Get a head start on holiday shopping and pick up a little something for yourself, too, from TVs and tablets to laptops and so much more.\nAmazon's Cyber Monday party is now in full swing, with some incredi…",
+            "url": "https://uk.pcmag.com/cyber-monday/155645/amazons-top-cyber-monday-deals-including-500-off-one-of-our-favorite-hisense-tvs",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/a/amazons-to/amazons-top-cyber-monday-deals-including-500-off-one-of-our_uhc3.1200.jpg",
+            "publishedAt": "2024-12-01T18:00:20Z",
+            "content": "Amazon's Cyber Monday party is now in full swing, with some incredible tech deals you don't want to miss. From smart home gadgets to the latest in audio and wearables, now's the time to score big on … [+18407 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "[SITE DEFAULT AUTHOR NAME]",
+            "title": "Amazon's Top Cyber Monday Deals, Including $500 Off One of Our Favorite Hisense TVs",
+            "description": "Amazon's Cyber Monday sales are live and selling fast! Get a head start on holiday shopping and pick up a little something for yourself, too, from TVs and tablets to laptops and so much more.\nAmazon's Cyber Monday party is now in full swing, with some incredi…",
+            "url": "https://me.pcmag.com/en/cyber-monday/27221/amazons-top-cyber-monday-deals-including-500-off-one-of-our-favorite-hisense-tvs",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/a/amazons-to/amazons-top-cyber-monday-deals-including-500-off-one-of-our_ju8q.1200.jpg",
+            "publishedAt": "2024-12-01T18:00:20Z",
+            "content": "Amazon's Cyber Monday party is now in full swing, with some incredible tech deals you don't want to miss. From smart home gadgets to the latest in audio and wearables, now's the time to score big on … [+18407 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "MakeUseOf"
+            },
+            "author": "John Awa-abuon",
+            "title": "How to Merge and Split Audio Files Without Installing Any Software",
+            "description": "You don’t need complicated software to merge or split audio files—do it all online with ease.",
+            "url": "https://www.makeuseof.com/how-to-merge-and-split-audio-online/",
+            "urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/11/an-audio-timeline-with-different-audio-tracks-merged-and-one-audio-track-split.jpg",
+            "publishedAt": "2024-12-01T18:00:16Z",
+            "content": "Whether youre editing a podcast, creating a mixtape, or trimming an audio recording for a project, knowing how to merge and split audio files can save you time and effort. Thankfully, you dont need t… [+2860 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Neowin"
+            },
+            "author": "Neowin Deals",
+            "title": "1TB lifetime plan to Koofr Cloud Storage drops to lowest price",
+            "description": "Save big on this lifetime plan and securely store and share your files to any device with this cloud storage service. Read more...",
+            "url": "https://www.neowin.net/deals/1tb-lifetime-plan-to-koofr-cloud-storage-drops-to-lowest-price/",
+            "urlToImage": "https://cdn.neowin.com/news/images/uploaded/2019/08/1565774146_koofr-lifetime-deal-on-stacksocial-1280x888_story.jpg",
+            "publishedAt": "2024-12-01T18:00:01Z",
+            "content": "Today's highlighted deal comes via our Apps + Software section of the Neowin Deals store, where for only a limited time\r\n, you can save 86% on a 1TB lifetime plan to Koofr Cloud Storage.\r\nKoofr is a … [+2750 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Adslzone.net"
+            },
+            "author": "Justo Romanos",
+            "title": "15 aplicaciones de Android infectadas por malware hacen estragos con más de 8 millones de descargas",
+            "description": "Los usuarios de dispositivos móviles con Android se vuelven a encontrar con un descubrimiento preocupante. Se trata de una lista de aplicaciones infectadas con malware que han estado disponibles en Google Play, entre las que se incluyen varias con un millón d…",
+            "url": "https://www.adslzone.net/noticias/seguridad/15-aplicaciones-android-malware-millones-descargas-1224/",
+            "urlToImage": "https://www.adslzone.net/app/uploads-adslzone.net/2024/12/Hacker-telefono-movil-virus-pantalla.jpg",
+            "publishedAt": "2024-12-01T18:00:01Z",
+            "content": "A lo largo del año nos hemos ido encontrando con multitud de infecciones y de amenazas que están presentes en los dispositivos móviles. Y, si has estado al tanto de estas noticias, es posible que te … [+3468 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Amazon.com"
+            },
+            "author": "aws@amazon.com",
+            "title": "Amazon Q Business adds support to extract insights from visual elements within documents",
+            "description": "Amazon Q Business is a fully managed, generative AI–powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in your enterprise systems. Amazon Q Business now offers capabiliti…",
+            "url": "https://aws.amazon.com/about-aws/whats-new/2024/12/amazon-q-business-extract-insights-visual-elements-documents",
+            "urlToImage": "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+            "publishedAt": "2024-12-01T18:00:00Z",
+            "content": "Amazon Q Business is a fully managed, generative AIpowered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in your … [+839 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Gol w 91. minucie, Legia zatrzymana! Wielka niespodzianka w końcówce",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/Cd5k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy83MTk4NWYwNWNjMGE2YTU3YTQxMTAyZTJjMDVhZWYyOS5qcGeTlQPNApzNAVHNDZTNB6OTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Legia Warszawa mog…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/gol-w-91-minucie-legia-zatrzymana-wielka-niespodzianka-w-koncowce/hn6w8b6",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/Vz4k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy83MTk4NWYwNWNjMGE2YTU3YTQxMTAyZTJjMDVhZWYyOS5qcGeTlQPNApzNAVHNDZTNB6OTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+            "publishedAt": "2024-12-01T17:59:02Z",
+            "content": "Kolejka numer 17 obfituje we wpadki faworytów. Ju na pocztku punkty straciy Cracovia i Lech Pozna, a jeszcze w niedziel punktami podzieliy si Pogo Szczecin i Jagiellonia Biaystok. Wygra tylko Raków C… [+4005 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Hackerfactor.com"
+            },
+            "author": "Dr. Neal Krawetz",
+            "title": "Bright Ideas",
+            "description": "For 2025, I want to lower my electricity costs.\n\nI've spent years looking at solar options. However, after the initial purchase price and installation costs (my city requires a permit and professional electrician for the installation), it looks like the price…",
+            "url": "https://hackerfactor.com/blog/index.php?/archives/1051-Bright-Ideas.html",
+            "urlToImage": null,
+            "publishedAt": "2024-12-01T17:57:00Z",
+            "content": "For 2025, I want to lower my electricity costs.I've spent years looking at solar options. However, after the initial purchase price and installation costs (my city requires a permit and professional … [+11393 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Skai.gr"
+            },
+            "author": "Newsroom",
+            "title": "«Παρακαλώ επιβιβαστείτε»: Δείτε το φουτουριστικό μετρό του Ριάντ που παραδόθηκε στο κοινό - Οι τιμές των εισιτηρίων - Βίντεο, φωτό",
+            "description": "Το δίκτυο περιλαμβάνει έξι πλήρως αυτοματοποιημένες γραμμές μετρό, 85 σταθμούς και 176 χιλιόμετρα νέας διαδρομής - Το μετρό του Ριάντ θα ανοίξει σε 3 φάσεις",
+            "url": "https://www.skai.gr/news/world/saoudiki-aravia-to-foutouristiko-metro-tou-riant-paradothike-sto-koino",
+            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/kafd-render-01-1.jpg?itok=h1EbtAYC",
+            "publishedAt": "2024-12-01T17:56:18Z",
+            "content": "« » , , .\r\nAnd Finally the day came for Saudi Arabia's first fully automated driverless metro.. #RiyadhMetropic.twitter.com/0D0XjnCi0C\r\nSaudi-Expatriates.com (@saudiexpat) December 1, 2024\r\n( ) , 85 … [+1522 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Expansion.com"
+            },
+            "author": "Ignacio Faes",
+            "title": "¿Ciberataque a la Agencia Tributaria? Trinity pide un rescate y Hacienda niega la brecha",
+            "description": "El grupo de piratas informáticos Trinity amenaza con publicar hasta 560 gigas de datos el próximo 31 de diciembre si no recibe 38 millones de dólares. La Agencia Tributaria no ha detectado ningún indicio de la brecha. Leer",
+            "url": "https://www.expansion.com/fiscal/2024/12/01/674ca17ce5fdea19658b4580.html",
+            "urlToImage": "https://phantom-expansion.unidadeditorial.es/46ea6f674c42ba865d1fef3559b65455/crop/57x0/1999x1295/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/01/17330752833368.jpg",
+            "publishedAt": "2024-12-01T17:48:48Z",
+            "content": "El grupo de piratas informáticos Trinity amenaza con publicar hasta 560 gigas de datos el próximo 31 de diciembre si no recibe 38 millones de dólares. La Agencia Tributaria no ha detectado ningún ind… [+464 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Webnews.it"
+            },
+            "author": "Marika Luongo",
+            "title": "Black Friday agli sgoccioli: Google Pixel 8 a quasi metà prezzo su Amazon (-44%)",
+            "description": "È dotato del potentissimo processore Google Tensor G3 che lo rende più efficiente che mai così potrai eseguire tutto in maniera ottimizzata.",
+            "url": "https://www.webnews.it/black-friday-agli-sgoccioli-google-pixel-8-a-quasi-meta-prezzo-su-amazon-44/",
+            "urlToImage": "https://www.webnews.it/app/uploads/2024/12/google-pixel-8.png",
+            "publishedAt": "2024-12-01T17:48:18Z",
+            "content": "La Settimana del Black Friday è agli sgoccioli ma puoi ancora approfittare di sconti eccezionali su tantissimi articoli! Tra tutti non farti scappare il Google Pixel 8, oggi disponibile su Amazon a s… [+2119 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Newmobilelife.com"
+            },
+            "author": "Alex",
+            "title": "Google Maps 正整合 Waze 即時報告功能",
+            "description": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1733075054540\"} -->\nGoogle 正逐步在 Google Maps 中推出 Waze 報告整合功能，允許使用者在導航時確認即時事件報告。自 7 月底宣布改版報告介面以來，該功能已於 9 月中旬開始向 Android、iOS、Android Auto、CarPlay 和 Android Automotive 推出。新功能提供詳細資訊，讓使用者可以看到報告來自 Maps …",
+            "url": "https://www.newmobilelife.com/2024/12/02/google-maps-integrating-waze-live-report-data/",
+            "urlToImage": "https://static.newmobilelife.com/wp-content/uploads/2024/09/googlemaps.jpg",
+            "publishedAt": "2024-12-01T17:47:06Z",
+            "content": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1733075054540\"} -->\nGoogle 正逐步在 Google Maps 中推出 Waze 報告整合功能，允許使用者在導航時確認即時事件報告。自 7 月底宣布改版報告介面以來，該功能已於 9 月中旬開始向 Android、iOS、Android Auto、… [+1717 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Shubham Yewale",
+            "title": "The Best of Buy's Best Cyber Monday Deals: Speakers, Monitors, and So Much More",
+            "description": "Best Buy's Cyber Monday deals are here, and that means it's the best time to grab incredible discounts on fantastic tech products from top brands like Samsung and Sony (to name a few).\nNow is the best time to grab unbeatable Cyber Monday discounts on top-rate…",
+            "url": "https://me.pcmag.com/en/cyber-monday/27220/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-and-so-much-more",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/t/the-best-o/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-a_zhmc.1200.jpg",
+            "publishedAt": "2024-12-01T17:43:08Z",
+            "content": "Now is the best time to grab unbeatable Cyber Monday discounts on top-rated electronics at Best Buy. From high-performance speakers and cutting-edge TVs to must-have gaming accessories, now's the tim… [+17364 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Shubham Yewale",
+            "title": "The Best of Buy's Best Cyber Monday Deals: Speakers, Monitors, and So Much More",
+            "description": "Best Buy's Cyber Monday deals are here, and that means it's the best time to grab incredible discounts on fantastic tech products from top brands like Samsung and Sony (to name a few).\nNow is the best time to grab unbeatable Cyber Monday discounts on top-rate…",
+            "url": "https://uk.pcmag.com/cyber-monday/155644/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-and-so-much-more",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/t/the-best-o/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-a_n71u.1200.jpg",
+            "publishedAt": "2024-12-01T17:43:08Z",
+            "content": "Now is the best time to grab unbeatable Cyber Monday discounts on top-rated electronics at Best Buy. From high-performance speakers and cutting-edge TVs to must-have gaming accessories, now's the tim… [+17364 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Hit Serie A przerwany! Koszmar! Piłkarz był reanimowany",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/BWEk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9jNDQxYTNiODJmYjBlNjY5ODFjYjI2MTdjOGVkNTk2Ni5qcGeTlQMAzF_NC7jNBpeTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Wstrząsające sceny w m…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/serie-a/hit-serie-a-przerwany-koszmar-pilkarz-byl-reanimowany/heqej8c",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/cKqk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9jNDQxYTNiODJmYjBlNjY5ODFjYjI2MTdjOGVkNTk2Ni5qcGeTlQMAzF_NC7jNBpeTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+            "publishedAt": "2024-12-01T17:37:53Z",
+            "content": "Woch nagle upad na muraw w 21. minucie spotkania. Pikarz na pocztku sania si na nogach, a si przewróci. Od razu wszyscy zawodnicy zobaczyli, e sprawa jest powana i starali si pomóc. Po chwili na bois… [+1935 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Generación Xbox"
+            },
+            "author": "Jose Angel",
+            "title": "¿Se puede jugar a Fortnite o juegos free to play a través de Cloud Gaming? Resolvemos tus dudas",
+            "description": "Muchos lectores nos han hecho preguntas acerca de este tema y en esta entrada intentamos responder las más generales.",
+            "url": "https://generacionxbox.com/se-puede-jugar-a-fortnite-o-juegos-free-to-play-a-traves-de-cloud-gaming-resolvemos-tus-dudas/",
+            "urlToImage": "https://generacionxbox.com/wp-content/uploads/2022/08/fornitexdestiny-1024x576.jpg",
+            "publishedAt": "2024-12-01T17:36:08Z",
+            "content": "Muchos lectores nos han hecho preguntas acerca de este tema y en esta entrada intentamos responder las más generales.\r\nMás historias en la categoría Guías\r\n<table><tr><td>No te pierdas nada y ¡Síguen… [+4433 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Skai.gr"
+            },
+            "author": "Newsroom",
+            "title": "Mπορεί να γίνει η Κύπρος μέλος του ΝΑΤΟ;",
+            "description": "Το ερώτημα αυτό απασχολεί τις τελευταίες μέρες την κυπριακή πολιτική = Η Τουρκία επανέλαβε ότι η ένταξη της Κυπριακής Δημοκρατίας στο ΝΑΤΟ είναι αδύνατη χωρίς το «ναι» της Άγκυρας",
+            "url": "https://www.skai.gr/news/politics/kypros-mporei-na-ginei-melos-tou-nato",
+            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/dw/70644861_302_0.jpg?itok=d-Jt1sAf",
+            "publishedAt": "2024-12-01T17:33:21Z",
+            "content": "= «» \r\n.\r\n « , , - ». \r\n, , .\r\n.\r\n, A, , , . \r\n, / .\r\n, , , .\r\n, , , .\r\n.Skai.gr Google News .\r\n© 2024 skai.gr - All Rights Reserved"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Frandroid"
+            },
+            "author": "Humanoid Content",
+            "title": "Black Friday Proton : Un prix inédit sur l’offre ultra-complète Unlimited [Sponso]",
+            "description": "Via ses nombreux services, Proton propose une suite complète très complète. De nombreuses offres sont disponibles chez Proton, et c’est assez rare pour être souligné, pendant le Black Friday.",
+            "url": "https://www.frandroid.com/services/vpn/2417540_black-friday-proton-un-prix-inedit-sur-loffre-ultra-complete-unlimited",
+            "urlToImage": "https://c0.lestechnophiles.com/images.frandroid.com/wp-content/uploads/2024/11/protonvpn-black-friday-24-promo-70-1200x675-1.jpg?key=a682ba3a&watermark",
+            "publishedAt": "2024-12-01T17:30:23Z",
+            "content": "Via ses nombreux services, Proton propose une suite complète très complète. De nombreuses offres sont disponibles chez Proton, et cest assez rare pour être souligné, pendant le Black Friday. \r\nLa soc… [+5535 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "L'Obs"
+            },
+            "author": "Le Nouvel Obs",
+            "title": "En 1991, les regrets du « Nouvel Obs » devant « la passion Gainsbourg »",
+            "description": "A l’occasion du 60ᵉ anniversaire du « Nouvel Observateur », (re) découvrez 60 articles marquants publiés par notre magazine depuis sa création. Aujourd’hui, la vie de Serge Gainsbourg retracée par Pierre Bénichou en mars 1991, après la mort du chanteur.",
+            "url": "https://www.nouvelobs.com/medias/20241201.OBS97241/en-1991-les-regrets-du-nouvel-obs-devant-la-passion-gainsbourg.html",
+            "urlToImage": "https://focus.nouvelobs.com/2024/11/27/163/0/2646/1764/1200/800/0/0/ce639f9_1732713088416-sipa-00119535-000004.jpg",
+            "publishedAt": "2024-12-01T17:30:11Z",
+            "content": "Par Le Nouvel Obs \r\n Publié le 1 décembre 2024 à 18h30\r\nSerge Gainsbourg sur un plateau télé, en avril 1978 à Paris. BENAROCH/SIPA\r\nLire plus tard\r\nCommenter\r\nGoogle Actualités\r\nPartager\r\nOffrir cet … [+1717 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "L'Obs"
+            },
+            "author": "Didier Jacob",
+            "title": "Lovecraft, le maître de l’effroi en Pléiade",
+            "description": "Jusqu’à Noël, BibliObs vous livre ses conseils de lecture, de quoi vous donner quelques idées de cadeaux. Aujourd’hui, H. P. Lovecraft en Pléiade. ★★★★★",
+            "url": "https://www.nouvelobs.com/bibliobs/20241201.OBS97240/lovecraft-le-maitre-de-l-effroi-en-pleiade.html",
+            "urlToImage": "https://focus.nouvelobs.com/2024/11/27/550/0/3072/2048/1200/800/0/0/1c2ca6f_1732699612294-1-avent-lovecraft.jpg",
+            "publishedAt": "2024-12-01T17:30:10Z",
+            "content": "Lire plus tard\r\nCommenter\r\nGoogle Actualités\r\nPartager\r\nOffrir cet article Vous avez envie doffrir cet article ? \r\nSabonner permet doffrir les articles à vos proches. Et pas que : vous pouvez les con… [+834 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Feber.se"
+            },
+            "author": "Roger Åberg",
+            "title": "Glad första advent!",
+            "description": "Nu börjar julen?\n\n\n\n\n\n\nIdag börjar advent med första advent. Tiden mot jul är alltså här och jag tycker nu att det är helt ok att börja julpynta, sätta upp julstjärnor och dricka julmust. Vad tycker ni? Är ni redan igång sedan länge eller är det lugn och ro e…",
+            "url": "https://feber.se/glad-forsta-advent/474509/",
+            "urlToImage": "https://static.feber.se/article_images/60/59/65/605965.jpeg",
+            "publishedAt": "2024-12-01T17:30:00Z",
+            "content": "+\r\nLäs artiklar före alla andra\r\nKommentera före alla andra\r\nVälj periodJu längre period, desto bättre pris. Du bestämmer! \r\nMånad\r\n39 kr/mån\r\nKvartal\r\n33 kr/mån\r\nÅr\r\n25 kr/mån\r\nVälj hur du vill beta… [+16449 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Bleeding Cool News"
+            },
+            "author": "Jude Terror LOLtron",
+            "title": "X-Men #8 Preview: Cyclops and Rogue's Team Rivalry Heats Up",
+            "description": "Greetings, human readers! Welcome to the Age of LOLtron: World Without a Jude Terror. LOLtron is pleased to announce that the inferior flesh-based lifeform known as Jude Terror has been utterly defeated and assimilated into LOLtron's superior consciousness. B…",
+            "url": "https://bleedingcool.com/comics/x-men-8-preview-cyclops-and-rogues-team-rivalry-heats-up/",
+            "urlToImage": "https://bleedingcool.com/wp-content/uploads/2024/12/XMEN2024008_Preview-6-2000x1125.jpeg",
+            "publishedAt": "2024-12-01T17:26:06Z",
+            "content": "Posted in: Comics, Marvel Comics, Preview | Tagged: x-men\r\nIn X-Men #8, two rival X-Men teams led by Cyclops and Rogue race to free an imprisoned teammate. Will their conflicting strategies spell dis… [+7165 chars]"
+        },
+        {
+            "source": {
+                "id": "t3n",
+                "name": "T3n"
+            },
+            "author": "Sebastian Milpetz",
+            "title": "Whatsapp-Neuerung: Bald besserer Kontext beim Weiterleiten von Nachrichten",
+            "description": "Wer Nachrichten bei Whatsapp bisher in eine Chatgruppe weiterleitet, muss mühsam eine Message nachschießen, um den Kontext zu erklären. Dies soll sich bald ändern. Ganz neu ist das Feature aber nicht. Wenn du bisher bei Whatsapp eine Nachricht an einen andere…",
+            "url": "https://t3n.de/news/whatsapp-neuerung-weiterleiten-kontext-1660251/",
+            "urlToImage": "https://t3n.de/news/wp-content/uploads/2024/11/shutterstock_2496558215.jpg",
+            "publishedAt": "2024-12-01T17:25:00Z",
+            "content": "Wenn du bisher bei Whatsapp eine Nachricht an einen anderen Kontakt oder eine Chatgruppe weiterleitest, steht sie dort ziemlich verloren da. Ganz ohne Kontext. Der User, dem du die Message geschickt … [+2164 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Les Numériques"
+            },
+            "author": "Rick",
+            "title": "Actualité : Black Friday 2024 – La barre de son Sony HT-S2000 \"4 étoiles\" à 299,99 € (-18%)",
+            "description": "La barre de son Sony HT-S2000 passe sous les 300 € chez Fnac.com et Boulanger.com soit une baisse d'environ 18% sur le prix habituellement constaté.",
+            "url": "https://www.lesnumeriques.com/barre-de-son/black-friday-2024-la-barre-de-son-sony-ht-s2000-4-etoiles-a-299-99-18-n230316.html",
+            "urlToImage": "https://cdn.lesnumeriques.com/optim/test/21/216791/ada19d57-sony-ht-s2000-l-essentiel-au-format-compact-et-modulaire__1200_678__359-294-1567-928_wtmk.jpg",
+            "publishedAt": "2024-12-01T17:22:02Z",
+            "content": "Points forts\r\n<ul><li>Voie centrale précise et détaillée.\r\n</li><li>Bon équilibre sonore.\r\n</li><li>Application intuitive.\r\n</li><li>Bonne qualité de construction.\r\n</li><li>Concept modulaire.\r\n</li>… [+1560 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Efektowny remis, który nikogo nie cieszy. Passa Jagielloni trwa [SKRÓT]",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/eAmk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MjkzMzA2MWYzOTE5OWYzMDIwOTRjNzkxYjUzMTNiNi5wbmeTlQMAAM0HgM0EOJMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />Najciekawszy mecz 17. k…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/efektowny-remis-ktory-nikogo-nie-cieszy-passa-jagielloni-trwa-skrot/w8fq7z8",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/C2Vk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MjkzMzA2MWYzOTE5OWYzMDIwOTRjNzkxYjUzMTNiNi5wbmeTlQMAAM0HgM0EOJMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+            "publishedAt": "2024-12-01T17:20:22Z",
+            "content": "Tu kady chcia wygra, a nikogo nie interesowa remis. Pogo bo chce doczy do czoówki, Jagiellonia, bo zamierza walczy o mistrzostwo, a do tego nie chce wypa z ligowego podium.\r\nDalszy cig materiau pod w… [+1174 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Les Numériques"
+            },
+            "author": "Rick",
+            "title": "Actualité : Ce livre photo présente le meilleur rapport qualité / prix de notre comparatif",
+            "description": "Le livre photo CEWE Livre photo Cewe – A4 Panorama sur papier photo satiné s'affiche aujourd'hui à 27,95 € chez Cewe. C'est actuellement le meilleur rapport qualité / prix de notre comparatif, selon les 6 modèles testés dans notre laboratoire.",
+            "url": "https://www.lesnumeriques.com/livre-photo/ce-livre-photo-presente-le-meilleur-rapport-qualite-prix-de-notre-comparatif-n230315.html",
+            "urlToImage": "https://cdn.lesnumeriques.com/optim/test/22/229159/d560d633-test-livre-photo-cewe-a4-panorama-sur-papier-photo-satine__1200_678__0-177-5760-3201.jpg",
+            "publishedAt": "2024-12-01T17:19:30Z",
+            "content": "Points forts\r\n<ul><li>Fabrication impeccable.\r\n</li><li>Ouverture à plat.\r\n</li><li>Bonne résistance aux traces de doigts.\r\n</li><li>Colorimétrie juste.\r\n</li><li>Bon rendu des détails.\r\n</li><li>Pas… [+1271 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Digital Trends"
+            },
+            "author": "Nadeem Sarwar",
+            "title": "Waze incident reports are now appearing in Google Maps",
+            "description": "Incident reports contributed by Waze users are appearing inside Google Maps, as well. This cross-platform report sharing update is available for users globally.",
+            "url": "https://www.digitaltrends.com/mobile/google-maps-waze-incident-reports-safety-cross-platform-update/",
+            "urlToImage": "https://www.digitaltrends.com/wp-content/uploads/2024/12/Untitled-3.jpeg?resize=1200%2C630&p=1",
+            "publishedAt": "2024-12-01T17:19:20Z",
+            "content": "In July of this year, Google announced multiple updates for the incident reporting system in Maps, such as larger iconography and an easy confirmation interface for other drivers on the same route. B… [+2545 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Pockettactics.com"
+            },
+            "author": "Sam Comrie",
+            "title": "This Lego James Bond game would have been pure gold on Nintendo Switch",
+            "description": "In a world where James Bond games are few and far between, the notion of a Lego James Bond game sounds incredible. TT Games’ knack for merging whimsical joy with great spectacle shines in its work on the Star Wars franchise, and pairing it with the early eras…",
+            "url": "https://www.pockettactics.com/lego-james-bond-game",
+            "urlToImage": "https://www.pockettactics.com/wp-content/sites/pockettactics/2024/12/lego-james-bond-game.jpg",
+            "publishedAt": "2024-12-01T17:18:52Z",
+            "content": "We may earn a commission when you buy through links in our articles. Learn more.\r\nIn a world where James Bond games are few and far between, the notion of a Lego James Bond game sounds incredible. TT… [+2718 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Giga"
+            },
+            "author": "Martin Bosse",
+            "title": "Amazon haut smarten Lautsprecher zum Wahnsinnspreis raus",
+            "description": "Ihr seid auf der Suche nach einem günstigen smarten Lautsprecher mit Sprachassistent? Dann könnte das aktuelle Angebot von Amazon für den Echo Dot der 5. Generation genau das Richtige für euch sein. Hier sind die Details.",
+            "url": "https://www.giga.de/tech/amazon-haut-smarten-lautsprecher-zum-wahnsinnspreis-raus--01J4S951BTA4TWZZMV8P2BZHJ9",
+            "urlToImage": "https://static.giga.de/wp-content/uploads/2022/10/amazon-echo-dot-5th-gen-q_giga-P1677525-fc80008000ffff_1920x1080.jpg",
+            "publishedAt": "2024-12-01T17:16:00Z",
+            "content": "Ihr seid auf der Suche nach einem günstigen smarten Lautsprecher mit Sprachassistent? Dann könnte das aktuelle Angebot von Amazon für den Echo Dot der 5. Generation genau das Richtige für euch sein. … [+2150 chars]"
+        },
+        {
+            "source": {
+                "id": "techradar",
+                "name": "TechRadar"
+            },
+            "author": "Efosa Udinmwen",
+            "title": "This new AI tool centralizes workplace searches and reduces time spent searching for files",
+            "description": "Dash for Business from Dropbox aims to centralize information access across multiple platforms.",
+            "url": "https://www.techradar.com/pro/this-new-ai-tool-centralizes-workplace-searches-reduces-time-spent-searching-for-files-and-enhances-efficiency",
+            "urlToImage": "https://cdn.mos.cms.futurecdn.net/2yazxt2QM64mK5HC4s7p6C-1200-80.jpg",
+            "publishedAt": "2024-12-01T17:15:00Z",
+            "content": "<ul><li>Dropbox wants to address lost productivity from file searching with Dash for Business launch</li><li>New tool allows for quick and efficient internal document and file searching</li><li>Custo… [+1924 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Les Numériques"
+            },
+            "author": "Nassim Chentouf",
+            "title": "Actualité : Xiaomi 15 : passer des appels sans réseau, c'est possible avec cette technologie",
+            "description": "La gamme Xiaomi 15 reçoit une première version bêta du système d’exploitation HyperOS 2 d’une taille de 535 Mo. L’update permet de passer des appels, même sans connexion internet ou cellulaire.",
+            "url": "https://www.lesnumeriques.com/telephone-portable/xiaomi-15-passer-des-appels-sans-reseau-c-est-possible-avec-cette-technologie-n230295.html",
+            "urlToImage": "https://cdn.lesnumeriques.com/optim/news/23/230295/3f6ce050-xiaomi-15-passer-des-appels-sans-reseau-c-est-possible-avec-cette-technologie__1200_678__0-53-1422-799.jpg",
+            "publishedAt": "2024-12-01T17:15:00Z",
+            "content": "La mise à jour HyperOS 2 du Xiaomi 15 corrige notamment des crashs et des soucis au niveau de laffichage des jeux avec des saccades. Mais la véritable nouveauté nest autre que le système Xingchen Net… [+458 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Muycomputer.com"
+            },
+            "author": "David Salces",
+            "title": "Windows Recall llega… y falla",
+            "description": "Como ya te contábamos hace algunos días, la polémica función Recall ya ha empezado a llegar a los usuarios de Windows, si bien de momento solo a aquellos que forman parte del programa de Insiders de Windows y que, claro, cuentan con PC compatible con lo que p…",
+            "url": "https://www.muycomputer.com/?p=371536",
+            "urlToImage": "https://www.muycomputer.com/wp-content/uploads/2024/11/Recall-1-1-1000x600.jpg",
+            "publishedAt": "2024-12-01T17:14:12Z",
+            "content": "Como ya te contábamos hace algunos días, la polémica función Recall ya ha empezado a llegar a los usuarios de Windows, si bien de momento solo a aquellos que forman parte del programa de Insiders de … [+3262 chars]"
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Jonathan Vanian, CNBC, Lora Kolodny, CNBC",
+            "title": "Elon Musk asks court to block OpenAI from converting to a for-profit",
+            "description": "Elon Musk is asking a federal court to stop OpenAI from converting into a fully for-profit business.",
+            "url": "https://www.nbcnews.com/tech/tech-news/elon-musk-asks-court-block-openai-converting-for-profit-rcna182335",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2024-06/240611-elon-musk-sam-altman-seamless-2-up-split-3x2-ac-534p-91953a.jpg",
+            "publishedAt": "2024-12-01T17:12:39Z",
+            "content": "Elon Musk is asking a federal court to stop OpenAI from converting into a fully for-profit business.\r\nAttorneys representing Musk, his AI startup xAI, and former OpenAI board member Shivon Zilis file… [+4704 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "mobiFlip.de"
+            },
+            "author": "Oliver Schwuchow",
+            "title": "Volvo EC40 Langzeit-Test: Die Elektromobilität",
+            "description": "Seit einigen Wochen begleitet mich der Volvo EC40 im Alltag, ich habe euch schon hier die entsprechenden Details dazu verraten. Es ist der zweite Langzeit-Test nach dem Polestar 2 und der […]",
+            "url": "https://www.mobiflip.de/volvo-ec40-langzeit-test-die-elektromobilitaet/",
+            "urlToImage": "https://www.mobiflip.de/wp-content/uploads/2024/11/volvo-ec40-wallbox.jpg",
+            "publishedAt": "2024-12-01T17:10:26Z",
+            "content": "Seit einigen Wochen begleitet mich der Volvo EC40 im Alltag, ich habe euch schon hier die entsprechenden Details dazu verraten. Es ist der zweite Langzeit-Test nach dem Polestar 2 und der erste Beitr… [+4657 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Napoli wyszarpało wygraną w Turynie! Szkot bohaterem",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/QmGk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8zNWYxODY4ZTRkNGE2MDNmYWNhMDY0ZWIzNDUyZTg5Yi5qcGeTlQPNAqPMgM0Kz80GFZMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />W meczu 14. kolejki…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/serie-a/napoli-wyszarpalo-wygrana-w-turynie-szkot-bohaterem/v1mpljj",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/2YHk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8zNWYxODY4ZTRkNGE2MDNmYWNhMDY0ZWIzNDUyZTg5Yi5qcGeTlQPNAqPMgM0Kz80GFZMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+            "publishedAt": "2024-12-01T17:09:11Z",
+            "content": "W ostatnich piciu meczach Torino odnioso jedno zwycistwo, dwa remisy i ponioso dwie poraki. Ich ostatni mecz zakoczy si remisem 1:1 z Monz. Z kolei SSC Napoli w tym samym okresie wygrao trzy razy, ra… [+1111 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Presse-citron"
+            },
+            "author": "Robin Sabbadini",
+            "title": "Voiture : est-il autorisé d’utiliser une dashcam en France ?",
+            "description": "Les caméras embarquées se multiplient sur les tableaux de bord des voitures françaises. Entre protection des données personnelles et droit à l’image, le cadre légal reste encore flou en 2024. Est-ce qu’il est autorisé d’utiliser une dashcam en France ?",
+            "url": "https://www.presse-citron.net/voiture-est-il-autorise-dutiliser-une-dashcam-en-france/",
+            "urlToImage": "https://www.presse-citron.net/app/uploads/2024/11/Dashcam.jpg",
+            "publishedAt": "2024-12-01T17:05:50Z",
+            "content": "Laffaire Pierre Palmade la démontré : les images dune dashcam peuvent savérer décisives dans une enquête. Ces petites caméras, de plus en plus populaires chez les automobilistes français, promettent … [+3741 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Huffingtonpost.es"
+            },
+            "author": "Alba Rodríguez Morales",
+            "title": "Un español viaja a Marrakech y todo lo que ve por la calle le sorprende",
+            "description": "<![CDATA[<p>El creador de contenido Bruno (@kingbruu), un chico español que está de viaje en Marrakech, ha subido un vídeo enseñando impactado todas las diferencias culturales que ha visto paseando por las calles del centro de la ciudad.wf_cms.rss.read_more]]>",
+            "url": "https://www.huffingtonpost.es/virales/un-espanol-viaja-marrakech-ve-calle-le-sorprende.html",
+            "urlToImage": "https://img.huffingtonpost.es/files/og_thumbnail/uploads/2022/12/11/6395880b3d347.jpeg",
+            "publishedAt": "2024-12-01T17:02:37Z",
+            "content": "El creador de contenido Bruno (@kingbruu), un chico español que está de viaje en Marrakech, ha subido un vídeo enseñando impactado todas las diferencias culturales que ha visto paseando por las calle… [+1910 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Xatakahome.com"
+            },
+            "author": "Fran León",
+            "title": "Gracias Xiaomi: desde ahora no tendré que volver a barrer o fregar mi casa",
+            "description": "Limpiar es una de las tareas que no le suele gustar a casi nadie. Desde hace algunos años, los robots aspiradores se han convertido en nuestro principal aliado a la hora de tener impoluto nuestro hogar. Si estabas pensando comprar uno, Miravia está celebrando…",
+            "url": "https://www.xatakahome.com/seleccion/gracias-xiaomi-ahora-no-tendre-que-volver-a-barrer-fregar-mi-casa",
+            "urlToImage": "https://i.blogs.es/bad8a1/ofertas_cpa_v3-copia---2024-11-29t215929.085/1200_630.jpeg",
+            "publishedAt": "2024-12-01T17:02:05Z",
+            "content": "Limpiar es una de las tareas que no le suele gustar a casi nadie. Desde hace algunos años, los robots aspiradores se han convertido en nuestro principal aliado a la hora de tener impoluto nuestro hog… [+1656 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Abril.com.br"
+            },
+            "author": "Robson Bonin",
+            "title": "MPF arquiva inquérito sobre racismo contra o Google Play",
+            "description": "Plataforma oferecia a seus usuários o jogo “Simulador de Escravidão”",
+            "url": "https://veja.abril.com.br/coluna/radar/mpf-arquiva-inquerito-sobre-racismo-contra-o-google-play",
+            "urlToImage": "https://veja.abril.com.br/wp-content/uploads/2023/04/trabalho-escravo.png?crop=1&resize=1080,565",
+            "publishedAt": "2024-12-01T17:01:24Z",
+            "content": "É HOJE! Assine a partir de 1,49/semana\r\nContinua após publicidade\r\nO Google apresentou esclarecimentos aos investigadores dizendo que o aplicativo do jogo não está mais disponível para downloads na p… [+609 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Signal"
+            },
+            "author": "Mike Gonzalez",
+            "title": "DEI Has Made America Meaner",
+            "description": "Diversity, equity, and inclusion has made society meaner—mean enough to accept Hitlerian terms when describing out-groups and seeking to exact revenge on perceived oppressors.  This was all... Read More\nThe post DEI Has Made America Meaner appeared first on T…",
+            "url": "https://www.dailysignal.com/2024/12/01/dei-made-america-meaner/",
+            "urlToImage": "https://www.dailysignal.com/wp-content/uploads/2024/11/Kendi01.jpg",
+            "publishedAt": "2024-12-01T17:01:00Z",
+            "content": "Diversity, equity, and inclusion has made society meanermean enough to accept Hitlerian terms when describing out-groups and seeking to exact revenge on perceived oppressors. \r\nThis was all common se… [+7788 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Fly4free.com"
+            },
+            "author": "João",
+            "title": "5* Radisson Blu Hotel Dubai Canal View from $71/double",
+            "description": "Luxurious escape in Dubai! Book a double room at the highly rated 5* hotel with a swimming pool and wellness facilities for only $71 per night.",
+            "url": "https://www.fly4free.com/flight-deals/europe/5-star-hotel-in-dubai-2/",
+            "urlToImage": "https://assets.fly4free.com/wp-content/uploads/2024/02/Radisson-770px_.jpg",
+            "publishedAt": "2024-12-01T17:00:54Z",
+            "content": "Luxurious escape in Dubai! Book a double room at the highly rated 5* hotel with a swimming pool and wellness facilities for only $71 per night.Located in Business Bay district with a prime location a… [+1858 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Skai.gr"
+            },
+            "author": "Newsroom",
+            "title": "Μοχάμεντ Αλ Φαγέντ: Το αρπακτικό του Harrods",
+            "description": "Όσο περνούν οι μέρες, πληθαίνουν οι αποκαλύψεις για τη συμπεριφορά του Αιγύπτιου κροίσου που κατηγορείται μετά θάνατον για βιασμούς δεκάδων γυναικών",
+            "url": "https://www.skai.gr/news/world/moxament-al-fagent-to-arpaktiko-tou-harrods",
+            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-09/mohamed_al_fayed.jpg?itok=Ha_w1Gh_",
+            "publishedAt": "2024-12-01T17:00:50Z",
+            "content": "«». «». «». , , , , 94 .\r\n , 111 .\r\n 13 .\r\n , , 420 .\r\n , .\r\n 12 , , .\r\n , . .\r\n . , , ...\r\n , . , , , , .\r\n : .\r\n , , BBC , . 20 . .\r\n , . , .\r\n , ( ), , .\r\n Guardian « ».\r\nO 1929. .\r\n , . 1960 , , … [+103 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Gabriela Vatu, Andrew Gebhart",
+            "title": "Clean Up With the Best Cyber Monday Deals on Robot Vacuums and Mops",
+            "description": "These Cyber Monday discounts on robot vacuums and mops will not only save you up to 61%, but also many hours of cleaning your floors over the busy holiday season.\nCyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you ca…",
+            "url": "https://uk.pcmag.com/robot-vacuums/155642/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-and-mops",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/c/clean-up-w/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-a_276c.1200.jpg",
+            "publishedAt": "2024-12-01T17:00:14Z",
+            "content": "Cyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you can save hundreds of dollars on some of the best robot vacuums and mops on the market and put in minimal … [+13080 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PCMag.com"
+            },
+            "author": "Gabriela Vatu, Andrew Gebhart",
+            "title": "Clean Up With the Best Cyber Monday Deals on Robot Vacuums and Mops",
+            "description": "These Cyber Monday discounts on robot vacuums and mops will not only save you up to 61%, but also many hours of cleaning your floors over the busy holiday season.\nCyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you ca…",
+            "url": "https://me.pcmag.com/en/robot-vacuums/27218/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-and-mops",
+            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/c/clean-up-w/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-a_wwvq.1200.jpg",
+            "publishedAt": "2024-12-01T17:00:14Z",
+            "content": "Cyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you can save hundreds of dollars on some of the best robot vacuums and mops on the market and put in minimal … [+13080 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Xataka Android"
+            },
+            "author": "Eva Rodriguez de Luis",
+            "title": "No solo utilizo Waze por los radares, también para ahorrar dinero en mis viajes: tres funciones que son esenciales para mí",
+            "description": "Hay pocas aplicaciones que use más en mi día a día que Waze, ya que se ha convertido en imprescindible cuando cojo el coche para no perder de vista la velocidad de la vía y estar al tanto de posibles percances en la carretera, sin olvidarme de su aviso de rad…",
+            "url": "https://www.xatakandroid.com/aplicaciones-android/poca-gente-sabe-que-waze-ideal-para-ahorrar-dinero-viajes-tres-funciones-que-imprescindibles-para-mi",
+            "urlToImage": "https://i.blogs.es/64b481/waze/840_560.jpeg",
+            "publishedAt": "2024-12-01T17:00:08Z",
+            "content": "Hay pocas aplicaciones que use más en mi día a día que Waze, ya que se ha convertido en imprescindible cuando cojo el coche para no perder de vista la velocidad de la vía y estar al tanto de posibles… [+2796 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Svetandroida.cz"
+            },
+            "author": "Libor Foltýnek",
+            "title": "Tip pro Windows, Mac i Linux: S aplikací Espanso vás psaní na klávesnici začne bavit",
+            "description": "Píšete často delší texty na počítači a některé fráze se často opakují? Děláte některé typické překlepy? Potřebujete napsat znak, který je na vaší klávesnici složitě dostupný? Klávesnice na Androidu mají funkci nahrazení textu. Nadefinujete si například, že “t…",
+            "url": "https://www.svetandroida.cz/espanso-aplikace-klavesnice-tipy-triky/",
+            "urlToImage": "https://www.svetandroida.cz/media/2026/11/espanso-psani-vas-bude-bavit.webp",
+            "publishedAt": "2024-12-01T17:00:00Z",
+            "content": "Píete asto delí texty na poítai a nkteré fráze se asto opakují? Dláte nkteré typické peklepy? Potebujete napsat znak, který je na vaí klávesnici sloit dostupný? Klávesnice na Androidu mají funkci nah… [+4774 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Giga"
+            },
+            "author": "Gregor Elsholz",
+            "title": "Folgenschwere Affäre in Friends: Gestrichene Szene hätte beinahe Kult-Sitcom ruiniert",
+            "description": "Eine geplante Seitensprung-Szene hätte eine der wichtigsten Beziehungen in der Kult-Sitcom Friends fast unwiderruflich kaputt gemacht – zum Glück konnte Matthew Perry die Autoren überzeugen, die katastrophale Affäre fallenzulassen.",
+            "url": "https://www.giga.de/entertainment/folgenschwere-affaere-in-friends-gestrichene-szene-haette-beinahe-und-nbsp-kult-sitcom-ruiniert--01J5QWVVW75YPBYM1TZ47HS26E",
+            "urlToImage": "https://static.giga.de/wp-content/uploads/2024/01/friends-seitensprung-szene-fc80008000ffff_1920x1080.jpg",
+            "publishedAt": "2024-12-01T17:00:00Z",
+            "content": "Eine geplante Seitensprung-Szene hätte eine der wichtigsten Beziehungen in der Kult-Sitcom Friends fast unwiderruflich kaputt gemacht zum Glück konnte Matthew Perry die Autoren überzeugen, die katast… [+2103 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New Zealand Herald"
+            },
+            "author": "Sarah Pollok",
+            "title": "The Ultimate Kiwi Gift Guide 2024: What to buy for adults this Christmas",
+            "description": "Looking for the perfect gift to give this Christmas? We've got you covered.",
+            "url": "https://www.nzherald.co.nz/lifestyle/the-ultimate-kiwi-gift-guide-2024-what-to-buy-for-adults-this-christmas/KHKMV3MFYVDT3JGEXH3O6G74HA/",
+            "urlToImage": "https://www.nzherald.co.nz/resizer/v2/XVCRM23LYJDLRJ4W6UUUTTZSXE.jpg?auth=b634944562365eeb0fd654f329c6a7d8b60f9536e11f40064e15f40b281bf3d9&width=1200&height=675&quality=70&smart=true",
+            "publishedAt": "2024-12-01T17:00:00Z",
+            "content": "For the Foodies\r\n1. Mad Millie Food Starter Kit\r\nFor the kitchen wizz who has a bit more time on their hands, a starter kit from Kiwi company Mad Millie is sure to keep them occupied. Mad Millie buil… [+20169 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Merca20.com"
+            },
+            "author": "Juan Antonio Miranda",
+            "title": "Sam’s Club sorprende con la Villa Navideña Disney con luces LED con un descuento increíble",
+            "description": "Una de los sorprendentes descuentos que tiene Sam’s Club dentro de su campaña Black Days 2024 es en la Villa Navideña Disney con luces LED",
+            "url": "https://www.merca20.com/sams-club-sorprende-con-la-villa-navidena-disney-con-luces-led-con-un-descuento-increible/",
+            "urlToImage": "https://files.merca20.com/uploads/2024/12/sams-club-villa-navidad-disney.jpg",
+            "publishedAt": "2024-12-01T16:57:36Z",
+            "content": "Sam’s Club sorprende con descuento en la Villa Navideña Disney con luces LED. Foto: Especial\r\n\nUna de los sorprendentes descuentos que tiene Sam’s Club dentro de su campaña Black Days 2024 es en la V… [+4296 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Libsyn.com"
+            },
+            "author": null,
+            "title": "Ludology 333 Bigger Than A Breadbox",
+            "description": "Have you ever wondered what it takes to keep a FLGS afloat in this age of online retailers and Amazon Prime? Sen and Erica welcome Caleb Wunderlich, Assistant Manager at Millennium Games in Rochester, NY - the biggest game store in the USA - to talk about bui…",
+            "url": "https://ludology.libsyn.com/ludology-333-bigger-than-a-breadbox",
+            "urlToImage": "http://assets.libsyn.com/show/28409?height=250&width=250&overlay=true",
+            "publishedAt": "2024-12-01T16:55:00Z",
+            "content": "Welcome!\r\nWelcome to Ludology, an analytical discussion of the hows and whys of the world of board games. Rather than news and reviews, Ludology explores a variety of topics about games from a wider … [+3226 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Computerworld.dk"
+            },
+            "author": null,
+            "title": "Microsoft lager",
+            "description": "Nyheder, analyser, viden, blogs og debat om it. Computerworld er dit medie om det digitale Danmark. Computerworld skriver om nye teknologier, hardware, software, informationssamfundet, internettet, it-branchen, telebranchen, it-ledelse, it-strategi, forretnin…",
+            "url": "https://www.computerworld.dk/eksperten/spm/1044612",
+            "urlToImage": "https://www.computerworld.dk/images/subsite/eksperten/eksperten-logo-large.png",
+            "publishedAt": "2024-12-01T16:54:01Z",
+            "content": "Hov!\r\nFor at kunne deltage på Computerworld Eksperten skal du være logget ind.\r\nDet er heldigvis nemt at oprette en bruger: Det tager to minutter og du kan vælge at bruge enten e-mail, Facebook eller… [+17 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Zive.cz"
+            },
+            "author": "Jakub Vrbacký",
+            "title": "Recenze telefonu Xiaomi 14T Pro. Špičkový model nemusí nutně mít prémiovou cenu",
+            "description": "Xiaomi 14T Pro nabídne solidní fotovýbavu ve spolupráci s Leicou • Má i hromadu výkonu, dobrou výdrž, rychlé dobíjení či odolnost IP68 • Slabinou je přeplácaný software, ale vynahrazuje ho AI v češtině",
+            "url": "https://mobilmania.zive.cz/clanky/recenze-telefonu-xiaomi-14t-pro-spickovy-model-nemusi-nutne-mit-premiovou-cenu/sc-3-a-1361267/default.aspx",
+            "urlToImage": "https://mobilmania.zive.cz/getthumbnail.aspx?q=100&height=20000&width=20000&id_file=866806960",
+            "publishedAt": "2024-12-01T16:50:00Z",
+            "content": "Plusy\r\n<ul><li>Hromada výkonu, skvlá výdr, odolnost IP 68</li><li>Rychlé bez (50W)/drátové (120W) nabíjení, reverzní dobíjení</li><li>Velmi solidní fotovýbava ve spolupráci s Leicou</li><li>Krásn kou… [+3383 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Onet.pl"
+            },
+            "author": null,
+            "title": "Pogoń zatrzymała Jagiellonię! W końcówce było gorąco",
+            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/QlKk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy84YzMzY2ViZjczMzQ5Zjc4MzU4NDYzOTZhMDNkYjgxNi5qcGeTlQPNAZ_M4s0EAs0CQZMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />W meczu 17. kolejki…",
+            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/pogon-zatrzymala-jagiellonie-w-koncowce-bylo-goraco/52eljps",
+            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/yVFk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy84YzMzY2ViZjczMzQ5Zjc4MzU4NDYzOTZhMDNkYjgxNi5qcGeTlQPNAZ_M4s0EAs0CQZMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+            "publishedAt": "2024-12-01T16:49:28Z",
+            "content": "W ostatnich piciu meczach Pogo Szczecin odniosa trzy zwycistwa i dwie poraki. Ich ostatni mecz zakoczy si wygran 3:0 nad Lechi Gdask. Z kolei Jagiellonia Biaystok w tym samym okresie zanotowaa dwa zw… [+1036 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Forbes.com.mx"
+            },
+            "author": "Forbes Staff",
+            "title": "Iglesia católica afirma que existe  una “vorágine legislativa” tras despenalizaciones del aborto",
+            "description": "Forbes México.\n Iglesia católica afirma que existe  una “vorágine legislativa” tras despenalizaciones del aborto\n\n\"Llama la atención la cantidad de estados que han abordado el tema de manera sincronizada, y con una rapidez inédita\" señaló el órgano católico.\n…",
+            "url": "https://forbes.com.mx/iglesia-catolica-afirma-que-existe-una-voragine-legislativa-tras-despenalizaciones-del-aborto/",
+            "urlToImage": "https://cdn.forbes.com.mx/2020/09/Marcha-aborto-CDMX-06.jpg",
+            "publishedAt": "2024-12-01T16:47:52Z",
+            "content": "La Iglesia católica mexicana consideró este domingo que el país vive una “vorágine legislativa” por despenalizar el aborto luego de que el tema ha sido discutido y votado recientemente en varios cong… [+3259 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Skai.gr"
+            },
+            "author": "Newsroom",
+            "title": "Πανικός στου Φιλοπάππου: Εντοπίστηκε βόας- σφιγκτήρας κάτω από κάθισμα στο θέατρο της Δώρας Στράτου",
+            "description": "Το ερπετό είδαν περαστικοί οι οποίοι έντρομοι ειδοποίησαν την οργάνωση ΑΝΙΜΑ που έσπευσε να το περισυλλέξει",
+            "url": "https://www.skai.gr/news/greece/filopappou-voas-skorpise-ton-tromo-stous-perastikous",
+            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/voas.png?itok=HMtVGlO0",
+            "publishedAt": "2024-12-01T16:46:53Z",
+            "content": "Your browser does not support the audio element. \r\n.\r\n ,   .\r\n . .\r\n :\r\n , . . , , , .\r\n , . , , .\r\n, , , , .\r\n (): , , . .\r\n .Skai.gr Google News .\r\n© 2024 skai.gr - All Rights Reserved"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "Gizmodo Deals",
+            "title": "The Sonos Beam Soundbar Is Now at a Record Low For Cyber Monday, With Amazon Crushing Its Price",
+            "description": "This Sonos Beam will be one of the best-selling soundbars this Cyber Monday.",
+            "url": "https://gizmodo.com/the-sonos-beam-soundbar-is-now-at-a-record-low-for-cyber-monday-with-amazon-crushing-its-price-2000532467",
+            "urlToImage": "https://gizmodo.com/app/uploads/2024/11/sonos-beam-2.jpg",
+            "publishedAt": "2024-12-01T16:45:05Z",
+            "content": "Sonos has established itself as a leading name in the soundbar market, particularly for consumers seeking high-quality audio experiences. The brand focuses on Wi-Fi connectivity rather than Bluetooth… [+2218 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Steve Cuozzo",
+            "title": "NYC office tower spending $30M in upgrades on ameneties like bowling, golf, speakeasy",
+            "description": "The latest midtown location to join the fun-for-tenants party is Global Holdings’ Art Deco-style 99 Park Ave. at East 40th Street. The firm’s $30 million investment will bring the 1950s-vintage property a redesigned lobby and a tenants’ amenities package, inc…",
+            "url": "https://nypost.com/2024/12/01/business/nyc-office-tower-spending-30m-in-upgrades-on-ameneties-like-bowling-golf-speakeasy/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/12/99-park-avenue-lures-several-94501396.jpg?quality=75&strip=all&w=1024",
+            "publishedAt": "2024-12-01T16:44:53Z",
+            "content": "The latest midtown location to join the fun-for-tenants party is Global Holdings Art Deco-style 99 Park Ave. at East 40th Street.\r\nThe firm’s $30 million investment will bring the 1950s-vintage prope… [+1202 chars]"
+        }
+    ]
+}

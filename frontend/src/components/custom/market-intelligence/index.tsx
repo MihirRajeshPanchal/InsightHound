@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 import React from "react"
 import { CompanyCard } from "./company-card"
 import Loading from "@/components/loading"
+import News from "./news"
 
 export default function MarketIntelligence() {
 	const { user } = useAuth()
@@ -28,6 +29,7 @@ export default function MarketIntelligence() {
 		<div className="flex flex-col gap-6 p-6">
 			<h2 className="font-bold text-2xl">Market Intelligence</h2>
 			<CompanyCard company={data} />
+			<News />
 		</div>
 	)
 }
