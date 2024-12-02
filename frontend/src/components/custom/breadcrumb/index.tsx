@@ -27,6 +27,7 @@ export default function DashboardBreadCrumb() {
 		"audience-outreach": "Engage with your audience",
 		"audience-segments": "Segment your audience",
 		"hound-board": "Plot your roadmap",
+		"product-comparison": "Compare your products",
 	}
 	function getPath(i: number): string {
 		return "/" + path.slice(0, i + 1).join("/")

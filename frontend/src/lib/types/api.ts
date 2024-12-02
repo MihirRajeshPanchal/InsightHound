@@ -183,3 +183,23 @@ export type MockResponse = {
 		percentage: number
 	}[]
 }
+
+export type Review = {
+  reviewer_name: string;
+  reviewer_rating: string;
+  reviewer_comment: string;
+};
+
+export type Product = {
+  company_name: string;
+  product_name: string;
+  product_pricing: string;
+  product_reviews: Review[];
+};
+
+export type Products = Product[];
+
+export type GetProductComparisonBody ={
+  id : string,
+  product_name: string
+}

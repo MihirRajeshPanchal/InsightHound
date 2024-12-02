@@ -41,6 +41,10 @@ const data = {
 					url: "/dashboard/competitor-mapping",
 				},
 				{
+					title: "Product Comparison",
+					url: "/dashboard/product-comparison",
+				},
+				{
 					title: "HoundBot",
 					url: "/dashboard/strategic-insights",
 				},
