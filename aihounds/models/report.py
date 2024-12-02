@@ -5,4 +5,3 @@ class HTMLReport(BaseModel):
 
 class ReportRequest(BaseModel):
     id: str
-    product_name: str

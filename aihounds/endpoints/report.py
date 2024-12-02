@@ -16,7 +16,7 @@ def get_report(request: ReportRequest):
             company_details = "Company details not found"
             print("Company details not found")
         
-        product_comparison = mongo_client.read_by_key_value("product", "unique_id", request.id + "_" + request.product_name)
+        product_comparison = mongo_client.read_by_key_value("product", "unique_id", request.id)
         if not product_comparison:
             product_comparison = "Product comparison not found"
             print("Product comparison not found")
