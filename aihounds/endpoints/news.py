@@ -19,7 +19,7 @@ async def fetch_news(request: NewsRequest):
     query = company_data['name']
     from_date = datetime.now() - relativedelta(months=1)
     from_date_str = from_date.strftime("%Y-%m-%d")
-    url = f"{BASE_URL}?q={query}&from={from_date_str}&sortBy=publishedAt&apiKey={NEWS_API_KEY}"
+    url = f"{BASE_URL}?q={query}&from={from_date_str}&sortBy=publishedAt&apiKey={NEWS_API_KEY}&language=en"
     print(url)
     response = requests.get(url)
 
