@@ -22,7 +22,11 @@ export default function FeatureForm({ onSubmit, setValue, value, mutation }: Fea
                 Enter the product you want to get comparisons for
             </h1>
             <div className="space-y-4 pb-2 w-full max-w-screen-md">
-                <Input className='w-full' value={value} onChange={(e) => setValue(e.target.value)} />
+                <Input onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        onSubmit()
+                    }
+                }} className='w-full' value={value} onChange={(e) => setValue(e.target.value)} />
                 <RainbowButton disabled={isPending} className='w-full' onClick={onSubmit}>Get competitors</RainbowButton>
             </div>
         </div>
