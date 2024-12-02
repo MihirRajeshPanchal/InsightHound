@@ -8140,3 +8140,74 @@ export const heatmapData = [
 		int: 0.1111111111,
 	},
 ]
+
+export const sampleProductComparison = [
+    {
+        "company_name": "Google",
+        "product_name": "Gemini",
+        "product_pricing": "Pricing not publicly available",
+        "product_reviews": [
+            {
+                "reviewer_name": "TechCrunch",
+                "reviewer_rating": "4.5/5",
+                "reviewer_comment": "Gemini offers cutting-edge AI capabilities with seamless integration into Google's ecosystem."
+            },
+            {
+                "reviewer_name": "AI Today",
+                "reviewer_rating": "4/5",
+                "reviewer_comment": "A strong contender in the AI space, though pricing details are not transparent."
+            }
+        ]
+    },
+    {
+        "company_name": "Microsoft",
+        "product_name": "Azure AI",
+        "product_pricing": "Pay-as-you-go pricing model",
+        "product_reviews": [
+            {
+                "reviewer_name": "Forbes",
+                "reviewer_rating": "4.7/5",
+                "reviewer_comment": "Azure AI provides robust tools and services with excellent scalability and support."
+            },
+            {
+                "reviewer_name": "Cloud Pro",
+                "reviewer_rating": "4.3/5",
+                "reviewer_comment": "Comprehensive AI solutions with flexible pricing, though can be complex for beginners."
+            }
+        ]
+    },
+    {
+        "company_name": "Amazon",
+        "product_name": "AWS AI",
+        "product_pricing": "Usage-based pricing",
+        "product_reviews": [
+            {
+                "reviewer_name": "ZDNet",
+                "reviewer_rating": "4.6/5",
+                "reviewer_comment": "AWS AI offers a wide range of AI services with powerful infrastructure support."
+            },
+            {
+                "reviewer_name": "TechRadar",
+                "reviewer_rating": "4.4/5",
+                "reviewer_comment": "Highly reliable and scalable AI services, but pricing can be high for extensive use."
+            }
+        ]
+    },
+    {
+        "company_name": "IBM",
+        "product_name": "Watson AI",
+        "product_pricing": "Subscription-based pricing",
+        "product_reviews": [
+            {
+                "reviewer_name": "PCMag",
+                "reviewer_rating": "4.2/5",
+                "reviewer_comment": "Watson AI excels in natural language processing and data analysis, though setup can be complex."
+            },
+            {
+                "reviewer_name": "AI Weekly",
+                "reviewer_rating": "4.0/5",
+                "reviewer_comment": "Strong analytical capabilities with a focus on enterprise solutions, but requires technical expertise."
+            }
+        ]
+    }
+]

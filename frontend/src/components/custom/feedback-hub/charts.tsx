@@ -43,8 +43,8 @@ export default function SurveyResultsCharts({
 							color: COLORS[index % COLORS.length],
 						}
 						return acc
-						// eslint-disable-next-line @typescript-eslint/no-explicit-any
 					},
+					// eslint-disable-next-line @typescript-eslint/no-explicit-any
 					{} as any,
 				)
 
@@ -84,8 +84,8 @@ export default function SurveyResultsCharts({
 																key={`cell-${index}`}
 																fill={
 																	COLORS[
-																		index %
-																			COLORS.length
+																	index %
+																	COLORS.length
 																	]
 																}
 															/>
@@ -128,8 +128,8 @@ export default function SurveyResultsCharts({
 																key={`cell-${index}`}
 																fill={
 																	COLORS[
-																		index %
-																			COLORS.length
+																	index %
+																	COLORS.length
 																	]
 																}
 															/>
