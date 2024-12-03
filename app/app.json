@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app",
+    "name": "HoundMe",
     "slug": "app",
     "version": "1.0.0",
     "newArchEnabled": true,
@@ -30,13 +30,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.app"
     }
   }
 }

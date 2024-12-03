@@ -1,21 +1,32 @@
 import { Tabs } from "expo-router";
-import { FontAwesome5, Foundation } from "@expo/vector-icons";
+import { Foundation, MaterialCommunityIcons } from "@expo/vector-icons";
 import { TabBarIcon } from "~/components/TabBarIcon";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "black",
+        tabBarActiveTintColor: "white",
         tabBarHideOnKeyboard: true,
+        tabBarAccessibilityLabel: "TabBar",
+        tabBarShowLabel: false,
+        // tabBarItemStyle: {
+        //   display: "flex",
+        //   flexDirection: "column"
+        // },
+        tabBarStyle: {
+          backgroundColor: "#040404",
+          borderTopColor: "#0A0A0A",
+          borderTopWidth: 1,
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "AppHound",
+          title: "HoundMe",
           tabBarIcon: ({ color }) => (
-            <TabBarIcon Icon={FontAwesome5} size={26} name="home" color={color} />
+            <TabBarIcon Icon={MaterialCommunityIcons} size={26} name="cards" color={color} />
           ),
         }}
       />
