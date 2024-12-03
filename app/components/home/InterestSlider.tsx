@@ -11,6 +11,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
+import { font } from "~/lib/constants";
 
 interface InterestSliderProps {
   interests: string[];
@@ -55,7 +56,7 @@ export function InterestSlider({
   }));
 
   return (
-    <View className="w-full bg-white shadow-md py-4">
+    <View className="w-full bg-zinc-900 shadow-md py-4">
       <Animated.View style={animatedStyle}>
         <ScrollView
           ref={scrollViewRef}
@@ -74,18 +75,17 @@ export function InterestSlider({
                 px-6 py-3 rounded-full mx-2
                 ${index === 0 ? "ml-4" : ""}
                 ${index === interests.length - 1 ? "mr-4" : ""}
-                ${
-                  selectedInterest === interest ? "bg-slate-500" : "bg-gray-100"
+                ${selectedInterest === interest ? "bg-indigo-500" : "bg-gray-100"
                 }
               `}
             >
               <Text
+                style={font.medium}
                 className={`
                   text-base font-medium
-                  ${
-                    selectedInterest === interest
-                      ? "text-white"
-                      : "text-gray-700"
+                  ${selectedInterest === interest
+                    ? "text-white"
+                    : "text-gray-700"
                   }
                 `}
               >
@@ -98,4 +98,3 @@ export function InterestSlider({
     </View>
   );
 }
-  

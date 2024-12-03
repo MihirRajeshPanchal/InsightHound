@@ -1,11 +1,14 @@
 import { Stack } from "expo-router";
-import { View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { useState, useEffect } from "react";
 import { InterestSlider } from "~/components/home/InterestSlider";
 import { CompanyCard } from "~/components/home/CompanyCard";
-import { DOMAINS, BACKEND_URL, FASTAPI_URL } from "~/lib/constants";
+import { DOMAINS, FASTAPI_URL, font } from "~/lib/constants";
 import { Company } from "~/lib/types/prisma";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { sampleCompanies } from "~/lib/data/sample";
+import Loader from "~/components/loader";
+import Loading from "~/components/loading";
 
 export default function Home() {
   const [selectedInterest, setSelectedInterest] = useState(DOMAINS[0]);
@@ -15,6 +18,8 @@ export default function Home() {
 
   const fetchCompanies = async () => {
     try {
+      // setCompanies(sampleCompanies);
+      // return;
       setIsLoading(true);
       const response = await fetch(`${FASTAPI_URL}/getObjects`, {
         method: 'POST',
@@ -61,10 +66,19 @@ export default function Home() {
 
   const currentCompany = companies[currentCompanyIndex] || null;
 
+  console.log("Current Company:", currentCompany);
+
   return (
     <GestureHandlerRootView className="flex-1">
-      <View className="flex-1 bg-gray-50">
-        <Stack.Screen options={{ title: "AppHound" }} />
+      <View className="flex-1 bg-zinc-950">
+        <Stack.Screen options={{
+          title: "AppHound", headerTitleStyle: { fontFamily: font.semiBold.fontFamily }, header: () => (
+            <View className="flex flex-row items-center justify-center gap-4 bg-zinc-950 py-2 px-4">
+              <Image source={require("../../assets/logo.png")} style={{ height: 20, width: 20, objectFit: "contain" }} />
+              <Text style={font.semiBold} className="text-2xl font-semibold text-slate-50 text-center">HoundMe</Text>
+            </View>
+          )
+        }} />
 
         <InterestSlider
           interests={DOMAINS}
@@ -72,15 +86,16 @@ export default function Home() {
           onInterestChange={handleInterestChange}
         />
 
-        <View className="flex-1 items-center justify-center px-4">
-          {currentCompany && (
+        {currentCompany ? (
+          <View className="flex-1 items-center justify-center px-4">
             <CompanyCard
               company={currentCompany}
               onSwipe={handleSwipe}
               isLoadingMore={isLoading}
             />
-          )}
-        </View>
+          </View>
+        ) : <Loader />}
+        {/* <Loader /> */}
       </View>
     </GestureHandlerRootView>
   );
