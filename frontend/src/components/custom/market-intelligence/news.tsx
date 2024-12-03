@@ -27,7 +27,7 @@ export default function News() {
     })
 
     return data && (
-        <div className='grid grid-cols-3 gap-4 px-2'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-2'>
             {data.articles.map((article, index) => (<NewsCard key={index} article={article} />))}
         </div>
     )

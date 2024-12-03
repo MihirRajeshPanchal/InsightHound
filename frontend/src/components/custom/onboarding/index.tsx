@@ -133,8 +133,9 @@ export default function OnboardingForm() {
 			<form
 				ref={formRef}
 				onSubmit={form.handleSubmit(onSubmit)}
-				className="space-y-8 max-w-3xl mx-auto py-10"
+				className="space-y-8 max-w-3xl mx-auto py-10 px-6"
 			>
+				<h1 className="text-2xl font-bold py-2">Onboarding</h1>
 				<FormField
 					control={form.control}
 					name="name"

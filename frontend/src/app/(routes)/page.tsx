@@ -12,15 +12,15 @@ export default function Landing() {
 					<img src="logo.png" alt="Logo" className="w-full max-w-6" />
 					<nav className="content-center">
 						<ul className="flex items-center gap-4 lg:gap-8">
-							<a href="#home">
+							<a href="#home" className="hidden md:block">
 								<li className="text-lg font-medium">Home</li>
 							</a>
-							<a target="_blank" href="https://varad.xyz/contact">
+							<a target="_blank" className="hidden md:block" href="https://varad.xyz/contact">
 								<li className="text-lg ~font-medium text-text/65">
 									Contact us
 								</li>
 							</a>
-							<a href="#features">
+							<a href="#features" className="hidden md:block">
 								<li className="text-lg ~font-medium text-text/65">
 									Services
 								</li>

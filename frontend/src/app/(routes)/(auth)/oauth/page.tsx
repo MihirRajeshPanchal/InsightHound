@@ -4,7 +4,7 @@ import React from "react"
 
 export default function Page() {
 	return (
-		<div className="flex justify-center items-center p-24 min-h-screen">
+		<div className="flex justify-center items-center p-6 md:p-24 min-h-screen">
 			<div className="flex flex-col items-center gap-6">
 				<h1 className="font-semibold text-2xl">
 					pls use email-password

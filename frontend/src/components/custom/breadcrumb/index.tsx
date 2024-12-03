@@ -41,7 +41,7 @@ export default function DashboardBreadCrumb() {
 				{path.map((p, i) => (
 					<React.Fragment key={i}>
 						<BreadcrumbItem
-							className={cn(isActive(i) && "text-white")}
+							className={cn(isActive(i) && "text-white", !isActive(i) && i < path.length - 1 && "hidden md:block")}
 						>
 							<BreadcrumbLink href={getPath(i)}>
 								{pathToTitle[p]}
