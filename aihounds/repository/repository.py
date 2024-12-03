@@ -8,7 +8,7 @@ T = TypeVar("T", bound=BaseModel)
 
 class MongoDBClient:
     def __init__(self, database_url: str, database_name: str):
-        self.client = MongoClient(database_url)
+        self.client = MongoClient(database_url,tls=True,tlsAllowInvalidCertificates=True)
         self.db = self.client[database_name]
 
     def _get_collection(self, collection_name: str):
