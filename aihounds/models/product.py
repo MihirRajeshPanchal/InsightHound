@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
     
 class ProductReview(BaseModel):
-    reviewer_name: Optional[str] = None
     reviewer_rating: Optional[float] = None
     reviewer_comment: Optional[str] = None
 
@@ -12,6 +11,7 @@ class Product(BaseModel):
     company_name: Optional[str] = None
     product_name: Optional[str] = None
     product_pricing: Optional[str] = None
+    product_features: List[str]
     product_reviews: List[ProductReview] = []
 
 class ProductMongo(BaseModel):
