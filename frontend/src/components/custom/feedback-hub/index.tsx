@@ -36,16 +36,16 @@ export default function FeedbackHub() {
 			const response = await fetchAPI<
 				{ form_url: string },
 				TNoParams,
-				QuestionsData
+				QuestionsData & { id: string }
 			>({
 				url: "/typeform",
 				method: "POST",
-				body: data || { questions: [] },
+				body: { questions: data?.questions || [], id: user?.companyId || "" },
 				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 			})
 			return response.data
 		},
-		enabled: !!data,
+		enabled: !!(data && user?.companyId),
 	})
 	if (!data) {
 		return <Loading />
