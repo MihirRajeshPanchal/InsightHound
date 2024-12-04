@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Dict, List, Optional
 from pydantic import BaseModel
 
 
@@ -21,4 +21,11 @@ class TypeformResponse(BaseModel):
 class TypeformMongo(BaseModel):
     id: str
     form_url: str
-    form_id: str
+    form_id: str 
+    
+class ResponseFrequency(BaseModel):
+    question_text: str
+    options: Dict[str, int]
+    
+class ResponseTypeformFrequency(BaseModel):
+    id: str
