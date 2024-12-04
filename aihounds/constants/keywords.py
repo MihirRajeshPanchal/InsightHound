@@ -27,6 +27,7 @@ Guidelines:
 - Each keyword should be a string.
 - Generate keywords which are relevant to the startup details.
 - Generate keywords which would be searched by users to find the startup.
+- Keywords should be which are come across google trends multiple times
 """
 )
 

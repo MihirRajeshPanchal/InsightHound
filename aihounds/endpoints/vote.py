@@ -1,4 +1,4 @@
-from aihounds.models.vote import VoteRequest
+from aihounds.models.vote import CoinsMongo, CoinsRequest, VoteRequest
 from aihounds.constants.hound import mongo_client
 from fastapi import APIRouter
 
@@ -14,5 +14,23 @@ def generate_trends(request: VoteRequest):
             update_data={"userId": request.userId, "companyId": request.companyId, "liked": request.liked}
         )
         return {"message": "Vote updated"}
-    vote_id = mongo_client.create("vote", request)
-    return {"message": "Vote added"}
+    else:
+        coins_data = mongo_client.read_by_key_value("coins", "userId", request.userId)
+        if coins_data:
+            mongo_client.update(
+                "coins",
+                document_id=coins_data[0]["_id"],
+                update_data={"userId": request.userId, "coins": coins_data[0]["coins"] + 1}
+            )
+        else:
+            mongo_client.create("coins", CoinsMongo(userId=request.userId, coins=1))
+        mongo_client.create("vote", request)
+        return {"message": "Vote added"}
+    
+@router.get("/coins")
+def get_votes(request: CoinsRequest):
+    coins = mongo_client.read_by_key_value("coins", "userId", request.userId)
+    if coins:
+        return {"coins": coins[0]["coins"]}
+    else:
+        return {"coins": 0}
