@@ -86,7 +86,7 @@ async def get_typeform_responses(response_request: ResponseTypeformFrequency):
     try:
         async with httpx.AsyncClient() as client:
             response = await client.get(
-                f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z",
+                f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z&workspace_id=QDcqdz",
                 headers={
                     "Authorization": f"Bearer {TYPEFORM_API_TOKEN}",
                     "Content-Type": "application/json"
