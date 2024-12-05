@@ -107,13 +107,13 @@
 }
 
 /* Text Animation */
-svg {
+.iHoundText svg {
 	/*  400px  */
 	width: min(90%, var(--loaderTextWidth, 218px));
 	margin-inline: auto;
 	height: 100%;
 }
-svg path {
+.iHoundText svg path {
 	animation: text-svg var(--loaderDuration, 5s) linear infinite;
 }
 .hound path {
