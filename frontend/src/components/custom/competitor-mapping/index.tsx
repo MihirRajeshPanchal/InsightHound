@@ -41,11 +41,11 @@ export default function CompetitorMapping() {
 		return <Loading />
 	}
 	return (
-		<section className="grow">
-			<div className="compareLtoR | p-2 h-full ~bg-red-300 grid gap-2 grid-cols-[0fr_1fr] peer-checked:grid-cols-[0fr_1fr] has-[.compCard:checked]:grid-cols-[1fr_1fr] transition-[grid-template-columns] duration-500">
+		<section>
+			<div className="compareLtoR | group | overflow-hidden p-2 grid gap-0 grid-cols-[0fr_1fr] peer-checked:grid-cols-[0fr_1fr] has-[.compCard:checked]:gap-4 has-[.compCard:checked]:grid-cols-[1fr_1fr] transition-[grid-template-columns,gap] duration-500">
 				{userData && (
 					<div className="overflow-hidden">
-						<div className="competitorCard | h-full~">
+						<div className="competitorCard w-max group-has-[.compCard:checked]:w-full [interpolate-size:allow-keywords] transition-[width] duration-500">
 							<button className="bg-foreground text-background font-medium rounded-md grid place-items-center w-full my-4">
 								<label
 									htmlFor="compareBack"
@@ -65,15 +65,15 @@ export default function CompetitorMapping() {
 						</div>
 					</div>
 				)}
-				<div className="grid gap-4 grid-cols-[repeat(3,1fr)] has-[#compCompareOne:checked]:grid-cols-[1fr_repeat(2,0fr)] has-[#compCompareTwo:checked]:grid-cols-[0fr_1fr_0fr] has-[#compCompareThree:checked]:grid-cols-[repeat(2,0fr)_1fr]">
+				<div className="grid gap-4 grid-cols-[repeat(3,1fr)] has-[.compCard:checked]:gap-0 has-[#compCompareOne:checked]:grid-cols-[1fr_0fr_0fr] has-[#compCompareTwo:checked]:grid-cols-[0fr_1fr_0fr] has-[#compCompareThree:checked]:grid-cols-[0fr_0fr_1fr] transition-[grid-template-columns,gap] duration-500">
 					{data[0] && (
 						<div className="overflow-hidden">
-							<div className="competitorCard | h-full~">
+							<div className="competitorCard">
 								<label
 									htmlFor="compCompareOne"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" }),
+										buttonVariants({ variant: "default" })
 									)}
 								>
 									Compare
@@ -90,12 +90,12 @@ export default function CompetitorMapping() {
 					)}
 					{data[1] && (
 						<div className="overflow-hidden">
-							<div className="competitorCard | h-full~">
+							<div className="competitorCard">
 								<label
 									htmlFor="compCompareTwo"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" }),
+										buttonVariants({ variant: "default" })
 									)}
 								>
 									Compare
@@ -112,12 +112,12 @@ export default function CompetitorMapping() {
 					)}
 					{data[2] && (
 						<div className="overflow-hidden">
-							<div className="competitorCard | h-full~">
+							<div className="competitorCard">
 								<label
 									htmlFor="compCompareThree"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" }),
+										buttonVariants({ variant: "default" })
 									)}
 								>
 									Compare
