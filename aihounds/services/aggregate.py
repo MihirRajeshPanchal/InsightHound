@@ -141,7 +141,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
                     agent_response = Message(
                         id=conversation_id, 
                         role="ai", 
-                        action=mapping.get(tool_name, "query"), 
+                        action=mapping.get(tool_name, "response_md"), 
                         data=str(tool_output), 
                         tool_call_id=tool_call["id"]
                     )
