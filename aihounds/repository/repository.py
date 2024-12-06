@@ -73,3 +73,15 @@ class MongoDBClient:
             doc["_id"] = str(doc["_id"])
             result.append(doc)
         return result
+    
+    def find(self, collection_name: str, query: Dict[str, Any], limit: int = 0) -> List[Dict[str, Any]]:
+        try:
+            collection = self._get_collection(collection_name)
+            documents = collection.find(query).sort('created_at', 1).limit(limit)
+            result = []
+            for doc in documents:
+                doc["_id"] = str(doc["_id"])
+                result.append(doc)
+            return result
+        except Exception as e:
+            return []

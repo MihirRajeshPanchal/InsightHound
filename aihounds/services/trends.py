@@ -1,8 +1,31 @@
 from aihounds.constants.hound import SERPAPI_KEY
 from serpapi import GoogleSearch
+from langchain_core.tools import tool
 
-
+@tool
 def get_trends_search(query,geo):
+    """
+    Fetches Google Trends data for a specific query and geographic region.
+
+    This function uses the SERP API with the `google_trends` engine to fetch 
+    data on regional interest levels for a given search query. The results
+    include details about the location, interest value, and geographic coordinates.
+
+    Args:
+        query (str): The search query to analyze.
+        geo (str): The geographical code (e.g., "IN" for India) to specify the region for trends.
+
+    Returns:
+        List[dict]: A list of dictionaries representing interest levels by region. Each dictionary includes:
+            - `coordinates` (dict): Contains `lat` (latitude) and `lng` (longitude).
+            - `location` (str): The name of the location.
+            - `max_value_index` (int): The index of the maximum value.
+            - `value` (str): The interest value as a string.
+            - `extracted_value` (int): The numeric value of the interest level.
+
+    Note:
+        If the SERP API does not return data, a default set of results is provided.
+    """
     params = {
         "engine": "google_trends",
         "q": query,
