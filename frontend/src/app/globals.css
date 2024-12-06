@@ -123,6 +123,11 @@ body {
 	color: hsl(var(--text));
 }
 
+.compareLtoR:has(.compCard:checked)
+	.competitorCard:has(.compCard:not(:checked)) {
+	width: max-content;
+}
+
 @keyframes aspectAnimate {
 	to {
 		aspect-ratio: 0.25;

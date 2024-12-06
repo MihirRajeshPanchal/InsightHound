@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function Landing() {
 	return (
 		<Lenis>
-			<div className="landingWrapper | relative">
+			<div className="landingWrapper | relative scroll-smooth">
 				<header className="fixed z-50 top-7 left-1/2 -translate-x-1/2 w-[min(768px,100%_-_1rem)] px-8 py-3 flex justify-between rounded-full bg-black/20 backdrop-blur-xl backdrop-saturate-150 border border-text/20">
 					<img src="logo.png" alt="Logo" className="w-full max-w-6" />
 					<nav className="content-center">
@@ -15,7 +15,11 @@ export default function Landing() {
 							<a href="#home" className="hidden md:block">
 								<li className="text-lg font-medium">Home</li>
 							</a>
-							<a target="_blank" className="hidden md:block" href="https://varad.xyz/contact">
+							<a
+								target="_blank"
+								className="hidden md:block"
+								href="https://varad.xyz/contact"
+							>
 								<li className="text-lg ~font-medium text-text/65">
 									Contact us
 								</li>
