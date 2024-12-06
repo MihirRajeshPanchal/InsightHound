@@ -44,3 +44,33 @@ export function generateMockResponses(questions: Question[]): MockResponse[] {
 		}
 	})
 }
+
+export function convertMarkdownToHtml(markdown: string): string {
+	console.log({ markdown })
+	let html = markdown
+		.replace(/^### (.+)$/gm, "<h3>$1</h3>")
+		.replace(/^## (.+)$/gm, "<h2>$1</h2>")
+		.replace(/^# (.+)$/gm, "<h1>$1</h1>")
+
+	html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+
+	html = html
+		.replace(/_(.*?)_/g, "<em>$1</em>")
+		.replace(/\*(.*?)\*/g, "<em>$1</em>")
+
+	html = html.replace(/`([^`]+)`/g, "<code>$1</code>")
+
+	html = html.replace(/```([\s\S]*?)```/g, "<pre><code>$1</code></pre>")
+	html = html.replace(/~~~([\s\S]*?)~~~/g, "<pre><code>$1</code></pre>")
+
+	html = html.replace(/^> (.+)$/gm, "<blockquote>$1</blockquote>")
+
+	html = html.replace(/^\s*[-*] (.+)$/gm, "<li>$1</li>")
+	html = html.replace(/(<li>.*<\/li>)/g, "<ul>$1</ul>")
+
+	html = html.replace(/\[([^\]]+)]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+
+	html = html.replace(/\\n/g, "<br>")
+
+	return html
+}

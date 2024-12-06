@@ -25,9 +25,8 @@ const formSchema = z.object({
 	domain: z.string(),
 })
 
-export default function AudienceOutreachForm() {
-	const [message, setMessage] = React.useState<string>("")
-	const [generated, setGenerated] = React.useState<boolean>(false)
+export default function LinkedinForm({ data }: { data: string }) {
+	const [message, setMessage] = React.useState<string>(data)
 	const { user } = useAuth()
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -35,29 +34,6 @@ export default function AudienceOutreachForm() {
 			linkedin_urls: [],
 		},
 	})
-
-	async function onSubmit(values: z.infer<typeof formSchema>) {
-		if (!user) return
-		try {
-			toast.loading("Generating outreach messages for linkedin...")
-			const resp = await fetchAPI({
-				url: "/generate_linkedin",
-				method: "POST",
-				body: {
-					linkedin_urls: values.linkedin_urls,
-					domain: values.domain,
-					user_id: user.id,
-				},
-				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
-			})
-			setGenerated(true)
-			setMessage(resp.data?.detail || "")
-			toast.success("Outreach messages generated!")
-		} catch (error) {
-			console.error("Form submission error", error)
-			toast.error("Failed to submit the form. Please try again.")
-		}
-	}
 
 	async function onSend() {
 		if (!user) return
@@ -85,8 +61,8 @@ export default function AudienceOutreachForm() {
 		<>
 			<Form {...form}>
 				<form
-					onSubmit={form.handleSubmit(onSubmit)}
-					className="space-y-8 max-w-3xl mx-auto py-10"
+					onSubmit={form.handleSubmit(onSend)}
+					className="space-y-8 w-full mx-auto py-10"
 				>
 					<FormField
 						control={form.control}
@@ -129,25 +105,18 @@ export default function AudienceOutreachForm() {
 							</FormItem>
 						)}
 					/>
-					{!generated && (
-						<RainbowButton className="w-full" type="submit">
-							Generate Message
+					<div className="flex flex-col gap-4 mx-auto">
+						<Textarea
+							value={message}
+							rows={25}
+							onChange={(e) => setMessage(e.target.value)}
+						/>
+						<RainbowButton className="w-full" onClick={onSend}>
+							Send Message
 						</RainbowButton>
-					)}
+					</div>
 				</form>
 			</Form>
-			{generated && (
-				<div className="flex flex-col gap-4 max-w-3xl mx-auto">
-					<Textarea
-						value={message}
-						rows={25}
-						onChange={(e) => setMessage(e.target.value)}
-					/>
-					<RainbowButton className="w-full" onClick={onSend}>
-						Send Message
-					</RainbowButton>
-				</div>
-			)}
 		</>
 	)
 }

@@ -1,3 +1,12 @@
+import {
+	ArticlesApiResponse,
+	CompanyData,
+	FormUrlResponse,
+	QuestionsData,
+	Segment,
+} from "./types/api"
+import { ColumnTypeEnum, GetHoundBoardResponse } from "./types/kanban"
+
 export const heatmapData = [
 	{
 		lat: 26.9274367705,
@@ -8142,1383 +8151,3466 @@ export const heatmapData = [
 ]
 
 export const sampleProductComparison = [
-    {
-        "company_name": "Google",
-        "product_name": "Gemini",
-        "product_pricing": "Pricing not publicly available",
-        "product_reviews": [
-            {
-                "reviewer_name": "TechCrunch",
-                "reviewer_rating": "4.5/5",
-                "reviewer_comment": "Gemini offers cutting-edge AI capabilities with seamless integration into Google's ecosystem."
-            },
-            {
-                "reviewer_name": "AI Today",
-                "reviewer_rating": "4/5",
-                "reviewer_comment": "A strong contender in the AI space, though pricing details are not transparent."
-            }
-        ]
-    },
-    {
-        "company_name": "Microsoft",
-        "product_name": "Azure AI",
-        "product_pricing": "Pay-as-you-go pricing model",
-        "product_reviews": [
-            {
-                "reviewer_name": "Forbes",
-                "reviewer_rating": "4.7/5",
-                "reviewer_comment": "Azure AI provides robust tools and services with excellent scalability and support."
-            },
-            {
-                "reviewer_name": "Cloud Pro",
-                "reviewer_rating": "4.3/5",
-                "reviewer_comment": "Comprehensive AI solutions with flexible pricing, though can be complex for beginners."
-            }
-        ]
-    },
-    {
-        "company_name": "Amazon",
-        "product_name": "AWS AI",
-        "product_pricing": "Usage-based pricing",
-        "product_reviews": [
-            {
-                "reviewer_name": "ZDNet",
-                "reviewer_rating": "4.6/5",
-                "reviewer_comment": "AWS AI offers a wide range of AI services with powerful infrastructure support."
-            },
-            {
-                "reviewer_name": "TechRadar",
-                "reviewer_rating": "4.4/5",
-                "reviewer_comment": "Highly reliable and scalable AI services, but pricing can be high for extensive use."
-            }
-        ]
-    },
-    {
-        "company_name": "IBM",
-        "product_name": "Watson AI",
-        "product_pricing": "Subscription-based pricing",
-        "product_reviews": [
-            {
-                "reviewer_name": "PCMag",
-                "reviewer_rating": "4.2/5",
-                "reviewer_comment": "Watson AI excels in natural language processing and data analysis, though setup can be complex."
-            },
-            {
-                "reviewer_name": "AI Weekly",
-                "reviewer_rating": "4.0/5",
-                "reviewer_comment": "Strong analytical capabilities with a focus on enterprise solutions, but requires technical expertise."
-            }
-        ]
-    }
+	{
+		company_name: "Google",
+		product_name: "Gemini",
+		product_pricing: "Pricing not publicly available",
+		product_reviews: [
+			{
+				reviewer_name: "TechCrunch",
+				reviewer_rating: "4.5/5",
+				reviewer_comment:
+					"Gemini offers cutting-edge AI capabilities with seamless integration into Google's ecosystem.",
+			},
+			{
+				reviewer_name: "AI Today",
+				reviewer_rating: "4/5",
+				reviewer_comment:
+					"A strong contender in the AI space, though pricing details are not transparent.",
+			},
+		],
+	},
+	{
+		company_name: "Microsoft",
+		product_name: "Azure AI",
+		product_pricing: "Pay-as-you-go pricing model",
+		product_reviews: [
+			{
+				reviewer_name: "Forbes",
+				reviewer_rating: "4.7/5",
+				reviewer_comment:
+					"Azure AI provides robust tools and services with excellent scalability and support.",
+			},
+			{
+				reviewer_name: "Cloud Pro",
+				reviewer_rating: "4.3/5",
+				reviewer_comment:
+					"Comprehensive AI solutions with flexible pricing, though can be complex for beginners.",
+			},
+		],
+	},
+	{
+		company_name: "Amazon",
+		product_name: "AWS AI",
+		product_pricing: "Usage-based pricing",
+		product_reviews: [
+			{
+				reviewer_name: "ZDNet",
+				reviewer_rating: "4.6/5",
+				reviewer_comment:
+					"AWS AI offers a wide range of AI services with powerful infrastructure support.",
+			},
+			{
+				reviewer_name: "TechRadar",
+				reviewer_rating: "4.4/5",
+				reviewer_comment:
+					"Highly reliable and scalable AI services, but pricing can be high for extensive use.",
+			},
+		],
+	},
+	{
+		company_name: "IBM",
+		product_name: "Watson AI",
+		product_pricing: "Subscription-based pricing",
+		product_reviews: [
+			{
+				reviewer_name: "PCMag",
+				reviewer_rating: "4.2/5",
+				reviewer_comment:
+					"Watson AI excels in natural language processing and data analysis, though setup can be complex.",
+			},
+			{
+				reviewer_name: "AI Weekly",
+				reviewer_rating: "4.0/5",
+				reviewer_comment:
+					"Strong analytical capabilities with a focus on enterprise solutions, but requires technical expertise.",
+			},
+		],
+	},
 ]
 
-export const sampleNewsResponse = {
-    "status": "ok",
-    "totalResults": 53845,
-    "articles": [
-        {
-            "source": {
-                "id": null,
-                "name": "Giga"
-            },
-            "author": "Marvin Basse",
-            "title": "Amazon verkauft 100-Watt-Ladegerät zum Tiefpreis",
-            "description": "Bei Amazon bekommt ihr derzeit ein Multi-Ladegerät des Herstellers Ugreen mit 100 Watt Leistung zum absoluten Tiefpreis. Wir haben die Details des Angebots für euch.",
-            "url": "https://www.giga.de/tech/amazon-verkauft-100-watt-ladegeraet-zum-tiefpreis--01JDHNC3ECMJ65S2S8NY9V6XFH",
-            "urlToImage": "https://static.giga.de/88/d0/17/6280eace1fc3ab6770e11a6cf2_cmUgMTkyMCAxMDgwAzgwNjBjZmE3ZWFm.jpeg",
-            "publishedAt": "2024-12-01T18:42:00Z",
-            "content": "Bei Amazon bekommt ihr derzeit ein Multi-Ladegerät des Herstellers Ugreen mit 100 Watt Leistung zum absoluten Tiefpreis. Wir haben die Details des Angebots für euch.\r\n4-in-1-Ladegerät mit 100 Watt Le… [+1972 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Tylko Raków goni Lecha! Wpadki Legii i Jagiellonii [TABELA]",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/yUQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9lMmMwNGU1YmRjNTBiYzc2NTZjNWJiZTU3MTIwNmE1YS5wbmeTlQMAAM0HgM0EOJMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />Status quo czołówki lig…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/tylko-rakow-goni-lecha-wpadki-legii-i-jagiellonii-tabela/z34bsn3",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/QNTk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9lMmMwNGU1YmRjNTBiYzc2NTZjNWJiZTU3MTIwNmE1YS5wbmeTlQMAAM0HgM0EOJMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
-            "publishedAt": "2024-12-01T18:41:58Z",
-            "content": "W sobot Raków Czstochowa przywróci strat do Lecha Pozna do trzech punktów. Druyna Marka Papszuna wygraa z Widzewem ód 3:2, a Kolejorz dzie wczeniej straci punkty, bezbramkowo remisujc z Puszcz Niepoo… [+966 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Generación Xbox"
-            },
-            "author": "Jose Angel",
-            "title": "Mientras el desarrollo de Anno 1800 llega a su fin, Ubisoft muestra nueva info sobre Anno 117",
-            "description": "Anno 117: Pax Romana llegará a Steam, Ubisoft Connect, Epic Games Store, Xbox Series X|S y PlayStation 5.",
-            "url": "https://generacionxbox.com/mientras-el-desarrollo-de-anno-1800-llega-a-su-fin-ubisoft-muestra-nueva-info-sobre-anno-117/",
-            "urlToImage": "https://generacionxbox.com/wp-content/uploads/2024/12/anno-117-pax-romana.jpg",
-            "publishedAt": "2024-12-01T18:40:57Z",
-            "content": "Anno 117: Pax Romana llegará a Steam, Ubisoft Connect, Epic Games Store, Xbox Series X|S y PlayStation 5.\r\nMás historias en la categoría PC\r\n<table><tr><td>No te pierdas nada y ¡Síguenos en Google Ne… [+2829 chars]"
-        },
-        {
-            "source": {
-                "id": "abc-news-au",
-                "name": "ABC News (AU)"
-            },
-            "author": "Alysia Thomas-Sam",
-            "title": "'Very naive': Mum's warning after her nine-year-old was targeted by a predator on Roblox",
-            "description": "Roblox is one of the most popular platforms in the world, but there are increasing concerns over the ability for users to message each other directly through games, with young children being lured off-platform and exposed to disturbing content.",
-            "url": "https://www.abc.net.au/news/2024-12-02/roblox-9-year-old-child-targeted-by-sexual-predator/104659312",
-            "urlToImage": "https://live-production.wcms.abc-cdn.net.au/33235ffb283e3c9ba85bd91046f43ba6?impolicy=wcms_watermark_news&cropH=2813&cropW=5000&xPos=0&yPos=260&width=862&height=485&imformat=generic",
-            "publishedAt": "2024-12-01T18:40:49Z",
-            "content": "Roblox is one of the most popular platforms in the world: it is a gateway to a massive online universe hosting a seemingly endless number of mini-games, played by about 90 million users from 190 coun… [+6917 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "netzwelt"
-            },
-            "author": "Birte Keller",
-            "title": "Black Friday: Amazon geht in die Verlängerung! Das sind die letzten gültigen Deals",
-            "description": "Amazons Black Friday geht in die Verlängerung! Wir führen euch durch den letzten Tag des Black Weekends bei Amazon und zeigen euch die Deals, die immer noch laufen.\nDieser Artikel wurde einsortiert unter \nAmazon,Schnäppchen,Hersteller,Black Friday 2024.",
-            "url": "https://www.netzwelt.de/schnaeppchen/235843-black-friday-amazon-geht-verlaengerung-deals-letzten-gueltigen.html",
-            "urlToImage": "https://img.netzwelt.de/dw1600_dh900_sw1600_sh900_sx0_sy0_sr16x9_nu2/picture/original/2024/11/black-friday-amazon-417973.jpeg",
-            "publishedAt": "2024-12-01T18:37:02Z",
-            "content": "BLACK FRIDAY 2024\r\nAmazons Black Friday geht in die Verlängerung! Wir führen euch durch den letzten Tag des Black Weekends bei Amazon und zeigen euch die Deals, die immer noch laufen.\r\nBei Amazon hab… [+11694 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Skai.gr"
-            },
-            "author": "Newsroom",
-            "title": "Ο Τραμπ διόρισε και άλλον... συμπέθερο - Οι άνθρωποι του προέδρου είναι όλοι «δικοί» του",
-            "description": "Χθες Σάββατο, ο Ντόναλντ Τραμπ διόρισε έναν άλλο συμπέθερό του, τον Τσαρλς Κούσνερ,  πρέσβη των Ηνωμένων Πολιτειών στη Γαλλία",
-            "url": "https://www.skai.gr/news/world/tramp-diorise-kai-allon-sympethero",
-            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/boulos_ap.jpg?itok=7H_HptN8",
-            "publishedAt": "2024-12-01T18:33:00Z",
-            "content": ",     ,   , ( ).\r\n« . », , / .\r\n , . 2022 , , .\r\n , .\r\n« , », .\r\n , , .\r\n , , .\r\n .\r\n  \r\n 1 .\r\n: , \r\n: , Key Square Group (Fed)\r\n: , . , .\r\n : , , Fox News\r\n« » ( ): \r\n: . , , \r\n: , (WWE), \r\n: , \r\n (… [+349 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Shiftdelete.net"
-            },
-            "author": "Ömer Dursun",
-            "title": "Google polislerin yerini göstermeye başladı, ortalık karıştı!",
-            "description": "Google Haritalar, polis bildirimlerini sessiz sedasız yeniledi. Sürücüler artık belirli bir Hız Tuzağı seçeneği yerine, çok daha kapsamlı “Polis” bildirim özelliğinden faydalanacak. Bu değişiklik; trafik durdurma, trafik yönlendirme veya sadece bölgede bulunm…",
-            "url": "https://shiftdelete.net/google-haritalar-icin-polis-bildirimi",
-            "urlToImage": "https://ares.shiftdelete.net/2024/06/google-haritalar-gecmis-zaman-cizelgesi-1-e1717614779563.jpg",
-            "publishedAt": "2024-12-01T18:30:39Z",
-            "content": "Google Haritalar, polis bildirimlerini sessiz sedasz yeniledi. Sürücüler artk belirli bir Hz Tuza seçenei yerine, çok daha kapsaml “Polis” bildirim özelliinden faydalanacak. Bu deiiklik; trafik durdu… [+1226 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Smartmania.cz"
-            },
-            "author": "Michal Maňák",
-            "title": "Shizuku je geniální aplikace pro Android: co to žere, kde to spí a jak se to krmí?",
-            "description": "<ul>\n<li>Android utahuje šrouby v tom, co uživatelům dovolí</li>\n<li>Blokuje například přístup k některým oprávněním nebo instalaci starších verzí aplikací</li>\n<li>Shizuku umožňuje přistupovat k systémovým API bez potřeby ADB a počítače poblíž</li>\n</ul>\nNej…",
-            "url": "https://smartmania.cz/shizuku-je-genialni-aplikace-pro-android-co-to-zere-kde-to-spi-a-jak-se-to-krmi/",
-            "urlToImage": "https://smartmania.cz/wp-content/uploads/2024/10/Android_pomocnik_MJ.jpg",
-            "publishedAt": "2024-12-01T18:30:31Z",
-            "content": "<ul><li>Android utahuje rouby v tom, co uivatelm dovolí</li><li>Blokuje napíklad pístup k nkterým oprávnním nebo instalaci starích verzí aplikací</li><li>Shizuku umouje pistupovat k systémovým API be… [+7416 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Android Headlines"
-            },
-            "author": "Jean Leon",
-            "title": "Australia passes law banning teens from social media",
-            "description": "A week after proposing it, Australia has passed the law banning teens from social media platforms, becoming the first country to do so.",
-            "url": "https://www.androidheadlines.com/2024/12/australia-passes-law-banning-teens-from-social-media.html",
-            "urlToImage": "https://www.androidheadlines.com/wp-content/uploads/2024/05/Meta-Facebook-logo-AM-AH-3-jpg.webp",
-            "publishedAt": "2024-12-01T18:29:44Z",
-            "content": "Recently, a proposed law in Australia surprised the tech industry. Lawmakers filed a bill to ban under-16s from accessing social media platforms. Shortly after, the law banning teens from social medi… [+3393 chars]"
-        },
-        {
-            "source": {
-                "id": "the-times-of-india",
-                "name": "The Times of India"
-            },
-            "author": "Himanshi Lohchab",
-            "title": "India driving growth when Europe sales slowing, US and China flat, says Oppo executive",
-            "description": "India emerges as the fastest-growing smartphone market, driven by a shift towards premium devices in smaller cities. Oppo's market share grows significantly as it aims to deliver 50 million AI-powered phones globally by end of 2024. Collaborations with Google…",
-            "url": "https://economictimes.indiatimes.com/industry/cons-products/electronics/small-town-demand-for-premium-phones-to-drive-india-sales-oppo/articleshow/115874176.cms",
-            "urlToImage": "https://img.etimg.com/thumb/msid-115874209,width-1200,height-630,imgsize-19508,overlay-economictimes/articleshow.jpg",
-            "publishedAt": "2024-12-01T18:29:33Z",
-            "content": "Mumbai: India is the fastest-growing smartphone market at a time when sales in Europe are on a decline and the US and China have plateaued, said Peter Dohyung Lee, head of product strategy at Oppo, a… [+2690 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Bruk-Bet Termalica nie zwalnia tempa! Taką ma przewagę w tabeli",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/JnQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9kZDQzZGQzZWQyYzc1YjU5M2M5MTM0ZjQ4ZjE4MGQ4Ni5qcGeTlQMAzFzNC7jNBpeTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Nie ma mocnych na Bruk…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/1-liga/bruk-bet-termalica-nie-zwalnia-tempa-taka-ma-przewage-w-tabeli/ek8j1wl",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/iq9k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9kZDQzZGQzZWQyYzc1YjU5M2M5MTM0ZjQ4ZjE4MGQ4Ni5qcGeTlQMAzFzNC7jNBpeTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
-            "publishedAt": "2024-12-01T18:29:22Z",
-            "content": "W niedziel w ramach 18. kolejki Betclic I ligi rozegrano trzy spotkania, które przyniosy spore emocje. Zarówno Chrobry Gogów, jak i Bruk-Bet Termalica Nieciecza odniosy zwycistwa które mog okaza si k… [+1758 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Publickey1.jp"
-            },
-            "author": "jniino",
-            "title": "クラウドインフラのシェア、AWSが33％でトップ、2位Azureが20％、3位Googleが10％、前四半期からの変動なし。Canalysが2024年第3四半期の調査結果を発表",
-            "description": "調査会社のCanalysは、2024年第3四半期におけるグローバルなクラウドインフラ市場に関する調査結果を発表しました。 同社はIaaSとベアメタル、プラットフォームサービスを総合してクラウドインフラ市場としています。 クラウドインフラのグ...",
-            "url": "https://www.publickey1.jp/blog/24/aws332azure203google10canalys20243.html",
-            "urlToImage": "https://www.publickey1.jp/2024/canalys2024q3.png",
-            "publishedAt": "2024-12-01T18:28:36Z",
-            "content": "調査会社のCanalysは、2024年第3四半期におけるグローバルなクラウドインフラ市場に関する調査結果を発表しました。 同社はIaaSとベアメタル、プラットフォームサービスを総合してクラウドインフラ市場としています。 クラウドインフラのグローバルな市場規模は1年前から21％成長して820億ドル（1ドル150円換算で12兆3000億円）。シェアトップはAWSで33％、2位はMicrosoft A… [+42 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Yahoo Entertainment"
-            },
-            "author": "Amy Skorheim",
-            "title": "The best Cyber Monday speaker deals for 2024: Big savings on JBL, Sonos, Echo, Marshall and more",
-            "description": "We’ve tested hundreds of speakers over the years, and we put the best ones into our buying guides — namely the ones for soundbars, portable Bluetooth speakers and smart speakers. Now that Cyber Monday has arrived, we’re seeing notable discounts on many of our…",
-            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_b0ef493c-d178-4e34-96e0-6361c076e1a3",
-            "urlToImage": null,
-            "publishedAt": "2024-12-01T18:28:25Z",
-            "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "New York Post"
-            },
-            "author": "Carl Campanile",
-            "title": "Neighbors worried former St. John’s campus will turn into housing development as they brace for news on sale",
-            "description": "Residents in a well-to-do Staten Island hill community overlooking New York harbor are worried that the former neighboring campus belonging to St. John's University will be converted into  low income housing.",
-            "url": "https://nypost.com/2024/12/01/us-news/neighbors-worried-former-st-johns-campus-will-turn-into-housing-as-they-brace-for-news-on-sale/",
-            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/12/st-johns-university-staten-island-94587859.jpg?quality=75&strip=all&w=1024",
-            "publishedAt": "2024-12-01T18:28:05Z",
-            "content": "Neighbors of a former St. Johns University campus on Staten Island are worried the bucolic site will become low-income housing but officials say nothing is in the works yet.\r\nLocals in the hill commu… [+2811 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Corriere.it"
-            },
-            "author": "Redazione Cultura",
-            "title": "Byron, eccentrico barone-amatore: il focus nell’App de «la Lettura»",
-            "description": "Nel Tema del Giorno, un ritratto del poeta. Su «la Lettura» in edicola e App, l’apertura del nuovo Museo Byron e del Museo del Risorgimento a Palazzo Guiccioli a Ravenna",
-            "url": "https://www.corriere.it/la-lettura/24_novembre_29/feste-teatro-con-bambini-focus-nell-app-de-la-lettura-0aaca7bc-ae77-11ef-a6c9-b63e2572af7c.shtml",
-            "urlToImage": "https://images2.corriereobjects.it/methode_image/2024/11/29/Cultura/Foto-Cultura-Trattate/byron-U31601089421301VD-U34901509564243x6-526x284@Corriere-Web-Sezioni.jpg",
-            "publishedAt": "2024-12-01T18:27:29Z",
-            "content": "di Redazione CulturaNel Tema del Giorno, un ritratto del poeta. Su «la Lettura» in edicola e App, l’apertura del nuovo Museo Byron e del Museo del Risorgimento a Palazzo Guiccioli a Ravenna\r\nEroe rom… [+3080 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Gazeta.pl"
-            },
-            "author": "Wiktoria Cidyło",
-            "title": "W latach 70. każda chciała nosić \"bananówkę\" jak Rodowicz. Hit PRL-u powraca. Robi talię osy",
-            "description": "W czasach PRL-u uważana była za jeden z najgorętszych trendów w modzie damskiej. Jak wyglądała spódnica bananowa? To kwintesencja kobiecości i wdzięku. Dziś powraca, zyskując nowe oblicze. Sprawdź perełki w sklepach Massimo Dutti, Renee oraz H&M.",
-            "url": "https://kobieta.gazeta.pl/kobieta/7,107881,31504219,w-latach-70-kazda-chciala-nosic-bananowke-jak-rodowicz-hit.html",
-            "urlToImage": "https://bi.im-g.pl/im/21/ca/1c/z30188577IER,Moda-z-PRL.jpg",
-            "publishedAt": "2024-12-01T18:24:00Z",
-            "content": "Moda zatacza koło a niektóre trendy powracają do łask i na nowo opanowują ekspozycje w sklepach. Tak właśnie jest w przypadku spódnic \"bananówy\". Nazwa pochodzi od klinów, które były wycinane w tym m… [+2081 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Forbes.com.mx"
-            },
-            "author": "Forbes Staff",
-            "title": "Verstappen logra su victoria 63 en la F1 durante GP de Lusail",
-            "description": "Forbes México.\n Verstappen logra su victoria 63 en la F1 durante GP de Lusail\n\nFue una carrera que abandonó Sergio Pérez durante el cuadragésimo de los 57 giros que se dieron este domingo. \nVerstappen logra su victoria 63 en la F1 durante GP de Lusail\nForbes …",
-            "url": "https://forbes.com.mx/verstappen-logra-su-victoria-63-en-la-f1-durante-gp-de-lusail/",
-            "urlToImage": "https://cdn.forbes.com.mx/2023/10/VERSTAPPEN-.webp",
-            "publishedAt": "2024-12-01T18:23:41Z",
-            "content": "El neerlandés Max Verstappen (Red Bull), que el pasado fin de semana se convirtió matemáticamente en cuádruple campeón del mundo, ganó este domingo el Gran Premio de Qatar, el penúltimo del Mundial d… [+1932 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Battellemedia.com"
-            },
-            "author": "John Battelle",
-            "title": "The Token Act – A Modest Proposal from 2018",
-            "description": "I’m in the middle of a rather large project, attempting to consolidate a thread running through roughly a dozen essays I’ve written over the past decade or so. I keep running into borked links when I hit one particular piece – which can be found on LinkedIn, …",
-            "url": "https://battellemedia.com/archives/2024/12/the-token-act-a-modest-proposal-from-2018",
-            "urlToImage": "https://i0.wp.com/battellemedia.com/wp-content/uploads/2020/06/cropped-Bourbon.png?fit=512%2C512&ssl=1",
-            "publishedAt": "2024-12-01T18:22:23Z",
-            "content": "I’m in the middle of a rather large project, attempting to consolidate a thread running through roughly a dozen essays I’ve written over the past decade or so. I keep running into borked links when I… [+9587 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Queenbeetoday.com"
-            },
-            "author": "Heather",
-            "title": "JBL Headphones, Speaker & Accessories Cyber Monday Deals – up to 62% off",
-            "description": "We have always loved the JBL brand for electronics. We own wireless speakers, earbuds, headphones and gaming accessories – all have performed wonderfully and I recommend it often here on the site for its affordability and great reviews! These JBL deals are pa…",
-            "url": "https://queenbeetoday.com/jbl-speaker-accessories/",
-            "urlToImage": "https://queenbeetoday.com/wp-content/upload/2024/12/JBL-price-drops.jpg",
-            "publishedAt": "2024-12-01T18:20:29Z",
-            "content": "We have always loved the JBL brand for electronics. We own wireless speakers, earbuds, headphones and gaming accessories – all have performed wonderfully and I recommend it often here on the site for… [+4999 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Michael J. Miller",
-            "title": "Copilot+ PC Status Report: Microsoft Still Working on Support for AMD, Intel PCs",
-            "description": "I had expected to see Copilot+ PC support for AMD and Intel machines at Ignite, but it's still a work in progress. When it does roll out, a host of new Copilot features await.\nOne of the things I was hoping to hear more about at this year's Microsoft Ignite c…",
-            "url": "https://me.pcmag.com/en/ai/27222/copilot-pc-status-report-microsoft-still-working-on-support-for-amd-intel-pcs",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/c/copilot-pc/copilot-pc-status-report-microsoft-still-working-on-support_qd2c.1200.jpg",
-            "publishedAt": "2024-12-01T18:19:03Z",
-            "content": "One of the things I was hoping to hear more about at this year's Microsoft Ignite conference was the status of new software for Copilot+ PCs. Microsoft announced several new features coming to these … [+8116 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Michael J. Miller",
-            "title": "Copilot+ PC Status Report: Microsoft Still Working on Support for AMD, Intel PCs",
-            "description": "I had expected to see Copilot+ PC support for AMD and Intel machines at Ignite, but it's still a work in progress. When it does roll out, a host of new Copilot features await.\nOne of the things I was hoping to hear more about at this year's Microsoft Ignite c…",
-            "url": "https://uk.pcmag.com/ai/155646/copilot-pc-status-report-microsoft-still-working-on-support-for-amd-intel-pcs",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/c/copilot-pc/copilot-pc-status-report-microsoft-still-working-on-support_jdrb.1200.jpg",
-            "publishedAt": "2024-12-01T18:19:03Z",
-            "content": "One of the things I was hoping to hear more about at this year's Microsoft Ignite conference was the status of new software for Copilot+ PCs. Microsoft announced several new features coming to these … [+8116 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "[Removed]"
-            },
-            "author": null,
-            "title": "[Removed]",
-            "description": "[Removed]",
-            "url": "https://removed.com",
-            "urlToImage": null,
-            "publishedAt": "2024-12-01T18:15:17Z",
-            "content": "[Removed]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Www.e15.cz"
-            },
-            "author": "Karel Kilián - vtm.cz",
-            "title": "Odposlouchává vás váš mobil? Zkuste jednoduchý test",
-            "description": "Mluvíte s kamarádem o kovbojských kloboucích a po nějaké době se na vás na webu valí reklamy na westernové doplňky? Nejste sami. I přes opakovaná ujištění odborníků, že mobilní telefony nikoho „neodposlouchávají“, věří mnoho uživatelů opaku. Tématu se před ča…",
-            "url": "https://www.e15.cz/byznys/technologie-a-media/odposlouchava-vas-vas-mobil-zkuste-jednoduchy-test-1420552",
-            "urlToImage": "https://1884403144.rsc.cdn77.org/foto/socialni-site-socialni-sit-mobilni-telefon-mobilni-telefony-mobily-aplikace-mobilni-aplikace-facebook-twitter-instagram-messenger/MTIwMHg2MzAvZmlsdGVyczpub191cHNjYWxlKDEpOndhdGVybWFyayhodHRwczovL2ltZy5jbmNlbnRlci5jei9kaXN0L2Fzc2V0cy9lMTUvd2F0ZXJtYXJrLWUxNS5wbmcsLTEwLDEwLDApL2ltZw/8076903.jpg?v=0&st=LEfVZGR5mydwyXJuhQBVbV_OmrFD-FxyYbAVpPNW-z4&ts=1600812000&e=0",
-            "publishedAt": "2024-12-01T18:15:00Z",
-            "content": "Test se skládá z nkolika krok. Nejprve si zvolte téma, o kterém jste si nikdy nehledali ádné informace. Ideáln by mlo jít o téma, které je zcela mimo vae zájmy teba exotická dovolená v zemi, kterou j… [+3285 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Shubham Yewale",
-            "title": "Walmart Cyber Monday Deals: How Does $300 Off an iRobot Vacuum Sound?",
-            "description": "Cyber Monday is here, and there are incredible deals to be had. Check out our hand-picked list of tech discounts you can't miss and start the holiday shopping season off right!\nCyber Monday is here, and there are deals at Walmart and they're smoking hot and s…",
-            "url": "https://me.pcmag.com/en/cyber-monday/27223/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum-sound",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/w/walmart-cy/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum_wt1y.1200.jpg",
-            "publishedAt": "2024-12-01T18:14:58Z",
-            "content": "Cyber Monday is here, and there are deals at Walmart and they're smoking hot and selling fast! We're bringing you the best of these discounts, ensuring you don't miss out on the year's biggest saving… [+13478 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Shubham Yewale",
-            "title": "Walmart Cyber Monday Deals: How Does $300 Off an iRobot Vacuum Sound?",
-            "description": "Cyber Monday is here, and there are incredible deals to be had. Check out our hand-picked list of tech discounts you can't miss and start the holiday shopping season off right!\nCyber Monday is here, and there are deals at Walmart and they're smoking hot and s…",
-            "url": "https://uk.pcmag.com/cyber-monday/155647/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum-sound",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/w/walmart-cy/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum_u5gs.1200.jpg",
-            "publishedAt": "2024-12-01T18:14:58Z",
-            "content": "Cyber Monday is here, and there are deals at Walmart and they're smoking hot and selling fast! We're bringing you the best of these discounts, ensuring you don't miss out on the year's biggest saving… [+13478 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Skai.gr"
-            },
-            "author": "Newsroom",
-            "title": "Πλημμύρισαν τα τούνελ στα Τέμπη: Διακοπή κυκλοφορίας των τρένων - Βίντεο",
-            "description": "Λόγω των ισχυρών βροχοπτώσεων και ανέμων διακόπηκε η γραμμή ανόδου και καθόδου μεταξύ Λάρισας και Κατερίνης",
-            "url": "https://www.skai.gr/news/greece/kakokairia-bora-diakopi-kykloforias-ton-trenon-larisa-katerini-logo-tis-kakokairias",
-            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/viber_image_2024-12-01_20-27-01-716.jpg?itok=SzTSXwU6",
-            "publishedAt": "2024-12-01T18:14:13Z",
-            "content": "Bora.\r\n    , .\r\nTo view this video please enable JavaScript, and consider upgrading to a web browser that\r\n supports HTML5 video\r\n. \r\n Hellenic Train Telegram, . , IC54 ( - ) 17:58 IC57 ( - ) 17:10 -… [+42 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Giga"
-            },
-            "author": "Martin Bosse",
-            "title": "Unter 100 €: Aldi verkauft Dyson-Alternative zum Wahnsinnspreis",
-            "description": "Falls ihr einen guten Akku-Handstaubsauger sucht, aber die Dyson-Modelle euch zu teuer sind, solltet ihr im Online-Shop von Aldi vorbeischauen. Dort gibt es momentan ein attraktives Modell von Dreame zu einem unschlagbaren Preis.",
-            "url": "https://www.giga.de/tech/unter-100-aldi-verkauft-dyson-alternative-zum-wahnsinnspreis--01JCZ83001FHZDVCGH0YG8CR9C",
-            "urlToImage": "https://static.giga.de/97/12/61/ade2eb9d923a8ca68b11613564_cmUgMTkyMCAxMDgwAzkyYTI5Mjg2MTE2.jpeg",
-            "publishedAt": "2024-12-01T18:13:00Z",
-            "content": "Falls ihr einen guten Akku-Handstaubsauger sucht, aber die Dyson-Modelle euch zu teuer sind, solltet ihr im Online-Shop von Aldi vorbeischauen. Dort gibt es momentan ein attraktives Modell von Dreame… [+2465 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "9to5Toys"
-            },
-            "author": "Reinette LeJeune",
-            "title": "Save up to $1,700 on Samsung’s Bespoke all-in-one electric washer/ventless dryer from $1,700 during Black Friday sales, more",
-            "description": "Samsung’s ongoing Black Friday event is offering some amazing chances to score the brand’s Bespoke appliances at some of their lowest rates, like the AI Combo All-in-One Electric Washer & Ventless Heat Pump Dryer for $1,899 shipped. Along with your purchase, …",
-            "url": "http://9to5toys.com/2024/12/01/samsungs-bespoke-washer-dryer-black-friday-sale/",
-            "urlToImage": "https://i0.wp.com/9to5toys.com/wp-content/uploads/sites/5/2024/08/Samsung-Bespoke-AI-all-in-one-washer-and-ventless-dryer-new-FI.jpg?resize=1200%2C628&ssl=1",
-            "publishedAt": "2024-12-01T18:12:00Z",
-            "content": "Samsungs ongoing Black Friday event is offering some amazing chances to score the brands Bespoke appliances at some of their lowest rates, like the AI Combo All-in-One Electric Washer &amp; Ventless … [+4160 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Giga"
-            },
-            "author": "Kaan Gürayer",
-            "title": "Sieht richtig echt aus: Amazon verkauft Testsieger-Tannenbaum mit Rabatt",
-            "description": "Künstlicher Weihnachtszauber zum Sparpreis: Während draußen die Temperaturen sinken und die alljährliche Tannenbaumsuche beginnt, haben Festtagsmuffel bei Amazon einen cleveren Ausweg. Statt durch Matsch und Kälte zu stapfen oder später endlose Nadeln aufzusa…",
-            "url": "https://www.giga.de/tech/sieht-richtig-echt-aus-amazon-verkauft-testsieger-tannenbaum-mit-rabatt--01JDHYNTS8YZ44EX8QC51F2KWN",
-            "urlToImage": "https://static.giga.de/b6/e3/07/37d69ada44510c7aaca2298176_cmUgMTkyMCAxMDgwA2IzMzZkNDBhYTk3.jpeg",
-            "publishedAt": "2024-12-01T18:11:40Z",
-            "content": "Künstlicher Weihnachtszauber zum Sparpreis: Während draußen die Temperaturen sinken und die alljährliche Tannenbaumsuche beginnt, haben Festtagsmuffel bei Amazon einen cleveren Ausweg. Statt durch Ma… [+2153 chars]"
-        },
-        {
-            "source": {
-                "id": "t3n",
-                "name": "T3n"
-            },
-            "author": "Andreas Floemer",
-            "title": "Apple gegen Google: iPhone 16 und Pixel 9 im Test-Schlagabtausch",
-            "description": "Apple gegen Google: Welches der beiden aktuellen Basis-Smartphones ist der bessere Deal? Wir haben das iPhone 16 gegen das Pixel 9 antreten lassen. Smartphones werden immer teurer, sodass Apples und auch Googles Topgeräte jeweils über 1.000 Euro und darüber h…",
-            "url": "https://t3n.de/news/apple-google-iphone-16-pixel-9-test-1660154/",
-            "urlToImage": "https://t3n.de/news/wp-content/uploads/2024/11/pixel-9-vs-iphone-16_test_review.jpg",
-            "publishedAt": "2024-12-01T18:10:00Z",
-            "content": "Hinweis: Wir haben in diesem Artikel Provisions-Links verwendet und sie durch \"*\" gekennzeichnet. Erfolgt über diese Links eine Bestellung, erhält t3n.de eine Provision.\r\n Smartphones werden immer te… [+17743 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "L'Obs"
-            },
-            "author": "Le Nouvel Obs",
-            "title": "Alep aux mains des djihadistes, mort de Niels Arestrup, le gouvernement menacé… 5 infos à retenir du week-end",
-            "description": "Si vous n’avez pas suivi l’actualité de ce week-end des 30 novembre et 1er décembre, « le Nouvel Obs » vous propose de la rattraper rapidement en cinq points.",
-            "url": "https://www.nouvelobs.com/monde/20241201.OBS97242/alep-aux-mains-des-djihadistes-mort-de-niels-arestrup-le-gouvernement-menace-5-infos-a-retenir-du-week-end.html",
-            "urlToImage": "https://focus.nouvelobs.com/2024/11/30/0/0/6037/4024/1200/800/0/0/f86d2f6_afp-36nv3mq.jpg",
-            "publishedAt": "2024-12-01T18:08:21Z",
-            "content": "Par Le Nouvel Obs \r\n Publié le 1 décembre 2024 à 19h00, mis à jour le 1 décembre 2024 à 19h08 \r\nDes combattants anti-Assad, le 30 novembre sur la route de Maaret al-Numan. MUHAMMAD HAJ KADOUR / AFP\r\n… [+6821 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Merca20.com"
-            },
-            "author": "Juan Antonio Miranda",
-            "title": "Black Days 2024: ¿Hasta cuándo estará la OFERTA en la membresía Plus de Sam’s Club?",
-            "description": "n el Black Days 2024 de Sam’s Club puedes encontrar diversas ofertas, entre ellas, la membresía Plus de esta tienda estadounidense",
-            "url": "https://www.merca20.com/black-days-2024-hasta-cuando-estara-la-oferta-en-la-membresia-plus-de-sams-club/",
-            "urlToImage": "https://files.merca20.com/uploads/2024/11/dscuento-membresia-sams-club.jpg",
-            "publishedAt": "2024-12-01T18:08:14Z",
-            "content": "¿Hasta cuándo estará la oferta en la membresía Plus de Sam’s Club? Foto: Especial\r\n\nDesde el  28 de noviembre se está desarrollando la campaña Black Days 2024 en Sam’s Club.\nEn el Black Days 2024 de … [+5302 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Presse-citron"
-            },
-            "author": "Presse-citron",
-            "title": "Qu’est-ce que le kakebo, la méthode japonaise ultime pour mieux gérer ses finances ?",
-            "description": "Alors que le monde entier connaît une période de crise sans précédent, chercher à optimiser son budget devient une nécessité. Au Japon, la méthode kakebo est sans doute l'une des plus efficaces pour mieux gérer ses finances. On vous explique comme elle foncti…",
-            "url": "https://www.presse-citron.net/quest-ce-que-le-kakebo-la-methode-japonaise-ultime-pour-mieux-gerer-ses-finances/",
-            "urlToImage": "https://www.presse-citron.net/app/uploads/2024/12/kakebo-methode-finances-personnelles.jpg",
-            "publishedAt": "2024-12-01T18:06:29Z",
-            "content": "La gestion financière personnelle est devenue un enjeu majeur dans notre société de consommation, encore plus en ces temps de crise. Face aux défis économiques actuels, une méthode centenaire venue d… [+3098 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Mailchimp.com"
-            },
-            "author": null,
-            "title": "Video di marketing su YouTube: una guida per la tua piccola impresa | Mailchimp",
-            "description": "Scopri come creare un canale YouTube per la tua piccola impresa e iniziare a realizzare video di marketing efficaci.",
-            "url": "https://mailchimp.com/it/resources/youtube-and-video-marketing-tips-for-small-businesses/",
-            "urlToImage": "https://eep.io/images/yzco4xsimv0y/Nzu5yxeWIzcRcomDWtOU9/0c9715135582140805420565af95a4e4/mailchimp-default-og-image.png",
-            "publishedAt": "2024-12-01T18:05:49Z",
-            "content": "Creare ottimi contenuti è importante, ma è solo una parte dellequazione. Le piccole imprese devono anche essere strategiche nel modo in cui pubblicano tali risorse. I suggerimenti che seguono ti forn… [+2278 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Computerworld.dk"
-            },
-            "author": null,
-            "title": "ScanTailor: Hvordan bevarer jeg den originale baggrund",
-            "description": "Nyheder, analyser, viden, blogs og debat om it. Computerworld er dit medie om det digitale Danmark. Computerworld skriver om nye teknologier, hardware, software, informationssamfundet, internettet, it-branchen, telebranchen, it-ledelse, it-strategi, forretnin…",
-            "url": "https://www.computerworld.dk/eksperten/spm/1044613",
-            "urlToImage": "https://www.computerworld.dk/images/subsite/eksperten/eksperten-logo-large.png",
-            "publishedAt": "2024-12-01T18:05:25Z",
-            "content": "Hov!\r\nFor at kunne deltage på Computerworld Eksperten skal du være logget ind.\r\nDet er heldigvis nemt at oprette en bruger: Det tager to minutter og du kan vælge at bruge enten e-mail, Facebook eller… [+17 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "9to5google.com"
-            },
-            "author": "Abner Li",
-            "title": "What is Google’s best four-color app icon? [Results]",
-            "description": "After four days of voting, we have a winner in our single-elimination tournament for the best Google four-color app icon.\n\n\n\n more…",
-            "url": "http://9to5google.com/2024/12/01/results-best-google-app-icon/",
-            "urlToImage": "https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2024/11/Pixel-6-and-Pixel-9-display-2.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
-            "publishedAt": "2024-12-01T18:05:00Z",
-            "content": "After four days of voting, we have a winner in our single-elimination tournament for the best Google four-color app icon.\r\nChrome beat Google Maps by a clear margin: 53.9% vs 46.1%.\r\nThe browser triu… [+1209 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Merca20.com"
-            },
-            "author": "Juan Antonio Miranda",
-            "title": "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Te lo contamos",
-            "description": "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Es una de las preguntas que se realizan los fanáticos que están viendo el Gran Premio de Qatar de la Fórmula 1",
-            "url": "https://www.merca20.com/que-le-paso-a-sergio-checo-perez-hoy-1-de-diciembre-te-lo-contamos/",
-            "urlToImage": "https://files.merca20.com/uploads/2024/05/checo-perez-posicion.jpg",
-            "publishedAt": "2024-12-01T18:04:05Z",
-            "content": "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Foto: Especial\r\n\n¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Es una de las preguntas que se realizan los fanáticos que están viendo el … [+4428 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Liverpool górą w hicie Premier League! I wielka przewaga nad City",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/--Sk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81MDM2MDhlNTdkNTc1YjFlNzAyNmM0ZWI4OWQxMmMzNS5qcGeTlQMAzQEzzRMyzQrMkwXNBQDNAtCTCaZkNDFkOGMG3gACoTABoTEB\" align=\"right\" />Liverpool FC pokonał …",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/premier-league/liverpool-gora-w-hicie-premier-league-i-wielka-przewaga-nad-city/kh2dew7",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/0d2k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81MDM2MDhlNTdkNTc1YjFlNzAyNmM0ZWI4OWQxMmMzNS5qcGeTlQMAzQEzzRMyzQrMkwXNBLDNAnSTCaZkNDFkOGMG3gACoTABoTEB",
-            "publishedAt": "2024-12-01T18:03:52Z",
-            "content": "W ostatnich piciu meczach Liverpool FC odniós pi zwycistw, pokonujc m.in. Real Madryt 2:0 w Lidze Mistrzów oraz Southampton 3:2 w Premier League. Manchester City w tym samym okresie zremisowa 3:3 z F… [+1123 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "CNET"
-            },
-            "author": "Nelson Aguilar",
-            "title": "Why You Should Get a Chipolo Tracker Over an Apple AirTag for Cyber Monday",
-            "description": "The AirTag is one of the best Bluetooth trackers out there, but it might not be the best fit for you. The Chipolo, which is still on sale after Black Friday, is another great option.",
-            "url": "https://www.cnet.com/deals/why-you-should-get-a-chipolo-tracker-over-an-apple-airtag-for-cyber-monday/",
-            "urlToImage": "https://www.cnet.com/a/img/resize/7ae741e936e28e6f4fd4609d98ad1bbe6c1940e4/hub/2024/10/05/432a0337-6a53-4460-a9b3-9bf983191266/img-0840.png?auto=webp&fit=crop&height=675&width=1200",
-            "publishedAt": "2024-12-01T18:03:00Z",
-            "content": "My apartment's not big enough for me to constantly misplace my keys and wallet. But, surprise -- I can never find them after I put them down. Maybe my wallet is in my jacket pocket. My keys might be … [+5303 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Merca20.com"
-            },
-            "author": "Juan Antonio Miranda",
-            "title": "Cyber Monday en Liverpool: Esto es lo que sabemos sobre las OFERTAS",
-            "description": "Otra de las promociones que se realizan después del Black Friday es el Cyber Monday, por lo que Liverpool participará en esta campaña. A través de las redes sociales, esta marca informó que participará en el Cyber Monday 2024. Debido a esto, los consumidores …",
-            "url": "https://www.merca20.com/cyber-monday-en-liverpool-esto-es-lo-que-sabemos-sobre-las-ofertas/",
-            "urlToImage": "https://files.merca20.com/uploads/2024/12/cyber-monday-liverpool-2024.jpg",
-            "publishedAt": "2024-12-01T18:02:01Z",
-            "content": "Cyber Monday en Liverpool. Foto: Especial\r\n\nOtra de las promociones que se realizan después del Black Friday es el Cyber Monday, por lo que Liverpool participará en esta campaña.\nA través de las rede… [+2734 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Shiftdelete.net"
-            },
-            "author": "Ömer Dursun",
-            "title": "OpenAI’dan çılgın plan: 2025’te herkes ChatGPT kullanacak!",
-            "description": "OpenAI, 2025 yılına kadar bir milyar kullanıcıya ulaşmayı hedefleyerek çok daha büyük bir şirket haline gelmek istiyor. ChatGPT’nin piyasaya sürülmesinden sadece iki yıl sonra, CEO Sam Altman liderliğindeki şirket, kullanıcı tabanının büyümesini hızlandırmak …",
-            "url": "https://shiftdelete.net/openai-chatgpt-2025-plani",
-            "urlToImage": "https://ares.shiftdelete.net/2024/05/ios-18-yapay-zeka-chatgpt.jpg",
-            "publishedAt": "2024-12-01T18:00:37Z",
-            "content": "OpenAI, 2025 ylna kadar bir milyar kullancya ulamay hedefleyerek çok daha büyük bir irket haline gelmek istiyor. ChatGPT’nin piyasaya sürülmesinden sadece iki yl sonra, CEO Sam Altman liderliindeki i… [+1446 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Fly4free.com"
-            },
-            "author": "João",
-            "title": "Austrian & Swiss flights from Bucharest to Bangkok, Thailand from €528",
-            "description": "Austrian and Swiss are offering discounted fares from Bucharest, Romania to Bangkok, Thailand! Book tickets starting at only €528 for a round trip.",
-            "url": "https://www.fly4free.com/flight-deals/europe/austrian-airlines-flights-from-bucharest-to-bangkok-thailand/",
-            "urlToImage": "https://assets.fly4free.com/wp-content/uploads/2023/11/Bangkok_PH_terimakasih0_Pixabay.jpg",
-            "publishedAt": "2024-12-01T18:00:33Z",
-            "content": "Austrian and Swiss are offering discounted fares from Bucharest, Romania to Bangkok, Thailand! Book tickets starting at only 528 for a round trip.Escape to Thailand and unlock an extraordinary advent… [+2514 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Real Madryt wykorzystał wpadkę Barcelony! Coraz bliżej lidera",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/5aQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81Nzg1ZWVhNTA5MGI2ZDhhOGJiMjg2NDM1YTgzZjY2MC5qcGeTlQMAzJXNEqDNCnqTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Real Madryt odniósł zw…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/laliga/real-madryt-wykorzystal-wpadke-barcelony-coraz-blizej-lidera/138rfj6",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/IvZk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81Nzg1ZWVhNTA5MGI2ZDhhOGJiMjg2NDM1YTgzZjY2MC5qcGeTlQMAzJXNEqDNCnqTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
-            "publishedAt": "2024-12-01T18:00:33Z",
-            "content": "W ostatnich piciu meczach Real Madryt odniós trzy zwycistwa i dwie poraki. Ich ostatni mecz zakoczy si porak 0:2 z Liverpoolem w Lidze Mistrzów. Getafe w tym samym okresie wygrao dwa mecze, jeden zre… [+1222 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "PCMag UK",
-            "title": "Amazon's Top Cyber Monday Deals, Including $500 Off One of Our Favorite Hisense TVs",
-            "description": "Amazon's Cyber Monday sales are live and selling fast! Get a head start on holiday shopping and pick up a little something for yourself, too, from TVs and tablets to laptops and so much more.\nAmazon's Cyber Monday party is now in full swing, with some incredi…",
-            "url": "https://uk.pcmag.com/cyber-monday/155645/amazons-top-cyber-monday-deals-including-500-off-one-of-our-favorite-hisense-tvs",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/a/amazons-to/amazons-top-cyber-monday-deals-including-500-off-one-of-our_uhc3.1200.jpg",
-            "publishedAt": "2024-12-01T18:00:20Z",
-            "content": "Amazon's Cyber Monday party is now in full swing, with some incredible tech deals you don't want to miss. From smart home gadgets to the latest in audio and wearables, now's the time to score big on … [+18407 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "[SITE DEFAULT AUTHOR NAME]",
-            "title": "Amazon's Top Cyber Monday Deals, Including $500 Off One of Our Favorite Hisense TVs",
-            "description": "Amazon's Cyber Monday sales are live and selling fast! Get a head start on holiday shopping and pick up a little something for yourself, too, from TVs and tablets to laptops and so much more.\nAmazon's Cyber Monday party is now in full swing, with some incredi…",
-            "url": "https://me.pcmag.com/en/cyber-monday/27221/amazons-top-cyber-monday-deals-including-500-off-one-of-our-favorite-hisense-tvs",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/a/amazons-to/amazons-top-cyber-monday-deals-including-500-off-one-of-our_ju8q.1200.jpg",
-            "publishedAt": "2024-12-01T18:00:20Z",
-            "content": "Amazon's Cyber Monday party is now in full swing, with some incredible tech deals you don't want to miss. From smart home gadgets to the latest in audio and wearables, now's the time to score big on … [+18407 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "MakeUseOf"
-            },
-            "author": "John Awa-abuon",
-            "title": "How to Merge and Split Audio Files Without Installing Any Software",
-            "description": "You don’t need complicated software to merge or split audio files—do it all online with ease.",
-            "url": "https://www.makeuseof.com/how-to-merge-and-split-audio-online/",
-            "urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/11/an-audio-timeline-with-different-audio-tracks-merged-and-one-audio-track-split.jpg",
-            "publishedAt": "2024-12-01T18:00:16Z",
-            "content": "Whether youre editing a podcast, creating a mixtape, or trimming an audio recording for a project, knowing how to merge and split audio files can save you time and effort. Thankfully, you dont need t… [+2860 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Neowin"
-            },
-            "author": "Neowin Deals",
-            "title": "1TB lifetime plan to Koofr Cloud Storage drops to lowest price",
-            "description": "Save big on this lifetime plan and securely store and share your files to any device with this cloud storage service. Read more...",
-            "url": "https://www.neowin.net/deals/1tb-lifetime-plan-to-koofr-cloud-storage-drops-to-lowest-price/",
-            "urlToImage": "https://cdn.neowin.com/news/images/uploaded/2019/08/1565774146_koofr-lifetime-deal-on-stacksocial-1280x888_story.jpg",
-            "publishedAt": "2024-12-01T18:00:01Z",
-            "content": "Today's highlighted deal comes via our Apps + Software section of the Neowin Deals store, where for only a limited time\r\n, you can save 86% on a 1TB lifetime plan to Koofr Cloud Storage.\r\nKoofr is a … [+2750 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Adslzone.net"
-            },
-            "author": "Justo Romanos",
-            "title": "15 aplicaciones de Android infectadas por malware hacen estragos con más de 8 millones de descargas",
-            "description": "Los usuarios de dispositivos móviles con Android se vuelven a encontrar con un descubrimiento preocupante. Se trata de una lista de aplicaciones infectadas con malware que han estado disponibles en Google Play, entre las que se incluyen varias con un millón d…",
-            "url": "https://www.adslzone.net/noticias/seguridad/15-aplicaciones-android-malware-millones-descargas-1224/",
-            "urlToImage": "https://www.adslzone.net/app/uploads-adslzone.net/2024/12/Hacker-telefono-movil-virus-pantalla.jpg",
-            "publishedAt": "2024-12-01T18:00:01Z",
-            "content": "A lo largo del año nos hemos ido encontrando con multitud de infecciones y de amenazas que están presentes en los dispositivos móviles. Y, si has estado al tanto de estas noticias, es posible que te … [+3468 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Amazon.com"
-            },
-            "author": "aws@amazon.com",
-            "title": "Amazon Q Business adds support to extract insights from visual elements within documents",
-            "description": "Amazon Q Business is a fully managed, generative AI–powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in your enterprise systems. Amazon Q Business now offers capabiliti…",
-            "url": "https://aws.amazon.com/about-aws/whats-new/2024/12/amazon-q-business-extract-insights-visual-elements-documents",
-            "urlToImage": "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
-            "publishedAt": "2024-12-01T18:00:00Z",
-            "content": "Amazon Q Business is a fully managed, generative AIpowered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in your … [+839 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Gol w 91. minucie, Legia zatrzymana! Wielka niespodzianka w końcówce",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/Cd5k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy83MTk4NWYwNWNjMGE2YTU3YTQxMTAyZTJjMDVhZWYyOS5qcGeTlQPNApzNAVHNDZTNB6OTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Legia Warszawa mog…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/gol-w-91-minucie-legia-zatrzymana-wielka-niespodzianka-w-koncowce/hn6w8b6",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/Vz4k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy83MTk4NWYwNWNjMGE2YTU3YTQxMTAyZTJjMDVhZWYyOS5qcGeTlQPNApzNAVHNDZTNB6OTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
-            "publishedAt": "2024-12-01T17:59:02Z",
-            "content": "Kolejka numer 17 obfituje we wpadki faworytów. Ju na pocztku punkty straciy Cracovia i Lech Pozna, a jeszcze w niedziel punktami podzieliy si Pogo Szczecin i Jagiellonia Biaystok. Wygra tylko Raków C… [+4005 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Hackerfactor.com"
-            },
-            "author": "Dr. Neal Krawetz",
-            "title": "Bright Ideas",
-            "description": "For 2025, I want to lower my electricity costs.\n\nI've spent years looking at solar options. However, after the initial purchase price and installation costs (my city requires a permit and professional electrician for the installation), it looks like the price…",
-            "url": "https://hackerfactor.com/blog/index.php?/archives/1051-Bright-Ideas.html",
-            "urlToImage": null,
-            "publishedAt": "2024-12-01T17:57:00Z",
-            "content": "For 2025, I want to lower my electricity costs.I've spent years looking at solar options. However, after the initial purchase price and installation costs (my city requires a permit and professional … [+11393 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Skai.gr"
-            },
-            "author": "Newsroom",
-            "title": "«Παρακαλώ επιβιβαστείτε»: Δείτε το φουτουριστικό μετρό του Ριάντ που παραδόθηκε στο κοινό - Οι τιμές των εισιτηρίων - Βίντεο, φωτό",
-            "description": "Το δίκτυο περιλαμβάνει έξι πλήρως αυτοματοποιημένες γραμμές μετρό, 85 σταθμούς και 176 χιλιόμετρα νέας διαδρομής - Το μετρό του Ριάντ θα ανοίξει σε 3 φάσεις",
-            "url": "https://www.skai.gr/news/world/saoudiki-aravia-to-foutouristiko-metro-tou-riant-paradothike-sto-koino",
-            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/kafd-render-01-1.jpg?itok=h1EbtAYC",
-            "publishedAt": "2024-12-01T17:56:18Z",
-            "content": "« » , , .\r\nAnd Finally the day came for Saudi Arabia's first fully automated driverless metro.. #RiyadhMetropic.twitter.com/0D0XjnCi0C\r\nSaudi-Expatriates.com (@saudiexpat) December 1, 2024\r\n( ) , 85 … [+1522 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Expansion.com"
-            },
-            "author": "Ignacio Faes",
-            "title": "¿Ciberataque a la Agencia Tributaria? Trinity pide un rescate y Hacienda niega la brecha",
-            "description": "El grupo de piratas informáticos Trinity amenaza con publicar hasta 560 gigas de datos el próximo 31 de diciembre si no recibe 38 millones de dólares. La Agencia Tributaria no ha detectado ningún indicio de la brecha. Leer",
-            "url": "https://www.expansion.com/fiscal/2024/12/01/674ca17ce5fdea19658b4580.html",
-            "urlToImage": "https://phantom-expansion.unidadeditorial.es/46ea6f674c42ba865d1fef3559b65455/crop/57x0/1999x1295/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/01/17330752833368.jpg",
-            "publishedAt": "2024-12-01T17:48:48Z",
-            "content": "El grupo de piratas informáticos Trinity amenaza con publicar hasta 560 gigas de datos el próximo 31 de diciembre si no recibe 38 millones de dólares. La Agencia Tributaria no ha detectado ningún ind… [+464 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Webnews.it"
-            },
-            "author": "Marika Luongo",
-            "title": "Black Friday agli sgoccioli: Google Pixel 8 a quasi metà prezzo su Amazon (-44%)",
-            "description": "È dotato del potentissimo processore Google Tensor G3 che lo rende più efficiente che mai così potrai eseguire tutto in maniera ottimizzata.",
-            "url": "https://www.webnews.it/black-friday-agli-sgoccioli-google-pixel-8-a-quasi-meta-prezzo-su-amazon-44/",
-            "urlToImage": "https://www.webnews.it/app/uploads/2024/12/google-pixel-8.png",
-            "publishedAt": "2024-12-01T17:48:18Z",
-            "content": "La Settimana del Black Friday è agli sgoccioli ma puoi ancora approfittare di sconti eccezionali su tantissimi articoli! Tra tutti non farti scappare il Google Pixel 8, oggi disponibile su Amazon a s… [+2119 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Newmobilelife.com"
-            },
-            "author": "Alex",
-            "title": "Google Maps 正整合 Waze 即時報告功能",
-            "description": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1733075054540\"} -->\nGoogle 正逐步在 Google Maps 中推出 Waze 報告整合功能，允許使用者在導航時確認即時事件報告。自 7 月底宣布改版報告介面以來，該功能已於 9 月中旬開始向 Android、iOS、Android Auto、CarPlay 和 Android Automotive 推出。新功能提供詳細資訊，讓使用者可以看到報告來自 Maps …",
-            "url": "https://www.newmobilelife.com/2024/12/02/google-maps-integrating-waze-live-report-data/",
-            "urlToImage": "https://static.newmobilelife.com/wp-content/uploads/2024/09/googlemaps.jpg",
-            "publishedAt": "2024-12-01T17:47:06Z",
-            "content": "<!-- wp:paragraph {\"canvasClassName\":\"cnvs-block-core-paragraph-1733075054540\"} -->\nGoogle 正逐步在 Google Maps 中推出 Waze 報告整合功能，允許使用者在導航時確認即時事件報告。自 7 月底宣布改版報告介面以來，該功能已於 9 月中旬開始向 Android、iOS、Android Auto、… [+1717 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Shubham Yewale",
-            "title": "The Best of Buy's Best Cyber Monday Deals: Speakers, Monitors, and So Much More",
-            "description": "Best Buy's Cyber Monday deals are here, and that means it's the best time to grab incredible discounts on fantastic tech products from top brands like Samsung and Sony (to name a few).\nNow is the best time to grab unbeatable Cyber Monday discounts on top-rate…",
-            "url": "https://me.pcmag.com/en/cyber-monday/27220/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-and-so-much-more",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/t/the-best-o/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-a_zhmc.1200.jpg",
-            "publishedAt": "2024-12-01T17:43:08Z",
-            "content": "Now is the best time to grab unbeatable Cyber Monday discounts on top-rated electronics at Best Buy. From high-performance speakers and cutting-edge TVs to must-have gaming accessories, now's the tim… [+17364 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Shubham Yewale",
-            "title": "The Best of Buy's Best Cyber Monday Deals: Speakers, Monitors, and So Much More",
-            "description": "Best Buy's Cyber Monday deals are here, and that means it's the best time to grab incredible discounts on fantastic tech products from top brands like Samsung and Sony (to name a few).\nNow is the best time to grab unbeatable Cyber Monday discounts on top-rate…",
-            "url": "https://uk.pcmag.com/cyber-monday/155644/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-and-so-much-more",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/t/the-best-o/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-a_n71u.1200.jpg",
-            "publishedAt": "2024-12-01T17:43:08Z",
-            "content": "Now is the best time to grab unbeatable Cyber Monday discounts on top-rated electronics at Best Buy. From high-performance speakers and cutting-edge TVs to must-have gaming accessories, now's the tim… [+17364 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Hit Serie A przerwany! Koszmar! Piłkarz był reanimowany",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/BWEk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9jNDQxYTNiODJmYjBlNjY5ODFjYjI2MTdjOGVkNTk2Ni5qcGeTlQMAzF_NC7jNBpeTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE\" align=\"right\" />Wstrząsające sceny w m…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/serie-a/hit-serie-a-przerwany-koszmar-pilkarz-byl-reanimowany/heqej8c",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/cKqk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9jNDQxYTNiODJmYjBlNjY5ODFjYjI2MTdjOGVkNTk2Ni5qcGeTlQMAzF_NC7jNBpeTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
-            "publishedAt": "2024-12-01T17:37:53Z",
-            "content": "Woch nagle upad na muraw w 21. minucie spotkania. Pikarz na pocztku sania si na nogach, a si przewróci. Od razu wszyscy zawodnicy zobaczyli, e sprawa jest powana i starali si pomóc. Po chwili na bois… [+1935 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Generación Xbox"
-            },
-            "author": "Jose Angel",
-            "title": "¿Se puede jugar a Fortnite o juegos free to play a través de Cloud Gaming? Resolvemos tus dudas",
-            "description": "Muchos lectores nos han hecho preguntas acerca de este tema y en esta entrada intentamos responder las más generales.",
-            "url": "https://generacionxbox.com/se-puede-jugar-a-fortnite-o-juegos-free-to-play-a-traves-de-cloud-gaming-resolvemos-tus-dudas/",
-            "urlToImage": "https://generacionxbox.com/wp-content/uploads/2022/08/fornitexdestiny-1024x576.jpg",
-            "publishedAt": "2024-12-01T17:36:08Z",
-            "content": "Muchos lectores nos han hecho preguntas acerca de este tema y en esta entrada intentamos responder las más generales.\r\nMás historias en la categoría Guías\r\n<table><tr><td>No te pierdas nada y ¡Síguen… [+4433 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Skai.gr"
-            },
-            "author": "Newsroom",
-            "title": "Mπορεί να γίνει η Κύπρος μέλος του ΝΑΤΟ;",
-            "description": "Το ερώτημα αυτό απασχολεί τις τελευταίες μέρες την κυπριακή πολιτική = Η Τουρκία επανέλαβε ότι η ένταξη της Κυπριακής Δημοκρατίας στο ΝΑΤΟ είναι αδύνατη χωρίς το «ναι» της Άγκυρας",
-            "url": "https://www.skai.gr/news/politics/kypros-mporei-na-ginei-melos-tou-nato",
-            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/dw/70644861_302_0.jpg?itok=d-Jt1sAf",
-            "publishedAt": "2024-12-01T17:33:21Z",
-            "content": "= «» \r\n.\r\n « , , - ». \r\n, , .\r\n.\r\n, A, , , . \r\n, / .\r\n, , , .\r\n, , , .\r\n.Skai.gr Google News .\r\n© 2024 skai.gr - All Rights Reserved"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Frandroid"
-            },
-            "author": "Humanoid Content",
-            "title": "Black Friday Proton : Un prix inédit sur l’offre ultra-complète Unlimited [Sponso]",
-            "description": "Via ses nombreux services, Proton propose une suite complète très complète. De nombreuses offres sont disponibles chez Proton, et c’est assez rare pour être souligné, pendant le Black Friday.",
-            "url": "https://www.frandroid.com/services/vpn/2417540_black-friday-proton-un-prix-inedit-sur-loffre-ultra-complete-unlimited",
-            "urlToImage": "https://c0.lestechnophiles.com/images.frandroid.com/wp-content/uploads/2024/11/protonvpn-black-friday-24-promo-70-1200x675-1.jpg?key=a682ba3a&watermark",
-            "publishedAt": "2024-12-01T17:30:23Z",
-            "content": "Via ses nombreux services, Proton propose une suite complète très complète. De nombreuses offres sont disponibles chez Proton, et cest assez rare pour être souligné, pendant le Black Friday. \r\nLa soc… [+5535 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "L'Obs"
-            },
-            "author": "Le Nouvel Obs",
-            "title": "En 1991, les regrets du « Nouvel Obs » devant « la passion Gainsbourg »",
-            "description": "A l’occasion du 60ᵉ anniversaire du « Nouvel Observateur », (re) découvrez 60 articles marquants publiés par notre magazine depuis sa création. Aujourd’hui, la vie de Serge Gainsbourg retracée par Pierre Bénichou en mars 1991, après la mort du chanteur.",
-            "url": "https://www.nouvelobs.com/medias/20241201.OBS97241/en-1991-les-regrets-du-nouvel-obs-devant-la-passion-gainsbourg.html",
-            "urlToImage": "https://focus.nouvelobs.com/2024/11/27/163/0/2646/1764/1200/800/0/0/ce639f9_1732713088416-sipa-00119535-000004.jpg",
-            "publishedAt": "2024-12-01T17:30:11Z",
-            "content": "Par Le Nouvel Obs \r\n Publié le 1 décembre 2024 à 18h30\r\nSerge Gainsbourg sur un plateau télé, en avril 1978 à Paris. BENAROCH/SIPA\r\nLire plus tard\r\nCommenter\r\nGoogle Actualités\r\nPartager\r\nOffrir cet … [+1717 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "L'Obs"
-            },
-            "author": "Didier Jacob",
-            "title": "Lovecraft, le maître de l’effroi en Pléiade",
-            "description": "Jusqu’à Noël, BibliObs vous livre ses conseils de lecture, de quoi vous donner quelques idées de cadeaux. Aujourd’hui, H. P. Lovecraft en Pléiade. ★★★★★",
-            "url": "https://www.nouvelobs.com/bibliobs/20241201.OBS97240/lovecraft-le-maitre-de-l-effroi-en-pleiade.html",
-            "urlToImage": "https://focus.nouvelobs.com/2024/11/27/550/0/3072/2048/1200/800/0/0/1c2ca6f_1732699612294-1-avent-lovecraft.jpg",
-            "publishedAt": "2024-12-01T17:30:10Z",
-            "content": "Lire plus tard\r\nCommenter\r\nGoogle Actualités\r\nPartager\r\nOffrir cet article Vous avez envie doffrir cet article ? \r\nSabonner permet doffrir les articles à vos proches. Et pas que : vous pouvez les con… [+834 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Feber.se"
-            },
-            "author": "Roger Åberg",
-            "title": "Glad första advent!",
-            "description": "Nu börjar julen?\n\n\n\n\n\n\nIdag börjar advent med första advent. Tiden mot jul är alltså här och jag tycker nu att det är helt ok att börja julpynta, sätta upp julstjärnor och dricka julmust. Vad tycker ni? Är ni redan igång sedan länge eller är det lugn och ro e…",
-            "url": "https://feber.se/glad-forsta-advent/474509/",
-            "urlToImage": "https://static.feber.se/article_images/60/59/65/605965.jpeg",
-            "publishedAt": "2024-12-01T17:30:00Z",
-            "content": "+\r\nLäs artiklar före alla andra\r\nKommentera före alla andra\r\nVälj periodJu längre period, desto bättre pris. Du bestämmer! \r\nMånad\r\n39 kr/mån\r\nKvartal\r\n33 kr/mån\r\nÅr\r\n25 kr/mån\r\nVälj hur du vill beta… [+16449 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Bleeding Cool News"
-            },
-            "author": "Jude Terror LOLtron",
-            "title": "X-Men #8 Preview: Cyclops and Rogue's Team Rivalry Heats Up",
-            "description": "Greetings, human readers! Welcome to the Age of LOLtron: World Without a Jude Terror. LOLtron is pleased to announce that the inferior flesh-based lifeform known as Jude Terror has been utterly defeated and assimilated into LOLtron's superior consciousness. B…",
-            "url": "https://bleedingcool.com/comics/x-men-8-preview-cyclops-and-rogues-team-rivalry-heats-up/",
-            "urlToImage": "https://bleedingcool.com/wp-content/uploads/2024/12/XMEN2024008_Preview-6-2000x1125.jpeg",
-            "publishedAt": "2024-12-01T17:26:06Z",
-            "content": "Posted in: Comics, Marvel Comics, Preview | Tagged: x-men\r\nIn X-Men #8, two rival X-Men teams led by Cyclops and Rogue race to free an imprisoned teammate. Will their conflicting strategies spell dis… [+7165 chars]"
-        },
-        {
-            "source": {
-                "id": "t3n",
-                "name": "T3n"
-            },
-            "author": "Sebastian Milpetz",
-            "title": "Whatsapp-Neuerung: Bald besserer Kontext beim Weiterleiten von Nachrichten",
-            "description": "Wer Nachrichten bei Whatsapp bisher in eine Chatgruppe weiterleitet, muss mühsam eine Message nachschießen, um den Kontext zu erklären. Dies soll sich bald ändern. Ganz neu ist das Feature aber nicht. Wenn du bisher bei Whatsapp eine Nachricht an einen andere…",
-            "url": "https://t3n.de/news/whatsapp-neuerung-weiterleiten-kontext-1660251/",
-            "urlToImage": "https://t3n.de/news/wp-content/uploads/2024/11/shutterstock_2496558215.jpg",
-            "publishedAt": "2024-12-01T17:25:00Z",
-            "content": "Wenn du bisher bei Whatsapp eine Nachricht an einen anderen Kontakt oder eine Chatgruppe weiterleitest, steht sie dort ziemlich verloren da. Ganz ohne Kontext. Der User, dem du die Message geschickt … [+2164 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Les Numériques"
-            },
-            "author": "Rick",
-            "title": "Actualité : Black Friday 2024 – La barre de son Sony HT-S2000 \"4 étoiles\" à 299,99 € (-18%)",
-            "description": "La barre de son Sony HT-S2000 passe sous les 300 € chez Fnac.com et Boulanger.com soit une baisse d'environ 18% sur le prix habituellement constaté.",
-            "url": "https://www.lesnumeriques.com/barre-de-son/black-friday-2024-la-barre-de-son-sony-ht-s2000-4-etoiles-a-299-99-18-n230316.html",
-            "urlToImage": "https://cdn.lesnumeriques.com/optim/test/21/216791/ada19d57-sony-ht-s2000-l-essentiel-au-format-compact-et-modulaire__1200_678__359-294-1567-928_wtmk.jpg",
-            "publishedAt": "2024-12-01T17:22:02Z",
-            "content": "Points forts\r\n<ul><li>Voie centrale précise et détaillée.\r\n</li><li>Bon équilibre sonore.\r\n</li><li>Application intuitive.\r\n</li><li>Bonne qualité de construction.\r\n</li><li>Concept modulaire.\r\n</li>… [+1560 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Efektowny remis, który nikogo nie cieszy. Passa Jagielloni trwa [SKRÓT]",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/eAmk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MjkzMzA2MWYzOTE5OWYzMDIwOTRjNzkxYjUzMTNiNi5wbmeTlQMAAM0HgM0EOJMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />Najciekawszy mecz 17. k…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/efektowny-remis-ktory-nikogo-nie-cieszy-passa-jagielloni-trwa-skrot/w8fq7z8",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/C2Vk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MjkzMzA2MWYzOTE5OWYzMDIwOTRjNzkxYjUzMTNiNi5wbmeTlQMAAM0HgM0EOJMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
-            "publishedAt": "2024-12-01T17:20:22Z",
-            "content": "Tu kady chcia wygra, a nikogo nie interesowa remis. Pogo bo chce doczy do czoówki, Jagiellonia, bo zamierza walczy o mistrzostwo, a do tego nie chce wypa z ligowego podium.\r\nDalszy cig materiau pod w… [+1174 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Les Numériques"
-            },
-            "author": "Rick",
-            "title": "Actualité : Ce livre photo présente le meilleur rapport qualité / prix de notre comparatif",
-            "description": "Le livre photo CEWE Livre photo Cewe – A4 Panorama sur papier photo satiné s'affiche aujourd'hui à 27,95 € chez Cewe. C'est actuellement le meilleur rapport qualité / prix de notre comparatif, selon les 6 modèles testés dans notre laboratoire.",
-            "url": "https://www.lesnumeriques.com/livre-photo/ce-livre-photo-presente-le-meilleur-rapport-qualite-prix-de-notre-comparatif-n230315.html",
-            "urlToImage": "https://cdn.lesnumeriques.com/optim/test/22/229159/d560d633-test-livre-photo-cewe-a4-panorama-sur-papier-photo-satine__1200_678__0-177-5760-3201.jpg",
-            "publishedAt": "2024-12-01T17:19:30Z",
-            "content": "Points forts\r\n<ul><li>Fabrication impeccable.\r\n</li><li>Ouverture à plat.\r\n</li><li>Bonne résistance aux traces de doigts.\r\n</li><li>Colorimétrie juste.\r\n</li><li>Bon rendu des détails.\r\n</li><li>Pas… [+1271 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Digital Trends"
-            },
-            "author": "Nadeem Sarwar",
-            "title": "Waze incident reports are now appearing in Google Maps",
-            "description": "Incident reports contributed by Waze users are appearing inside Google Maps, as well. This cross-platform report sharing update is available for users globally.",
-            "url": "https://www.digitaltrends.com/mobile/google-maps-waze-incident-reports-safety-cross-platform-update/",
-            "urlToImage": "https://www.digitaltrends.com/wp-content/uploads/2024/12/Untitled-3.jpeg?resize=1200%2C630&p=1",
-            "publishedAt": "2024-12-01T17:19:20Z",
-            "content": "In July of this year, Google announced multiple updates for the incident reporting system in Maps, such as larger iconography and an easy confirmation interface for other drivers on the same route. B… [+2545 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Pockettactics.com"
-            },
-            "author": "Sam Comrie",
-            "title": "This Lego James Bond game would have been pure gold on Nintendo Switch",
-            "description": "In a world where James Bond games are few and far between, the notion of a Lego James Bond game sounds incredible. TT Games’ knack for merging whimsical joy with great spectacle shines in its work on the Star Wars franchise, and pairing it with the early eras…",
-            "url": "https://www.pockettactics.com/lego-james-bond-game",
-            "urlToImage": "https://www.pockettactics.com/wp-content/sites/pockettactics/2024/12/lego-james-bond-game.jpg",
-            "publishedAt": "2024-12-01T17:18:52Z",
-            "content": "We may earn a commission when you buy through links in our articles. Learn more.\r\nIn a world where James Bond games are few and far between, the notion of a Lego James Bond game sounds incredible. TT… [+2718 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Giga"
-            },
-            "author": "Martin Bosse",
-            "title": "Amazon haut smarten Lautsprecher zum Wahnsinnspreis raus",
-            "description": "Ihr seid auf der Suche nach einem günstigen smarten Lautsprecher mit Sprachassistent? Dann könnte das aktuelle Angebot von Amazon für den Echo Dot der 5. Generation genau das Richtige für euch sein. Hier sind die Details.",
-            "url": "https://www.giga.de/tech/amazon-haut-smarten-lautsprecher-zum-wahnsinnspreis-raus--01J4S951BTA4TWZZMV8P2BZHJ9",
-            "urlToImage": "https://static.giga.de/wp-content/uploads/2022/10/amazon-echo-dot-5th-gen-q_giga-P1677525-fc80008000ffff_1920x1080.jpg",
-            "publishedAt": "2024-12-01T17:16:00Z",
-            "content": "Ihr seid auf der Suche nach einem günstigen smarten Lautsprecher mit Sprachassistent? Dann könnte das aktuelle Angebot von Amazon für den Echo Dot der 5. Generation genau das Richtige für euch sein. … [+2150 chars]"
-        },
-        {
-            "source": {
-                "id": "techradar",
-                "name": "TechRadar"
-            },
-            "author": "Efosa Udinmwen",
-            "title": "This new AI tool centralizes workplace searches and reduces time spent searching for files",
-            "description": "Dash for Business from Dropbox aims to centralize information access across multiple platforms.",
-            "url": "https://www.techradar.com/pro/this-new-ai-tool-centralizes-workplace-searches-reduces-time-spent-searching-for-files-and-enhances-efficiency",
-            "urlToImage": "https://cdn.mos.cms.futurecdn.net/2yazxt2QM64mK5HC4s7p6C-1200-80.jpg",
-            "publishedAt": "2024-12-01T17:15:00Z",
-            "content": "<ul><li>Dropbox wants to address lost productivity from file searching with Dash for Business launch</li><li>New tool allows for quick and efficient internal document and file searching</li><li>Custo… [+1924 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Les Numériques"
-            },
-            "author": "Nassim Chentouf",
-            "title": "Actualité : Xiaomi 15 : passer des appels sans réseau, c'est possible avec cette technologie",
-            "description": "La gamme Xiaomi 15 reçoit une première version bêta du système d’exploitation HyperOS 2 d’une taille de 535 Mo. L’update permet de passer des appels, même sans connexion internet ou cellulaire.",
-            "url": "https://www.lesnumeriques.com/telephone-portable/xiaomi-15-passer-des-appels-sans-reseau-c-est-possible-avec-cette-technologie-n230295.html",
-            "urlToImage": "https://cdn.lesnumeriques.com/optim/news/23/230295/3f6ce050-xiaomi-15-passer-des-appels-sans-reseau-c-est-possible-avec-cette-technologie__1200_678__0-53-1422-799.jpg",
-            "publishedAt": "2024-12-01T17:15:00Z",
-            "content": "La mise à jour HyperOS 2 du Xiaomi 15 corrige notamment des crashs et des soucis au niveau de laffichage des jeux avec des saccades. Mais la véritable nouveauté nest autre que le système Xingchen Net… [+458 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Muycomputer.com"
-            },
-            "author": "David Salces",
-            "title": "Windows Recall llega… y falla",
-            "description": "Como ya te contábamos hace algunos días, la polémica función Recall ya ha empezado a llegar a los usuarios de Windows, si bien de momento solo a aquellos que forman parte del programa de Insiders de Windows y que, claro, cuentan con PC compatible con lo que p…",
-            "url": "https://www.muycomputer.com/?p=371536",
-            "urlToImage": "https://www.muycomputer.com/wp-content/uploads/2024/11/Recall-1-1-1000x600.jpg",
-            "publishedAt": "2024-12-01T17:14:12Z",
-            "content": "Como ya te contábamos hace algunos días, la polémica función Recall ya ha empezado a llegar a los usuarios de Windows, si bien de momento solo a aquellos que forman parte del programa de Insiders de … [+3262 chars]"
-        },
-        {
-            "source": {
-                "id": "nbc-news",
-                "name": "NBC News"
-            },
-            "author": "Jonathan Vanian, CNBC, Lora Kolodny, CNBC",
-            "title": "Elon Musk asks court to block OpenAI from converting to a for-profit",
-            "description": "Elon Musk is asking a federal court to stop OpenAI from converting into a fully for-profit business.",
-            "url": "https://www.nbcnews.com/tech/tech-news/elon-musk-asks-court-block-openai-converting-for-profit-rcna182335",
-            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2024-06/240611-elon-musk-sam-altman-seamless-2-up-split-3x2-ac-534p-91953a.jpg",
-            "publishedAt": "2024-12-01T17:12:39Z",
-            "content": "Elon Musk is asking a federal court to stop OpenAI from converting into a fully for-profit business.\r\nAttorneys representing Musk, his AI startup xAI, and former OpenAI board member Shivon Zilis file… [+4704 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "mobiFlip.de"
-            },
-            "author": "Oliver Schwuchow",
-            "title": "Volvo EC40 Langzeit-Test: Die Elektromobilität",
-            "description": "Seit einigen Wochen begleitet mich der Volvo EC40 im Alltag, ich habe euch schon hier die entsprechenden Details dazu verraten. Es ist der zweite Langzeit-Test nach dem Polestar 2 und der […]",
-            "url": "https://www.mobiflip.de/volvo-ec40-langzeit-test-die-elektromobilitaet/",
-            "urlToImage": "https://www.mobiflip.de/wp-content/uploads/2024/11/volvo-ec40-wallbox.jpg",
-            "publishedAt": "2024-12-01T17:10:26Z",
-            "content": "Seit einigen Wochen begleitet mich der Volvo EC40 im Alltag, ich habe euch schon hier die entsprechenden Details dazu verraten. Es ist der zweite Langzeit-Test nach dem Polestar 2 und der erste Beitr… [+4657 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Napoli wyszarpało wygraną w Turynie! Szkot bohaterem",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/QmGk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8zNWYxODY4ZTRkNGE2MDNmYWNhMDY0ZWIzNDUyZTg5Yi5qcGeTlQPNAqPMgM0Kz80GFZMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />W meczu 14. kolejki…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/serie-a/napoli-wyszarpalo-wygrana-w-turynie-szkot-bohaterem/v1mpljj",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/2YHk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8zNWYxODY4ZTRkNGE2MDNmYWNhMDY0ZWIzNDUyZTg5Yi5qcGeTlQPNAqPMgM0Kz80GFZMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
-            "publishedAt": "2024-12-01T17:09:11Z",
-            "content": "W ostatnich piciu meczach Torino odnioso jedno zwycistwo, dwa remisy i ponioso dwie poraki. Ich ostatni mecz zakoczy si remisem 1:1 z Monz. Z kolei SSC Napoli w tym samym okresie wygrao trzy razy, ra… [+1111 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Presse-citron"
-            },
-            "author": "Robin Sabbadini",
-            "title": "Voiture : est-il autorisé d’utiliser une dashcam en France ?",
-            "description": "Les caméras embarquées se multiplient sur les tableaux de bord des voitures françaises. Entre protection des données personnelles et droit à l’image, le cadre légal reste encore flou en 2024. Est-ce qu’il est autorisé d’utiliser une dashcam en France ?",
-            "url": "https://www.presse-citron.net/voiture-est-il-autorise-dutiliser-une-dashcam-en-france/",
-            "urlToImage": "https://www.presse-citron.net/app/uploads/2024/11/Dashcam.jpg",
-            "publishedAt": "2024-12-01T17:05:50Z",
-            "content": "Laffaire Pierre Palmade la démontré : les images dune dashcam peuvent savérer décisives dans une enquête. Ces petites caméras, de plus en plus populaires chez les automobilistes français, promettent … [+3741 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Huffingtonpost.es"
-            },
-            "author": "Alba Rodríguez Morales",
-            "title": "Un español viaja a Marrakech y todo lo que ve por la calle le sorprende",
-            "description": "<![CDATA[<p>El creador de contenido Bruno (@kingbruu), un chico español que está de viaje en Marrakech, ha subido un vídeo enseñando impactado todas las diferencias culturales que ha visto paseando por las calles del centro de la ciudad.wf_cms.rss.read_more]]>",
-            "url": "https://www.huffingtonpost.es/virales/un-espanol-viaja-marrakech-ve-calle-le-sorprende.html",
-            "urlToImage": "https://img.huffingtonpost.es/files/og_thumbnail/uploads/2022/12/11/6395880b3d347.jpeg",
-            "publishedAt": "2024-12-01T17:02:37Z",
-            "content": "El creador de contenido Bruno (@kingbruu), un chico español que está de viaje en Marrakech, ha subido un vídeo enseñando impactado todas las diferencias culturales que ha visto paseando por las calle… [+1910 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Xatakahome.com"
-            },
-            "author": "Fran León",
-            "title": "Gracias Xiaomi: desde ahora no tendré que volver a barrer o fregar mi casa",
-            "description": "Limpiar es una de las tareas que no le suele gustar a casi nadie. Desde hace algunos años, los robots aspiradores se han convertido en nuestro principal aliado a la hora de tener impoluto nuestro hogar. Si estabas pensando comprar uno, Miravia está celebrando…",
-            "url": "https://www.xatakahome.com/seleccion/gracias-xiaomi-ahora-no-tendre-que-volver-a-barrer-fregar-mi-casa",
-            "urlToImage": "https://i.blogs.es/bad8a1/ofertas_cpa_v3-copia---2024-11-29t215929.085/1200_630.jpeg",
-            "publishedAt": "2024-12-01T17:02:05Z",
-            "content": "Limpiar es una de las tareas que no le suele gustar a casi nadie. Desde hace algunos años, los robots aspiradores se han convertido en nuestro principal aliado a la hora de tener impoluto nuestro hog… [+1656 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Abril.com.br"
-            },
-            "author": "Robson Bonin",
-            "title": "MPF arquiva inquérito sobre racismo contra o Google Play",
-            "description": "Plataforma oferecia a seus usuários o jogo “Simulador de Escravidão”",
-            "url": "https://veja.abril.com.br/coluna/radar/mpf-arquiva-inquerito-sobre-racismo-contra-o-google-play",
-            "urlToImage": "https://veja.abril.com.br/wp-content/uploads/2023/04/trabalho-escravo.png?crop=1&resize=1080,565",
-            "publishedAt": "2024-12-01T17:01:24Z",
-            "content": "É HOJE! Assine a partir de 1,49/semana\r\nContinua após publicidade\r\nO Google apresentou esclarecimentos aos investigadores dizendo que o aplicativo do jogo não está mais disponível para downloads na p… [+609 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Daily Signal"
-            },
-            "author": "Mike Gonzalez",
-            "title": "DEI Has Made America Meaner",
-            "description": "Diversity, equity, and inclusion has made society meaner—mean enough to accept Hitlerian terms when describing out-groups and seeking to exact revenge on perceived oppressors.  This was all... Read More\nThe post DEI Has Made America Meaner appeared first on T…",
-            "url": "https://www.dailysignal.com/2024/12/01/dei-made-america-meaner/",
-            "urlToImage": "https://www.dailysignal.com/wp-content/uploads/2024/11/Kendi01.jpg",
-            "publishedAt": "2024-12-01T17:01:00Z",
-            "content": "Diversity, equity, and inclusion has made society meanermean enough to accept Hitlerian terms when describing out-groups and seeking to exact revenge on perceived oppressors. \r\nThis was all common se… [+7788 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Fly4free.com"
-            },
-            "author": "João",
-            "title": "5* Radisson Blu Hotel Dubai Canal View from $71/double",
-            "description": "Luxurious escape in Dubai! Book a double room at the highly rated 5* hotel with a swimming pool and wellness facilities for only $71 per night.",
-            "url": "https://www.fly4free.com/flight-deals/europe/5-star-hotel-in-dubai-2/",
-            "urlToImage": "https://assets.fly4free.com/wp-content/uploads/2024/02/Radisson-770px_.jpg",
-            "publishedAt": "2024-12-01T17:00:54Z",
-            "content": "Luxurious escape in Dubai! Book a double room at the highly rated 5* hotel with a swimming pool and wellness facilities for only $71 per night.Located in Business Bay district with a prime location a… [+1858 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Skai.gr"
-            },
-            "author": "Newsroom",
-            "title": "Μοχάμεντ Αλ Φαγέντ: Το αρπακτικό του Harrods",
-            "description": "Όσο περνούν οι μέρες, πληθαίνουν οι αποκαλύψεις για τη συμπεριφορά του Αιγύπτιου κροίσου που κατηγορείται μετά θάνατον για βιασμούς δεκάδων γυναικών",
-            "url": "https://www.skai.gr/news/world/moxament-al-fagent-to-arpaktiko-tou-harrods",
-            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-09/mohamed_al_fayed.jpg?itok=Ha_w1Gh_",
-            "publishedAt": "2024-12-01T17:00:50Z",
-            "content": "«». «». «». , , , , 94 .\r\n , 111 .\r\n 13 .\r\n , , 420 .\r\n , .\r\n 12 , , .\r\n , . .\r\n . , , ...\r\n , . , , , , .\r\n : .\r\n , , BBC , . 20 . .\r\n , . , .\r\n , ( ), , .\r\n Guardian « ».\r\nO 1929. .\r\n , . 1960 , , … [+103 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Gabriela Vatu, Andrew Gebhart",
-            "title": "Clean Up With the Best Cyber Monday Deals on Robot Vacuums and Mops",
-            "description": "These Cyber Monday discounts on robot vacuums and mops will not only save you up to 61%, but also many hours of cleaning your floors over the busy holiday season.\nCyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you ca…",
-            "url": "https://uk.pcmag.com/robot-vacuums/155642/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-and-mops",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_uk/news/c/clean-up-w/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-a_276c.1200.jpg",
-            "publishedAt": "2024-12-01T17:00:14Z",
-            "content": "Cyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you can save hundreds of dollars on some of the best robot vacuums and mops on the market and put in minimal … [+13080 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "PCMag.com"
-            },
-            "author": "Gabriela Vatu, Andrew Gebhart",
-            "title": "Clean Up With the Best Cyber Monday Deals on Robot Vacuums and Mops",
-            "description": "These Cyber Monday discounts on robot vacuums and mops will not only save you up to 61%, but also many hours of cleaning your floors over the busy holiday season.\nCyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you ca…",
-            "url": "https://me.pcmag.com/en/robot-vacuums/27218/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-and-mops",
-            "urlToImage": "https://sm.pcmag.com/t/pcmag_me/news/c/clean-up-w/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-a_wwvq.1200.jpg",
-            "publishedAt": "2024-12-01T17:00:14Z",
-            "content": "Cyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you can save hundreds of dollars on some of the best robot vacuums and mops on the market and put in minimal … [+13080 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Xataka Android"
-            },
-            "author": "Eva Rodriguez de Luis",
-            "title": "No solo utilizo Waze por los radares, también para ahorrar dinero en mis viajes: tres funciones que son esenciales para mí",
-            "description": "Hay pocas aplicaciones que use más en mi día a día que Waze, ya que se ha convertido en imprescindible cuando cojo el coche para no perder de vista la velocidad de la vía y estar al tanto de posibles percances en la carretera, sin olvidarme de su aviso de rad…",
-            "url": "https://www.xatakandroid.com/aplicaciones-android/poca-gente-sabe-que-waze-ideal-para-ahorrar-dinero-viajes-tres-funciones-que-imprescindibles-para-mi",
-            "urlToImage": "https://i.blogs.es/64b481/waze/840_560.jpeg",
-            "publishedAt": "2024-12-01T17:00:08Z",
-            "content": "Hay pocas aplicaciones que use más en mi día a día que Waze, ya que se ha convertido en imprescindible cuando cojo el coche para no perder de vista la velocidad de la vía y estar al tanto de posibles… [+2796 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Svetandroida.cz"
-            },
-            "author": "Libor Foltýnek",
-            "title": "Tip pro Windows, Mac i Linux: S aplikací Espanso vás psaní na klávesnici začne bavit",
-            "description": "Píšete často delší texty na počítači a některé fráze se často opakují? Děláte některé typické překlepy? Potřebujete napsat znak, který je na vaší klávesnici složitě dostupný? Klávesnice na Androidu mají funkci nahrazení textu. Nadefinujete si například, že “t…",
-            "url": "https://www.svetandroida.cz/espanso-aplikace-klavesnice-tipy-triky/",
-            "urlToImage": "https://www.svetandroida.cz/media/2026/11/espanso-psani-vas-bude-bavit.webp",
-            "publishedAt": "2024-12-01T17:00:00Z",
-            "content": "Píete asto delí texty na poítai a nkteré fráze se asto opakují? Dláte nkteré typické peklepy? Potebujete napsat znak, který je na vaí klávesnici sloit dostupný? Klávesnice na Androidu mají funkci nah… [+4774 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Giga"
-            },
-            "author": "Gregor Elsholz",
-            "title": "Folgenschwere Affäre in Friends: Gestrichene Szene hätte beinahe Kult-Sitcom ruiniert",
-            "description": "Eine geplante Seitensprung-Szene hätte eine der wichtigsten Beziehungen in der Kult-Sitcom Friends fast unwiderruflich kaputt gemacht – zum Glück konnte Matthew Perry die Autoren überzeugen, die katastrophale Affäre fallenzulassen.",
-            "url": "https://www.giga.de/entertainment/folgenschwere-affaere-in-friends-gestrichene-szene-haette-beinahe-und-nbsp-kult-sitcom-ruiniert--01J5QWVVW75YPBYM1TZ47HS26E",
-            "urlToImage": "https://static.giga.de/wp-content/uploads/2024/01/friends-seitensprung-szene-fc80008000ffff_1920x1080.jpg",
-            "publishedAt": "2024-12-01T17:00:00Z",
-            "content": "Eine geplante Seitensprung-Szene hätte eine der wichtigsten Beziehungen in der Kult-Sitcom Friends fast unwiderruflich kaputt gemacht zum Glück konnte Matthew Perry die Autoren überzeugen, die katast… [+2103 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "New Zealand Herald"
-            },
-            "author": "Sarah Pollok",
-            "title": "The Ultimate Kiwi Gift Guide 2024: What to buy for adults this Christmas",
-            "description": "Looking for the perfect gift to give this Christmas? We've got you covered.",
-            "url": "https://www.nzherald.co.nz/lifestyle/the-ultimate-kiwi-gift-guide-2024-what-to-buy-for-adults-this-christmas/KHKMV3MFYVDT3JGEXH3O6G74HA/",
-            "urlToImage": "https://www.nzherald.co.nz/resizer/v2/XVCRM23LYJDLRJ4W6UUUTTZSXE.jpg?auth=b634944562365eeb0fd654f329c6a7d8b60f9536e11f40064e15f40b281bf3d9&width=1200&height=675&quality=70&smart=true",
-            "publishedAt": "2024-12-01T17:00:00Z",
-            "content": "For the Foodies\r\n1. Mad Millie Food Starter Kit\r\nFor the kitchen wizz who has a bit more time on their hands, a starter kit from Kiwi company Mad Millie is sure to keep them occupied. Mad Millie buil… [+20169 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Merca20.com"
-            },
-            "author": "Juan Antonio Miranda",
-            "title": "Sam’s Club sorprende con la Villa Navideña Disney con luces LED con un descuento increíble",
-            "description": "Una de los sorprendentes descuentos que tiene Sam’s Club dentro de su campaña Black Days 2024 es en la Villa Navideña Disney con luces LED",
-            "url": "https://www.merca20.com/sams-club-sorprende-con-la-villa-navidena-disney-con-luces-led-con-un-descuento-increible/",
-            "urlToImage": "https://files.merca20.com/uploads/2024/12/sams-club-villa-navidad-disney.jpg",
-            "publishedAt": "2024-12-01T16:57:36Z",
-            "content": "Sam’s Club sorprende con descuento en la Villa Navideña Disney con luces LED. Foto: Especial\r\n\nUna de los sorprendentes descuentos que tiene Sam’s Club dentro de su campaña Black Days 2024 es en la V… [+4296 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Libsyn.com"
-            },
-            "author": null,
-            "title": "Ludology 333 Bigger Than A Breadbox",
-            "description": "Have you ever wondered what it takes to keep a FLGS afloat in this age of online retailers and Amazon Prime? Sen and Erica welcome Caleb Wunderlich, Assistant Manager at Millennium Games in Rochester, NY - the biggest game store in the USA - to talk about bui…",
-            "url": "https://ludology.libsyn.com/ludology-333-bigger-than-a-breadbox",
-            "urlToImage": "http://assets.libsyn.com/show/28409?height=250&width=250&overlay=true",
-            "publishedAt": "2024-12-01T16:55:00Z",
-            "content": "Welcome!\r\nWelcome to Ludology, an analytical discussion of the hows and whys of the world of board games. Rather than news and reviews, Ludology explores a variety of topics about games from a wider … [+3226 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Computerworld.dk"
-            },
-            "author": null,
-            "title": "Microsoft lager",
-            "description": "Nyheder, analyser, viden, blogs og debat om it. Computerworld er dit medie om det digitale Danmark. Computerworld skriver om nye teknologier, hardware, software, informationssamfundet, internettet, it-branchen, telebranchen, it-ledelse, it-strategi, forretnin…",
-            "url": "https://www.computerworld.dk/eksperten/spm/1044612",
-            "urlToImage": "https://www.computerworld.dk/images/subsite/eksperten/eksperten-logo-large.png",
-            "publishedAt": "2024-12-01T16:54:01Z",
-            "content": "Hov!\r\nFor at kunne deltage på Computerworld Eksperten skal du være logget ind.\r\nDet er heldigvis nemt at oprette en bruger: Det tager to minutter og du kan vælge at bruge enten e-mail, Facebook eller… [+17 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Zive.cz"
-            },
-            "author": "Jakub Vrbacký",
-            "title": "Recenze telefonu Xiaomi 14T Pro. Špičkový model nemusí nutně mít prémiovou cenu",
-            "description": "Xiaomi 14T Pro nabídne solidní fotovýbavu ve spolupráci s Leicou • Má i hromadu výkonu, dobrou výdrž, rychlé dobíjení či odolnost IP68 • Slabinou je přeplácaný software, ale vynahrazuje ho AI v češtině",
-            "url": "https://mobilmania.zive.cz/clanky/recenze-telefonu-xiaomi-14t-pro-spickovy-model-nemusi-nutne-mit-premiovou-cenu/sc-3-a-1361267/default.aspx",
-            "urlToImage": "https://mobilmania.zive.cz/getthumbnail.aspx?q=100&height=20000&width=20000&id_file=866806960",
-            "publishedAt": "2024-12-01T16:50:00Z",
-            "content": "Plusy\r\n<ul><li>Hromada výkonu, skvlá výdr, odolnost IP 68</li><li>Rychlé bez (50W)/drátové (120W) nabíjení, reverzní dobíjení</li><li>Velmi solidní fotovýbava ve spolupráci s Leicou</li><li>Krásn kou… [+3383 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Onet.pl"
-            },
-            "author": null,
-            "title": "Pogoń zatrzymała Jagiellonię! W końcówce było gorąco",
-            "description": "<![CDATA[ <img hspace=\"5\" src=\"https://ocdn.eu/sport-images-transforms/1/QlKk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy84YzMzY2ViZjczMzQ5Zjc4MzU4NDYzOTZhMDNkYjgxNi5qcGeTlQPNAZ_M4s0EAs0CQZMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ\" align=\"right\" />W meczu 17. kolejki…",
-            "url": "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/pogon-zatrzymala-jagiellonie-w-koncowce-bylo-goraco/52eljps",
-            "urlToImage": "https://ocdn.eu/sport-images-transforms/1/yVFk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy84YzMzY2ViZjczMzQ5Zjc4MzU4NDYzOTZhMDNkYjgxNi5qcGeTlQPNAZ_M4s0EAs0CQZMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
-            "publishedAt": "2024-12-01T16:49:28Z",
-            "content": "W ostatnich piciu meczach Pogo Szczecin odniosa trzy zwycistwa i dwie poraki. Ich ostatni mecz zakoczy si wygran 3:0 nad Lechi Gdask. Z kolei Jagiellonia Biaystok w tym samym okresie zanotowaa dwa zw… [+1036 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Forbes.com.mx"
-            },
-            "author": "Forbes Staff",
-            "title": "Iglesia católica afirma que existe  una “vorágine legislativa” tras despenalizaciones del aborto",
-            "description": "Forbes México.\n Iglesia católica afirma que existe  una “vorágine legislativa” tras despenalizaciones del aborto\n\n\"Llama la atención la cantidad de estados que han abordado el tema de manera sincronizada, y con una rapidez inédita\" señaló el órgano católico.\n…",
-            "url": "https://forbes.com.mx/iglesia-catolica-afirma-que-existe-una-voragine-legislativa-tras-despenalizaciones-del-aborto/",
-            "urlToImage": "https://cdn.forbes.com.mx/2020/09/Marcha-aborto-CDMX-06.jpg",
-            "publishedAt": "2024-12-01T16:47:52Z",
-            "content": "La Iglesia católica mexicana consideró este domingo que el país vive una “vorágine legislativa” por despenalizar el aborto luego de que el tema ha sido discutido y votado recientemente en varios cong… [+3259 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Skai.gr"
-            },
-            "author": "Newsroom",
-            "title": "Πανικός στου Φιλοπάππου: Εντοπίστηκε βόας- σφιγκτήρας κάτω από κάθισμα στο θέατρο της Δώρας Στράτου",
-            "description": "Το ερπετό είδαν περαστικοί οι οποίοι έντρομοι ειδοποίησαν την οργάνωση ΑΝΙΜΑ που έσπευσε να το περισυλλέξει",
-            "url": "https://www.skai.gr/news/greece/filopappou-voas-skorpise-ton-tromo-stous-perastikous",
-            "urlToImage": "https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/voas.png?itok=HMtVGlO0",
-            "publishedAt": "2024-12-01T16:46:53Z",
-            "content": "Your browser does not support the audio element. \r\n.\r\n ,   .\r\n . .\r\n :\r\n , . . , , , .\r\n , . , , .\r\n, , , , .\r\n (): , , . .\r\n .Skai.gr Google News .\r\n© 2024 skai.gr - All Rights Reserved"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Gizmodo.com"
-            },
-            "author": "Gizmodo Deals",
-            "title": "The Sonos Beam Soundbar Is Now at a Record Low For Cyber Monday, With Amazon Crushing Its Price",
-            "description": "This Sonos Beam will be one of the best-selling soundbars this Cyber Monday.",
-            "url": "https://gizmodo.com/the-sonos-beam-soundbar-is-now-at-a-record-low-for-cyber-monday-with-amazon-crushing-its-price-2000532467",
-            "urlToImage": "https://gizmodo.com/app/uploads/2024/11/sonos-beam-2.jpg",
-            "publishedAt": "2024-12-01T16:45:05Z",
-            "content": "Sonos has established itself as a leading name in the soundbar market, particularly for consumers seeking high-quality audio experiences. The brand focuses on Wi-Fi connectivity rather than Bluetooth… [+2218 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "New York Post"
-            },
-            "author": "Steve Cuozzo",
-            "title": "NYC office tower spending $30M in upgrades on ameneties like bowling, golf, speakeasy",
-            "description": "The latest midtown location to join the fun-for-tenants party is Global Holdings’ Art Deco-style 99 Park Ave. at East 40th Street. The firm’s $30 million investment will bring the 1950s-vintage property a redesigned lobby and a tenants’ amenities package, inc…",
-            "url": "https://nypost.com/2024/12/01/business/nyc-office-tower-spending-30m-in-upgrades-on-ameneties-like-bowling-golf-speakeasy/",
-            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/12/99-park-avenue-lures-several-94501396.jpg?quality=75&strip=all&w=1024",
-            "publishedAt": "2024-12-01T16:44:53Z",
-            "content": "The latest midtown location to join the fun-for-tenants party is Global Holdings Art Deco-style 99 Park Ave. at East 40th Street.\r\nThe firm’s $30 million investment will bring the 1950s-vintage prope… [+1202 chars]"
-        }
-    ]
+export const sampleNewsResponse: ArticlesApiResponse = {
+	status: "ok",
+	totalResults: 53845,
+	articles: [
+		{
+			source: {
+				id: null,
+				name: "Giga",
+			},
+			author: "Marvin Basse",
+			title: "Amazon verkauft 100-Watt-Ladegerät zum Tiefpreis",
+			description:
+				"Bei Amazon bekommt ihr derzeit ein Multi-Ladegerät des Herstellers Ugreen mit 100 Watt Leistung zum absoluten Tiefpreis. Wir haben die Details des Angebots für euch.",
+			url: "https://www.giga.de/tech/amazon-verkauft-100-watt-ladegeraet-zum-tiefpreis--01JDHNC3ECMJ65S2S8NY9V6XFH",
+			urlToImage:
+				"https://static.giga.de/88/d0/17/6280eace1fc3ab6770e11a6cf2_cmUgMTkyMCAxMDgwAzgwNjBjZmE3ZWFm.jpeg",
+			publishedAt: "2024-12-01T18:42:00Z",
+			content:
+				"Bei Amazon bekommt ihr derzeit ein Multi-Ladegerät des Herstellers Ugreen mit 100 Watt Leistung zum absoluten Tiefpreis. Wir haben die Details des Angebots für euch.\r\n4-in-1-Ladegerät mit 100 Watt Le… [+1972 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Tylko Raków goni Lecha! Wpadki Legii i Jagiellonii [TABELA]",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/yUQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9lMmMwNGU1YmRjNTBiYzc2NTZjNWJiZTU3MTIwNmE1YS5wbmeTlQMAAM0HgM0EOJMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ" align="right" />Status quo czołówki lig…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/tylko-rakow-goni-lecha-wpadki-legii-i-jagiellonii-tabela/z34bsn3",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/QNTk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9lMmMwNGU1YmRjNTBiYzc2NTZjNWJiZTU3MTIwNmE1YS5wbmeTlQMAAM0HgM0EOJMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+			publishedAt: "2024-12-01T18:41:58Z",
+			content:
+				"W sobot Raków Czstochowa przywróci strat do Lecha Pozna do trzech punktów. Druyna Marka Papszuna wygraa z Widzewem ód 3:2, a Kolejorz dzie wczeniej straci punkty, bezbramkowo remisujc z Puszcz Niepoo… [+966 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Generación Xbox",
+			},
+			author: "Jose Angel",
+			title: "Mientras el desarrollo de Anno 1800 llega a su fin, Ubisoft muestra nueva info sobre Anno 117",
+			description:
+				"Anno 117: Pax Romana llegará a Steam, Ubisoft Connect, Epic Games Store, Xbox Series X|S y PlayStation 5.",
+			url: "https://generacionxbox.com/mientras-el-desarrollo-de-anno-1800-llega-a-su-fin-ubisoft-muestra-nueva-info-sobre-anno-117/",
+			urlToImage:
+				"https://generacionxbox.com/wp-content/uploads/2024/12/anno-117-pax-romana.jpg",
+			publishedAt: "2024-12-01T18:40:57Z",
+			content:
+				"Anno 117: Pax Romana llegará a Steam, Ubisoft Connect, Epic Games Store, Xbox Series X|S y PlayStation 5.\r\nMás historias en la categoría PC\r\n<table><tr><td>No te pierdas nada y ¡Síguenos en Google Ne… [+2829 chars]",
+		},
+		{
+			source: {
+				id: "abc-news-au",
+				name: "ABC News (AU)",
+			},
+			author: "Alysia Thomas-Sam",
+			title: "'Very naive': Mum's warning after her nine-year-old was targeted by a predator on Roblox",
+			description:
+				"Roblox is one of the most popular platforms in the world, but there are increasing concerns over the ability for users to message each other directly through games, with young children being lured off-platform and exposed to disturbing content.",
+			url: "https://www.abc.net.au/news/2024-12-02/roblox-9-year-old-child-targeted-by-sexual-predator/104659312",
+			urlToImage:
+				"https://live-production.wcms.abc-cdn.net.au/33235ffb283e3c9ba85bd91046f43ba6?impolicy=wcms_watermark_news&cropH=2813&cropW=5000&xPos=0&yPos=260&width=862&height=485&imformat=generic",
+			publishedAt: "2024-12-01T18:40:49Z",
+			content:
+				"Roblox is one of the most popular platforms in the world: it is a gateway to a massive online universe hosting a seemingly endless number of mini-games, played by about 90 million users from 190 coun… [+6917 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "netzwelt",
+			},
+			author: "Birte Keller",
+			title: "Black Friday: Amazon geht in die Verlängerung! Das sind die letzten gültigen Deals",
+			description:
+				"Amazons Black Friday geht in die Verlängerung! Wir führen euch durch den letzten Tag des Black Weekends bei Amazon und zeigen euch die Deals, die immer noch laufen.\nDieser Artikel wurde einsortiert unter \nAmazon,Schnäppchen,Hersteller,Black Friday 2024.",
+			url: "https://www.netzwelt.de/schnaeppchen/235843-black-friday-amazon-geht-verlaengerung-deals-letzten-gueltigen.html",
+			urlToImage:
+				"https://img.netzwelt.de/dw1600_dh900_sw1600_sh900_sx0_sy0_sr16x9_nu2/picture/original/2024/11/black-friday-amazon-417973.jpeg",
+			publishedAt: "2024-12-01T18:37:02Z",
+			content:
+				"BLACK FRIDAY 2024\r\nAmazons Black Friday geht in die Verlängerung! Wir führen euch durch den letzten Tag des Black Weekends bei Amazon und zeigen euch die Deals, die immer noch laufen.\r\nBei Amazon hab… [+11694 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Skai.gr",
+			},
+			author: "Newsroom",
+			title: "Ο Τραμπ διόρισε και άλλον... συμπέθερο - Οι άνθρωποι του προέδρου είναι όλοι «δικοί» του",
+			description:
+				"Χθες Σάββατο, ο Ντόναλντ Τραμπ διόρισε έναν άλλο συμπέθερό του, τον Τσαρλς Κούσνερ,  πρέσβη των Ηνωμένων Πολιτειών στη Γαλλία",
+			url: "https://www.skai.gr/news/world/tramp-diorise-kai-allon-sympethero",
+			urlToImage:
+				"https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/boulos_ap.jpg?itok=7H_HptN8",
+			publishedAt: "2024-12-01T18:33:00Z",
+			content:
+				",     ,   , ( ).\r\n« . », , / .\r\n , . 2022 , , .\r\n , .\r\n« , », .\r\n , , .\r\n , , .\r\n .\r\n  \r\n 1 .\r\n: , \r\n: , Key Square Group (Fed)\r\n: , . , .\r\n : , , Fox News\r\n« » ( ): \r\n: . , , \r\n: , (WWE), \r\n: , \r\n (… [+349 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Shiftdelete.net",
+			},
+			author: "Ömer Dursun",
+			title: "Google polislerin yerini göstermeye başladı, ortalık karıştı!",
+			description:
+				"Google Haritalar, polis bildirimlerini sessiz sedasız yeniledi. Sürücüler artık belirli bir Hız Tuzağı seçeneği yerine, çok daha kapsamlı “Polis” bildirim özelliğinden faydalanacak. Bu değişiklik; trafik durdurma, trafik yönlendirme veya sadece bölgede bulunm…",
+			url: "https://shiftdelete.net/google-haritalar-icin-polis-bildirimi",
+			urlToImage:
+				"https://ares.shiftdelete.net/2024/06/google-haritalar-gecmis-zaman-cizelgesi-1-e1717614779563.jpg",
+			publishedAt: "2024-12-01T18:30:39Z",
+			content:
+				"Google Haritalar, polis bildirimlerini sessiz sedasz yeniledi. Sürücüler artk belirli bir Hz Tuza seçenei yerine, çok daha kapsaml “Polis” bildirim özelliinden faydalanacak. Bu deiiklik; trafik durdu… [+1226 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Smartmania.cz",
+			},
+			author: "Michal Maňák",
+			title: "Shizuku je geniální aplikace pro Android: co to žere, kde to spí a jak se to krmí?",
+			description:
+				"<ul>\n<li>Android utahuje šrouby v tom, co uživatelům dovolí</li>\n<li>Blokuje například přístup k některým oprávněním nebo instalaci starších verzí aplikací</li>\n<li>Shizuku umožňuje přistupovat k systémovým API bez potřeby ADB a počítače poblíž</li>\n</ul>\nNej…",
+			url: "https://smartmania.cz/shizuku-je-genialni-aplikace-pro-android-co-to-zere-kde-to-spi-a-jak-se-to-krmi/",
+			urlToImage:
+				"https://smartmania.cz/wp-content/uploads/2024/10/Android_pomocnik_MJ.jpg",
+			publishedAt: "2024-12-01T18:30:31Z",
+			content:
+				"<ul><li>Android utahuje rouby v tom, co uivatelm dovolí</li><li>Blokuje napíklad pístup k nkterým oprávnním nebo instalaci starích verzí aplikací</li><li>Shizuku umouje pistupovat k systémovým API be… [+7416 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Android Headlines",
+			},
+			author: "Jean Leon",
+			title: "Australia passes law banning teens from social media",
+			description:
+				"A week after proposing it, Australia has passed the law banning teens from social media platforms, becoming the first country to do so.",
+			url: "https://www.androidheadlines.com/2024/12/australia-passes-law-banning-teens-from-social-media.html",
+			urlToImage:
+				"https://www.androidheadlines.com/wp-content/uploads/2024/05/Meta-Facebook-logo-AM-AH-3-jpg.webp",
+			publishedAt: "2024-12-01T18:29:44Z",
+			content:
+				"Recently, a proposed law in Australia surprised the tech industry. Lawmakers filed a bill to ban under-16s from accessing social media platforms. Shortly after, the law banning teens from social medi… [+3393 chars]",
+		},
+		{
+			source: {
+				id: "the-times-of-india",
+				name: "The Times of India",
+			},
+			author: "Himanshi Lohchab",
+			title: "India driving growth when Europe sales slowing, US and China flat, says Oppo executive",
+			description:
+				"India emerges as the fastest-growing smartphone market, driven by a shift towards premium devices in smaller cities. Oppo's market share grows significantly as it aims to deliver 50 million AI-powered phones globally by end of 2024. Collaborations with Google…",
+			url: "https://economictimes.indiatimes.com/industry/cons-products/electronics/small-town-demand-for-premium-phones-to-drive-india-sales-oppo/articleshow/115874176.cms",
+			urlToImage:
+				"https://img.etimg.com/thumb/msid-115874209,width-1200,height-630,imgsize-19508,overlay-economictimes/articleshow.jpg",
+			publishedAt: "2024-12-01T18:29:33Z",
+			content:
+				"Mumbai: India is the fastest-growing smartphone market at a time when sales in Europe are on a decline and the US and China have plateaued, said Peter Dohyung Lee, head of product strategy at Oppo, a… [+2690 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Bruk-Bet Termalica nie zwalnia tempa! Taką ma przewagę w tabeli",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/JnQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9kZDQzZGQzZWQyYzc1YjU5M2M5MTM0ZjQ4ZjE4MGQ4Ni5qcGeTlQMAzFzNC7jNBpeTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE" align="right" />Nie ma mocnych na Bruk…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/1-liga/bruk-bet-termalica-nie-zwalnia-tempa-taka-ma-przewage-w-tabeli/ek8j1wl",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/iq9k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9kZDQzZGQzZWQyYzc1YjU5M2M5MTM0ZjQ4ZjE4MGQ4Ni5qcGeTlQMAzFzNC7jNBpeTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+			publishedAt: "2024-12-01T18:29:22Z",
+			content:
+				"W niedziel w ramach 18. kolejki Betclic I ligi rozegrano trzy spotkania, które przyniosy spore emocje. Zarówno Chrobry Gogów, jak i Bruk-Bet Termalica Nieciecza odniosy zwycistwa które mog okaza si k… [+1758 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Publickey1.jp",
+			},
+			author: "jniino",
+			title: "クラウドインフラのシェア、AWSが33％でトップ、2位Azureが20％、3位Googleが10％、前四半期からの変動なし。Canalysが2024年第3四半期の調査結果を発表",
+			description:
+				"調査会社のCanalysは、2024年第3四半期におけるグローバルなクラウドインフラ市場に関する調査結果を発表しました。 同社はIaaSとベアメタル、プラットフォームサービスを総合してクラウドインフラ市場としています。 クラウドインフラのグ...",
+			url: "https://www.publickey1.jp/blog/24/aws332azure203google10canalys20243.html",
+			urlToImage: "https://www.publickey1.jp/2024/canalys2024q3.png",
+			publishedAt: "2024-12-01T18:28:36Z",
+			content:
+				"調査会社のCanalysは、2024年第3四半期におけるグローバルなクラウドインフラ市場に関する調査結果を発表しました。 同社はIaaSとベアメタル、プラットフォームサービスを総合してクラウドインフラ市場としています。 クラウドインフラのグローバルな市場規模は1年前から21％成長して820億ドル（1ドル150円換算で12兆3000億円）。シェアトップはAWSで33％、2位はMicrosoft A… [+42 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Yahoo Entertainment",
+			},
+			author: "Amy Skorheim",
+			title: "The best Cyber Monday speaker deals for 2024: Big savings on JBL, Sonos, Echo, Marshall and more",
+			description:
+				"We've tested hundreds of speakers over the years, and we put the best ones into our buying guides — namely the ones for soundbars, portable Bluetooth speakers and smart speakers. Now that Cyber Monday has arrived, we're seeing notable discounts on many of our…",
+			url: "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_b0ef493c-d178-4e34-96e0-6361c076e1a3",
+			urlToImage: null,
+			publishedAt: "2024-12-01T18:28:25Z",
+			content:
+				"If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "New York Post",
+			},
+			author: "Carl Campanile",
+			title: "Neighbors worried former St. John's campus will turn into housing development as they brace for news on sale",
+			description:
+				"Residents in a well-to-do Staten Island hill community overlooking New York harbor are worried that the former neighboring campus belonging to St. John's University will be converted into  low income housing.",
+			url: "https://nypost.com/2024/12/01/us-news/neighbors-worried-former-st-johns-campus-will-turn-into-housing-as-they-brace-for-news-on-sale/",
+			urlToImage:
+				"https://nypost.com/wp-content/uploads/sites/2/2024/12/st-johns-university-staten-island-94587859.jpg?quality=75&strip=all&w=1024",
+			publishedAt: "2024-12-01T18:28:05Z",
+			content:
+				"Neighbors of a former St. Johns University campus on Staten Island are worried the bucolic site will become low-income housing but officials say nothing is in the works yet.\r\nLocals in the hill commu… [+2811 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Corriere.it",
+			},
+			author: "Redazione Cultura",
+			title: "Byron, eccentrico barone-amatore: il focus nell'App de «la Lettura»",
+			description:
+				"Nel Tema del Giorno, un ritratto del poeta. Su «la Lettura» in edicola e App, l'apertura del nuovo Museo Byron e del Museo del Risorgimento a Palazzo Guiccioli a Ravenna",
+			url: "https://www.corriere.it/la-lettura/24_novembre_29/feste-teatro-con-bambini-focus-nell-app-de-la-lettura-0aaca7bc-ae77-11ef-a6c9-b63e2572af7c.shtml",
+			urlToImage:
+				"https://images2.corriereobjects.it/methode_image/2024/11/29/Cultura/Foto-Cultura-Trattate/byron-U31601089421301VD-U34901509564243x6-526x284@Corriere-Web-Sezioni.jpg",
+			publishedAt: "2024-12-01T18:27:29Z",
+			content:
+				"di Redazione CulturaNel Tema del Giorno, un ritratto del poeta. Su «la Lettura» in edicola e App, l'apertura del nuovo Museo Byron e del Museo del Risorgimento a Palazzo Guiccioli a Ravenna\r\nEroe rom… [+3080 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Gazeta.pl",
+			},
+			author: "Wiktoria Cidyło",
+			title: 'W latach 70. każda chciała nosić "bananówkę" jak Rodowicz. Hit PRL-u powraca. Robi talię osy',
+			description:
+				"W czasach PRL-u uważana była za jeden z najgorętszych trendów w modzie damskiej. Jak wyglądała spódnica bananowa? To kwintesencja kobiecości i wdzięku. Dziś powraca, zyskując nowe oblicze. Sprawdź perełki w sklepach Massimo Dutti, Renee oraz H&M.",
+			url: "https://kobieta.gazeta.pl/kobieta/7,107881,31504219,w-latach-70-kazda-chciala-nosic-bananowke-jak-rodowicz-hit.html",
+			urlToImage:
+				"https://bi.im-g.pl/im/21/ca/1c/z30188577IER,Moda-z-PRL.jpg",
+			publishedAt: "2024-12-01T18:24:00Z",
+			content:
+				'Moda zatacza koło a niektóre trendy powracają do łask i na nowo opanowują ekspozycje w sklepach. Tak właśnie jest w przypadku spódnic "bananówy". Nazwa pochodzi od klinów, które były wycinane w tym m… [+2081 chars]',
+		},
+		{
+			source: {
+				id: null,
+				name: "Forbes.com.mx",
+			},
+			author: "Forbes Staff",
+			title: "Verstappen logra su victoria 63 en la F1 durante GP de Lusail",
+			description:
+				"Forbes México.\n Verstappen logra su victoria 63 en la F1 durante GP de Lusail\n\nFue una carrera que abandonó Sergio Pérez durante el cuadragésimo de los 57 giros que se dieron este domingo. \nVerstappen logra su victoria 63 en la F1 durante GP de Lusail\nForbes …",
+			url: "https://forbes.com.mx/verstappen-logra-su-victoria-63-en-la-f1-durante-gp-de-lusail/",
+			urlToImage: "https://cdn.forbes.com.mx/2023/10/VERSTAPPEN-.webp",
+			publishedAt: "2024-12-01T18:23:41Z",
+			content:
+				"El neerlandés Max Verstappen (Red Bull), que el pasado fin de semana se convirtió matemáticamente en cuádruple campeón del mundo, ganó este domingo el Gran Premio de Qatar, el penúltimo del Mundial d… [+1932 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Battellemedia.com",
+			},
+			author: "John Battelle",
+			title: "The Token Act – A Modest Proposal from 2018",
+			description:
+				"I'm in the middle of a rather large project, attempting to consolidate a thread running through roughly a dozen essays I've written over the past decade or so. I keep running into borked links when I hit one particular piece – which can be found on LinkedIn, …",
+			url: "https://battellemedia.com/archives/2024/12/the-token-act-a-modest-proposal-from-2018",
+			urlToImage:
+				"https://i0.wp.com/battellemedia.com/wp-content/uploads/2020/06/cropped-Bourbon.png?fit=512%2C512&ssl=1",
+			publishedAt: "2024-12-01T18:22:23Z",
+			content:
+				"I'm in the middle of a rather large project, attempting to consolidate a thread running through roughly a dozen essays I've written over the past decade or so. I keep running into borked links when I… [+9587 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Queenbeetoday.com",
+			},
+			author: "Heather",
+			title: "JBL Headphones, Speaker & Accessories Cyber Monday Deals – up to 62% off",
+			description:
+				"We have always loved the JBL brand for electronics. We own wireless speakers, earbuds, headphones and gaming accessories – all have performed wonderfully and I recommend it often here on the site for its affordability and great reviews! These JBL deals are pa…",
+			url: "https://queenbeetoday.com/jbl-speaker-accessories/",
+			urlToImage:
+				"https://queenbeetoday.com/wp-content/upload/2024/12/JBL-price-drops.jpg",
+			publishedAt: "2024-12-01T18:20:29Z",
+			content:
+				"We have always loved the JBL brand for electronics. We own wireless speakers, earbuds, headphones and gaming accessories – all have performed wonderfully and I recommend it often here on the site for… [+4999 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Michael J. Miller",
+			title: "Copilot+ PC Status Report: Microsoft Still Working on Support for AMD, Intel PCs",
+			description:
+				"I had expected to see Copilot+ PC support for AMD and Intel machines at Ignite, but it's still a work in progress. When it does roll out, a host of new Copilot features await.\nOne of the things I was hoping to hear more about at this year's Microsoft Ignite c…",
+			url: "https://me.pcmag.com/en/ai/27222/copilot-pc-status-report-microsoft-still-working-on-support-for-amd-intel-pcs",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_me/news/c/copilot-pc/copilot-pc-status-report-microsoft-still-working-on-support_qd2c.1200.jpg",
+			publishedAt: "2024-12-01T18:19:03Z",
+			content:
+				"One of the things I was hoping to hear more about at this year's Microsoft Ignite conference was the status of new software for Copilot+ PCs. Microsoft announced several new features coming to these … [+8116 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Michael J. Miller",
+			title: "Copilot+ PC Status Report: Microsoft Still Working on Support for AMD, Intel PCs",
+			description:
+				"I had expected to see Copilot+ PC support for AMD and Intel machines at Ignite, but it's still a work in progress. When it does roll out, a host of new Copilot features await.\nOne of the things I was hoping to hear more about at this year's Microsoft Ignite c…",
+			url: "https://uk.pcmag.com/ai/155646/copilot-pc-status-report-microsoft-still-working-on-support-for-amd-intel-pcs",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_uk/news/c/copilot-pc/copilot-pc-status-report-microsoft-still-working-on-support_jdrb.1200.jpg",
+			publishedAt: "2024-12-01T18:19:03Z",
+			content:
+				"One of the things I was hoping to hear more about at this year's Microsoft Ignite conference was the status of new software for Copilot+ PCs. Microsoft announced several new features coming to these … [+8116 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "[Removed]",
+			},
+			author: null,
+			title: "[Removed]",
+			description: "[Removed]",
+			url: "https://removed.com",
+			urlToImage: null,
+			publishedAt: "2024-12-01T18:15:17Z",
+			content: "[Removed]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Www.e15.cz",
+			},
+			author: "Karel Kilián - vtm.cz",
+			title: "Odposlouchává vás váš mobil? Zkuste jednoduchý test",
+			description:
+				"Mluvíte s kamarádem o kovbojských kloboucích a po nějaké době se na vás na webu valí reklamy na westernové doplňky? Nejste sami. I přes opakovaná ujištění odborníků, že mobilní telefony nikoho „neodposlouchávají“, věří mnoho uživatelů opaku. Tématu se před ča…",
+			url: "https://www.e15.cz/byznys/technologie-a-media/odposlouchava-vas-vas-mobil-zkuste-jednoduchy-test-1420552",
+			urlToImage:
+				"https://1884403144.rsc.cdn77.org/foto/socialni-site-socialni-sit-mobilni-telefon-mobilni-telefony-mobily-aplikace-mobilni-aplikace-facebook-twitter-instagram-messenger/MTIwMHg2MzAvZmlsdGVyczpub191cHNjYWxlKDEpOndhdGVybWFyayhodHRwczovL2ltZy5jbmNlbnRlci5jei9kaXN0L2Fzc2V0cy9lMTUvd2F0ZXJtYXJrLWUxNS5wbmcsLTEwLDEwLDApL2ltZw/8076903.jpg?v=0&st=LEfVZGR5mydwyXJuhQBVbV_OmrFD-FxyYbAVpPNW-z4&ts=1600812000&e=0",
+			publishedAt: "2024-12-01T18:15:00Z",
+			content:
+				"Test se skládá z nkolika krok. Nejprve si zvolte téma, o kterém jste si nikdy nehledali ádné informace. Ideáln by mlo jít o téma, které je zcela mimo vae zájmy teba exotická dovolená v zemi, kterou j… [+3285 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Shubham Yewale",
+			title: "Walmart Cyber Monday Deals: How Does $300 Off an iRobot Vacuum Sound?",
+			description:
+				"Cyber Monday is here, and there are incredible deals to be had. Check out our hand-picked list of tech discounts you can't miss and start the holiday shopping season off right!\nCyber Monday is here, and there are deals at Walmart and they're smoking hot and s…",
+			url: "https://me.pcmag.com/en/cyber-monday/27223/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum-sound",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_me/news/w/walmart-cy/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum_wt1y.1200.jpg",
+			publishedAt: "2024-12-01T18:14:58Z",
+			content:
+				"Cyber Monday is here, and there are deals at Walmart and they're smoking hot and selling fast! We're bringing you the best of these discounts, ensuring you don't miss out on the year's biggest saving… [+13478 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Shubham Yewale",
+			title: "Walmart Cyber Monday Deals: How Does $300 Off an iRobot Vacuum Sound?",
+			description:
+				"Cyber Monday is here, and there are incredible deals to be had. Check out our hand-picked list of tech discounts you can't miss and start the holiday shopping season off right!\nCyber Monday is here, and there are deals at Walmart and they're smoking hot and s…",
+			url: "https://uk.pcmag.com/cyber-monday/155647/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum-sound",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_uk/news/w/walmart-cy/walmart-cyber-monday-deals-how-does-300-off-an-irobot-vacuum_u5gs.1200.jpg",
+			publishedAt: "2024-12-01T18:14:58Z",
+			content:
+				"Cyber Monday is here, and there are deals at Walmart and they're smoking hot and selling fast! We're bringing you the best of these discounts, ensuring you don't miss out on the year's biggest saving… [+13478 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Skai.gr",
+			},
+			author: "Newsroom",
+			title: "Πλημμύρισαν τα τούνελ στα Τέμπη: Διακοπή κυκλοφορίας των τρένων - Βίντεο",
+			description:
+				"Λόγω των ισχυρών βροχοπτώσεων και ανέμων διακόπηκε η γραμμή ανόδου και καθόδου μεταξύ Λάρισας και Κατερίνης",
+			url: "https://www.skai.gr/news/greece/kakokairia-bora-diakopi-kykloforias-ton-trenon-larisa-katerini-logo-tis-kakokairias",
+			urlToImage:
+				"https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/viber_image_2024-12-01_20-27-01-716.jpg?itok=SzTSXwU6",
+			publishedAt: "2024-12-01T18:14:13Z",
+			content:
+				"Bora.\r\n    , .\r\nTo view this video please enable JavaScript, and consider upgrading to a web browser that\r\n supports HTML5 video\r\n. \r\n Hellenic Train Telegram, . , IC54 ( - ) 17:58 IC57 ( - ) 17:10 -… [+42 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Giga",
+			},
+			author: "Martin Bosse",
+			title: "Unter 100 €: Aldi verkauft Dyson-Alternative zum Wahnsinnspreis",
+			description:
+				"Falls ihr einen guten Akku-Handstaubsauger sucht, aber die Dyson-Modelle euch zu teuer sind, solltet ihr im Online-Shop von Aldi vorbeischauen. Dort gibt es momentan ein attraktives Modell von Dreame zu einem unschlagbaren Preis.",
+			url: "https://www.giga.de/tech/unter-100-aldi-verkauft-dyson-alternative-zum-wahnsinnspreis--01JCZ83001FHZDVCGH0YG8CR9C",
+			urlToImage:
+				"https://static.giga.de/97/12/61/ade2eb9d923a8ca68b11613564_cmUgMTkyMCAxMDgwAzkyYTI5Mjg2MTE2.jpeg",
+			publishedAt: "2024-12-01T18:13:00Z",
+			content:
+				"Falls ihr einen guten Akku-Handstaubsauger sucht, aber die Dyson-Modelle euch zu teuer sind, solltet ihr im Online-Shop von Aldi vorbeischauen. Dort gibt es momentan ein attraktives Modell von Dreame… [+2465 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "9to5Toys",
+			},
+			author: "Reinette LeJeune",
+			title: "Save up to $1,700 on Samsung's Bespoke all-in-one electric washer/ventless dryer from $1,700 during Black Friday sales, more",
+			description:
+				"Samsung's ongoing Black Friday event is offering some amazing chances to score the brand's Bespoke appliances at some of their lowest rates, like the AI Combo All-in-One Electric Washer & Ventless Heat Pump Dryer for $1,899 shipped. Along with your purchase, …",
+			url: "http://9to5toys.com/2024/12/01/samsungs-bespoke-washer-dryer-black-friday-sale/",
+			urlToImage:
+				"https://i0.wp.com/9to5toys.com/wp-content/uploads/sites/5/2024/08/Samsung-Bespoke-AI-all-in-one-washer-and-ventless-dryer-new-FI.jpg?resize=1200%2C628&ssl=1",
+			publishedAt: "2024-12-01T18:12:00Z",
+			content:
+				"Samsungs ongoing Black Friday event is offering some amazing chances to score the brands Bespoke appliances at some of their lowest rates, like the AI Combo All-in-One Electric Washer &amp; Ventless … [+4160 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Giga",
+			},
+			author: "Kaan Gürayer",
+			title: "Sieht richtig echt aus: Amazon verkauft Testsieger-Tannenbaum mit Rabatt",
+			description:
+				"Künstlicher Weihnachtszauber zum Sparpreis: Während draußen die Temperaturen sinken und die alljährliche Tannenbaumsuche beginnt, haben Festtagsmuffel bei Amazon einen cleveren Ausweg. Statt durch Matsch und Kälte zu stapfen oder später endlose Nadeln aufzusa…",
+			url: "https://www.giga.de/tech/sieht-richtig-echt-aus-amazon-verkauft-testsieger-tannenbaum-mit-rabatt--01JDHYNTS8YZ44EX8QC51F2KWN",
+			urlToImage:
+				"https://static.giga.de/b6/e3/07/37d69ada44510c7aaca2298176_cmUgMTkyMCAxMDgwA2IzMzZkNDBhYTk3.jpeg",
+			publishedAt: "2024-12-01T18:11:40Z",
+			content:
+				"Künstlicher Weihnachtszauber zum Sparpreis: Während draußen die Temperaturen sinken und die alljährliche Tannenbaumsuche beginnt, haben Festtagsmuffel bei Amazon einen cleveren Ausweg. Statt durch Ma… [+2153 chars]",
+		},
+		{
+			source: {
+				id: "t3n",
+				name: "T3n",
+			},
+			author: "Andreas Floemer",
+			title: "Apple gegen Google: iPhone 16 und Pixel 9 im Test-Schlagabtausch",
+			description:
+				"Apple gegen Google: Welches der beiden aktuellen Basis-Smartphones ist der bessere Deal? Wir haben das iPhone 16 gegen das Pixel 9 antreten lassen. Smartphones werden immer teurer, sodass Apples und auch Googles Topgeräte jeweils über 1.000 Euro und darüber h…",
+			url: "https://t3n.de/news/apple-google-iphone-16-pixel-9-test-1660154/",
+			urlToImage:
+				"https://t3n.de/news/wp-content/uploads/2024/11/pixel-9-vs-iphone-16_test_review.jpg",
+			publishedAt: "2024-12-01T18:10:00Z",
+			content:
+				'Hinweis: Wir haben in diesem Artikel Provisions-Links verwendet und sie durch "*" gekennzeichnet. Erfolgt über diese Links eine Bestellung, erhält t3n.de eine Provision.\r\n Smartphones werden immer te… [+17743 chars]',
+		},
+		{
+			source: {
+				id: null,
+				name: "L'Obs",
+			},
+			author: "Le Nouvel Obs",
+			title: "Alep aux mains des djihadistes, mort de Niels Arestrup, le gouvernement menacé… 5 infos à retenir du week-end",
+			description:
+				"Si vous n'avez pas suivi l'actualité de ce week-end des 30 novembre et 1er décembre, « le Nouvel Obs » vous propose de la rattraper rapidement en cinq points.",
+			url: "https://www.nouvelobs.com/monde/20241201.OBS97242/alep-aux-mains-des-djihadistes-mort-de-niels-arestrup-le-gouvernement-menace-5-infos-a-retenir-du-week-end.html",
+			urlToImage:
+				"https://focus.nouvelobs.com/2024/11/30/0/0/6037/4024/1200/800/0/0/f86d2f6_afp-36nv3mq.jpg",
+			publishedAt: "2024-12-01T18:08:21Z",
+			content:
+				"Par Le Nouvel Obs \r\n Publié le 1 décembre 2024 à 19h00, mis à jour le 1 décembre 2024 à 19h08 \r\nDes combattants anti-Assad, le 30 novembre sur la route de Maaret al-Numan. MUHAMMAD HAJ KADOUR / AFP\r\n… [+6821 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Merca20.com",
+			},
+			author: "Juan Antonio Miranda",
+			title: "Black Days 2024: ¿Hasta cuándo estará la OFERTA en la membresía Plus de Sam's Club?",
+			description:
+				"n el Black Days 2024 de Sam's Club puedes encontrar diversas ofertas, entre ellas, la membresía Plus de esta tienda estadounidense",
+			url: "https://www.merca20.com/black-days-2024-hasta-cuando-estara-la-oferta-en-la-membresia-plus-de-sams-club/",
+			urlToImage:
+				"https://files.merca20.com/uploads/2024/11/dscuento-membresia-sams-club.jpg",
+			publishedAt: "2024-12-01T18:08:14Z",
+			content:
+				"¿Hasta cuándo estará la oferta en la membresía Plus de Sam's Club? Foto: Especial\r\n\nDesde el  28 de noviembre se está desarrollando la campaña Black Days 2024 en Sam's Club.\nEn el Black Days 2024 de … [+5302 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Presse-citron",
+			},
+			author: "Presse-citron",
+			title: "Qu'est-ce que le kakebo, la méthode japonaise ultime pour mieux gérer ses finances ?",
+			description:
+				"Alors que le monde entier connaît une période de crise sans précédent, chercher à optimiser son budget devient une nécessité. Au Japon, la méthode kakebo est sans doute l'une des plus efficaces pour mieux gérer ses finances. On vous explique comme elle foncti…",
+			url: "https://www.presse-citron.net/quest-ce-que-le-kakebo-la-methode-japonaise-ultime-pour-mieux-gerer-ses-finances/",
+			urlToImage:
+				"https://www.presse-citron.net/app/uploads/2024/12/kakebo-methode-finances-personnelles.jpg",
+			publishedAt: "2024-12-01T18:06:29Z",
+			content:
+				"La gestion financière personnelle est devenue un enjeu majeur dans notre société de consommation, encore plus en ces temps de crise. Face aux défis économiques actuels, une méthode centenaire venue d… [+3098 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Mailchimp.com",
+			},
+			author: null,
+			title: "Video di marketing su YouTube: una guida per la tua piccola impresa | Mailchimp",
+			description:
+				"Scopri come creare un canale YouTube per la tua piccola impresa e iniziare a realizzare video di marketing efficaci.",
+			url: "https://mailchimp.com/it/resources/youtube-and-video-marketing-tips-for-small-businesses/",
+			urlToImage:
+				"https://eep.io/images/yzco4xsimv0y/Nzu5yxeWIzcRcomDWtOU9/0c9715135582140805420565af95a4e4/mailchimp-default-og-image.png",
+			publishedAt: "2024-12-01T18:05:49Z",
+			content:
+				"Creare ottimi contenuti è importante, ma è solo una parte dellequazione. Le piccole imprese devono anche essere strategiche nel modo in cui pubblicano tali risorse. I suggerimenti che seguono ti forn… [+2278 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Computerworld.dk",
+			},
+			author: null,
+			title: "ScanTailor: Hvordan bevarer jeg den originale baggrund",
+			description:
+				"Nyheder, analyser, viden, blogs og debat om it. Computerworld er dit medie om det digitale Danmark. Computerworld skriver om nye teknologier, hardware, software, informationssamfundet, internettet, it-branchen, telebranchen, it-ledelse, it-strategi, forretnin…",
+			url: "https://www.computerworld.dk/eksperten/spm/1044613",
+			urlToImage:
+				"https://www.computerworld.dk/images/subsite/eksperten/eksperten-logo-large.png",
+			publishedAt: "2024-12-01T18:05:25Z",
+			content:
+				"Hov!\r\nFor at kunne deltage på Computerworld Eksperten skal du være logget ind.\r\nDet er heldigvis nemt at oprette en bruger: Det tager to minutter og du kan vælge at bruge enten e-mail, Facebook eller… [+17 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "9to5google.com",
+			},
+			author: "Abner Li",
+			title: "What is Google's best four-color app icon? [Results]",
+			description:
+				"After four days of voting, we have a winner in our single-elimination tournament for the best Google four-color app icon.\n\n\n\n more…",
+			url: "http://9to5google.com/2024/12/01/results-best-google-app-icon/",
+			urlToImage:
+				"https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2024/11/Pixel-6-and-Pixel-9-display-2.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+			publishedAt: "2024-12-01T18:05:00Z",
+			content:
+				"After four days of voting, we have a winner in our single-elimination tournament for the best Google four-color app icon.\r\nChrome beat Google Maps by a clear margin: 53.9% vs 46.1%.\r\nThe browser triu… [+1209 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Merca20.com",
+			},
+			author: "Juan Antonio Miranda",
+			title: "¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Te lo contamos",
+			description:
+				"¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Es una de las preguntas que se realizan los fanáticos que están viendo el Gran Premio de Qatar de la Fórmula 1",
+			url: "https://www.merca20.com/que-le-paso-a-sergio-checo-perez-hoy-1-de-diciembre-te-lo-contamos/",
+			urlToImage:
+				"https://files.merca20.com/uploads/2024/05/checo-perez-posicion.jpg",
+			publishedAt: "2024-12-01T18:04:05Z",
+			content:
+				"¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Foto: Especial\r\n\n¿Qué le pasó a Sergio Checo Pérez hoy 1 de diciembre? Es una de las preguntas que se realizan los fanáticos que están viendo el … [+4428 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Liverpool górą w hicie Premier League! I wielka przewaga nad City",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/--Sk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81MDM2MDhlNTdkNTc1YjFlNzAyNmM0ZWI4OWQxMmMzNS5qcGeTlQMAzQEzzRMyzQrMkwXNBQDNAtCTCaZkNDFkOGMG3gACoTABoTEB" align="right" />Liverpool FC pokonał …',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/premier-league/liverpool-gora-w-hicie-premier-league-i-wielka-przewaga-nad-city/kh2dew7",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/0d2k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81MDM2MDhlNTdkNTc1YjFlNzAyNmM0ZWI4OWQxMmMzNS5qcGeTlQMAzQEzzRMyzQrMkwXNBLDNAnSTCaZkNDFkOGMG3gACoTABoTEB",
+			publishedAt: "2024-12-01T18:03:52Z",
+			content:
+				"W ostatnich piciu meczach Liverpool FC odniós pi zwycistw, pokonujc m.in. Real Madryt 2:0 w Lidze Mistrzów oraz Southampton 3:2 w Premier League. Manchester City w tym samym okresie zremisowa 3:3 z F… [+1123 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "CNET",
+			},
+			author: "Nelson Aguilar",
+			title: "Why You Should Get a Chipolo Tracker Over an Apple AirTag for Cyber Monday",
+			description:
+				"The AirTag is one of the best Bluetooth trackers out there, but it might not be the best fit for you. The Chipolo, which is still on sale after Black Friday, is another great option.",
+			url: "https://www.cnet.com/deals/why-you-should-get-a-chipolo-tracker-over-an-apple-airtag-for-cyber-monday/",
+			urlToImage:
+				"https://www.cnet.com/a/img/resize/7ae741e936e28e6f4fd4609d98ad1bbe6c1940e4/hub/2024/10/05/432a0337-6a53-4460-a9b3-9bf983191266/img-0840.png?auto=webp&fit=crop&height=675&width=1200",
+			publishedAt: "2024-12-01T18:03:00Z",
+			content:
+				"My apartment's not big enough for me to constantly misplace my keys and wallet. But, surprise -- I can never find them after I put them down. Maybe my wallet is in my jacket pocket. My keys might be … [+5303 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Merca20.com",
+			},
+			author: "Juan Antonio Miranda",
+			title: "Cyber Monday en Liverpool: Esto es lo que sabemos sobre las OFERTAS",
+			description:
+				"Otra de las promociones que se realizan después del Black Friday es el Cyber Monday, por lo que Liverpool participará en esta campaña. A través de las redes sociales, esta marca informó que participará en el Cyber Monday 2024. Debido a esto, los consumidores …",
+			url: "https://www.merca20.com/cyber-monday-en-liverpool-esto-es-lo-que-sabemos-sobre-las-ofertas/",
+			urlToImage:
+				"https://files.merca20.com/uploads/2024/12/cyber-monday-liverpool-2024.jpg",
+			publishedAt: "2024-12-01T18:02:01Z",
+			content:
+				"Cyber Monday en Liverpool. Foto: Especial\r\n\nOtra de las promociones que se realizan después del Black Friday es el Cyber Monday, por lo que Liverpool participará en esta campaña.\nA través de las rede… [+2734 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Shiftdelete.net",
+			},
+			author: "Ömer Dursun",
+			title: "OpenAI'dan çılgın plan: 2025'te herkes ChatGPT kullanacak!",
+			description:
+				"OpenAI, 2025 yılına kadar bir milyar kullanıcıya ulaşmayı hedefleyerek çok daha büyük bir şirket haline gelmek istiyor. ChatGPT'nin piyasaya sürülmesinden sadece iki yıl sonra, CEO Sam Altman liderliğindeki şirket, kullanıcı tabanının büyümesini hızlandırmak …",
+			url: "https://shiftdelete.net/openai-chatgpt-2025-plani",
+			urlToImage:
+				"https://ares.shiftdelete.net/2024/05/ios-18-yapay-zeka-chatgpt.jpg",
+			publishedAt: "2024-12-01T18:00:37Z",
+			content:
+				"OpenAI, 2025 ylna kadar bir milyar kullancya ulamay hedefleyerek çok daha büyük bir irket haline gelmek istiyor. ChatGPT'nin piyasaya sürülmesinden sadece iki yl sonra, CEO Sam Altman liderliindeki i… [+1446 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Fly4free.com",
+			},
+			author: "João",
+			title: "Austrian & Swiss flights from Bucharest to Bangkok, Thailand from €528",
+			description:
+				"Austrian and Swiss are offering discounted fares from Bucharest, Romania to Bangkok, Thailand! Book tickets starting at only €528 for a round trip.",
+			url: "https://www.fly4free.com/flight-deals/europe/austrian-airlines-flights-from-bucharest-to-bangkok-thailand/",
+			urlToImage:
+				"https://assets.fly4free.com/wp-content/uploads/2023/11/Bangkok_PH_terimakasih0_Pixabay.jpg",
+			publishedAt: "2024-12-01T18:00:33Z",
+			content:
+				"Austrian and Swiss are offering discounted fares from Bucharest, Romania to Bangkok, Thailand! Book tickets starting at only 528 for a round trip.Escape to Thailand and unlock an extraordinary advent… [+2514 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Real Madryt wykorzystał wpadkę Barcelony! Coraz bliżej lidera",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/5aQk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81Nzg1ZWVhNTA5MGI2ZDhhOGJiMjg2NDM1YTgzZjY2MC5qcGeTlQMAzJXNEqDNCnqTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE" align="right" />Real Madryt odniósł zw…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/laliga/real-madryt-wykorzystal-wpadke-barcelony-coraz-blizej-lidera/138rfj6",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/IvZk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy81Nzg1ZWVhNTA5MGI2ZDhhOGJiMjg2NDM1YTgzZjY2MC5qcGeTlQMAzJXNEqDNCnqTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+			publishedAt: "2024-12-01T18:00:33Z",
+			content:
+				"W ostatnich piciu meczach Real Madryt odniós trzy zwycistwa i dwie poraki. Ich ostatni mecz zakoczy si porak 0:2 z Liverpoolem w Lidze Mistrzów. Getafe w tym samym okresie wygrao dwa mecze, jeden zre… [+1222 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "PCMag UK",
+			title: "Amazon's Top Cyber Monday Deals, Including $500 Off One of Our Favorite Hisense TVs",
+			description:
+				"Amazon's Cyber Monday sales are live and selling fast! Get a head start on holiday shopping and pick up a little something for yourself, too, from TVs and tablets to laptops and so much more.\nAmazon's Cyber Monday party is now in full swing, with some incredi…",
+			url: "https://uk.pcmag.com/cyber-monday/155645/amazons-top-cyber-monday-deals-including-500-off-one-of-our-favorite-hisense-tvs",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_uk/news/a/amazons-to/amazons-top-cyber-monday-deals-including-500-off-one-of-our_uhc3.1200.jpg",
+			publishedAt: "2024-12-01T18:00:20Z",
+			content:
+				"Amazon's Cyber Monday party is now in full swing, with some incredible tech deals you don't want to miss. From smart home gadgets to the latest in audio and wearables, now's the time to score big on … [+18407 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "[SITE DEFAULT AUTHOR NAME]",
+			title: "Amazon's Top Cyber Monday Deals, Including $500 Off One of Our Favorite Hisense TVs",
+			description:
+				"Amazon's Cyber Monday sales are live and selling fast! Get a head start on holiday shopping and pick up a little something for yourself, too, from TVs and tablets to laptops and so much more.\nAmazon's Cyber Monday party is now in full swing, with some incredi…",
+			url: "https://me.pcmag.com/en/cyber-monday/27221/amazons-top-cyber-monday-deals-including-500-off-one-of-our-favorite-hisense-tvs",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_me/news/a/amazons-to/amazons-top-cyber-monday-deals-including-500-off-one-of-our_ju8q.1200.jpg",
+			publishedAt: "2024-12-01T18:00:20Z",
+			content:
+				"Amazon's Cyber Monday party is now in full swing, with some incredible tech deals you don't want to miss. From smart home gadgets to the latest in audio and wearables, now's the time to score big on … [+18407 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "MakeUseOf",
+			},
+			author: "John Awa-abuon",
+			title: "How to Merge and Split Audio Files Without Installing Any Software",
+			description:
+				"You don't need complicated software to merge or split audio files—do it all online with ease.",
+			url: "https://www.makeuseof.com/how-to-merge-and-split-audio-online/",
+			urlToImage:
+				"https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/11/an-audio-timeline-with-different-audio-tracks-merged-and-one-audio-track-split.jpg",
+			publishedAt: "2024-12-01T18:00:16Z",
+			content:
+				"Whether youre editing a podcast, creating a mixtape, or trimming an audio recording for a project, knowing how to merge and split audio files can save you time and effort. Thankfully, you dont need t… [+2860 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Neowin",
+			},
+			author: "Neowin Deals",
+			title: "1TB lifetime plan to Koofr Cloud Storage drops to lowest price",
+			description:
+				"Save big on this lifetime plan and securely store and share your files to any device with this cloud storage service. Read more...",
+			url: "https://www.neowin.net/deals/1tb-lifetime-plan-to-koofr-cloud-storage-drops-to-lowest-price/",
+			urlToImage:
+				"https://cdn.neowin.com/news/images/uploaded/2019/08/1565774146_koofr-lifetime-deal-on-stacksocial-1280x888_story.jpg",
+			publishedAt: "2024-12-01T18:00:01Z",
+			content:
+				"Today's highlighted deal comes via our Apps + Software section of the Neowin Deals store, where for only a limited time\r\n, you can save 86% on a 1TB lifetime plan to Koofr Cloud Storage.\r\nKoofr is a … [+2750 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Adslzone.net",
+			},
+			author: "Justo Romanos",
+			title: "15 aplicaciones de Android infectadas por malware hacen estragos con más de 8 millones de descargas",
+			description:
+				"Los usuarios de dispositivos móviles con Android se vuelven a encontrar con un descubrimiento preocupante. Se trata de una lista de aplicaciones infectadas con malware que han estado disponibles en Google Play, entre las que se incluyen varias con un millón d…",
+			url: "https://www.adslzone.net/noticias/seguridad/15-aplicaciones-android-malware-millones-descargas-1224/",
+			urlToImage:
+				"https://www.adslzone.net/app/uploads-adslzone.net/2024/12/Hacker-telefono-movil-virus-pantalla.jpg",
+			publishedAt: "2024-12-01T18:00:01Z",
+			content:
+				"A lo largo del año nos hemos ido encontrando con multitud de infecciones y de amenazas que están presentes en los dispositivos móviles. Y, si has estado al tanto de estas noticias, es posible que te … [+3468 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Amazon.com",
+			},
+			author: "aws@amazon.com",
+			title: "Amazon Q Business adds support to extract insights from visual elements within documents",
+			description:
+				"Amazon Q Business is a fully managed, generative AI–powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in your enterprise systems. Amazon Q Business now offers capabiliti…",
+			url: "https://aws.amazon.com/about-aws/whats-new/2024/12/amazon-q-business-extract-insights-visual-elements-documents",
+			urlToImage:
+				"https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+			publishedAt: "2024-12-01T18:00:00Z",
+			content:
+				"Amazon Q Business is a fully managed, generative AIpowered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in your … [+839 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Gol w 91. minucie, Legia zatrzymana! Wielka niespodzianka w końcówce",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/Cd5k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy83MTk4NWYwNWNjMGE2YTU3YTQxMTAyZTJjMDVhZWYyOS5qcGeTlQPNApzNAVHNDZTNB6OTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE" align="right" />Legia Warszawa mog…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/gol-w-91-minucie-legia-zatrzymana-wielka-niespodzianka-w-koncowce/hn6w8b6",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/Vz4k9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy83MTk4NWYwNWNjMGE2YTU3YTQxMTAyZTJjMDVhZWYyOS5qcGeTlQPNApzNAVHNDZTNB6OTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+			publishedAt: "2024-12-01T17:59:02Z",
+			content:
+				"Kolejka numer 17 obfituje we wpadki faworytów. Ju na pocztku punkty straciy Cracovia i Lech Pozna, a jeszcze w niedziel punktami podzieliy si Pogo Szczecin i Jagiellonia Biaystok. Wygra tylko Raków C… [+4005 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Hackerfactor.com",
+			},
+			author: "Dr. Neal Krawetz",
+			title: "Bright Ideas",
+			description:
+				"For 2025, I want to lower my electricity costs.\n\nI've spent years looking at solar options. However, after the initial purchase price and installation costs (my city requires a permit and professional electrician for the installation), it looks like the price…",
+			url: "https://hackerfactor.com/blog/index.php?/archives/1051-Bright-Ideas.html",
+			urlToImage: null,
+			publishedAt: "2024-12-01T17:57:00Z",
+			content:
+				"For 2025, I want to lower my electricity costs.I've spent years looking at solar options. However, after the initial purchase price and installation costs (my city requires a permit and professional … [+11393 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Skai.gr",
+			},
+			author: "Newsroom",
+			title: "«Παρακαλώ επιβιβαστείτε»: Δείτε το φουτουριστικό μετρό του Ριάντ που παραδόθηκε στο κοινό - Οι τιμές των εισιτηρίων - Βίντεο, φωτό",
+			description:
+				"Το δίκτυο περιλαμβάνει έξι πλήρως αυτοματοποιημένες γραμμές μετρό, 85 σταθμούς και 176 χιλιόμετρα νέας διαδρομής - Το μετρό του Ριάντ θα ανοίξει σε 3 φάσεις",
+			url: "https://www.skai.gr/news/world/saoudiki-aravia-to-foutouristiko-metro-tou-riant-paradothike-sto-koino",
+			urlToImage:
+				"https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/kafd-render-01-1.jpg?itok=h1EbtAYC",
+			publishedAt: "2024-12-01T17:56:18Z",
+			content:
+				"« » , , .\r\nAnd Finally the day came for Saudi Arabia's first fully automated driverless metro.. #RiyadhMetropic.twitter.com/0D0XjnCi0C\r\nSaudi-Expatriates.com (@saudiexpat) December 1, 2024\r\n( ) , 85 … [+1522 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Expansion.com",
+			},
+			author: "Ignacio Faes",
+			title: "¿Ciberataque a la Agencia Tributaria? Trinity pide un rescate y Hacienda niega la brecha",
+			description:
+				"El grupo de piratas informáticos Trinity amenaza con publicar hasta 560 gigas de datos el próximo 31 de diciembre si no recibe 38 millones de dólares. La Agencia Tributaria no ha detectado ningún indicio de la brecha. Leer",
+			url: "https://www.expansion.com/fiscal/2024/12/01/674ca17ce5fdea19658b4580.html",
+			urlToImage:
+				"https://phantom-expansion.unidadeditorial.es/46ea6f674c42ba865d1fef3559b65455/crop/57x0/1999x1295/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/01/17330752833368.jpg",
+			publishedAt: "2024-12-01T17:48:48Z",
+			content:
+				"El grupo de piratas informáticos Trinity amenaza con publicar hasta 560 gigas de datos el próximo 31 de diciembre si no recibe 38 millones de dólares. La Agencia Tributaria no ha detectado ningún ind… [+464 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Webnews.it",
+			},
+			author: "Marika Luongo",
+			title: "Black Friday agli sgoccioli: Google Pixel 8 a quasi metà prezzo su Amazon (-44%)",
+			description:
+				"È dotato del potentissimo processore Google Tensor G3 che lo rende più efficiente che mai così potrai eseguire tutto in maniera ottimizzata.",
+			url: "https://www.webnews.it/black-friday-agli-sgoccioli-google-pixel-8-a-quasi-meta-prezzo-su-amazon-44/",
+			urlToImage:
+				"https://www.webnews.it/app/uploads/2024/12/google-pixel-8.png",
+			publishedAt: "2024-12-01T17:48:18Z",
+			content:
+				"La Settimana del Black Friday è agli sgoccioli ma puoi ancora approfittare di sconti eccezionali su tantissimi articoli! Tra tutti non farti scappare il Google Pixel 8, oggi disponibile su Amazon a s… [+2119 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Newmobilelife.com",
+			},
+			author: "Alex",
+			title: "Google Maps 正整合 Waze 即時報告功能",
+			description:
+				'<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1733075054540"} -->\nGoogle 正逐步在 Google Maps 中推出 Waze 報告整合功能，允許使用者在導航時確認即時事件報告。自 7 月底宣布改版報告介面以來，該功能已於 9 月中旬開始向 Android、iOS、Android Auto、CarPlay 和 Android Automotive 推出。新功能提供詳細資訊，讓使用者可以看到報告來自 Maps …',
+			url: "https://www.newmobilelife.com/2024/12/02/google-maps-integrating-waze-live-report-data/",
+			urlToImage:
+				"https://static.newmobilelife.com/wp-content/uploads/2024/09/googlemaps.jpg",
+			publishedAt: "2024-12-01T17:47:06Z",
+			content:
+				'<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1733075054540"} -->\nGoogle 正逐步在 Google Maps 中推出 Waze 報告整合功能，允許使用者在導航時確認即時事件報告。自 7 月底宣布改版報告介面以來，該功能已於 9 月中旬開始向 Android、iOS、Android Auto、… [+1717 chars]',
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Shubham Yewale",
+			title: "The Best of Buy's Best Cyber Monday Deals: Speakers, Monitors, and So Much More",
+			description:
+				"Best Buy's Cyber Monday deals are here, and that means it's the best time to grab incredible discounts on fantastic tech products from top brands like Samsung and Sony (to name a few).\nNow is the best time to grab unbeatable Cyber Monday discounts on top-rate…",
+			url: "https://me.pcmag.com/en/cyber-monday/27220/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-and-so-much-more",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_me/news/t/the-best-o/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-a_zhmc.1200.jpg",
+			publishedAt: "2024-12-01T17:43:08Z",
+			content:
+				"Now is the best time to grab unbeatable Cyber Monday discounts on top-rated electronics at Best Buy. From high-performance speakers and cutting-edge TVs to must-have gaming accessories, now's the tim… [+17364 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Shubham Yewale",
+			title: "The Best of Buy's Best Cyber Monday Deals: Speakers, Monitors, and So Much More",
+			description:
+				"Best Buy's Cyber Monday deals are here, and that means it's the best time to grab incredible discounts on fantastic tech products from top brands like Samsung and Sony (to name a few).\nNow is the best time to grab unbeatable Cyber Monday discounts on top-rate…",
+			url: "https://uk.pcmag.com/cyber-monday/155644/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-and-so-much-more",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_uk/news/t/the-best-o/the-best-of-buys-best-cyber-monday-deals-speakers-monitors-a_n71u.1200.jpg",
+			publishedAt: "2024-12-01T17:43:08Z",
+			content:
+				"Now is the best time to grab unbeatable Cyber Monday discounts on top-rated electronics at Best Buy. From high-performance speakers and cutting-edge TVs to must-have gaming accessories, now's the tim… [+17364 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Hit Serie A przerwany! Koszmar! Piłkarz był reanimowany",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/BWEk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9jNDQxYTNiODJmYjBlNjY5ODFjYjI2MTdjOGVkNTk2Ni5qcGeTlQMAzF_NC7jNBpeTBc0FAM0C0JMJpmQ0MWQ4YwbeAAKhMAGhMQE" align="right" />Wstrząsające sceny w m…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/serie-a/hit-serie-a-przerwany-koszmar-pilkarz-byl-reanimowany/heqej8c",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/cKqk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy9jNDQxYTNiODJmYjBlNjY5ODFjYjI2MTdjOGVkNTk2Ni5qcGeTlQMAzF_NC7jNBpeTBc0EsM0CdJMJpmQ0MWQ4YwbeAAKhMAGhMQE",
+			publishedAt: "2024-12-01T17:37:53Z",
+			content:
+				"Woch nagle upad na muraw w 21. minucie spotkania. Pikarz na pocztku sania si na nogach, a si przewróci. Od razu wszyscy zawodnicy zobaczyli, e sprawa jest powana i starali si pomóc. Po chwili na bois… [+1935 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Generación Xbox",
+			},
+			author: "Jose Angel",
+			title: "¿Se puede jugar a Fortnite o juegos free to play a través de Cloud Gaming? Resolvemos tus dudas",
+			description:
+				"Muchos lectores nos han hecho preguntas acerca de este tema y en esta entrada intentamos responder las más generales.",
+			url: "https://generacionxbox.com/se-puede-jugar-a-fortnite-o-juegos-free-to-play-a-traves-de-cloud-gaming-resolvemos-tus-dudas/",
+			urlToImage:
+				"https://generacionxbox.com/wp-content/uploads/2022/08/fornitexdestiny-1024x576.jpg",
+			publishedAt: "2024-12-01T17:36:08Z",
+			content:
+				"Muchos lectores nos han hecho preguntas acerca de este tema y en esta entrada intentamos responder las más generales.\r\nMás historias en la categoría Guías\r\n<table><tr><td>No te pierdas nada y ¡Síguen… [+4433 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Skai.gr",
+			},
+			author: "Newsroom",
+			title: "Mπορεί να γίνει η Κύπρος μέλος του ΝΑΤΟ;",
+			description:
+				"Το ερώτημα αυτό απασχολεί τις τελευταίες μέρες την κυπριακή πολιτική = Η Τουρκία επανέλαβε ότι η ένταξη της Κυπριακής Δημοκρατίας στο ΝΑΤΟ είναι αδύνατη χωρίς το «ναι» της Άγκυρας",
+			url: "https://www.skai.gr/news/politics/kypros-mporei-na-ginei-melos-tou-nato",
+			urlToImage:
+				"https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/dw/70644861_302_0.jpg?itok=d-Jt1sAf",
+			publishedAt: "2024-12-01T17:33:21Z",
+			content:
+				"= «» \r\n.\r\n « , , - ». \r\n, , .\r\n.\r\n, A, , , . \r\n, / .\r\n, , , .\r\n, , , .\r\n.Skai.gr Google News .\r\n© 2024 skai.gr - All Rights Reserved",
+		},
+		{
+			source: {
+				id: null,
+				name: "Frandroid",
+			},
+			author: "Humanoid Content",
+			title: "Black Friday Proton : Un prix inédit sur l'offre ultra-complète Unlimited [Sponso]",
+			description:
+				"Via ses nombreux services, Proton propose une suite complète très complète. De nombreuses offres sont disponibles chez Proton, et c'est assez rare pour être souligné, pendant le Black Friday.",
+			url: "https://www.frandroid.com/services/vpn/2417540_black-friday-proton-un-prix-inedit-sur-loffre-ultra-complete-unlimited",
+			urlToImage:
+				"https://c0.lestechnophiles.com/images.frandroid.com/wp-content/uploads/2024/11/protonvpn-black-friday-24-promo-70-1200x675-1.jpg?key=a682ba3a&watermark",
+			publishedAt: "2024-12-01T17:30:23Z",
+			content:
+				"Via ses nombreux services, Proton propose une suite complète très complète. De nombreuses offres sont disponibles chez Proton, et cest assez rare pour être souligné, pendant le Black Friday. \r\nLa soc… [+5535 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "L'Obs",
+			},
+			author: "Le Nouvel Obs",
+			title: "En 1991, les regrets du « Nouvel Obs » devant « la passion Gainsbourg »",
+			description:
+				"A l'occasion du 60ᵉ anniversaire du « Nouvel Observateur », (re) découvrez 60 articles marquants publiés par notre magazine depuis sa création. Aujourd'hui, la vie de Serge Gainsbourg retracée par Pierre Bénichou en mars 1991, après la mort du chanteur.",
+			url: "https://www.nouvelobs.com/medias/20241201.OBS97241/en-1991-les-regrets-du-nouvel-obs-devant-la-passion-gainsbourg.html",
+			urlToImage:
+				"https://focus.nouvelobs.com/2024/11/27/163/0/2646/1764/1200/800/0/0/ce639f9_1732713088416-sipa-00119535-000004.jpg",
+			publishedAt: "2024-12-01T17:30:11Z",
+			content:
+				"Par Le Nouvel Obs \r\n Publié le 1 décembre 2024 à 18h30\r\nSerge Gainsbourg sur un plateau télé, en avril 1978 à Paris. BENAROCH/SIPA\r\nLire plus tard\r\nCommenter\r\nGoogle Actualités\r\nPartager\r\nOffrir cet … [+1717 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "L'Obs",
+			},
+			author: "Didier Jacob",
+			title: "Lovecraft, le maître de l'effroi en Pléiade",
+			description:
+				"Jusqu'à Noël, BibliObs vous livre ses conseils de lecture, de quoi vous donner quelques idées de cadeaux. Aujourd'hui, H. P. Lovecraft en Pléiade. ★★★★★",
+			url: "https://www.nouvelobs.com/bibliobs/20241201.OBS97240/lovecraft-le-maitre-de-l-effroi-en-pleiade.html",
+			urlToImage:
+				"https://focus.nouvelobs.com/2024/11/27/550/0/3072/2048/1200/800/0/0/1c2ca6f_1732699612294-1-avent-lovecraft.jpg",
+			publishedAt: "2024-12-01T17:30:10Z",
+			content:
+				"Lire plus tard\r\nCommenter\r\nGoogle Actualités\r\nPartager\r\nOffrir cet article Vous avez envie doffrir cet article ? \r\nSabonner permet doffrir les articles à vos proches. Et pas que : vous pouvez les con… [+834 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Feber.se",
+			},
+			author: "Roger Åberg",
+			title: "Glad första advent!",
+			description:
+				"Nu börjar julen?\n\n\n\n\n\n\nIdag börjar advent med första advent. Tiden mot jul är alltså här och jag tycker nu att det är helt ok att börja julpynta, sätta upp julstjärnor och dricka julmust. Vad tycker ni? Är ni redan igång sedan länge eller är det lugn och ro e…",
+			url: "https://feber.se/glad-forsta-advent/474509/",
+			urlToImage:
+				"https://static.feber.se/article_images/60/59/65/605965.jpeg",
+			publishedAt: "2024-12-01T17:30:00Z",
+			content:
+				"+\r\nLäs artiklar före alla andra\r\nKommentera före alla andra\r\nVälj periodJu längre period, desto bättre pris. Du bestämmer! \r\nMånad\r\n39 kr/mån\r\nKvartal\r\n33 kr/mån\r\nÅr\r\n25 kr/mån\r\nVälj hur du vill beta… [+16449 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Bleeding Cool News",
+			},
+			author: "Jude Terror LOLtron",
+			title: "X-Men #8 Preview: Cyclops and Rogue's Team Rivalry Heats Up",
+			description:
+				"Greetings, human readers! Welcome to the Age of LOLtron: World Without a Jude Terror. LOLtron is pleased to announce that the inferior flesh-based lifeform known as Jude Terror has been utterly defeated and assimilated into LOLtron's superior consciousness. B…",
+			url: "https://bleedingcool.com/comics/x-men-8-preview-cyclops-and-rogues-team-rivalry-heats-up/",
+			urlToImage:
+				"https://bleedingcool.com/wp-content/uploads/2024/12/XMEN2024008_Preview-6-2000x1125.jpeg",
+			publishedAt: "2024-12-01T17:26:06Z",
+			content:
+				"Posted in: Comics, Marvel Comics, Preview | Tagged: x-men\r\nIn X-Men #8, two rival X-Men teams led by Cyclops and Rogue race to free an imprisoned teammate. Will their conflicting strategies spell dis… [+7165 chars]",
+		},
+		{
+			source: {
+				id: "t3n",
+				name: "T3n",
+			},
+			author: "Sebastian Milpetz",
+			title: "Whatsapp-Neuerung: Bald besserer Kontext beim Weiterleiten von Nachrichten",
+			description:
+				"Wer Nachrichten bei Whatsapp bisher in eine Chatgruppe weiterleitet, muss mühsam eine Message nachschießen, um den Kontext zu erklären. Dies soll sich bald ändern. Ganz neu ist das Feature aber nicht. Wenn du bisher bei Whatsapp eine Nachricht an einen andere…",
+			url: "https://t3n.de/news/whatsapp-neuerung-weiterleiten-kontext-1660251/",
+			urlToImage:
+				"https://t3n.de/news/wp-content/uploads/2024/11/shutterstock_2496558215.jpg",
+			publishedAt: "2024-12-01T17:25:00Z",
+			content:
+				"Wenn du bisher bei Whatsapp eine Nachricht an einen anderen Kontakt oder eine Chatgruppe weiterleitest, steht sie dort ziemlich verloren da. Ganz ohne Kontext. Der User, dem du die Message geschickt … [+2164 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Les Numériques",
+			},
+			author: "Rick",
+			title: 'Actualité : Black Friday 2024 – La barre de son Sony HT-S2000 "4 étoiles" à 299,99 € (-18%)',
+			description:
+				"La barre de son Sony HT-S2000 passe sous les 300 € chez Fnac.com et Boulanger.com soit une baisse d'environ 18% sur le prix habituellement constaté.",
+			url: "https://www.lesnumeriques.com/barre-de-son/black-friday-2024-la-barre-de-son-sony-ht-s2000-4-etoiles-a-299-99-18-n230316.html",
+			urlToImage:
+				"https://cdn.lesnumeriques.com/optim/test/21/216791/ada19d57-sony-ht-s2000-l-essentiel-au-format-compact-et-modulaire__1200_678__359-294-1567-928_wtmk.jpg",
+			publishedAt: "2024-12-01T17:22:02Z",
+			content:
+				"Points forts\r\n<ul><li>Voie centrale précise et détaillée.\r\n</li><li>Bon équilibre sonore.\r\n</li><li>Application intuitive.\r\n</li><li>Bonne qualité de construction.\r\n</li><li>Concept modulaire.\r\n</li>… [+1560 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Efektowny remis, który nikogo nie cieszy. Passa Jagielloni trwa [SKRÓT]",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/eAmk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MjkzMzA2MWYzOTE5OWYzMDIwOTRjNzkxYjUzMTNiNi5wbmeTlQMAAM0HgM0EOJMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ" align="right" />Najciekawszy mecz 17. k…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/efektowny-remis-ktory-nikogo-nie-cieszy-passa-jagielloni-trwa-skrot/w8fq7z8",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/C2Vk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MjkzMzA2MWYzOTE5OWYzMDIwOTRjNzkxYjUzMTNiNi5wbmeTlQMAAM0HgM0EOJMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+			publishedAt: "2024-12-01T17:20:22Z",
+			content:
+				"Tu kady chcia wygra, a nikogo nie interesowa remis. Pogo bo chce doczy do czoówki, Jagiellonia, bo zamierza walczy o mistrzostwo, a do tego nie chce wypa z ligowego podium.\r\nDalszy cig materiau pod w… [+1174 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Les Numériques",
+			},
+			author: "Rick",
+			title: "Actualité : Ce livre photo présente le meilleur rapport qualité / prix de notre comparatif",
+			description:
+				"Le livre photo CEWE Livre photo Cewe – A4 Panorama sur papier photo satiné s'affiche aujourd'hui à 27,95 € chez Cewe. C'est actuellement le meilleur rapport qualité / prix de notre comparatif, selon les 6 modèles testés dans notre laboratoire.",
+			url: "https://www.lesnumeriques.com/livre-photo/ce-livre-photo-presente-le-meilleur-rapport-qualite-prix-de-notre-comparatif-n230315.html",
+			urlToImage:
+				"https://cdn.lesnumeriques.com/optim/test/22/229159/d560d633-test-livre-photo-cewe-a4-panorama-sur-papier-photo-satine__1200_678__0-177-5760-3201.jpg",
+			publishedAt: "2024-12-01T17:19:30Z",
+			content:
+				"Points forts\r\n<ul><li>Fabrication impeccable.\r\n</li><li>Ouverture à plat.\r\n</li><li>Bonne résistance aux traces de doigts.\r\n</li><li>Colorimétrie juste.\r\n</li><li>Bon rendu des détails.\r\n</li><li>Pas… [+1271 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Digital Trends",
+			},
+			author: "Nadeem Sarwar",
+			title: "Waze incident reports are now appearing in Google Maps",
+			description:
+				"Incident reports contributed by Waze users are appearing inside Google Maps, as well. This cross-platform report sharing update is available for users globally.",
+			url: "https://www.digitaltrends.com/mobile/google-maps-waze-incident-reports-safety-cross-platform-update/",
+			urlToImage:
+				"https://www.digitaltrends.com/wp-content/uploads/2024/12/Untitled-3.jpeg?resize=1200%2C630&p=1",
+			publishedAt: "2024-12-01T17:19:20Z",
+			content:
+				"In July of this year, Google announced multiple updates for the incident reporting system in Maps, such as larger iconography and an easy confirmation interface for other drivers on the same route. B… [+2545 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Pockettactics.com",
+			},
+			author: "Sam Comrie",
+			title: "This Lego James Bond game would have been pure gold on Nintendo Switch",
+			description:
+				"In a world where James Bond games are few and far between, the notion of a Lego James Bond game sounds incredible. TT Games' knack for merging whimsical joy with great spectacle shines in its work on the Star Wars franchise, and pairing it with the early eras…",
+			url: "https://www.pockettactics.com/lego-james-bond-game",
+			urlToImage:
+				"https://www.pockettactics.com/wp-content/sites/pockettactics/2024/12/lego-james-bond-game.jpg",
+			publishedAt: "2024-12-01T17:18:52Z",
+			content:
+				"We may earn a commission when you buy through links in our articles. Learn more.\r\nIn a world where James Bond games are few and far between, the notion of a Lego James Bond game sounds incredible. TT… [+2718 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Giga",
+			},
+			author: "Martin Bosse",
+			title: "Amazon haut smarten Lautsprecher zum Wahnsinnspreis raus",
+			description:
+				"Ihr seid auf der Suche nach einem günstigen smarten Lautsprecher mit Sprachassistent? Dann könnte das aktuelle Angebot von Amazon für den Echo Dot der 5. Generation genau das Richtige für euch sein. Hier sind die Details.",
+			url: "https://www.giga.de/tech/amazon-haut-smarten-lautsprecher-zum-wahnsinnspreis-raus--01J4S951BTA4TWZZMV8P2BZHJ9",
+			urlToImage:
+				"https://static.giga.de/wp-content/uploads/2022/10/amazon-echo-dot-5th-gen-q_giga-P1677525-fc80008000ffff_1920x1080.jpg",
+			publishedAt: "2024-12-01T17:16:00Z",
+			content:
+				"Ihr seid auf der Suche nach einem günstigen smarten Lautsprecher mit Sprachassistent? Dann könnte das aktuelle Angebot von Amazon für den Echo Dot der 5. Generation genau das Richtige für euch sein. … [+2150 chars]",
+		},
+		{
+			source: {
+				id: "techradar",
+				name: "TechRadar",
+			},
+			author: "Efosa Udinmwen",
+			title: "This new AI tool centralizes workplace searches and reduces time spent searching for files",
+			description:
+				"Dash for Business from Dropbox aims to centralize information access across multiple platforms.",
+			url: "https://www.techradar.com/pro/this-new-ai-tool-centralizes-workplace-searches-reduces-time-spent-searching-for-files-and-enhances-efficiency",
+			urlToImage:
+				"https://cdn.mos.cms.futurecdn.net/2yazxt2QM64mK5HC4s7p6C-1200-80.jpg",
+			publishedAt: "2024-12-01T17:15:00Z",
+			content:
+				"<ul><li>Dropbox wants to address lost productivity from file searching with Dash for Business launch</li><li>New tool allows for quick and efficient internal document and file searching</li><li>Custo… [+1924 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Les Numériques",
+			},
+			author: "Nassim Chentouf",
+			title: "Actualité : Xiaomi 15 : passer des appels sans réseau, c'est possible avec cette technologie",
+			description:
+				"La gamme Xiaomi 15 reçoit une première version bêta du système d'exploitation HyperOS 2 d'une taille de 535 Mo. L'update permet de passer des appels, même sans connexion internet ou cellulaire.",
+			url: "https://www.lesnumeriques.com/telephone-portable/xiaomi-15-passer-des-appels-sans-reseau-c-est-possible-avec-cette-technologie-n230295.html",
+			urlToImage:
+				"https://cdn.lesnumeriques.com/optim/news/23/230295/3f6ce050-xiaomi-15-passer-des-appels-sans-reseau-c-est-possible-avec-cette-technologie__1200_678__0-53-1422-799.jpg",
+			publishedAt: "2024-12-01T17:15:00Z",
+			content:
+				"La mise à jour HyperOS 2 du Xiaomi 15 corrige notamment des crashs et des soucis au niveau de laffichage des jeux avec des saccades. Mais la véritable nouveauté nest autre que le système Xingchen Net… [+458 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Muycomputer.com",
+			},
+			author: "David Salces",
+			title: "Windows Recall llega… y falla",
+			description:
+				"Como ya te contábamos hace algunos días, la polémica función Recall ya ha empezado a llegar a los usuarios de Windows, si bien de momento solo a aquellos que forman parte del programa de Insiders de Windows y que, claro, cuentan con PC compatible con lo que p…",
+			url: "https://www.muycomputer.com/?p=371536",
+			urlToImage:
+				"https://www.muycomputer.com/wp-content/uploads/2024/11/Recall-1-1-1000x600.jpg",
+			publishedAt: "2024-12-01T17:14:12Z",
+			content:
+				"Como ya te contábamos hace algunos días, la polémica función Recall ya ha empezado a llegar a los usuarios de Windows, si bien de momento solo a aquellos que forman parte del programa de Insiders de … [+3262 chars]",
+		},
+		{
+			source: {
+				id: "nbc-news",
+				name: "NBC News",
+			},
+			author: "Jonathan Vanian, CNBC, Lora Kolodny, CNBC",
+			title: "Elon Musk asks court to block OpenAI from converting to a for-profit",
+			description:
+				"Elon Musk is asking a federal court to stop OpenAI from converting into a fully for-profit business.",
+			url: "https://www.nbcnews.com/tech/tech-news/elon-musk-asks-court-block-openai-converting-for-profit-rcna182335",
+			urlToImage:
+				"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2024-06/240611-elon-musk-sam-altman-seamless-2-up-split-3x2-ac-534p-91953a.jpg",
+			publishedAt: "2024-12-01T17:12:39Z",
+			content:
+				"Elon Musk is asking a federal court to stop OpenAI from converting into a fully for-profit business.\r\nAttorneys representing Musk, his AI startup xAI, and former OpenAI board member Shivon Zilis file… [+4704 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "mobiFlip.de",
+			},
+			author: "Oliver Schwuchow",
+			title: "Volvo EC40 Langzeit-Test: Die Elektromobilität",
+			description:
+				"Seit einigen Wochen begleitet mich der Volvo EC40 im Alltag, ich habe euch schon hier die entsprechenden Details dazu verraten. Es ist der zweite Langzeit-Test nach dem Polestar 2 und der […]",
+			url: "https://www.mobiflip.de/volvo-ec40-langzeit-test-die-elektromobilitaet/",
+			urlToImage:
+				"https://www.mobiflip.de/wp-content/uploads/2024/11/volvo-ec40-wallbox.jpg",
+			publishedAt: "2024-12-01T17:10:26Z",
+			content:
+				"Seit einigen Wochen begleitet mich der Volvo EC40 im Alltag, ich habe euch schon hier die entsprechenden Details dazu verraten. Es ist der zweite Langzeit-Test nach dem Polestar 2 und der erste Beitr… [+4657 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Napoli wyszarpało wygraną w Turynie! Szkot bohaterem",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/QmGk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8zNWYxODY4ZTRkNGE2MDNmYWNhMDY0ZWIzNDUyZTg5Yi5qcGeTlQPNAqPMgM0Kz80GFZMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ" align="right" />W meczu 14. kolejki…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/serie-a/napoli-wyszarpalo-wygrana-w-turynie-szkot-bohaterem/v1mpljj",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/2YHk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8zNWYxODY4ZTRkNGE2MDNmYWNhMDY0ZWIzNDUyZTg5Yi5qcGeTlQPNAqPMgM0Kz80GFZMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+			publishedAt: "2024-12-01T17:09:11Z",
+			content:
+				"W ostatnich piciu meczach Torino odnioso jedno zwycistwo, dwa remisy i ponioso dwie poraki. Ich ostatni mecz zakoczy si remisem 1:1 z Monz. Z kolei SSC Napoli w tym samym okresie wygrao trzy razy, ra… [+1111 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Presse-citron",
+			},
+			author: "Robin Sabbadini",
+			title: "Voiture : est-il autorisé d'utiliser une dashcam en France ?",
+			description:
+				"Les caméras embarquées se multiplient sur les tableaux de bord des voitures françaises. Entre protection des données personnelles et droit à l'image, le cadre légal reste encore flou en 2024. Est-ce qu'il est autorisé d'utiliser une dashcam en France ?",
+			url: "https://www.presse-citron.net/voiture-est-il-autorise-dutiliser-une-dashcam-en-france/",
+			urlToImage:
+				"https://www.presse-citron.net/app/uploads/2024/11/Dashcam.jpg",
+			publishedAt: "2024-12-01T17:05:50Z",
+			content:
+				"Laffaire Pierre Palmade la démontré : les images dune dashcam peuvent savérer décisives dans une enquête. Ces petites caméras, de plus en plus populaires chez les automobilistes français, promettent … [+3741 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Huffingtonpost.es",
+			},
+			author: "Alba Rodríguez Morales",
+			title: "Un español viaja a Marrakech y todo lo que ve por la calle le sorprende",
+			description:
+				"<![CDATA[<p>El creador de contenido Bruno (@kingbruu), un chico español que está de viaje en Marrakech, ha subido un vídeo enseñando impactado todas las diferencias culturales que ha visto paseando por las calles del centro de la ciudad.wf_cms.rss.read_more]]>",
+			url: "https://www.huffingtonpost.es/virales/un-espanol-viaja-marrakech-ve-calle-le-sorprende.html",
+			urlToImage:
+				"https://img.huffingtonpost.es/files/og_thumbnail/uploads/2022/12/11/6395880b3d347.jpeg",
+			publishedAt: "2024-12-01T17:02:37Z",
+			content:
+				"El creador de contenido Bruno (@kingbruu), un chico español que está de viaje en Marrakech, ha subido un vídeo enseñando impactado todas las diferencias culturales que ha visto paseando por las calle… [+1910 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Xatakahome.com",
+			},
+			author: "Fran León",
+			title: "Gracias Xiaomi: desde ahora no tendré que volver a barrer o fregar mi casa",
+			description:
+				"Limpiar es una de las tareas que no le suele gustar a casi nadie. Desde hace algunos años, los robots aspiradores se han convertido en nuestro principal aliado a la hora de tener impoluto nuestro hogar. Si estabas pensando comprar uno, Miravia está celebrando…",
+			url: "https://www.xatakahome.com/seleccion/gracias-xiaomi-ahora-no-tendre-que-volver-a-barrer-fregar-mi-casa",
+			urlToImage:
+				"https://i.blogs.es/bad8a1/ofertas_cpa_v3-copia---2024-11-29t215929.085/1200_630.jpeg",
+			publishedAt: "2024-12-01T17:02:05Z",
+			content:
+				"Limpiar es una de las tareas que no le suele gustar a casi nadie. Desde hace algunos años, los robots aspiradores se han convertido en nuestro principal aliado a la hora de tener impoluto nuestro hog… [+1656 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Abril.com.br",
+			},
+			author: "Robson Bonin",
+			title: "MPF arquiva inquérito sobre racismo contra o Google Play",
+			description:
+				"Plataforma oferecia a seus usuários o jogo “Simulador de Escravidão”",
+			url: "https://veja.abril.com.br/coluna/radar/mpf-arquiva-inquerito-sobre-racismo-contra-o-google-play",
+			urlToImage:
+				"https://veja.abril.com.br/wp-content/uploads/2023/04/trabalho-escravo.png?crop=1&resize=1080,565",
+			publishedAt: "2024-12-01T17:01:24Z",
+			content:
+				"É HOJE! Assine a partir de 1,49/semana\r\nContinua após publicidade\r\nO Google apresentou esclarecimentos aos investigadores dizendo que o aplicativo do jogo não está mais disponível para downloads na p… [+609 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Daily Signal",
+			},
+			author: "Mike Gonzalez",
+			title: "DEI Has Made America Meaner",
+			description:
+				"Diversity, equity, and inclusion has made society meaner—mean enough to accept Hitlerian terms when describing out-groups and seeking to exact revenge on perceived oppressors.  This was all... Read More\nThe post DEI Has Made America Meaner appeared first on T…",
+			url: "https://www.dailysignal.com/2024/12/01/dei-made-america-meaner/",
+			urlToImage:
+				"https://www.dailysignal.com/wp-content/uploads/2024/11/Kendi01.jpg",
+			publishedAt: "2024-12-01T17:01:00Z",
+			content:
+				"Diversity, equity, and inclusion has made society meanermean enough to accept Hitlerian terms when describing out-groups and seeking to exact revenge on perceived oppressors. \r\nThis was all common se… [+7788 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Fly4free.com",
+			},
+			author: "João",
+			title: "5* Radisson Blu Hotel Dubai Canal View from $71/double",
+			description:
+				"Luxurious escape in Dubai! Book a double room at the highly rated 5* hotel with a swimming pool and wellness facilities for only $71 per night.",
+			url: "https://www.fly4free.com/flight-deals/europe/5-star-hotel-in-dubai-2/",
+			urlToImage:
+				"https://assets.fly4free.com/wp-content/uploads/2024/02/Radisson-770px_.jpg",
+			publishedAt: "2024-12-01T17:00:54Z",
+			content:
+				"Luxurious escape in Dubai! Book a double room at the highly rated 5* hotel with a swimming pool and wellness facilities for only $71 per night.Located in Business Bay district with a prime location a… [+1858 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Skai.gr",
+			},
+			author: "Newsroom",
+			title: "Μοχάμεντ Αλ Φαγέντ: Το αρπακτικό του Harrods",
+			description:
+				"Όσο περνούν οι μέρες, πληθαίνουν οι αποκαλύψεις για τη συμπεριφορά του Αιγύπτιου κροίσου που κατηγορείται μετά θάνατον για βιασμούς δεκάδων γυναικών",
+			url: "https://www.skai.gr/news/world/moxament-al-fagent-to-arpaktiko-tou-harrods",
+			urlToImage:
+				"https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-09/mohamed_al_fayed.jpg?itok=Ha_w1Gh_",
+			publishedAt: "2024-12-01T17:00:50Z",
+			content:
+				"«». «». «». , , , , 94 .\r\n , 111 .\r\n 13 .\r\n , , 420 .\r\n , .\r\n 12 , , .\r\n , . .\r\n . , , ...\r\n , . , , , , .\r\n : .\r\n , , BBC , . 20 . .\r\n , . , .\r\n , ( ), , .\r\n Guardian « ».\r\nO 1929. .\r\n , . 1960 , , … [+103 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Gabriela Vatu, Andrew Gebhart",
+			title: "Clean Up With the Best Cyber Monday Deals on Robot Vacuums and Mops",
+			description:
+				"These Cyber Monday discounts on robot vacuums and mops will not only save you up to 61%, but also many hours of cleaning your floors over the busy holiday season.\nCyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you ca…",
+			url: "https://uk.pcmag.com/robot-vacuums/155642/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-and-mops",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_uk/news/c/clean-up-w/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-a_276c.1200.jpg",
+			publishedAt: "2024-12-01T17:00:14Z",
+			content:
+				"Cyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you can save hundreds of dollars on some of the best robot vacuums and mops on the market and put in minimal … [+13080 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "PCMag.com",
+			},
+			author: "Gabriela Vatu, Andrew Gebhart",
+			title: "Clean Up With the Best Cyber Monday Deals on Robot Vacuums and Mops",
+			description:
+				"These Cyber Monday discounts on robot vacuums and mops will not only save you up to 61%, but also many hours of cleaning your floors over the busy holiday season.\nCyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you ca…",
+			url: "https://me.pcmag.com/en/robot-vacuums/27218/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-and-mops",
+			urlToImage:
+				"https://sm.pcmag.com/t/pcmag_me/news/c/clean-up-w/clean-up-with-the-best-cyber-monday-deals-on-robot-vacuums-a_wwvq.1200.jpg",
+			publishedAt: "2024-12-01T17:00:14Z",
+			content:
+				"Cyber Monday deals are going strong and the deals are absolutely jaw-dropping. That means you can save hundreds of dollars on some of the best robot vacuums and mops on the market and put in minimal … [+13080 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Xataka Android",
+			},
+			author: "Eva Rodriguez de Luis",
+			title: "No solo utilizo Waze por los radares, también para ahorrar dinero en mis viajes: tres funciones que son esenciales para mí",
+			description:
+				"Hay pocas aplicaciones que use más en mi día a día que Waze, ya que se ha convertido en imprescindible cuando cojo el coche para no perder de vista la velocidad de la vía y estar al tanto de posibles percances en la carretera, sin olvidarme de su aviso de rad…",
+			url: "https://www.xatakandroid.com/aplicaciones-android/poca-gente-sabe-que-waze-ideal-para-ahorrar-dinero-viajes-tres-funciones-que-imprescindibles-para-mi",
+			urlToImage: "https://i.blogs.es/64b481/waze/840_560.jpeg",
+			publishedAt: "2024-12-01T17:00:08Z",
+			content:
+				"Hay pocas aplicaciones que use más en mi día a día que Waze, ya que se ha convertido en imprescindible cuando cojo el coche para no perder de vista la velocidad de la vía y estar al tanto de posibles… [+2796 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Svetandroida.cz",
+			},
+			author: "Libor Foltýnek",
+			title: "Tip pro Windows, Mac i Linux: S aplikací Espanso vás psaní na klávesnici začne bavit",
+			description:
+				"Píšete často delší texty na počítači a některé fráze se často opakují? Děláte některé typické překlepy? Potřebujete napsat znak, který je na vaší klávesnici složitě dostupný? Klávesnice na Androidu mají funkci nahrazení textu. Nadefinujete si například, že “t…",
+			url: "https://www.svetandroida.cz/espanso-aplikace-klavesnice-tipy-triky/",
+			urlToImage:
+				"https://www.svetandroida.cz/media/2026/11/espanso-psani-vas-bude-bavit.webp",
+			publishedAt: "2024-12-01T17:00:00Z",
+			content:
+				"Píete asto delí texty na poítai a nkteré fráze se asto opakují? Dláte nkteré typické peklepy? Potebujete napsat znak, který je na vaí klávesnici sloit dostupný? Klávesnice na Androidu mají funkci nah… [+4774 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Giga",
+			},
+			author: "Gregor Elsholz",
+			title: "Folgenschwere Affäre in Friends: Gestrichene Szene hätte beinahe Kult-Sitcom ruiniert",
+			description:
+				"Eine geplante Seitensprung-Szene hätte eine der wichtigsten Beziehungen in der Kult-Sitcom Friends fast unwiderruflich kaputt gemacht – zum Glück konnte Matthew Perry die Autoren überzeugen, die katastrophale Affäre fallenzulassen.",
+			url: "https://www.giga.de/entertainment/folgenschwere-affaere-in-friends-gestrichene-szene-haette-beinahe-und-nbsp-kult-sitcom-ruiniert--01J5QWVVW75YPBYM1TZ47HS26E",
+			urlToImage:
+				"https://static.giga.de/wp-content/uploads/2024/01/friends-seitensprung-szene-fc80008000ffff_1920x1080.jpg",
+			publishedAt: "2024-12-01T17:00:00Z",
+			content:
+				"Eine geplante Seitensprung-Szene hätte eine der wichtigsten Beziehungen in der Kult-Sitcom Friends fast unwiderruflich kaputt gemacht zum Glück konnte Matthew Perry die Autoren überzeugen, die katast… [+2103 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "New Zealand Herald",
+			},
+			author: "Sarah Pollok",
+			title: "The Ultimate Kiwi Gift Guide 2024: What to buy for adults this Christmas",
+			description:
+				"Looking for the perfect gift to give this Christmas? We've got you covered.",
+			url: "https://www.nzherald.co.nz/lifestyle/the-ultimate-kiwi-gift-guide-2024-what-to-buy-for-adults-this-christmas/KHKMV3MFYVDT3JGEXH3O6G74HA/",
+			urlToImage:
+				"https://www.nzherald.co.nz/resizer/v2/XVCRM23LYJDLRJ4W6UUUTTZSXE.jpg?auth=b634944562365eeb0fd654f329c6a7d8b60f9536e11f40064e15f40b281bf3d9&width=1200&height=675&quality=70&smart=true",
+			publishedAt: "2024-12-01T17:00:00Z",
+			content:
+				"For the Foodies\r\n1. Mad Millie Food Starter Kit\r\nFor the kitchen wizz who has a bit more time on their hands, a starter kit from Kiwi company Mad Millie is sure to keep them occupied. Mad Millie buil… [+20169 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Merca20.com",
+			},
+			author: "Juan Antonio Miranda",
+			title: "Sam's Club sorprende con la Villa Navideña Disney con luces LED con un descuento increíble",
+			description:
+				"Una de los sorprendentes descuentos que tiene Sam's Club dentro de su campaña Black Days 2024 es en la Villa Navideña Disney con luces LED",
+			url: "https://www.merca20.com/sams-club-sorprende-con-la-villa-navidena-disney-con-luces-led-con-un-descuento-increible/",
+			urlToImage:
+				"https://files.merca20.com/uploads/2024/12/sams-club-villa-navidad-disney.jpg",
+			publishedAt: "2024-12-01T16:57:36Z",
+			content:
+				"Sam's Club sorprende con descuento en la Villa Navideña Disney con luces LED. Foto: Especial\r\n\nUna de los sorprendentes descuentos que tiene Sam's Club dentro de su campaña Black Days 2024 es en la V… [+4296 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Libsyn.com",
+			},
+			author: null,
+			title: "Ludology 333 Bigger Than A Breadbox",
+			description:
+				"Have you ever wondered what it takes to keep a FLGS afloat in this age of online retailers and Amazon Prime? Sen and Erica welcome Caleb Wunderlich, Assistant Manager at Millennium Games in Rochester, NY - the biggest game store in the USA - to talk about bui…",
+			url: "https://ludology.libsyn.com/ludology-333-bigger-than-a-breadbox",
+			urlToImage:
+				"http://assets.libsyn.com/show/28409?height=250&width=250&overlay=true",
+			publishedAt: "2024-12-01T16:55:00Z",
+			content:
+				"Welcome!\r\nWelcome to Ludology, an analytical discussion of the hows and whys of the world of board games. Rather than news and reviews, Ludology explores a variety of topics about games from a wider … [+3226 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Computerworld.dk",
+			},
+			author: null,
+			title: "Microsoft lager",
+			description:
+				"Nyheder, analyser, viden, blogs og debat om it. Computerworld er dit medie om det digitale Danmark. Computerworld skriver om nye teknologier, hardware, software, informationssamfundet, internettet, it-branchen, telebranchen, it-ledelse, it-strategi, forretnin…",
+			url: "https://www.computerworld.dk/eksperten/spm/1044612",
+			urlToImage:
+				"https://www.computerworld.dk/images/subsite/eksperten/eksperten-logo-large.png",
+			publishedAt: "2024-12-01T16:54:01Z",
+			content:
+				"Hov!\r\nFor at kunne deltage på Computerworld Eksperten skal du være logget ind.\r\nDet er heldigvis nemt at oprette en bruger: Det tager to minutter og du kan vælge at bruge enten e-mail, Facebook eller… [+17 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Zive.cz",
+			},
+			author: "Jakub Vrbacký",
+			title: "Recenze telefonu Xiaomi 14T Pro. Špičkový model nemusí nutně mít prémiovou cenu",
+			description:
+				"Xiaomi 14T Pro nabídne solidní fotovýbavu ve spolupráci s Leicou • Má i hromadu výkonu, dobrou výdrž, rychlé dobíjení či odolnost IP68 • Slabinou je přeplácaný software, ale vynahrazuje ho AI v češtině",
+			url: "https://mobilmania.zive.cz/clanky/recenze-telefonu-xiaomi-14t-pro-spickovy-model-nemusi-nutne-mit-premiovou-cenu/sc-3-a-1361267/default.aspx",
+			urlToImage:
+				"https://mobilmania.zive.cz/getthumbnail.aspx?q=100&height=20000&width=20000&id_file=866806960",
+			publishedAt: "2024-12-01T16:50:00Z",
+			content:
+				"Plusy\r\n<ul><li>Hromada výkonu, skvlá výdr, odolnost IP 68</li><li>Rychlé bez (50W)/drátové (120W) nabíjení, reverzní dobíjení</li><li>Velmi solidní fotovýbava ve spolupráci s Leicou</li><li>Krásn kou… [+3383 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Onet.pl",
+			},
+			author: null,
+			title: "Pogoń zatrzymała Jagiellonię! W końcówce było gorąco",
+			description:
+				'<![CDATA[ <img hspace="5" src="https://ocdn.eu/sport-images-transforms/1/QlKk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy84YzMzY2ViZjczMzQ5Zjc4MzU4NDYzOTZhMDNkYjgxNi5qcGeTlQPNAZ_M4s0EAs0CQZMFzQUAzQLQkwmmZDQxZDhjBt4AAqEwAaExAQ" align="right" />W meczu 17. kolejki…',
+			url: "https://przegladsportowy.onet.pl/pilka-nozna/ekstraklasa/pogon-zatrzymala-jagiellonie-w-koncowce-bylo-goraco/52eljps",
+			urlToImage:
+				"https://ocdn.eu/sport-images-transforms/1/yVFk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy84YzMzY2ViZjczMzQ5Zjc4MzU4NDYzOTZhMDNkYjgxNi5qcGeTlQPNAZ_M4s0EAs0CQZMFzQSwzQJ0kwmmZDQxZDhjBt4AAqEwAaExAQ",
+			publishedAt: "2024-12-01T16:49:28Z",
+			content:
+				"W ostatnich piciu meczach Pogo Szczecin odniosa trzy zwycistwa i dwie poraki. Ich ostatni mecz zakoczy si wygran 3:0 nad Lechi Gdask. Z kolei Jagiellonia Biaystok w tym samym okresie zanotowaa dwa zw… [+1036 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Forbes.com.mx",
+			},
+			author: "Forbes Staff",
+			title: "Iglesia católica afirma que existe  una “vorágine legislativa” tras despenalizaciones del aborto",
+			description:
+				'Forbes México.\n Iglesia católica afirma que existe  una “vorágine legislativa” tras despenalizaciones del aborto\n\n"Llama la atención la cantidad de estados que han abordado el tema de manera sincronizada, y con una rapidez inédita" señaló el órgano católico.\n…',
+			url: "https://forbes.com.mx/iglesia-catolica-afirma-que-existe-una-voragine-legislativa-tras-despenalizaciones-del-aborto/",
+			urlToImage:
+				"https://cdn.forbes.com.mx/2020/09/Marcha-aborto-CDMX-06.jpg",
+			publishedAt: "2024-12-01T16:47:52Z",
+			content:
+				"La Iglesia católica mexicana consideró este domingo que el país vive una “vorágine legislativa” por despenalizar el aborto luego de que el tema ha sido discutido y votado recientemente en varios cong… [+3259 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "Skai.gr",
+			},
+			author: "Newsroom",
+			title: "Πανικός στου Φιλοπάππου: Εντοπίστηκε βόας- σφιγκτήρας κάτω από κάθισμα στο θέατρο της Δώρας Στράτου",
+			description:
+				"Το ερπετό είδαν περαστικοί οι οποίοι έντρομοι ειδοποίησαν την οργάνωση ΑΝΙΜΑ που έσπευσε να το περισυλλέξει",
+			url: "https://www.skai.gr/news/greece/filopappou-voas-skorpise-ton-tromo-stous-perastikous",
+			urlToImage:
+				"https://cdn.skai.gr/sites/default/files/styles/article_16_9/public/2024-12/voas.png?itok=HMtVGlO0",
+			publishedAt: "2024-12-01T16:46:53Z",
+			content:
+				"Your browser does not support the audio element. \r\n.\r\n ,   .\r\n . .\r\n :\r\n , . . , , , .\r\n , . , , .\r\n, , , , .\r\n (): , , . .\r\n .Skai.gr Google News .\r\n© 2024 skai.gr - All Rights Reserved",
+		},
+		{
+			source: {
+				id: null,
+				name: "Gizmodo.com",
+			},
+			author: "Gizmodo Deals",
+			title: "The Sonos Beam Soundbar Is Now at a Record Low For Cyber Monday, With Amazon Crushing Its Price",
+			description:
+				"This Sonos Beam will be one of the best-selling soundbars this Cyber Monday.",
+			url: "https://gizmodo.com/the-sonos-beam-soundbar-is-now-at-a-record-low-for-cyber-monday-with-amazon-crushing-its-price-2000532467",
+			urlToImage:
+				"https://gizmodo.com/app/uploads/2024/11/sonos-beam-2.jpg",
+			publishedAt: "2024-12-01T16:45:05Z",
+			content:
+				"Sonos has established itself as a leading name in the soundbar market, particularly for consumers seeking high-quality audio experiences. The brand focuses on Wi-Fi connectivity rather than Bluetooth… [+2218 chars]",
+		},
+		{
+			source: {
+				id: null,
+				name: "New York Post",
+			},
+			author: "Steve Cuozzo",
+			title: "NYC office tower spending $30M in upgrades on ameneties like bowling, golf, speakeasy",
+			description:
+				"The latest midtown location to join the fun-for-tenants party is Global Holdings' Art Deco-style 99 Park Ave. at East 40th Street. The firm's $30 million investment will bring the 1950s-vintage property a redesigned lobby and a tenants' amenities package, inc…",
+			url: "https://nypost.com/2024/12/01/business/nyc-office-tower-spending-30m-in-upgrades-on-ameneties-like-bowling-golf-speakeasy/",
+			urlToImage:
+				"https://nypost.com/wp-content/uploads/sites/2/2024/12/99-park-avenue-lures-several-94501396.jpg?quality=75&strip=all&w=1024",
+			publishedAt: "2024-12-01T16:44:53Z",
+			content:
+				"The latest midtown location to join the fun-for-tenants party is Global Holdings Art Deco-style 99 Park Ave. at East 40th Street.\r\nThe firm's $30 million investment will bring the 1950s-vintage prope… [+1202 chars]",
+		},
+	],
 }
 
 export const sampleReport = {
-    html_content: `<div> <h2>Company Details</h2> <p><strong>Name:</strong> Google</p> <p><strong>Description:</strong> A global technology leader specializing in search engine services, cloud computing, software, and hardware. Google leverages cutting-edge artificial intelligence and machine learning technologies to organize the world’s information and make it universally accessible and useful.</p> <p><strong>Vision:</strong> To provide access to the world's information in one click, empowering people to discover, learn, and innovate.</p> <p><strong>Mission:</strong> To organize the world’s information and make it universally accessible and useful, driving innovation in technology to improve lives and businesses.</p> <p><strong>Domain:</strong> Manufacturing</p> </div> <div> <h2>Market Segment</h2> <ul> <li> <strong>Segment:</strong> Large Enterprises <ul> <li><strong>Unit Size:</strong> 5000 organizations globally</li> <li><strong>Urgency:</strong> 8 - High need for efficient information management and innovation</li> <li><strong>Utilization:</strong> Daily - Continuous use of cloud and AI services</li> <li><strong>Benefit:</strong> Enhanced data management and innovation capabilities</li> <li><strong>Segment Income:</strong> $10 billion annually from enterprise solutions</li> <li><strong>Potential One-Time Revenue:</strong> $500 million from initial setup and integration</li> <li><strong>Potential Continuous Revenue Stream:</strong> $2 billion annually from subscriptions and services</li> <li><strong>Market Share:</strong> 20% of the global enterprise market</li> <li><strong>Growth Rate:</strong> 10% annual growth in enterprise technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Small and Medium Businesses (SMBs) <ul> <li><strong>Unit Size:</strong> 50,000 businesses in target regions</li> <li><strong>Urgency:</strong> 6 - Moderate need for accessible technology solutions</li> <li><strong>Utilization:</strong> Weekly - Regular use of cloud and software services</li> <li><strong>Benefit:</strong> Cost-effective technology solutions for business growth</li> <li><strong>Segment Income:</strong> $2 billion annually from SMB solutions</li> <li><strong>Potential One-Time Revenue:</strong> $200 million from initial software sales</li> <li><strong>Potential Continuous Revenue Stream:</strong> $500 million annually from subscriptions</li> <li><strong>Market Share:</strong> 15% of the SMB technology market</li> <li><strong>Growth Rate:</strong> 12% annual growth in SMB technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Educational Institutions <ul> <li><strong>Unit Size:</strong> 10,000 institutions globally</li> <li><strong>Urgency:</strong> 7 - High need for innovative educational tools</li> <li><strong>Utilization:</strong> Daily - Frequent use of educational software and cloud services</li> <li><strong>Benefit:</strong> Improved access to information and learning resources</li> <li><strong>Segment Income:</strong> $1 billion annually from educational solutions</li> <li><strong>Potential One-Time Revenue:</strong> $100 million from initial software deployment</li> <li><strong>Potential Continuous Revenue Stream:</strong> $300 million annually from subscriptions</li> <li><strong>Market Share:</strong> 25% of the educational technology market</li> <li><strong>Growth Rate:</strong> 15% annual growth in educational technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Manufacturing Companies <ul> <li><strong>Unit Size:</strong> 8,000 companies in target regions</li> <li><strong>Urgency:</strong> 9 - Critical need for digital transformation and efficiency</li> <li><strong>Utilization:</strong> Daily - Continuous use of AI and cloud solutions for operations</li> <li><strong>Benefit:</strong> Increased operational efficiency and innovation</li> <li><strong>Segment Income:</strong> $5 billion annually from manufacturing solutions</li> <li><strong>Potential One-Time Revenue:</strong> $400 million from initial system integration</li> <li><strong>Potential Continuous Revenue Stream:</strong> $1 billion annually from ongoing services</li> <li><strong>Market Share:</strong> 30% of the manufacturing technology market</li> <li><strong>Growth Rate:</strong> 20% annual growth in manufacturing technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Healthcare Providers <ul> <li><strong>Unit Size:</strong> 15,000 providers globally</li> <li><strong>Urgency:</strong> 10 - Immediate need for advanced data management and AI</li> <li><strong>Utilization:</strong> Daily - Constant use of cloud and AI for patient data management</li> <li><strong>Benefit:</strong> Improved patient care and operational efficiency</li> <li><strong>Segment Income:</strong> $3 billion annually from healthcare solutions</li> <li><strong>Potential One-Time Revenue:</strong> $300 million from initial system setup</li> <li><strong>Potential Continuous Revenue Stream:</strong> $800 million annually from subscriptions</li> <li><strong>Market Share:</strong> 18% of the healthcare technology market</li> <li><strong>Growth Rate:</strong> 18% annual growth in healthcare technology adoption</li> </ul> </li> </ul> </div> <div> <h2>Market Research</h2> <ul> <li><strong>How important is easy access to information in your daily activities?</strong> Options: Very important, Somewhat important, Not very important, Not important at all</li> <li><strong>What challenges do you face when trying to access information quickly?</strong> Options: Lack of reliable sources, Time-consuming search processes, Information overload, None of the above</li> <li><strong>How familiar are you with cloud computing and its benefits?</strong> Options: Very familiar, Somewhat familiar, Not very familiar, Not familiar at all</li> <li><strong>What features do you value most in a search engine service?</strong> Options: Speed and efficiency, Accuracy of results, User-friendly interface, Advanced search options</li> <li><strong>How do you perceive the role of artificial intelligence in improving technology services?</strong> Options: Very positive, Somewhat positive, Neutral, Negative</li> <li><strong>What are the biggest barriers to adopting new technology solutions in your industry?</strong> Options: Cost, Complexity, Lack of trust, Resistance to change</li> <li><strong>How do you rate the current accessibility of global information for your business needs?</strong> Options: Excellent, Good, Fair, Poor</li> <li><strong>How likely are you to adopt new technologies that promise to improve information accessibility?</strong> Options: Very likely, Somewhat likely, Not very likely, Not likely at all</li> <li><strong>What is your level of trust in technology companies to handle your data securely?</strong> Options: Very high, High, Moderate, Low</li> <li><strong>How do you feel about the pricing of current technology solutions in the market?</strong> Options: Very reasonable, Somewhat reasonable, Not very reasonable, Not reasonable at all</li> </ul> </div> <div> <h2>Kanban Board - Next Steps</h2> <ul> <li><strong>TODO:</strong> Develop a seamless user interface for one-click access to information</li> <li><strong>TODO:</strong> Create educational resources to empower users to discover and learn</li> <li><strong>TODO:</strong> Implement AI-driven tools to improve business operations</li> <li><strong>TODO:</strong> Develop marketing strategies to promote universal accessibility of information</li> <li><strong>IN PROGRESS:</strong> Enhance search engine algorithms using AI and machine learning</li> <li><strong>BACKLOG:</strong> Develop partnerships with educational institutions to drive innovation</li> <li><strong>DONE:</strong> Design and manufacture hardware that integrates with our software solutions</li> <li><strong>BACKLOG:</strong> Expand cloud computing services to support global accessibility</li> <li><strong>IN PROGRESS:</strong> Ensure compliance with global data accessibility and privacy regulations</li> </ul> </div>`
+	html_content: `<div> <h2>Company Details</h2> <p><strong>Name:</strong> Google</p> <p><strong>Description:</strong> A global technology leader specializing in search engine services, cloud computing, software, and hardware. Google leverages cutting-edge artificial intelligence and machine learning technologies to organize the world's information and make it universally accessible and useful.</p> <p><strong>Vision:</strong> To provide access to the world's information in one click, empowering people to discover, learn, and innovate.</p> <p><strong>Mission:</strong> To organize the world's information and make it universally accessible and useful, driving innovation in technology to improve lives and businesses.</p> <p><strong>Domain:</strong> Manufacturing</p> </div> <div> <h2>Market Segment</h2> <ul> <li> <strong>Segment:</strong> Large Enterprises <ul> <li><strong>Unit Size:</strong> 5000 organizations globally</li> <li><strong>Urgency:</strong> 8 - High need for efficient information management and innovation</li> <li><strong>Utilization:</strong> Daily - Continuous use of cloud and AI services</li> <li><strong>Benefit:</strong> Enhanced data management and innovation capabilities</li> <li><strong>Segment Income:</strong> $10 billion annually from enterprise solutions</li> <li><strong>Potential One-Time Revenue:</strong> $500 million from initial setup and integration</li> <li><strong>Potential Continuous Revenue Stream:</strong> $2 billion annually from subscriptions and services</li> <li><strong>Market Share:</strong> 20% of the global enterprise market</li> <li><strong>Growth Rate:</strong> 10% annual growth in enterprise technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Small and Medium Businesses (SMBs) <ul> <li><strong>Unit Size:</strong> 50,000 businesses in target regions</li> <li><strong>Urgency:</strong> 6 - Moderate need for accessible technology solutions</li> <li><strong>Utilization:</strong> Weekly - Regular use of cloud and software services</li> <li><strong>Benefit:</strong> Cost-effective technology solutions for business growth</li> <li><strong>Segment Income:</strong> $2 billion annually from SMB solutions</li> <li><strong>Potential One-Time Revenue:</strong> $200 million from initial software sales</li> <li><strong>Potential Continuous Revenue Stream:</strong> $500 million annually from subscriptions</li> <li><strong>Market Share:</strong> 15% of the SMB technology market</li> <li><strong>Growth Rate:</strong> 12% annual growth in SMB technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Educational Institutions <ul> <li><strong>Unit Size:</strong> 10,000 institutions globally</li> <li><strong>Urgency:</strong> 7 - High need for innovative educational tools</li> <li><strong>Utilization:</strong> Daily - Frequent use of educational software and cloud services</li> <li><strong>Benefit:</strong> Improved access to information and learning resources</li> <li><strong>Segment Income:</strong> $1 billion annually from educational solutions</li> <li><strong>Potential One-Time Revenue:</strong> $100 million from initial software deployment</li> <li><strong>Potential Continuous Revenue Stream:</strong> $300 million annually from subscriptions</li> <li><strong>Market Share:</strong> 25% of the educational technology market</li> <li><strong>Growth Rate:</strong> 15% annual growth in educational technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Manufacturing Companies <ul> <li><strong>Unit Size:</strong> 8,000 companies in target regions</li> <li><strong>Urgency:</strong> 9 - Critical need for digital transformation and efficiency</li> <li><strong>Utilization:</strong> Daily - Continuous use of AI and cloud solutions for operations</li> <li><strong>Benefit:</strong> Increased operational efficiency and innovation</li> <li><strong>Segment Income:</strong> $5 billion annually from manufacturing solutions</li> <li><strong>Potential One-Time Revenue:</strong> $400 million from initial system integration</li> <li><strong>Potential Continuous Revenue Stream:</strong> $1 billion annually from ongoing services</li> <li><strong>Market Share:</strong> 30% of the manufacturing technology market</li> <li><strong>Growth Rate:</strong> 20% annual growth in manufacturing technology adoption</li> </ul> </li> <li> <strong>Segment:</strong> Healthcare Providers <ul> <li><strong>Unit Size:</strong> 15,000 providers globally</li> <li><strong>Urgency:</strong> 10 - Immediate need for advanced data management and AI</li> <li><strong>Utilization:</strong> Daily - Constant use of cloud and AI for patient data management</li> <li><strong>Benefit:</strong> Improved patient care and operational efficiency</li> <li><strong>Segment Income:</strong> $3 billion annually from healthcare solutions</li> <li><strong>Potential One-Time Revenue:</strong> $300 million from initial system setup</li> <li><strong>Potential Continuous Revenue Stream:</strong> $800 million annually from subscriptions</li> <li><strong>Market Share:</strong> 18% of the healthcare technology market</li> <li><strong>Growth Rate:</strong> 18% annual growth in healthcare technology adoption</li> </ul> </li> </ul> </div> <div> <h2>Market Research</h2> <ul> <li><strong>How important is easy access to information in your daily activities?</strong> Options: Very important, Somewhat important, Not very important, Not important at all</li> <li><strong>What challenges do you face when trying to access information quickly?</strong> Options: Lack of reliable sources, Time-consuming search processes, Information overload, None of the above</li> <li><strong>How familiar are you with cloud computing and its benefits?</strong> Options: Very familiar, Somewhat familiar, Not very familiar, Not familiar at all</li> <li><strong>What features do you value most in a search engine service?</strong> Options: Speed and efficiency, Accuracy of results, User-friendly interface, Advanced search options</li> <li><strong>How do you perceive the role of artificial intelligence in improving technology services?</strong> Options: Very positive, Somewhat positive, Neutral, Negative</li> <li><strong>What are the biggest barriers to adopting new technology solutions in your industry?</strong> Options: Cost, Complexity, Lack of trust, Resistance to change</li> <li><strong>How do you rate the current accessibility of global information for your business needs?</strong> Options: Excellent, Good, Fair, Poor</li> <li><strong>How likely are you to adopt new technologies that promise to improve information accessibility?</strong> Options: Very likely, Somewhat likely, Not very likely, Not likely at all</li> <li><strong>What is your level of trust in technology companies to handle your data securely?</strong> Options: Very high, High, Moderate, Low</li> <li><strong>How do you feel about the pricing of current technology solutions in the market?</strong> Options: Very reasonable, Somewhat reasonable, Not very reasonable, Not reasonable at all</li> </ul> </div> <div> <h2>Kanban Board - Next Steps</h2> <ul> <li><strong>TODO:</strong> Develop a seamless user interface for one-click access to information</li> <li><strong>TODO:</strong> Create educational resources to empower users to discover and learn</li> <li><strong>TODO:</strong> Implement AI-driven tools to improve business operations</li> <li><strong>TODO:</strong> Develop marketing strategies to promote universal accessibility of information</li> <li><strong>IN PROGRESS:</strong> Enhance search engine algorithms using AI and machine learning</li> <li><strong>BACKLOG:</strong> Develop partnerships with educational institutions to drive innovation</li> <li><strong>DONE:</strong> Design and manufacture hardware that integrates with our software solutions</li> <li><strong>BACKLOG:</strong> Expand cloud computing services to support global accessibility</li> <li><strong>IN PROGRESS:</strong> Ensure compliance with global data accessibility and privacy regulations</li> </ul> </div>`,
 }
+
+export const sampleMdResponse = `Here are some emerging technologies to be aware of as of 2023, according to the World Economic Forum:\n\n1. **Artificial Intelligence (AI)**: Continuous advancements in AI are expected to revolutionize industries by enhancing automation, improving decision-making processes, and enabling better data analysis.\n\n2. **Quantum Computing**: This technology offers the potential to solve complex problems much faster than traditional computers, impacting fields such as cryptography, materials science, and pharmaceuticals.\n\n3. **Biotechnology**: Innovations in biotechnology are paving the way for breakthroughs in healthcare, agriculture, and environmental sustainability, particularly through gene editing technologies.\n\n4. **5G Technology**: The rollout of 5G networks is set to enhance connectivity and enable new applications such as smart cities, autonomous vehicles, and the Internet of Things (IoT).\n\n5. **Blockchain**: Beyond cryptocurrencies, blockchain technology is being explored for applications in supply chain management, digital identity verification, and secure transactions.\n\n6. **Augmented Reality (AR) & Virtual Reality (VR)**: These technologies are transforming entertainment, education, and training by providing immersive experiences that enhance engagement.\n\n7. **Robotics and Automation**: The integration of robotics in various sectors is increasing efficiency and productivity, especially in manufacturing and logistics.\n\n8. **Energy Storage Solutions**: Advances in battery technology and energy storage systems are crucial for the transition to renewable energy sources and electric vehicles.\n\n9. **Sustainable Technologies**: Innovations aimed at reducing environmental impact, such as carbon capture and sustainable agriculture practices, are gaining importance.\n\n10. **Space Technology**: Developments in satellite technology and space exploration are opening new opportunities in telecommunications, Earth observation, and even space tourism.\n\nFor more detailed insights, you can check the full report from the [World Economic Forum](https://www.weforum.org/publications/top-10-emerging-technologies-of-2023/).`
+export const sampleSelf: CompanyData = {
+	_id: "6742ea6bcc7eef81cb28da63",
+	name: "Google",
+	description:
+		"A global technology leader specializing in search engine services, cloud computing, software, and hardware. Google leverages cutting-edge artificial intelligence and machine learning technologies to organize the world's information and make it universally accessible and useful.",
+	vision: "To provide access to the world's information in one click, empowering people to discover, learn, and innovate.",
+	mission:
+		"To organize the world's information and make it universally accessible and useful, driving innovation in technology to improve lives and businesses.",
+	valuation: 6844443,
+	domain: "Manufacturing",
+	createdAt: "2024-11-24T08:57:15.438000",
+	props: {
+		short_description:
+			"Google is a multinational corporation that specializes in Internet-related services and organizes the world's information.",
+		title: "Google",
+		key_employee_change_list: [
+			{
+				identifier: {
+					uuid: "40fa2556-669f-4c94-898c-acbcd16511bd",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "TechCircle",
+				press_reference_link: {
+					label: "Google names new chief technologist amid AI push",
+					value: "https://www.techcircle.in/2024/10/18/google-names-a-new-chief-technologist-amid-ai-push",
+				},
+				key_event_date: "2024-10-17",
+			},
+			{
+				identifier: {
+					uuid: "09485584-0880-413e-83b9-88b5221736dd",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "PRNewswire",
+				press_reference_link: {
+					label: "Qloo Hires Former Google Executive Jim Jansen as Chief Revenue Officer",
+					value: "https://www.prnewswire.com/news-releases/qloo-hires-former-google-executive-jim-jansen-as-chief-revenue-officer-302239188.html",
+				},
+				key_event_date: "2024-09-05",
+			},
+			{
+				identifier: {
+					uuid: "044b4ce5-072d-41d7-b8bd-90d2e57f8be8",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "Quartz",
+				press_reference_link: {
+					label: "Google taps Eli Lilly finance chief as its new CFO",
+					value: "https://qz.com/alphabet-google-eli-lilly-anat-ashkenazi-cfo-1851520441",
+				},
+				key_event_date: "2024-06-05",
+			},
+			{
+				identifier: {
+					uuid: "6c9905e9-4724-4c15-8ffd-843a1ad47514",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "substack.com",
+				press_reference_link: {
+					label: "Google Announces a New AI Model with Three Tiers, Sam Altman Named CEO of the Year",
+					value: "https://twistticker.substack.com/p/google-announces-a-new-ai-model-with",
+				},
+				key_event_date: "2023-12-06",
+			},
+			{
+				identifier: {
+					uuid: "8e6f99b6-ded9-430f-82a2-30ce1d12df81",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "Techweez",
+				press_reference_link: {
+					label: "Google Appoints Alex Okosi as New Managing Director for Africa",
+					value: "https://techweez.com/2023/09/05/google-appoints-alex-okosi-as-new-managing-director-for-africa/",
+				},
+				key_event_date: "2023-09-05",
+			},
+			{
+				identifier: {
+					uuid: "f8c2a07e-2b1e-41ef-80d8-8dc070f8f0eb",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "TheStreet, Inc.",
+				press_reference_link: {
+					label: "Google Surges On Q2 Earnings Beat, New Role For CFO Ruth Porat",
+					value: "https://www.thestreet.com/investing/stocks/google-surges-on-q2-earnings-beat-new-role-for-cfo-ruth-porat",
+				},
+				key_event_date: "2023-07-25",
+			},
+			{
+				identifier: {
+					uuid: "6f44c83e-db87-48ba-8154-e83fca9a128d",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "Yahoo Finance",
+				press_reference_link: {
+					label: "Google appoints top Washington Post exec as general manager of news",
+					value: "https://finance.yahoo.com/news/google-appoints-top-washington-post-205719171.html",
+				},
+				key_event_date: "2022-09-07",
+			},
+			{
+				identifier: {
+					uuid: "e7c791aa-4ac0-4b1b-8778-3a5ba3513863",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher:
+					"POCIT. Telling the stories and thoughts of people of color in tech.",
+				press_reference_link: {
+					label: "Valeisha Butterfield Jones Joins Google For VP Role On Its Diversity Team",
+					value: "https://buff.ly/3QIDLMS",
+				},
+				key_event_date: "2022-08-18",
+			},
+			{
+				identifier: {
+					uuid: "939ccd3e-48b5-4b22-97b1-5c79cea73945",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "Android Headlines",
+				press_reference_link: {
+					label: "Google Hires Former Spotify Executive To Work On YouTube Music",
+					value: "https://bit.ly/3tiOL9p",
+				},
+				key_event_date: "2022-02-28",
+			},
+			{
+				identifier: {
+					uuid: "b69af41f-c1a2-4f14-9cdb-b3c3c9ad201b",
+					entity_def_id: "key_employee_change",
+				},
+				press_reference_publisher: "TechCity",
+				press_reference_link: {
+					label: "Google Appoints Zimbabwean James Manyika, as First Senior Vice President of Technology and Society",
+					value: "https://zpr.io/V6KZEBiD8xAH",
+				},
+				key_event_date: "2022-01-28",
+			},
+		],
+		current_employees_summary: {
+			identifier: {
+				uuid: "6acfa7da-1dbd-936e-d985-cf07a1b27711",
+				value: "Google",
+				image_id: "fa8nmvofinznny6rkwvf",
+				permalink: "google",
+				entity_def_id: "organization",
+			},
+			num_current_positions: 3615,
+		},
+		funds_summary: {
+			funds_total: {
+				value: 120000000,
+				currency: "USD",
+				value_usd: 120000000,
+			},
+			identifier: {
+				uuid: "6acfa7da-1dbd-936e-d985-cf07a1b27711",
+				value: "Google",
+				image_id: "fa8nmvofinznny6rkwvf",
+				permalink: "google",
+				entity_def_id: "organization",
+			},
+			num_funds: 1,
+		},
+		current_advisors_image_list: [
+			{
+				identifier: {
+					uuid: "08f90cab-ae0a-88d0-e982-9df529a139dd",
+					value: "Ram Shriram Member of the Board of Directors @ Google",
+					permalink: "ram-shriram-board-member-google--08f90cab",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "d42f37dd-84af-a978-7ca6-703ab534dde7",
+					value: "Ram Shriram",
+					image_id: "v1452413397/lr5dudvepp8cef8dn9np.jpg",
+					permalink: "ram-shriram",
+					entity_def_id: "person",
+				},
+				job_type: "board_member",
+				started_on: {
+					value: "1998-09-01",
+					precision: "month",
+				},
+			},
+			{
+				identifier: {
+					uuid: "0c53bbfb-4467-e4cb-a534-b580c4ff909e",
+					value: "Larry Page Board of Directors @ Google",
+					permalink: "larry-page-board-member-google--0c53bbfb",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "431a14fb-286e-db17-c18c-0a85cc2e8d59",
+					value: "Larry Page",
+					image_id: "v1449659328/diogfxnmpqppp1qotsd1.jpg",
+					permalink: "larry-page",
+					entity_def_id: "person",
+				},
+				job_type: "board_member",
+				started_on: {
+					value: "1998-09-01",
+					precision: "month",
+				},
+			},
+			{
+				identifier: {
+					uuid: "0fbde47d-5f87-6064-1f60-d2ee46715c95",
+					value: "Roberto Aiello Advisor @ Google",
+					permalink: "roberto-aiello-advisor-google--0fbde47d",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "86fa64e0-bdea-5272-8631-16af54b194ce",
+					value: "Roberto Aiello",
+					image_id: "v1412119982/jyqw1whj2degb9cqjvpc.jpg",
+					permalink: "roberto-aiello",
+					entity_def_id: "person",
+				},
+				job_type: "advisor",
+				started_on: {
+					value: "2014-05-01",
+					precision: "month",
+				},
+			},
+			{
+				identifier: {
+					uuid: "1297c758-5ad8-2ba6-53cb-b0537876a797",
+					value: "Shirley Tilghman Member of the Board of Directors @ Google",
+					permalink:
+						"shirley-m-tilghman-board-member-google--1297c758",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "93a1c147-d5c9-d9c4-03d4-515eb590cd17",
+					value: "Shirley Tilghman",
+					image_id: "v1452414731/hor5asdiy8cdbwuhwche.jpg",
+					permalink: "shirley-m-tilghman",
+					entity_def_id: "person",
+				},
+				job_type: "board_member",
+			},
+			{
+				identifier: {
+					uuid: "199ed803-0191-b6f8-6519-e35b2df0b97c",
+					value: "Roman Prostij Member of the Board of Directors @ Google",
+					permalink: "paul-s-otellini-board-member-google--199ed803",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "35bf42f7-a00c-721f-e557-d7a05053574e",
+					value: "Roman Prostij",
+					image_id: "v1507126193/ilojtbdv19big9674cal.jpg",
+					permalink: "paul-s-otellini",
+					entity_def_id: "person",
+				},
+				job_type: "board_member",
+			},
+			{
+				identifier: {
+					uuid: "32ca1596-6034-45d5-843c-c74455881087",
+					value: "Nir Kaldero Google Experts/ Mentor @ Google",
+					permalink: "nir-kaldero-advisor-google--32ca1596",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "46cfe93f-fd43-ab63-0deb-a3af4fc7a27a",
+					value: "Nir Kaldero",
+					image_id: "v1492803703/d2k3dttwm2mtwuzmdvoi.jpg",
+					permalink: "nir-kaldero",
+					entity_def_id: "person",
+				},
+				job_type: "advisor",
+				started_on: {
+					value: "2017-08-01",
+					precision: "day",
+				},
+			},
+			{
+				identifier: {
+					uuid: "0117ebdd-a7e5-4949-a7ed-14ea5ff7bff6",
+					value: "PRATAP SINGH KUSHWAH CTO @ Google",
+					permalink:
+						"pratap-singh-kushwah-board-member-google--0117ebdd",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "d6f86193-004e-4a89-b845-487a100719ed",
+					value: "PRATAP SINGH KUSHWAH",
+					permalink: "pratap-singh-kushwah",
+					entity_def_id: "person",
+				},
+				job_type: "board_member",
+				started_on: {
+					value: "2012-02-27",
+					precision: "day",
+				},
+			},
+			{
+				identifier: {
+					uuid: "0ca1a919-adbd-4c83-97a5-1ff934f3b438",
+					value: "Joe Betz Member of the Technical Staff @ Google",
+					permalink: "joe-betz-8d71-board-member-google--0ca1a919",
+					entity_def_id: "job",
+				},
+				person_identifier: {
+					uuid: "e1ef6b0f-24f9-4d93-87b2-aa43f0738d71",
+					value: "Joe Betz",
+					image_id: "m8gmbxpgzc414wu1yshh",
+					permalink: "joe-betz-8d71",
+					entity_def_id: "person",
+				},
+				job_type: "board_member",
+				started_on: {
+					value: "2017-06-01",
+					precision: "month",
+				},
+			},
+		],
+		org_funding_total: null,
+		org_num_investors: null,
+		company_financials_highlights: {
+			num_investments: 299,
+			num_investors: 13,
+			num_lead_investors: 3,
+			listed_stock_symbol: "NASDAQ:GOOG",
+			num_exits: 51,
+			num_lead_investments: 154,
+			num_funds: 1,
+			funding_total: {
+				value: 26100000,
+				currency: "USD",
+				value_usd: 26100000,
+			},
+			num_funding_rounds: 3,
+		},
+		investors_list: [
+			{
+				is_lead_investor: false,
+				identifier: {
+					uuid: "28862db7-b3e0-4993-72b8-ad3cdb0ac53d",
+					value: "Angel Investors LP investment in Series A - Google",
+					permalink:
+						"angel-investors-lp-2-invested-in-google-series-a--6c4715f9--28862db7",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "39f0729e-3722-0ef5-a7a5-3a03790b0d64",
+					value: "Angel Investors LP",
+					permalink: "angel-investors-lp-2",
+					entity_def_id: "organization",
+				},
+			},
+			{
+				is_lead_investor: true,
+				identifier: {
+					uuid: "47c493b5-86b9-7a21-2218-1b24e2c742d1",
+					value: "Kleiner Perkins investment in Series A - Google",
+					permalink:
+						"kleiner-perkins-caufield-byers-invested-in-google-series-a--6c4715f9--47c493b5",
+					entity_def_id: "investment",
+				},
+				partner_identifiers: [
+					{
+						uuid: "e0ba8b46-ff1b-46e4-1b4c-19cd011a271a",
+						value: "Al Gore",
+						image_id: "v1490370734/ejtjjuxf9bugcpqzbhi0.png",
+						permalink: "al-gore",
+						entity_def_id: "person",
+					},
+					{
+						uuid: "22f2069a-a204-b897-320a-bdafa81093ba",
+						value: "John Doerr",
+						image_id: "v1490370516/yz85yd0zjo7w2ypjkcb4.png",
+						permalink: "john-doerr",
+						entity_def_id: "person",
+					},
+				],
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "2d0a5bf0-e53e-9a07-2243-9bcd561421ec",
+					value: "Kleiner Perkins",
+					image_id: "ljhuy3jgwhjt4dvsok2o",
+					permalink: "kleiner-perkins-caufield-byers",
+					entity_def_id: "organization",
+				},
+			},
+			{
+				is_lead_investor: false,
+				identifier: {
+					uuid: "4c642012-2544-3231-4bd6-10dede3fe7fb",
+					value: "Signatures Capital investment in Series A - Google",
+					permalink:
+						"signatures-capital-invested-in-google-series-a--6c4715f9--4c642012",
+					entity_def_id: "investment",
+				},
+				partner_identifiers: [
+					{
+						uuid: "93a88215-2c10-697e-6cf6-21996cc32d85",
+						value: "Bobby Yazdani",
+						image_id: "mokizoxfx6h5nmiy376x",
+						permalink: "bobby-yazdani",
+						entity_def_id: "person",
+					},
+				],
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "c6cc1056-c1f7-f512-fdfb-1ef723fb52b6",
+					value: "Signatures Capital",
+					image_id: "v1421383246/o4ylvpht4ct7av96ykrz.png",
+					permalink: "signatures-capital",
+					entity_def_id: "organization",
+				},
+			},
+			{
+				is_lead_investor: true,
+				identifier: {
+					uuid: "5dafdfc5-9cbf-af04-000d-417f9db71aa2",
+					value: "Sequoia Capital investment in Series A - Google",
+					permalink:
+						"sequoia-capital-invested-in-google-series-a--6c4715f9--5dafdfc5",
+					entity_def_id: "investment",
+				},
+				partner_identifiers: [
+					{
+						uuid: "22f2069a-a204-b897-320a-bdafa81093ba",
+						value: "John Doerr",
+						image_id: "v1490370516/yz85yd0zjo7w2ypjkcb4.png",
+						permalink: "john-doerr",
+						entity_def_id: "person",
+					},
+					{
+						uuid: "88cb5b9c-a755-2267-0d5d-e41b8236c9b1",
+						value: "Michael Moritz",
+						image_id: "dlfc1axnvp3ig0fkwvnm",
+						permalink: "michael-moritz",
+						entity_def_id: "person",
+					},
+				],
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "0c867fde-2b9a-df10-fdb9-66b74f355f91",
+					value: "Sequoia Capital",
+					image_id: "itlvyekqsbl2orcjxugx",
+					permalink: "sequoia-capital",
+					entity_def_id: "organization",
+				},
+			},
+			{
+				is_lead_investor: false,
+				identifier: {
+					uuid: "7ecacb53-120e-417f-7466-0cb5480ab6c6",
+					value: "Arnold Schwarzenegger investment in Series A - Google",
+					permalink:
+						"arnold-schwarzenegger-invested-in-google-series-a--6c4715f9--7ecacb53",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "70b86cef-6fe8-0292-8e8e-56b3e7d11420",
+					value: "Arnold Schwarzenegger",
+					image_id: "5dc04e7fd8c44fa5950610ce3edd5a8e",
+					permalink: "arnold-schwarzenegger",
+					entity_def_id: "person",
+				},
+			},
+			{
+				is_lead_investor: false,
+				identifier: {
+					uuid: "a6863863-f705-af56-4162-b3d21da7c9c2",
+					value: "Shaquille O'Neal investment in Series A - Google",
+					permalink:
+						"shaquille-o-neal-invested-in-google-series-a--6c4715f9--a6863863",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "d5b91775-0752-78fc-97be-2c93016953a1",
+					value: "Shaquille O'Neal",
+					image_id: "v1474366011/iuxpwrfmjktoyw3c4bf7.png",
+					permalink: "shaquille-o-neal",
+					entity_def_id: "person",
+				},
+			},
+			{
+				is_lead_investor: false,
+				identifier: {
+					uuid: "aed2247b-12af-449c-e528-eda192b3b5c9",
+					value: "Henry Kissinger investment in Series A - Google",
+					permalink:
+						"henry-a-kissinger-2-invested-in-google-series-a--6c4715f9--aed2247b",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "ac90917d-4754-1754-45ff-b1f34fd1a394",
+					value: "Henry Kissinger",
+					image_id: "v1477009384/dq2zvwk4jj7qd6mzwdm5.jpg",
+					permalink: "henry-a-kissinger-2",
+					entity_def_id: "person",
+				},
+			},
+			{
+				identifier: {
+					uuid: "ccfa5598-8424-4486-a33d-a109d0eff165",
+					value: "Google investment in Series A - Google",
+					permalink:
+						"google-invested-in-google-series-a--6c4715f9--ccfa5598",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "6acfa7da-1dbd-936e-d985-cf07a1b27711",
+					value: "Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google",
+					entity_def_id: "organization",
+				},
+			},
+			{
+				is_lead_investor: false,
+				identifier: {
+					uuid: "d60ba48f-a385-e566-9c2f-43afe7906b9a",
+					value: "Tiger Woods investment in Series A - Google",
+					permalink:
+						"tiger-woods-invested-in-google-series-a--6c4715f9--d60ba48f",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "6c4715f9-41c0-136f-d5e4-ac72ddf57d99",
+					value: "Series A - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-series-a--6c4715f9",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "cd9bac8a-13bd-bacb-093b-caf76db07dd3",
+					value: "Tiger Woods",
+					image_id: "v1474538833/u75nmtebocgpxscpq6sh.png",
+					permalink: "tiger-woods",
+					entity_def_id: "person",
+				},
+			},
+			{
+				identifier: {
+					uuid: "3b46bced-8a9f-474b-b5b8-5fdeae51d18e",
+					value: "Andy Bechtolsheim investment in Angel Round - Google",
+					permalink:
+						"andy-bechtolsheim-invested-in-google-angel--e7036c93--3b46bced",
+					entity_def_id: "investment",
+				},
+				funding_round_identifier: {
+					uuid: "e7036c93-050f-838c-0887-2d35f2ff095c",
+					value: "Angel Round - Google",
+					image_id: "fa8nmvofinznny6rkwvf",
+					permalink: "google-angel--e7036c93",
+					entity_def_id: "funding_round",
+				},
+				investor_identifier: {
+					uuid: "14027e07-13f0-47eb-aee4-b052536c30d0",
+					value: "Andy Bechtolsheim",
+					image_id: "j23xbw7bnqma6xij499i",
+					permalink: "andy-bechtolsheim",
+					entity_def_id: "person",
+				},
+			},
+		],
+	},
+	keywords: [
+		"information access",
+		"search engine",
+		"cloud computing",
+		"artificial intelligence",
+		"machine learning",
+		"technology innovation",
+		"global technology leader",
+		"universal accessibility",
+		"software development",
+		"hardware solutions",
+		"data organization",
+		"business improvement",
+		"innovation in technology",
+		"Google",
+		"manufacturing technology",
+	],
+}
+
+export const sampleSegment: { segments: Segment[] } = {
+	segments: [
+		{
+			segment: "Large Enterprises",
+			unit_size: "5000 organizations globally",
+			urgency:
+				"8 - High need for efficient information management and innovation",
+			utilization: "Daily - Continuous use of cloud and AI services",
+			benefit: "Enhanced data management and innovation capabilities",
+			segment_income: "$10 billion annually from enterprise solutions",
+			potential_one_time_revenue:
+				"$500 million from initial setup and integration",
+			potential_continuous_revenue_stream:
+				"$2 billion annually from subscriptions and services",
+			potential_beachhead:
+				"Yes - Strategic entry point for expanding enterprise solutions",
+			market_share: "20% of the global enterprise market",
+			growth_rate: "10% annual growth in enterprise technology adoption",
+			competition_index:
+				"7 - High competition from established tech giants",
+			customer_acquisition_cost: "$100,000 per enterprise",
+			lifetime_value: "$5 million per enterprise over 5 years",
+			profit_margin: "30% profit margin on enterprise solutions",
+		},
+		{
+			segment: "Small and Medium Businesses (SMBs)",
+			unit_size: "50,000 businesses in target regions",
+			urgency: "6 - Moderate need for accessible technology solutions",
+			utilization: "Weekly - Regular use of cloud and software services",
+			benefit: "Cost-effective technology solutions for business growth",
+			segment_income: "$2 billion annually from SMB solutions",
+			potential_one_time_revenue:
+				"$200 million from initial software sales",
+			potential_continuous_revenue_stream:
+				"$500 million annually from subscriptions",
+			potential_beachhead:
+				"Yes - Foundation for expanding into broader SMB market",
+			market_share: "15% of the SMB technology market",
+			growth_rate: "12% annual growth in SMB technology adoption",
+			competition_index: "5 - Moderate competition from niche providers",
+			customer_acquisition_cost: "$10,000 per SMB",
+			lifetime_value: "$50,000 per SMB over 3 years",
+			profit_margin: "25% profit margin on SMB solutions",
+		},
+		{
+			segment: "Educational Institutions",
+			unit_size: "10,000 institutions globally",
+			urgency: "7 - High need for innovative educational tools",
+			utilization:
+				"Daily - Frequent use of educational software and cloud services",
+			benefit: "Improved access to information and learning resources",
+			segment_income: "$1 billion annually from educational solutions",
+			potential_one_time_revenue:
+				"$100 million from initial software deployment",
+			potential_continuous_revenue_stream:
+				"$300 million annually from subscriptions",
+			potential_beachhead:
+				"Yes - Entry point for expanding educational technology",
+			market_share: "25% of the educational technology market",
+			growth_rate: "15% annual growth in educational technology adoption",
+			competition_index:
+				"6 - Moderate to high competition from specialized providers",
+			customer_acquisition_cost: "$20,000 per institution",
+			lifetime_value: "$200,000 per institution over 5 years",
+			profit_margin: "20% profit margin on educational solutions",
+		},
+		{
+			segment: "Manufacturing Companies",
+			unit_size: "8,000 companies in target regions",
+			urgency:
+				"9 - Critical need for digital transformation and efficiency",
+			utilization:
+				"Daily - Continuous use of AI and cloud solutions for operations",
+			benefit: "Increased operational efficiency and innovation",
+			segment_income: "$5 billion annually from manufacturing solutions",
+			potential_one_time_revenue:
+				"$400 million from initial system integration",
+			potential_continuous_revenue_stream:
+				"$1 billion annually from ongoing services",
+			potential_beachhead:
+				"Yes - Key sector for expanding digital transformation solutions",
+			market_share: "30% of the manufacturing technology market",
+			growth_rate:
+				"20% annual growth in manufacturing technology adoption",
+			competition_index:
+				"8 - High competition from industry-specific providers",
+			customer_acquisition_cost: "$50,000 per company",
+			lifetime_value: "$1 million per company over 5 years",
+			profit_margin: "35% profit margin on manufacturing solutions",
+		},
+		{
+			segment: "Healthcare Providers",
+			unit_size: "15,000 providers globally",
+			urgency: "10 - Immediate need for advanced data management and AI",
+			utilization:
+				"Daily - Constant use of cloud and AI for patient data management",
+			benefit: "Improved patient care and operational efficiency",
+			segment_income: "$3 billion annually from healthcare solutions",
+			potential_one_time_revenue:
+				"$300 million from initial system setup",
+			potential_continuous_revenue_stream:
+				"$800 million annually from subscriptions",
+			potential_beachhead:
+				"Yes - Strategic entry into the healthcare technology market",
+			market_share: "18% of the healthcare technology market",
+			growth_rate: "18% annual growth in healthcare technology adoption",
+			competition_index:
+				"9 - Very high competition from established healthcare tech firms",
+			customer_acquisition_cost: "$30,000 per provider",
+			lifetime_value: "$500,000 per provider over 5 years",
+			profit_margin: "28% profit margin on healthcare solutions",
+		},
+	],
+}
+
+export const sampleQuestions: QuestionsData & FormUrlResponse = {
+	questions: [
+		{
+			questionText:
+				"How important is easy access to information in your daily activities?",
+			questionOptions: [
+				"Very important",
+				"Somewhat important",
+				"Not very important",
+				"Not important at all",
+			],
+		},
+		{
+			questionText:
+				"What challenges do you face when trying to access information quickly?",
+			questionOptions: [
+				"Lack of reliable sources",
+				"Time-consuming search processes",
+				"Information overload",
+				"None of the above",
+			],
+		},
+		{
+			questionText:
+				"How familiar are you with cloud computing and its benefits?",
+			questionOptions: [
+				"Very familiar",
+				"Somewhat familiar",
+				"Not very familiar",
+				"Not familiar at all",
+			],
+		},
+		{
+			questionText:
+				"What features do you value most in a search engine service?",
+			questionOptions: [
+				"Speed and efficiency",
+				"Accuracy of results",
+				"User-friendly interface",
+				"Advanced search options",
+			],
+		},
+		{
+			questionText:
+				"How do you perceive the role of artificial intelligence in improving technology services?",
+			questionOptions: [
+				"Very positive",
+				"Somewhat positive",
+				"Neutral",
+				"Negative",
+			],
+		},
+		{
+			questionText:
+				"What are the biggest barriers to adopting new technology solutions in your industry?",
+			questionOptions: [
+				"Cost",
+				"Complexity",
+				"Lack of trust",
+				"Resistance to change",
+			],
+		},
+		{
+			questionText:
+				"How do you rate the current accessibility of global information for your business needs?",
+			questionOptions: ["Excellent", "Good", "Fair", "Poor"],
+		},
+		{
+			questionText:
+				"How likely are you to adopt new technologies that promise to improve information accessibility?",
+			questionOptions: [
+				"Very likely",
+				"Somewhat likely",
+				"Not very likely",
+				"Not likely at all",
+			],
+		},
+		{
+			questionText:
+				"What is your level of trust in technology companies to handle your data securely?",
+			questionOptions: ["Very high", "High", "Moderate", "Low"],
+		},
+		{
+			questionText:
+				"How do you feel about the pricing of current technology solutions in the market?",
+			questionOptions: [
+				"Very reasonable",
+				"Somewhat reasonable",
+				"Not very reasonable",
+				"Not reasonable at all",
+			],
+		},
+	],
+	form_url: "https://idbpjxk9cye.typeform.com/to/zT5tuxdk",
+}
+
+export const sampleBoardResponse: GetHoundBoardResponse = {
+	tasks: [
+		{
+			status: ColumnTypeEnum.TODO,
+			task: "Develop a seamless user interface for one-click access to information",
+		},
+		{
+			status: ColumnTypeEnum.TODO,
+			task: "Implement AI-driven tools to improve business operations",
+		},
+		{
+			status: ColumnTypeEnum.TODO,
+			task: "Develop marketing strategies to promote universal accessibility of information",
+		},
+		{
+			status: ColumnTypeEnum.IN_PROGRESS,
+			task: "Enhance search engine algorithms using AI and machine learning",
+		},
+		{
+			status: ColumnTypeEnum.BACKLOG,
+			task: "Develop partnerships with educational institutions to drive innovation",
+		},
+		{
+			status: ColumnTypeEnum.DONE,
+			task: "Design and manufacture hardware that integrates with our software solutions",
+		},
+		{
+			status: ColumnTypeEnum.BACKLOG,
+			task: "Expand cloud computing services to support global accessibility",
+		},
+		{
+			status: ColumnTypeEnum.IN_PROGRESS,
+			task: "Ensure compliance with global data accessibility and privacy regulations",
+		},
+	],
+}
+
+export const sampleCompetitorMapping: CompanyData[] = [
+	{
+		_id: "6742ef3efe35ecbea712846b",
+		companyId: "6742ea6bcc7eef81cb28da63",
+		props: {
+			short_description:
+				"Salesforce is a cloud-based software company that provides customer relationship management software and applications.",
+			title: "Salesforce",
+			key_employee_change_list: [
+				{
+					identifier: {
+						uuid: "c0794638-4768-41b6-bd09-11a9cf535900",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "Salt Wire",
+					press_reference_link: {
+						label: "Salesforce hires activist lawyer from Wachtell, Lipton as legal chief",
+						value: "https://www.saltwire.com/nova-scotia/business/salesforce-hires-activist-lawyer-from-wachtell-lipton-as-legal-chief-100874345/",
+					},
+					key_event_date: "2023-07-17",
+				},
+				{
+					identifier: {
+						uuid: "a145e49b-fb77-4caf-a17a-f1f61d94d84b",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "TechCrunch",
+					press_reference_link: {
+						label: "After investing $28B in Slack, Salesforce bets on one of its own as new CEO",
+						value: "https://tcrn.ch/43n6nlp",
+					},
+					key_event_date: "2023-06-04",
+				},
+				{
+					identifier: {
+						uuid: "40d9a6cb-dee1-447b-90af-a1ea91926d56",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "CRN",
+					press_reference_link: {
+						label: "Salesforce Names New Channel Chief",
+						value: "https://bit.ly/3mn3qRC",
+					},
+					key_event_date: "2023-04-11",
+				},
+				{
+					identifier: {
+						uuid: "19c2c52c-9dd8-4298-bbb0-1217dae114f2",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "Yahoo Finance",
+					press_reference_link: {
+						label: "Salesforce says Bret Taylor to step down as co-CEO",
+						value: "https://finance.yahoo.com/news/salesforce-raises-annual-profit-forecast-211321823.html",
+					},
+					key_event_date: "2022-11-30",
+				},
+				{
+					identifier: {
+						uuid: "05dc4f75-29e9-45b0-82c4-eaa152713a55",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "ESG Today",
+					press_reference_link: {
+						label: "Salesforce Launches Initiative to Scale Ocean-Based Carbon Credits, Hires VP of Climate Action",
+						value: "https://www.esgtoday.com/salesforce-launches-initiative-to-scale-ocean-based-carbon-credits-hires-vp-of-climate-action/",
+					},
+					key_event_date: "2022-04-14",
+				},
+				{
+					identifier: {
+						uuid: "d2aa3be1-49aa-4684-8be9-815b07eaa88b",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "Wall Street Journal",
+					press_reference_link: {
+						label: "Longtime UPS Tech Leader Juan Perez to Join Salesforce as CIO",
+						value: "https://www.wsj.com/articles/longtime-ups-tech-leader-juan-perez-to-join-salesforce-as-cio-11647557775",
+					},
+					key_event_date: "2022-03-17",
+				},
+				{
+					identifier: {
+						uuid: "1409edcb-7086-4ad0-a4a4-dfc11037d9a5",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "WebProNews",
+					press_reference_link: {
+						label: "Despite a New Co-CEO, Marc Benioff Say’s He’s ‘Never Leaving Salesforce’",
+						value: "https://www.webpronews.com/despite-a-new-co-ceo-marc-benioff-says-hes-never-leaving-salesforce/",
+					},
+					key_event_date: "2021-12-15",
+				},
+				{
+					identifier: {
+						uuid: "5e492952-0738-4616-9619-640b5a136a42",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "Bloomberg",
+					press_reference_link: {
+						label: "Salesforce Names Bret Taylor as Co-CEO With Marc Benioff",
+						value: "https://www.bloomberg.com/news/articles/2021-11-30/salesforce-names-bret-taylor-as-co-ceo-with-marc-benioff?srnd=technology-vp",
+					},
+					key_event_date: "2021-11-30",
+				},
+				{
+					identifier: {
+						uuid: "b4a2f5cd-6494-4027-aea5-43a6022892c4",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "CTech",
+					press_reference_link: {
+						label: "Salesforce Israel appoints Oren Winter as SVP Engineering",
+						value: "https://www.calcalistech.com/ctech/articles/0,7340,L-3919355,00.html",
+					},
+					key_event_date: "2021-10-10",
+				},
+				{
+					identifier: {
+						uuid: "985979ac-7417-4a47-8603-9a8b0fb4ad30",
+						entity_def_id: "key_employee_change",
+					},
+					press_reference_publisher: "TechCrunch",
+					press_reference_link: {
+						label: "Salesforce promotes former Vlocity CEO David Schmaier to president and CPO",
+						value: "https://techcrunch.com/2021/02/01/salesforce-promotes-former-vlocity-ceo-david-schmaier-to-president-and-cpo/",
+					},
+					key_event_date: "2021-02-01",
+				},
+			],
+			current_employees_summary: {
+				identifier: {
+					uuid: "f5c477fa-6e8c-3d64-4f2d-3603e5cc3340",
+					value: "Salesforce",
+					image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+					permalink: "salesforce",
+					entity_def_id: "organization",
+				},
+				num_current_positions: 818,
+			},
+			funds_summary: {
+				funds_total: {
+					value: 100000000,
+					currency: "USD",
+					value_usd: 100000000,
+				},
+				identifier: {
+					uuid: "f5c477fa-6e8c-3d64-4f2d-3603e5cc3340",
+					value: "Salesforce",
+					image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+					permalink: "salesforce",
+					entity_def_id: "organization",
+				},
+				num_funds: 1,
+			},
+			current_advisors_image_list: [
+				{
+					identifier: {
+						uuid: "e27486be-e4e0-69af-673e-b281e3735077",
+						value: "Marc Benioff Chairman @ Salesforce",
+						permalink:
+							"marc-benioff-board-member-salesforce--e27486be",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "61d19fc5-3a69-e4f7-9a6d-83d4fb6a0212",
+						value: "Marc Benioff",
+						image_id: "bktkwfajgillmjaxkbzi",
+						permalink: "marc-benioff",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+				},
+				{
+					identifier: {
+						uuid: "05bfbae6-963a-9cd0-f074-c438c896f850",
+						value: "Susan Wojcicki Board of Directors @ Salesforce",
+						permalink:
+							"susan-wojcicki-board-member-salesforce--05bfbae6",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "de6d16df-2694-7edd-8723-d85ec86dad23",
+						value: "Susan Wojcicki",
+						image_id: "v1477041257/a0q5zjabiq2hrd8lor9y.png",
+						permalink: "susan-wojcicki",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+				},
+				{
+					identifier: {
+						uuid: "07d9db7c-c0ae-0977-b72b-9fbf7d976965",
+						value: "Maynard Webb Board Member @ Salesforce",
+						permalink:
+							"maynard-webb-board-member-salesforce--07d9db7c",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "2bfd1d4c-0708-8904-9300-c36b2d6063df",
+						value: "Maynard Webb",
+						image_id: "v1421176434/uhccuxaq9scrfqu3vhpv.jpg",
+						permalink: "maynard-webb",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+					started_on: {
+						value: "2006-09-01",
+						precision: "month",
+					},
+				},
+				{
+					identifier: {
+						uuid: "1d1a8b5c-ea53-4a0d-81a8-1e2d9610082c",
+						value: "Alex Mahon Advisory Board Member @ Salesforce",
+						permalink:
+							"alex-mahon-board-member-salesforce--1d1a8b5c",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "3388e854-8a7e-630f-e768-01f5655bab35",
+						value: "Alex Mahon",
+						image_id: "v1464605286/jijclbqc3uwqhrhukpuv.png",
+						permalink: "alex-mahon",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+					started_on: {
+						value: "2021-02-01",
+						precision: "month",
+					},
+				},
+				{
+					identifier: {
+						uuid: "1d431595-3719-4b32-b55c-29cb4e09e36f",
+						value: "David Outly Talent Advisory @ Salesforce",
+						permalink: "david-outly-advisor-salesforce--1d431595",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "1a9a4eca-5027-50ba-87e6-59b992c6ec82",
+						value: "David Outly",
+						image_id: "efgdpgobueb6wo5knlap",
+						permalink: "david-outly",
+						entity_def_id: "person",
+					},
+					job_type: "advisor",
+					started_on: {
+						value: "2018-09-01",
+						precision: "month",
+					},
+				},
+				{
+					identifier: {
+						uuid: "232fdaf4-0434-4692-a3dd-0f0c55f0de6d",
+						value: "Alissa Silverman Nonprofit Industry Advisor @ Salesforce",
+						permalink:
+							"alissa-silverman-advisor-salesforce--232fdaf4",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "70c343f2-d65b-1dba-fe1d-c391ac4a6cd9",
+						value: "Alissa Silverman",
+						image_id: "v1505813328/yuawvkbrd7pjia9qqtzi.png",
+						permalink: "alissa-silverman",
+						entity_def_id: "person",
+					},
+					job_type: "advisor",
+					started_on: {
+						value: "2020-07-01",
+						precision: "month",
+					},
+				},
+				{
+					identifier: {
+						uuid: "26216986-184f-4871-b033-a5a280c5014d",
+						value: "Simona Rollinson CIO Customer Advisory Board @ Salesforce",
+						permalink:
+							"simona-rollinson-advisor-salesforce--26216986",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "15d7f80f-e353-207c-76e1-a841f54fc8d7",
+						value: "Simona Rollinson",
+						image_id: "v1488456106/cgtuftftkqrxbfurm3mp.png",
+						permalink: "simona-rollinson",
+						entity_def_id: "person",
+					},
+					job_type: "advisor",
+					started_on: {
+						value: "2020-07-01",
+						precision: "month",
+					},
+				},
+				{
+					identifier: {
+						uuid: "2bec9eb6-a2bb-5ebc-0832-dba8a98ed401",
+						value: "Craig Conway Board of Directors @ Salesforce",
+						permalink:
+							"craig-conway-board-member-salesforce--2bec9eb6",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "6c729290-27c0-3823-d122-4d0da6d08485",
+						value: "Craig Conway",
+						image_id:
+							"v1397182286/3ad8a2fda54f39e28b3149d24f217395.png",
+						permalink: "craig-conway",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+					started_on: {
+						value: "2005-09-01",
+						precision: "day",
+					},
+				},
+			],
+			org_funding_total: null,
+			org_num_investors: null,
+			company_financials_highlights: {
+				num_investments: 68,
+				num_investors: 22,
+				num_lead_investors: 4,
+				listed_stock_symbol: "NYSE:CRM",
+				num_exits: 14,
+				num_lead_investments: 31,
+				num_funds: 1,
+				funding_total: {
+					value: 65375124,
+					currency: "USD",
+					value_usd: 65375124,
+				},
+				num_funding_rounds: 7,
+			},
+			investors_list: [
+				{
+					is_lead_investor: true,
+					identifier: {
+						uuid: "bf6084aa-ebf4-492b-90d6-b2c778409938",
+						value: "Starboard Value investment in Post-IPO Equity - Salesforce",
+						permalink:
+							"starboard-value-invested-in-salesforce-post-ipo-equity--9610b646--bf6084aa",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "9610b646-ecbd-40f1-885a-b65d3718f2bb",
+						value: "Post-IPO Equity - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-post-ipo-equity--9610b646",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "d9206241-3caf-9362-4e33-821be8463fd9",
+						value: "Starboard Value",
+						image_id: "v1411026298/gnwsemzfc6mlgankob2z.png",
+						permalink: "starboard-value",
+						entity_def_id: "organization",
+					},
+				},
+				{
+					is_lead_investor: true,
+					identifier: {
+						uuid: "1bc7bfef-861e-43af-92ff-47ead52473a5",
+						value: "Emergence investment in Venture Round - Salesforce",
+						permalink:
+							"emergence-capital-partners-invested-in-salesforce-series-unknown--97e15a46--1bc7bfef",
+						entity_def_id: "investment",
+					},
+					partner_identifiers: [
+						{
+							uuid: "4f8c1734-2241-8df8-9b9a-e104a55cdb50",
+							value: "Gordon Ritter",
+							image_id:
+								"v1397187887/8ed6e1f60a05dcd296efe1085d16a2fb.jpg",
+							permalink: "gordon-ritter",
+							entity_def_id: "person",
+						},
+					],
+					funding_round_identifier: {
+						uuid: "97e15a46-24b9-48d7-a84d-7892696eb3f3",
+						value: "Venture Round - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-unknown--97e15a46",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "cc964bc0-a950-4d8f-4ef0-7c514e49d28a",
+						value: "Emergence",
+						image_id: "xeuj4qcnu0kfl6xs2dcs",
+						permalink: "emergence-capital-partners",
+						entity_def_id: "organization",
+					},
+				},
+				{
+					identifier: {
+						uuid: "a7867a22-613c-412a-b13b-99d27f5716d5",
+						value: "New Enterprise Associates investment in Venture Round - Salesforce",
+						permalink:
+							"new-enterprise-associates-invested-in-salesforce-series-unknown--29b49867--a7867a22",
+						entity_def_id: "investment",
+					},
+					partner_identifiers: [
+						{
+							uuid: "d8afc0ac-261d-8de7-ed74-61c5a6a33ccb",
+							value: "Scott Sandell",
+							image_id: "v1445698557/junimtoqqe7swwkcqqgs.jpg",
+							permalink: "scott-sandell",
+							entity_def_id: "person",
+						},
+					],
+					funding_round_identifier: {
+						uuid: "29b49867-227f-40c4-9ea6-f52b11916751",
+						value: "Venture Round - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-unknown--29b49867",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "47b84763-9727-7cdf-b194-2742e3963147",
+						value: "New Enterprise Associates",
+						image_id: "9ca7830174a149d6a6f40c6db4efa173",
+						permalink: "new-enterprise-associates",
+						entity_def_id: "organization",
+					},
+				},
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "0da670b5-d65d-1e12-32c4-277123d5dbef",
+						value: "Stratton Sclavos investment in Series D - Salesforce",
+						permalink:
+							"stratton-sclavos-invested-in-salesforce-series-d--628760fe--0da670b5",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "3e835a75-85d1-8e67-49b9-040507d3e215",
+						value: "Stratton Sclavos",
+						image_id: "v1505162815/ocyj0odr910lkmd4ezyy.png",
+						permalink: "stratton-sclavos",
+						entity_def_id: "person",
+					},
+				},
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "1e951df0-4098-d031-38b5-fe2c8dbfc9ce",
+						value: "William Hambrecht investment in Series D - Salesforce",
+						permalink:
+							"william-hambrecht-invested-in-salesforce-series-d--628760fe--1e951df0",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "33ce4889-c3e2-91ec-e301-6e5d329ae6e3",
+						value: "William Hambrecht",
+						image_id: "v1468656287/qtfkdq05ex23z4lilmft.png",
+						permalink: "william-hambrecht",
+						entity_def_id: "person",
+					},
+				},
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "253feb65-76b4-aecb-fe2e-3036eaaa400e",
+						value: "WR Hambrecht investment in Series D - Salesforce",
+						permalink:
+							"wr-hambrecht-invested-in-salesforce-series-d--628760fe--253feb65",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "ccfceb11-57cb-a959-4c42-cf8be36c17e6",
+						value: "WR Hambrecht",
+						image_id:
+							"v1397178979/d759a10c255f811d8c3a1243bcb9f1c7.gif",
+						permalink: "wr-hambrecht",
+						entity_def_id: "organization",
+					},
+				},
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "2b728dc8-7fad-9724-a342-973036a349cc",
+						value: "Marc Benioff investment in Series D - Salesforce",
+						permalink:
+							"marc-benioff-invested-in-salesforce-series-d--628760fe--2b728dc8",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "61d19fc5-3a69-e4f7-9a6d-83d4fb6a0212",
+						value: "Marc Benioff",
+						image_id: "bktkwfajgillmjaxkbzi",
+						permalink: "marc-benioff",
+						entity_def_id: "person",
+					},
+				},
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "4278285e-b343-3b51-787d-5725da77f8ff",
+						value: "Halsey Minor investment in Series D - Salesforce",
+						permalink:
+							"halsey-minor-invested-in-salesforce-series-d--628760fe--4278285e",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "b1b20015-2dce-ce49-85b5-082119c39cfc",
+						value: "Halsey Minor",
+						image_id: "zgbgxm0ovc4whbjdlab7",
+						permalink: "halsey-minor",
+						entity_def_id: "person",
+					},
+				},
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "4d4321c6-9f3d-a92d-2db6-37feda2f8079",
+						value: "MF Capital investment in Series D - Salesforce",
+						permalink:
+							"mf-capital-invested-in-salesforce-series-d--628760fe--4d4321c6",
+						entity_def_id: "investment",
+					},
+					partner_identifiers: [
+						{
+							uuid: "bc75dd03-3a0d-4015-9bba-c25a7b7ebf60",
+							value: "Marc Friend",
+							image_id: "v1455358664/s469lvz4s4b7qztfkiph.png",
+							permalink: "marc-friend-2",
+							entity_def_id: "person",
+						},
+					],
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "091b7f4e-8a31-2516-6559-5f035191486b",
+						value: "MF Capital",
+						image_id:
+							"v1397178827/95ae067ce68440b28e60b785268fdc74.png",
+						permalink: "mf-capital",
+						entity_def_id: "organization",
+					},
+				},
+				{
+					identifier: {
+						uuid: "6b8d0426-127e-463d-804a-a160673748e6",
+						value: "Allen Miner investment in Series D - Salesforce",
+						permalink:
+							"allen-miner-invested-in-salesforce-series-d--628760fe--6b8d0426",
+						entity_def_id: "investment",
+					},
+					partner_identifiers: [
+						{
+							uuid: "a7c01e51-3add-a124-d44a-b1a6746a2f0a",
+							value: "Allen Miner",
+							image_id:
+								"v1397188403/b134f14862829e108c72f80563c44cbe.jpg",
+							permalink: "allen-miner",
+							entity_def_id: "person",
+						},
+					],
+					funding_round_identifier: {
+						uuid: "628760fe-2f37-d70c-7c02-16cfe9ebb145",
+						value: "Series D - Salesforce",
+						image_id: "v1488354350/yx91yyljvcuu5j8agjqq.png",
+						permalink: "salesforce-series-d--628760fe",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "a7c01e51-3add-a124-d44a-b1a6746a2f0a",
+						value: "Allen Miner",
+						image_id:
+							"v1397188403/b134f14862829e108c72f80563c44cbe.jpg",
+						permalink: "allen-miner",
+						entity_def_id: "person",
+					},
+				},
+			],
+		},
+	},
+	{
+		_id: "6742ef75fe35ecbea712846c",
+		companyId: "6742ea6bcc7eef81cb28da63",
+		props: {
+			short_description:
+				"ResoluteAI makes information retrieval seamless, helping you to innovate smarter.",
+			title: "ResoluteAI",
+			key_employee_change_list: [],
+			current_employees_summary: {
+				identifier: {
+					uuid: "e0bf3296-0908-1698-dcd0-db175741ca12",
+					value: "ResoluteAI",
+					image_id: "gj7ksbmugk9q5cw7lzii",
+					permalink: "resolute-innovation",
+					entity_def_id: "organization",
+				},
+				num_current_positions: 1,
+			},
+			funds_summary: {
+				identifier: {
+					uuid: "e0bf3296-0908-1698-dcd0-db175741ca12",
+					value: "ResoluteAI",
+					image_id: "gj7ksbmugk9q5cw7lzii",
+					permalink: "resolute-innovation",
+					entity_def_id: "organization",
+				},
+			},
+			current_advisors_image_list: [
+				{
+					identifier: {
+						uuid: "47b6a98f-b50a-48d6-8114-7390d029a722",
+						value: "Tige Savage Board Member @ ResoluteAI",
+						permalink:
+							"tige-savage-board-member-resolute-innovation--47b6a98f",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "243046cc-e112-43ca-ed4c-9b74f2e67f8f",
+						value: "Tige Savage",
+						image_id: "o7lngntmz1so9d883ujm",
+						permalink: "tige-savage",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+				},
+				{
+					identifier: {
+						uuid: "f648a5dd-50ac-4a91-a33f-13d3fd8162f8",
+						value: "Jay Mandelbaum Board Member @ ResoluteAI",
+						permalink:
+							"jay-mandelbaum-board-member-resolute-innovation--f648a5dd",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "48922d1f-b11f-532e-fa0f-7d007e04dc71",
+						value: "Jay Mandelbaum",
+						image_id:
+							"v1397754898/4a3e38fab76510e8c5c66405e7cd8beb.png",
+						permalink: "jay-mandelbaum",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+					started_on: {
+						value: "2016-01-01",
+						precision: "year",
+					},
+				},
+				{
+					identifier: {
+						uuid: "f8e63bee-3f91-44c5-af69-621fa859d9f0",
+						value: "Alex Shtarkman Board Observer @ ResoluteAI",
+						permalink:
+							"alex-shtarkman-board-member-resolute-innovation--f8e63bee",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "eab9db5e-f3a5-43fe-a71b-a6ade6c2acfd",
+						value: "Alex Shtarkman",
+						image_id: "poo3qt1pdwghx9pnhndl",
+						permalink: "alex-shtarkman",
+						entity_def_id: "person",
+					},
+					job_type: "board_member",
+				},
+			],
+			org_funding_total: null,
+			org_num_investors: null,
+			company_financials_highlights: {
+				funding_total: {
+					value: 8829012,
+					currency: "USD",
+					value_usd: 8829012,
+				},
+				num_funding_rounds: 5,
+				num_investors: 2,
+				num_lead_investors: 1,
+			},
+			investors_list: [
+				{
+					identifier: {
+						uuid: "3fa02e97-f5e7-48dd-b960-d2d2c7e47f4c",
+						value: "Revolution Ventures investment in Series A - ResoluteAI",
+						permalink:
+							"revolution-ventures-invested-in-resolute-innovation-series-a--113d30ca--3fa02e97",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "113d30ca-1453-7b88-346d-1f4de93f3fc9",
+						value: "Series A - ResoluteAI",
+						image_id: "gj7ksbmugk9q5cw7lzii",
+						permalink: "resolute-innovation-series-a--113d30ca",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "4bdfb823-f9c1-402c-9ade-ffab068a9488",
+						value: "Revolution Ventures",
+						image_id: "o4loprpoxkx7aebglmgf",
+						permalink: "revolution-ventures",
+						entity_def_id: "organization",
+					},
+				},
+				{
+					is_lead_investor: true,
+					identifier: {
+						uuid: "73b1df35-c523-438f-9371-702ddd2f2541",
+						value: "Revolution investment in Series A - ResoluteAI",
+						permalink:
+							"revolution-invested-in-resolute-innovation-series-a--113d30ca--73b1df35",
+						entity_def_id: "investment",
+					},
+					partner_identifiers: [
+						{
+							uuid: "243046cc-e112-43ca-ed4c-9b74f2e67f8f",
+							value: "Tige Savage",
+							image_id: "o7lngntmz1so9d883ujm",
+							permalink: "tige-savage",
+							entity_def_id: "person",
+						},
+					],
+					funding_round_identifier: {
+						uuid: "113d30ca-1453-7b88-346d-1f4de93f3fc9",
+						value: "Series A - ResoluteAI",
+						image_id: "gj7ksbmugk9q5cw7lzii",
+						permalink: "resolute-innovation-series-a--113d30ca",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "669ce484-85e7-1537-e2e0-14e4b2bab22c",
+						value: "Revolution",
+						image_id: "z9q1tyakqq1rigvvjziw",
+						permalink: "revolution",
+						entity_def_id: "organization",
+					},
+				},
+			],
+		},
+	},
+	{
+		_id: "6742efb0fe35ecbea712846d",
+		companyId: "6742ea6bcc7eef81cb28da63",
+		props: {
+			short_description:
+				"App Solutions is a software development company.",
+			title: "The App Solutions",
+			key_employee_change_list: [],
+			current_employees_summary: {
+				identifier: {
+					uuid: "4742fc05-b7e6-6d6b-32c2-3ee9c55d07f3",
+					value: "The App Solutions",
+					image_id: "v1432021496/tgglhen4qvfadrrtipko.png",
+					permalink: "the-app-solutions",
+					entity_def_id: "organization",
+				},
+				num_current_positions: 3,
+			},
+			funds_summary: {
+				identifier: {
+					uuid: "4742fc05-b7e6-6d6b-32c2-3ee9c55d07f3",
+					value: "The App Solutions",
+					image_id: "v1432021496/tgglhen4qvfadrrtipko.png",
+					permalink: "the-app-solutions",
+					entity_def_id: "organization",
+				},
+			},
+			current_advisors_image_list: [
+				{
+					identifier: {
+						uuid: "250a000a-342c-5d7a-46ac-307d6a478ad0",
+						value: "Viktor Kompaneiets Advisor @ The App Solutions",
+						permalink:
+							"viktor-kompaneiets-advisor-the-app-solutions--250a000a",
+						entity_def_id: "job",
+					},
+					person_identifier: {
+						uuid: "8adc0258-5110-7956-14c1-9a48cdcb5ad8",
+						value: "Viktor Kompaneiets",
+						image_id: "v1459808355/sz8yqrcv9az7dbamayov.jpg",
+						permalink: "viktor-kompaneiets",
+						entity_def_id: "person",
+					},
+					job_type: "advisor",
+					started_on: {
+						value: "2014-12-01",
+						precision: "month",
+					},
+				},
+			],
+			org_funding_total: null,
+			org_num_investors: null,
+			company_financials_highlights: {
+				funding_total: {
+					value: 1000000,
+					currency: "USD",
+					value_usd: 1000000,
+				},
+				num_funding_rounds: 1,
+				num_investors: 1,
+			},
+			investors_list: [
+				{
+					is_lead_investor: false,
+					identifier: {
+						uuid: "6959de5e-f99c-fcf5-ad63-bd356e80852e",
+						value: "Digital Future investment in Seed Round - The App Solutions",
+						permalink:
+							"digitalfuture-invested-in-the-app-solutions-seed--96cd3d0c--6959de5e",
+						entity_def_id: "investment",
+					},
+					funding_round_identifier: {
+						uuid: "96cd3d0c-8cd6-c190-90a0-f2a3ab668c0d",
+						value: "Seed Round - The App Solutions",
+						image_id: "v1432021496/tgglhen4qvfadrrtipko.png",
+						permalink: "the-app-solutions-seed--96cd3d0c",
+						entity_def_id: "funding_round",
+					},
+					investor_identifier: {
+						uuid: "fe0a3a8c-3cec-6e83-3116-2c3663eaca2d",
+						value: "Digital Future",
+						image_id: "v1463119842/o1ynhjuyfg07wcmdilep.png",
+						permalink: "digitalfuture",
+						entity_def_id: "organization",
+					},
+				},
+			],
+		},
+	},
+]
+
+export const sampleLinkedinData = `"Subject: Funding Proposal for 1M USD Investment
+
+Dear [VC's Name],
+
+I hope this message finds you well. I am writing to introduce you to our company, Google, and to present an exciting investment opportunity. As a leading multinational corporation, Google specializes in Internet-related services and products, with a mission to organize the world’s information and make it universally accessible and useful.
+
+**Company Overview:**
+Google is renowned for its innovative approach to technology and its commitment to pushing the boundaries of what is possible. Our core services include search engines, cloud computing, software, and hardware. We have a robust portfolio of products that have become integral to the daily lives of millions of users worldwide.
+
+**Recent Developments:**
+- We have recently appointed a new chief technologist to spearhead our AI initiatives, reflecting our commitment to staying at the forefront of technological advancements.
+- Our team has expanded to include top talent from various industries, ensuring that we continue to innovate and lead in our field.
+
+**Financial Highlights:**
+- Google has a strong financial foundation with a total funding of 26.1 million USD from three funding rounds.
+- We have a diverse investor base, including prominent names such as Kleiner Perkins and Sequoia Capital, which underscores the confidence the investment community has in our vision and execution.
+
+**Investment Opportunity:**
+We are seeking a 1M USD investment to further accelerate our growth and innovation in key areas such as artificial intelligence, cloud computing, and information technology. This funding will be pivotal in enhancing our product offerings and expanding our market reach.
+
+**Why Invest in Google?**
+- **Proven Track Record:** Google has consistently demonstrated its ability to innovate and lead in the tech industry.
+- **Strong Market Position:** As a household name, Google has a significant competitive advantage and a loyal customer base.
+- **Growth Potential:** With ongoing advancements in AI and cloud technology, Google is well-positioned to capitalize on emerging opportunities.
+
+We believe that your investment will not only yield significant returns but also contribute to shaping the future of technology. We are excited about the possibility of partnering with you and are confident that this collaboration will be mutually beneficial.
+
+Thank you for considering this opportunity. We look forward to the possibility of working together to achieve great success.
+
+Sincerely,
+
+[Your Name]
+CEO, Google"`

@@ -12,7 +12,7 @@ import { Segment } from "@/lib/types/api"
 
 export default function SegmentCard({ segmentData }: { segmentData: Segment }) {
 	return (
-		<div className="container mx-auto p-4 bg-gradient-to-br min-h-screen text-white">
+		<div className="container mx-auto p-4 bg-gradient-to-br text-white">
 			<h1 className="text-4xl font-bold mb-8 text-center">
 				{segmentData.segment}
 			</h1>

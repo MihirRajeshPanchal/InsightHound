@@ -34,7 +34,7 @@ export default function SurveyResultsCharts({
 	surveyData: MockResponse[]
 }) {
 	return (
-		<div className="space-y-8 p-4">
+		<div className="space-y-8">
 			{surveyData.map((question, questionIndex) => {
 				const chartConfig = question.responses.reduce(
 					(acc, response, index) => {
@@ -84,8 +84,8 @@ export default function SurveyResultsCharts({
 																key={`cell-${index}`}
 																fill={
 																	COLORS[
-																	index %
-																	COLORS.length
+																		index %
+																			COLORS.length
 																	]
 																}
 															/>
@@ -128,8 +128,8 @@ export default function SurveyResultsCharts({
 																key={`cell-${index}`}
 																fill={
 																	COLORS[
-																	index %
-																	COLORS.length
+																		index %
+																			COLORS.length
 																	]
 																}
 															/>

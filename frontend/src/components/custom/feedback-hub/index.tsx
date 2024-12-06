@@ -2,7 +2,7 @@
 
 import Loading from "@/components/loading"
 import { useAuth } from "@/hooks/use-auth"
-import { QuestionsData } from "@/lib/types/api"
+import { FormUrlResponse, QuestionsData } from "@/lib/types/api"
 import { TNoParams } from "@/lib/types/common"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import { useQuery } from "@tanstack/react-query"
@@ -34,13 +34,16 @@ export default function FeedbackHub() {
 		queryKey: ["feedback-form", user?.companyId],
 		queryFn: async () => {
 			const response = await fetchAPI<
-				{ form_url: string },
+				FormUrlResponse,
 				TNoParams,
 				QuestionsData & { id: string }
 			>({
 				url: "/typeform",
 				method: "POST",
-				body: { questions: data?.questions || [], id: user?.companyId || "" },
+				body: {
+					questions: data?.questions || [],
+					id: user?.companyId || "",
+				},
 				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 			})
 			return response.data
