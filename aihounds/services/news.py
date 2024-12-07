@@ -5,13 +5,13 @@ from dateutil.relativedelta import relativedelta
 from langchain_core.tools import tool
 
 @tool
-def generate_news(company_name:str):
+def generate_news(company_name:str, topic:str):
     """
     Fetch news articles based on a query and current system date.
-    :param request: Body containing the search query.
+    :param request: Body containing the search company name and topic.
     :return: JSON response with news articles.
     """
-    query = company_name
+    query = company_name + " " + topic
     from_date = datetime.now() - relativedelta(months=1)
     from_date_str = from_date.strftime("%Y-%m-%d")
     url = f"{BASE_URL}?q={query}&from={from_date_str}&sortBy=publishedAt&apiKey={NEWS_API_KEY}&language=en"
@@ -20,4 +20,4 @@ def generate_news(company_name:str):
     if response.status_code != 200:
         return None
 
-    return {"company_name": company_name,"news_url": url}
+    return {"company_name": company_name, "topic": topic,"news_url": url}
