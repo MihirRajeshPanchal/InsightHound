@@ -1,4 +1,3 @@
-import re
 from pydantic import BaseModel
 from aihounds.constants.hound import mongo_client
 from fastapi import APIRouter

@@ -1,4 +1,4 @@
-from aihounds.models.trends import InterestByRegionData, TrendsQueryRequest
+from aihounds.models.trends import TrendsQueryRequest
 from aihounds.services.trends import generate_heatmap
 from fastapi import APIRouter
 

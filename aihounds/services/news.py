@@ -1,8 +1,6 @@
 import requests
 from datetime import datetime
 from aihounds.constants.hound import BASE_URL, NEWS_API_KEY
-from aihounds.constants.hound import mongo_client
-from aihounds.models.news import NewsRequest
 from dateutil.relativedelta import relativedelta
 from langchain_core.tools import tool
 

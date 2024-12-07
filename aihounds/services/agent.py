@@ -1,5 +1,3 @@
-from tavily import TavilyClient
-import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage
 from langgraph.checkpoint.memory import MemorySaver
@@ -9,7 +7,7 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.messages import BaseMessage
 from typing_extensions import TypedDict
 from aihounds.constants.hound import mongo_client
-from langgraph.graph import StateGraph, START, END
+from langgraph.graph import StateGraph, START
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 

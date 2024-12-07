@@ -1,16 +1,10 @@
-from calendar import c
 import requests
 from aihounds.models.crunchbase import CrunchBaseCompany
-from aihounds.models.user import User
-from aihounds.models.company import Company
 from aihounds.models.rivals import Rival
-from aihounds.repository.repository import MongoDBClient
 from aihounds.constants.hound import mongo_client
-import concurrent.futures
 import os
-import json
-from typing import List
 from fastapi import BackgroundTasks
+
 class CrunchBaseService:
     def __init__(self):
         self.api_key =os.getenv('APIFY_KEY') 

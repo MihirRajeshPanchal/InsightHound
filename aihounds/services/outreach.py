@@ -1,16 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
-from langchain.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 import re
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.tools import tool
 from aihounds.constants.outreach import LINKEDIN_PROMPT
-from aihounds.models.outreach import LinkedInLLMResponse, LinkedInResponse
+from aihounds.models.outreach import LinkedInLLMResponse
 load_dotenv()
-from langchain_core.messages import HumanMessage,BaseMessage
-from langchain_openai import ChatOpenAI
 import os 
 from aihounds.constants.prompt import prompt_template,generate_message_prompt
 from aihounds.constants.hound import openai_llm,mongo_client

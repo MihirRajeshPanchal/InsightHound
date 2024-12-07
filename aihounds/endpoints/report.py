@@ -1,4 +1,3 @@
-from calendar import c
 from aihounds.models.report import ReportRequest
 from aihounds.constants.hound import mongo_client
 from aihounds.services.report import generate_pdf

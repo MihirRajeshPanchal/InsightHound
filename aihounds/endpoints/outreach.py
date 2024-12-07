@@ -1,6 +1,6 @@
 from typing import Optional
 from aihounds.services.outreach import LinkedinOutreach
-from fastapi import APIRouter, HTTPException,Request
+from fastapi import APIRouter
 from pydantic import BaseModel
 outreach_router = APIRouter()
 
