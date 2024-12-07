@@ -38,6 +38,6 @@ async def get_conversations(conversation_id: Optional[str] = Query(None, descrip
         for i in conversations:
             messages = mongo_client.read_by_key_value("messages", "conversation_id", i["_id"])
             i["messages"] = messages
-        return conversations
+        return conversations[0]
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching conversations: {str(e)}")
