@@ -250,7 +250,7 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.LINKEDIN:
 			return <LinkedinForm data={message.data} />
 		case ActionEnum.HEATMAP:
-			return <MapComponent data={message.data.geo} keyword={message.data.query} />
+			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
 			return (
 				<div

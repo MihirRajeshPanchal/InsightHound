@@ -5,6 +5,7 @@ import {
 	QuestionsData,
 	Segment,
 } from "./types/api"
+import { HeatmapData } from "./types/chat"
 import { ColumnTypeEnum, GetHoundBoardResponse } from "./types/kanban"
 
 export const heatmapData = [
@@ -11615,8 +11616,8 @@ Sincerely,
 [Your Name]
 CEO, Google"`
 
-export const sampleHeatmapData = {
-	geo: [
+export const sampleHeatmapData:HeatmapData = {
+	interest_by_region: [
 		{
 			"coordinates": {
 				"lat": 37.36883,
@@ -11768,5 +11769,6 @@ export const sampleHeatmapData = {
 			"extracted_value": 67
 		}
 	],
-	query: "AI"
+	query: "AI",
+	geo: "IN"
 }

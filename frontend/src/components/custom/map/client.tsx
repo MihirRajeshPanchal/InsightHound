@@ -7,11 +7,12 @@ import "leaflet-defaulticon-compatibility"
 import { mapDefaults } from "@/lib/constants"
 import MapUtilities from "./util"
 import { HeatmapLayerFactory } from "@vgrid/react-leaflet-heatmap-layer"
-import { CoordinateDataApiResponse } from "@/lib/types/api"
+import { HeatmapData } from "@/lib/types/chat"
 
 const HeatmapLayer = HeatmapLayerFactory<[number, number, number]>()
 
-const MapComponent = ({ data, keyword }: { data: CoordinateDataApiResponse, keyword: string }) => {
+const MapComponent = ({ data: response }: { data: HeatmapData }) => {
+	const data = response.interest_by_region
 	const zoom = mapDefaults.zoom
 	const mappedData: [number, number, number][] = data.map((d) => [
 		d.coordinates.lat,
@@ -50,7 +51,7 @@ const MapComponent = ({ data, keyword }: { data: CoordinateDataApiResponse, keyw
 							position={[d.coordinates.lat, d.coordinates.lng]}
 						>
 							<Popup>
-								{d.extracted_value.toFixed(2)}% people interested in {keyword}
+								{d.extracted_value.toFixed(2)}% people interested in {response.query} in {response.geo}
 							</Popup>
 						</Marker>
 					))}

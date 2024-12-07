@@ -47,6 +47,12 @@ export type Message = {
 	  } & AIResponse)
 )
 
+export type HeatmapData = {
+	geo: string,
+	interest_by_region: CoordinateDataApiResponse
+	query: string
+}
+
 export type AIResponse =
 	| {
 			action: ActionEnum.ABOUT
@@ -70,13 +76,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.HEATMAP
-			data: {
-				geo: CoordinateDataApiResponse
-				query: string
-				// keywords: KeywordsResponse
-				// selectedKeyword: string
-				// selectedRegion: string
-			}
+			data: HeatmapData
 	  }
 	| {
 			action: ActionEnum.MAIL_INITIATE
