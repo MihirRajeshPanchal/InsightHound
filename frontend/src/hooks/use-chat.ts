@@ -1,40 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useCallback, FormEvent, useEffect, useRef } from "react"
 import { useAuth } from "./use-auth"
+import { convertMarkdownToHtml } from "@/lib/utils"
 
 interface Message {
 	role: "user" | "ai"
 	content: string
 	url?: string
-}
-
-function convertMarkdownToHtml(markdown: string): string {
-	let html = markdown
-		.replace(/^### (.+)$/gm, "<h3>$1</h3>")
-		.replace(/^## (.+)$/gm, "<h2>$1</h2>")
-		.replace(/^# (.+)$/gm, "<h1>$1</h1>")
-
-	html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-
-	html = html
-		.replace(/_(.*?)_/g, "<em>$1</em>")
-		.replace(/\*(.*?)\*/g, "<em>$1</em>")
-
-	html = html.replace(/`([^`]+)`/g, "<code>$1</code>")
-
-	html = html.replace(/```([\s\S]*?)```/g, "<pre><code>$1</code></pre>")
-	html = html.replace(/~~~([\s\S]*?)~~~/g, "<pre><code>$1</code></pre>")
-
-	html = html.replace(/^> (.+)$/gm, "<blockquote>$1</blockquote>")
-
-	html = html.replace(/^\s*[-*] (.+)$/gm, "<li>$1</li>")
-	html = html.replace(/(<li>.*<\/li>)/g, "<ul>$1</ul>")
-
-	html = html.replace(/\[([^\]]+)]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-
-	html = html.replace(/\\n/g, "<br>")
-
-	return html
 }
 
 export function useChat() {
@@ -101,6 +73,7 @@ export function useChat() {
 				}
 
 				const text = await response.text()
+				console.log(text)
 				const modifiedText = convertMarkdownToHtml(text.slice(1, -1))
 
 				const updatedMessages = [...messages.current]

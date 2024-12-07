@@ -128,6 +128,10 @@ body {
 	width: max-content;
 }
 
+.compareLtoR:has(.compCard-company:checked)
+	.competitorCard-company:has(.compCard-company:not(:checked)) {
+	width: max-content;
+}
 @keyframes aspectAnimate {
 	to {
 		aspect-ratio: 0.25;

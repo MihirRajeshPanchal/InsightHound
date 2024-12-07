@@ -19,7 +19,7 @@ export default function Cards({ mutation }: CardProps) {
 			id="product-comparison"
 			className={cn(
 				"grow transition-all delay-500 duration-500 min-h-[70vh]",
-				data ? "opacity-100" : "opacity-0"
+				data ? "opacity-100" : "opacity-0",
 			)}
 		>
 			<div className="compareLtoR | group | overflow-hidden p-2 grid gap-0 grid-cols-[0fr_1fr] peer-checked:grid-cols-[0fr_1fr] has-[.compCard:checked]:gap-4 has-[.compCard:checked]:grid-cols-[1fr_1fr] transition-[grid-template-columns,gap] duration-500">
@@ -53,7 +53,7 @@ export default function Cards({ mutation }: CardProps) {
 									htmlFor="compCompareOne"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare
@@ -75,7 +75,7 @@ export default function Cards({ mutation }: CardProps) {
 									htmlFor="compCompareTwo"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare
@@ -97,7 +97,7 @@ export default function Cards({ mutation }: CardProps) {
 									htmlFor="compCompareThree"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare

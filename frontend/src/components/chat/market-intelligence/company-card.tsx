@@ -61,7 +61,10 @@ export function CompanyCard({ company }: { company: CompanyData }) {
 								label="Valuation"
 								value={`$${formatNumber(company.valuation || company.props?.company_financials_highlights?.funding_total?.value || Math.ceil(Math.random() * 100000))}`}
 							/>
-							<InfoItem label="Domain" value={company.domain} />
+							<InfoItem
+								label="Domain"
+								value={company.domain || "unavailable"}
+							/>
 							<InfoItem
 								label="Total Funding"
 								value={

@@ -15,7 +15,7 @@ export default function SendPage() {
 	const imageRef = useRef<HTMLDivElement>(null)
 
 	return (
-		<main className="p-4">
+		<main className="px-4 w-full">
 			<TableData
 				columns={columns}
 				setColumns={setColumns}

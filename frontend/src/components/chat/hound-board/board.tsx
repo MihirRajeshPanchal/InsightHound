@@ -57,7 +57,7 @@ const Board = ({ data }: { data: GetHoundBoardResponse }) => {
 	}, [cards, mutation])
 
 	return (
-		<div className="flex h-full w-full flex-wrap gap-3 p-12">
+		<div className="flex h-full w-full flex-wrap gap-3 px-4">
 			<Column
 				title="Backlog"
 				column={ColumnTypeEnum.BACKLOG}

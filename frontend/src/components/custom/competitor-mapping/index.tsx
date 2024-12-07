@@ -73,7 +73,7 @@ export default function CompetitorMapping() {
 									htmlFor="compCompareOne"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare
@@ -95,7 +95,7 @@ export default function CompetitorMapping() {
 									htmlFor="compCompareTwo"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare
@@ -117,7 +117,7 @@ export default function CompetitorMapping() {
 									htmlFor="compCompareThree"
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare

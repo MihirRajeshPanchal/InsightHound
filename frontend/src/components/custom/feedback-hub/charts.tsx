@@ -84,8 +84,8 @@ export default function SurveyResultsCharts({
 																key={`cell-${index}`}
 																fill={
 																	COLORS[
-																	index %
-																	COLORS.length
+																		index %
+																			COLORS.length
 																	]
 																}
 															/>
@@ -128,8 +128,8 @@ export default function SurveyResultsCharts({
 																key={`cell-${index}`}
 																fill={
 																	COLORS[
-																	index %
-																	COLORS.length
+																		index %
+																			COLORS.length
 																	]
 																}
 															/>

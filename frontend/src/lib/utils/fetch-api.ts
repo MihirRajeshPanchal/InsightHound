@@ -1,4 +1,4 @@
-"use server"
+// "use server"
 
 import { TNoParams } from "@/lib/types/common"
 
@@ -6,7 +6,7 @@ export type FetchRequestParams<
 	ResponseDataT = TNoParams,
 	UrlParamsT = TNoParams,
 	BodyParamsT = TNoParams,
-	QueryParamsT = TNoParams
+	QueryParamsT = TNoParams,
 > = {
 	baseUrl?: string
 	body?: BodyParamsT
@@ -39,14 +39,14 @@ export async function fetchAPI<
 	ResponseDataT = TNoParams,
 	UrlParamsT = TNoParams,
 	BodyParamsT = TNoParams,
-	QueryParamsT = TNoParams
+	QueryParamsT = TNoParams,
 >(
 	params: FetchRequestParams<
 		ResponseDataT,
 		UrlParamsT,
 		BodyParamsT,
 		QueryParamsT
-	>
+	>,
 ): Promise<FetchResponseResult<ResponseDataT>> {
 	const {
 		url,
@@ -80,7 +80,7 @@ export async function fetchAPI<
 	console.log({ resolvedUrl })
 
 	const queryStr = new URLSearchParams(
-		query as Record<string, string>
+		query as Record<string, string>,
 	).toString()
 	if (queryStr) {
 		resolvedUrl += `?${queryStr}`
@@ -105,7 +105,7 @@ export async function fetchAPI<
 
 		console.log({ response: response.status })
 		const responseData = (await response.json()) as ResponseDataT
-		console.dir({ responseData }, { depth: null })
+		console.log({ responseData })
 
 		return {
 			success: true,

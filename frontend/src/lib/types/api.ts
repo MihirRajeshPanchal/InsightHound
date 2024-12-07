@@ -32,13 +32,14 @@ export type CoordinateDataApiResponse = CoordinateData[]
 
 export type CompanyData = {
 	_id: string
-	name: string
-	description: string
-	vision: string
-	mission: string
-	valuation: number
-	domain: string
-	createdAt: string
+	companyId?: string
+	name?: string
+	description?: string
+	vision?: string
+	mission?: string
+	valuation?: number
+	domain?: string
+	createdAt?: string
 	props: {
 		short_description: string
 		title: string
@@ -65,7 +66,7 @@ export type CompanyData = {
 			num_current_positions: number
 		}
 		funds_summary: {
-			funds_total: {
+			funds_total?: {
 				value: number
 				currency: string
 				value_usd: number
@@ -73,11 +74,11 @@ export type CompanyData = {
 			identifier: {
 				uuid: string
 				value: string
-				image_id: string
+				image_id?: string
 				permalink: string
 				entity_def_id: string
 			}
-			num_funds: number
+			num_funds?: number
 		}
 		current_advisors_image_list: {
 			identifier: {
@@ -89,12 +90,12 @@ export type CompanyData = {
 			person_identifier: {
 				uuid: string
 				value: string
-				image_id: string
+				image_id?: string
 				permalink: string
 				entity_def_id: string
 			}
 			job_type: string
-			started_on: {
+			started_on?: {
 				value: string
 				precision: string
 			}
@@ -102,22 +103,22 @@ export type CompanyData = {
 		org_funding_total: null
 		org_num_investors: null
 		company_financials_highlights: {
-			num_investments: number
-			num_investors: number
-			num_lead_investors: number
-			listed_stock_symbol: string
-			num_exits: number
-			num_lead_investments: number
-			num_funds: number
+			num_investments?: number
+			num_investors?: number
+			num_lead_investors?: number
+			listed_stock_symbol?: string
+			num_exits?: number
+			num_lead_investments?: number
+			num_funds?: number
 			funding_total: {
 				value: number
 				currency: string
 				value_usd: number
 			}
-			num_funding_rounds: number
+			num_funding_rounds?: number
 		}
 		investors_list: {
-			is_lead_investor: boolean
+			is_lead_investor?: boolean
 			identifier: {
 				uuid: string
 				value: string
@@ -134,6 +135,7 @@ export type CompanyData = {
 			investor_identifier: {
 				uuid: string
 				value: string
+				image_id?: string
 				permalink: string
 				entity_def_id: string
 			}
@@ -146,7 +148,7 @@ export type CompanyData = {
 			}[]
 		}[]
 	}
-	keywords: string[]
+	keywords?: string[]
 }
 
 export type Segment = {
@@ -176,6 +178,10 @@ export type QuestionsData = {
 	questions: Question[]
 }
 
+export type FormUrlResponse = {
+	form_url: string
+}
+
 export type MockResponse = {
 	questionText: string
 	responses: {
@@ -185,41 +191,41 @@ export type MockResponse = {
 }
 
 export type Review = {
-  reviewer_name: string;
-  reviewer_rating: string;
-  reviewer_comment: string;
-};
+	reviewer_name: string
+	reviewer_rating: string
+	reviewer_comment: string
+}
 
 export type Product = {
-  company_name: string;
-  product_name: string;
-  product_pricing: string;
-  product_reviews: Review[];
-};
+	company_name: string
+	product_name: string
+	product_pricing: string
+	product_reviews: Review[]
+}
 
-export type Products = Product[];
+export type Products = Product[]
 
-export type GetProductComparisonBody ={
-  id : string,
-  product_name: string
+export type GetProductComparisonBody = {
+	id: string
+	product_name: string
 }
 
 export type Article = {
-  source: {
-    id: string | null;
-    name: string;
-  };
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-};
+	source: {
+		id: string | null
+		name: string
+	}
+	author: string | null
+	title: string
+	description: string
+	url: string
+	urlToImage: string | null
+	publishedAt: string
+	content: string
+}
 
 export type ArticlesApiResponse = {
-  status: string;
-  totalResults: number;
-  articles: Article[];
-};
+	status: string
+	totalResults: number
+	articles: Article[]
+}
