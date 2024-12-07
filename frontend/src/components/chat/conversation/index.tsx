@@ -183,16 +183,19 @@ const conversation: Conversation = {
 function UserMessage({ message }: { message: Message }) {
 	return (
 		message.role === RoleEnum.USER && (
-			<div className="flex gap-4 py-2">
-				<Avatar className="size-8 rounded-xl overflow-clip">
-					<AvatarImage
-						src={`https://avatar.vercel.sh/${"user1156" + message.id}.png`}
-						alt={"user"}
-					/>
-					<AvatarFallback>U</AvatarFallback>
-				</Avatar>
-				<h3 className="font-semibold">{message.query}</h3>
-			</div>
+			<>
+				<div className="flex gap-4 py-2">
+					<Avatar className="size-8 rounded-xl overflow-clip">
+						<AvatarImage
+							src={`https://avatar.vercel.sh/${"user1156" + message.id}.png`}
+							alt={"user"}
+						/>
+						<AvatarFallback>U</AvatarFallback>
+					</Avatar>
+					<h3 className="font-semibold">{message.query}</h3>
+				</div>
+				<Separator className="mt-2 opacity-40" />
+			</>
 		)
 	)
 }
@@ -271,7 +274,7 @@ export default function ConversationPage({ id }: { id: string }) {
 		setOpen(true)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-	function onSubmit() {}
+	function onSubmit() { }
 	return (
 		<div className="px-4">
 			<div className="">
