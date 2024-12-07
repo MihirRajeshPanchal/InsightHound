@@ -1,5 +1,5 @@
 from typing import Optional
-from aihounds.models.aggregate import AgentRequest, ConversationResponse, CreateConversationRequest
+from aihounds.models.aggregate import AgentRequest, ConversationMongoStore, ConversationResponse, CreateConversationRequest
 from fastapi import APIRouter, HTTPException, Query
 from aihounds.services.aggregate import do_aggregate, generate_conversation_title_from_query
 from aihounds.constants.hound import mongo_client
@@ -22,8 +22,8 @@ async def get_aggregator(request: AgentRequest):
 async def create_conversation(request: CreateConversationRequest):
     try:
         collection_name = "conversations"
-        inserted_id = mongo_client.create(collection_name, request)
         title = generate_conversation_title_from_query(request.query)
+        inserted_id = mongo_client.create(collection_name, ConversationMongoStore(user_id= request.user_id, company_id=request.company_id, title=title['title']))
         return ConversationResponse(conversation_id=inserted_id, title=title['title'])
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error creating conversation: {str(e)}")
