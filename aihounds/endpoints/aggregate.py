@@ -1,5 +1,6 @@
+from typing import Optional
 from aihounds.models.aggregate import AgentRequest, ConversationResponse, CreateConversationRequest
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from aihounds.services.aggregate import do_aggregate, generate_conversation_title_from_query
 from aihounds.constants.hound import mongo_client
 
@@ -28,9 +29,12 @@ async def create_conversation(request: CreateConversationRequest):
         raise HTTPException(status_code=500, detail=f"Error creating conversation: {str(e)}")
     
 @router.get('/conversations')
-async def get_conversations(request: CreateConversationRequest):
+async def get_conversations(conversation_id: Optional[str] = Query(None, description="The ID of the conversation to fetch")):
     try:
-        conversations = mongo_client.read_multiple_by_key_value("conversations", "user_id", request.user_id, "company_id", request.company_id)
+        if not conversation_id:
+            raise HTTPException(status_code=400, detail="conversation_id query parameter is required")
+
+        conversations = mongo_client.read_by_id("conversations", "_id", conversation_id)
         for i in conversations:
             messages = mongo_client.read_by_key_value("messages", "conversation_id", i["_id"])
             i["messages"] = messages
