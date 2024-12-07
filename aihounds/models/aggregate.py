@@ -51,8 +51,8 @@ class ConversationMongoStore(BaseModel):
     user_id: str
     company_id: str
     title: str
-    summary: Optional[str] 
-    messages: Optional[List[dict]]
+    summary: Optional[str] = None 
+    messages: Optional[List[dict]] = [] 
     
 class GenerateQueryResponse(BaseModel):
     query: str
