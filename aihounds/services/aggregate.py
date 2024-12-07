@@ -37,7 +37,7 @@ mapping = {
     "generate_segmentation" : "segmentation", # working
     "generate_kanban" : "board", # working
     "generate_typeform" : "questionnaire", # working
-    "get_typeform_responses" : "questionnaire_analysis",
+    "get_typeform_responses" : "questionnaire_analysis", # not working
 }
 
 def create_tool_call(name: str, id: str, args: Any = None) -> Dict[str, Any]:
