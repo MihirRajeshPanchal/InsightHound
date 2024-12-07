@@ -9993,7 +9993,8 @@ export const sampleCompetitorMapping: CompanyData[] = [
 	},
 ]
 
-export const sampleLinkedinData = `"Subject: Funding Proposal for 1M USD Investment
+export const sampleLinkedinData = {
+	message:`"Subject: Funding Proposal for 1M USD Investment
 
 Dear [VC's Name],
 
@@ -10026,6 +10027,7 @@ Sincerely,
 
 [Your Name]
 CEO, Google"`
+}
 
 export const sampleHeatmapData:HeatmapData = {
 	interest_by_region: [

@@ -33,7 +33,7 @@ import LinkedinForm from "../audience-outreach/form"
 import useAgent from "@/hooks/use-agent"
 import { toast } from "sonner"
 import Loader from "../loader"
-import MapComponent from "@/components/custom/map/client"
+import MapComponent from "@/components/chat/map/client"
 
 const sampleConversationMessages: Message[] = [
 	{
@@ -248,7 +248,7 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.MAIL_INITIATE:
 			return <SendPage />
 		case ActionEnum.LINKEDIN:
-			return <LinkedinForm data={message.data} />
+			return <LinkedinForm data={message.data?.message || ""} />
 		case ActionEnum.HEATMAP:
 			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:

@@ -56,6 +56,9 @@ export type NewsData = {
 	"news_url": string
 }
 
+export type LinkedinData = {
+	message: string
+}
 export type AIResponse =
 	| {
 			action: ActionEnum.ABOUT
@@ -90,7 +93,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.LINKEDIN
-			data: string
+			data: LinkedinData
 	  }
 	| {
 			action: ActionEnum.SEGMENTATION
