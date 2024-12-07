@@ -1,3 +1,4 @@
+from turtle import title
 from pydantic import BaseModel
 from datetime import datetime
 from pydantic import BaseModel
@@ -41,9 +42,11 @@ class Message(BaseModel):
 class CreateConversationRequest(BaseModel):
     user_id: str
     company_id: str
+    query: str
     
 class ConversationResponse(BaseModel):
     conversation_id: str
+    title: str
 
 class ConversationMongoStore(BaseModel):
     user_id: str
@@ -51,3 +54,9 @@ class ConversationMongoStore(BaseModel):
     title: str
     summary: Optional[str] 
     messages: Optional[List[dict]]
+    
+class GenerateQueryResponse(BaseModel):
+    query: str
+
+class GenerateTitleResponse(BaseModel):
+    title: str

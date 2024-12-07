@@ -1,6 +1,6 @@
 from aihounds.models.aggregate import AgentRequest, ConversationResponse, CreateConversationRequest
 from fastapi import APIRouter, HTTPException
-from aihounds.services.aggregate import do_aggregate
+from aihounds.services.aggregate import do_aggregate, generate_conversation_title_from_query
 from aihounds.constants.hound import mongo_client
 
 router = APIRouter()
@@ -22,7 +22,8 @@ async def create_conversation(request: CreateConversationRequest):
     try:
         collection_name = "conversations"
         inserted_id = mongo_client.create(collection_name, request)
-        return ConversationResponse(conversation_id=inserted_id)
+        title = generate_conversation_title_from_query(request.query)
+        return ConversationResponse(conversation_id=inserted_id, title=title['title'])
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error creating conversation: {str(e)}")
     

@@ -1,8 +1,11 @@
 from datetime import datetime
 from typing import Any, Dict, List
 from langchain_core.messages import HumanMessage, ToolMessage, AIMessage
+from aihounds.constants.aggregate import TITLE_PROMPT
+from langchain.output_parsers import OutputFixingParser
+from langchain_core.output_parsers import JsonOutputParser
 from aihounds.constants.hound import openai_llm, mongo_client
-from aihounds.models.aggregate import Message
+from aihounds.models.aggregate import GenerateTitleResponse, Message
 from aihounds.services.email import generate_mail
 from aihounds.services.kanban import generate_kanban
 from aihounds.services.marketsegment import generate_segmentation
@@ -201,3 +204,11 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
         mongo_client.create("messages", agent_response)
 
     return ai_list_return
+
+
+def generate_conversation_title_from_query(query: str):
+    chain = TITLE_PROMPT | openai_llm | OutputFixingParser.from_llm(parser=JsonOutputParser(pydantic_object=GenerateTitleResponse), llm=openai_llm)
+    
+    result = chain.invoke({"query": query})
+    
+    return result
