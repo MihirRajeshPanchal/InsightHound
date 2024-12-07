@@ -6,7 +6,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.tools import tool
 
 @tool
-def generate_email(vision, mission, description, domain, array):
+def generate_mail(vision, mission, description, domain, array):
     """
     Generates an email subject and template based on the provided inputs.
 
@@ -30,4 +30,4 @@ def generate_email(vision, mission, description, domain, array):
     
     email = result.get("email_template", [])
     subject = result.get("subject", [])
-    return subject, email
+    return Email(subject=subject, email_template=email).model_dump()

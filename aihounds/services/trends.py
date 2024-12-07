@@ -3,7 +3,7 @@ from serpapi import GoogleSearch
 from langchain_core.tools import tool
 
 @tool
-def get_trends_search(query,geo):
+def generate_heatmap(query,geo):
     """
     Fetches Google Trends data for a specific query and geographic region.
 

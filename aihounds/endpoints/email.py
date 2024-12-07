@@ -1,5 +1,5 @@
 from aihounds.models.email import Email, EmailRequest
-from aihounds.services.email import generate_email
+from aihounds.services.email import generate_mail
 from aihounds.constants.hound import mongo_client
 from fastapi import APIRouter
 
@@ -9,7 +9,7 @@ router = APIRouter()
 async def get_email(request: EmailRequest):
     company_data  = mongo_client.read("company", request.id)
 
-    subject, email = generate_email(
+    subject, email = generate_mail(
         vision=company_data["vision"],
         mission=company_data["mission"],
         description=company_data["description"],

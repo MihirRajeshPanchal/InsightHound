@@ -26,7 +26,7 @@ async def create_typeform(survey_request: SurveyRequest):
 
         try:
 
-            typeform_data = await create_typeform_definition(survey_request)
+            typeform_data = create_typeform_definition(survey_request)
 
             async with httpx.AsyncClient() as client:
                 response = await client.post(

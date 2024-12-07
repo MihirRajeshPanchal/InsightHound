@@ -1,9 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
-# from aihounds.constants.hound import openai_llm
 from langchain.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 import re
+from langchain.output_parsers import OutputFixingParser
+from langchain_core.output_parsers import JsonOutputParser
+from langchain_core.tools import tool
+from aihounds.constants.outreach import LINKEDIN_PROMPT
+from aihounds.models.outreach import LinkedInLLMResponse, LinkedInResponse
 load_dotenv()
 from langchain_core.messages import HumanMessage,BaseMessage
 from langchain_openai import ChatOpenAI
@@ -101,3 +105,25 @@ class LinkedinOutreach:
             return "Messages sent successfully"
         except Exception as e:
             return e
+
+@tool
+def generate_linkedin(purpose):
+    """
+    Generates LinkedIn-related content, such as email templates and subjects, 
+    based on the provided purpose.
+
+    Parameters:
+        purpose (str): The specific purpose for generating the LinkedIn content.
+
+    Returns:
+        LinkedInResponse: A response object containing:
+            - subject (str): The subject line for the LinkedIn-related content.
+            - email_template (str): A detailed email template for LinkedIn outreach.
+    """
+    chain = LINKEDIN_PROMPT | openai_llm | OutputFixingParser.from_llm(parser=JsonOutputParser(pydantic_object=LinkedInLLMResponse), llm=openai_llm)
+    
+    result = chain.invoke({"purpose": purpose})
+    print(result)
+    
+    message = result.get("message", [])
+    return LinkedInLLMResponse(message=message).model_dump()

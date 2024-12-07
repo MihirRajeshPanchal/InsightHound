@@ -3,34 +3,41 @@ from typing import Any, Dict, List
 from langchain_core.messages import HumanMessage, ToolMessage, AIMessage
 from aihounds.constants.hound import openai_llm, mongo_client
 from aihounds.models.aggregate import Message
-from aihounds.services.email import generate_email
+from aihounds.services.email import generate_mail
 from aihounds.services.kanban import generate_kanban
-from aihounds.services.keywords import generate_keywords
-from aihounds.services.marketresearch import generate_questionnaire
-from aihounds.services.marketsegment import generate_segments
+from aihounds.services.marketsegment import generate_segmentation
+from aihounds.services.news import generate_news
+from aihounds.services.outreach import generate_linkedin
 from aihounds.services.product import generate_product
-from aihounds.services.trends import get_trends_search
+from aihounds.services.trends import generate_heatmap
+from aihounds.services.typeform import generate_typeform, get_typeform_responses
 
-tools = [generate_email, generate_keywords, generate_product, get_trends_search, generate_questionnaire, generate_kanban, generate_segments]
+tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform, get_typeform_responses]
 
 llm_with_tools = openai_llm.bind_tools(tools)
 
 selected_tool = {
-    "generate_email": generate_email, 
-    "generate_keywords": generate_keywords, 
-    "generate_product": generate_product, 
-    "get_trends_search": get_trends_search, 
-    "generate_questionnaire": generate_questionnaire, 
-    "generate_kanban": generate_kanban, 
-    "generate_segments": generate_segments
+    "generate_news": generate_news, # working
+    "generate_product": generate_product, # working
+    "generate_heatmap": generate_heatmap, # working
+    "generate_mail": generate_mail, # working
+    "generate_linkedin": generate_linkedin, # working
+    "generate_segmentation": generate_segmentation, # working
+    "generate_kanban": generate_kanban, # working
+    "generate_typeform": generate_typeform,  # working
+    "get_typeform_responses": get_typeform_responses  # not working
 }
 
 mapping = {
-    "generate_email": "mail_init",
-    "generate_keywords": "heatmap",
-    "generate_product": "product",
-    "generate_kanban": "board",
-    "generate_segments": "segmentation"
+    "generate_news" : "feed", # working
+    "generate_product" : "product", # working
+    "generate_heatmap" : "heatmap", # working
+    "generate_mail" : "mail_init", # working
+    "generate_linkedin" : "linkedin", # working
+    "generate_segmentation" : "segmentation", # working
+    "generate_kanban" : "board", # working
+    "generate_typeform" : "questionnaire", # working
+    "get_typeform_responses" : "questionnaire_analysis",
 }
 
 def create_tool_call(name: str, id: str, args: Any = None) -> Dict[str, Any]:
@@ -64,6 +71,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
     Returns:
         List[Dict[str, Any]]: List of all conversations for the given conversation ID
     '''
+    ai_list_return = []
     temp_query = query
     previous_conversations = list(mongo_client.find(
         "conversations", 
@@ -134,7 +142,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
         query=temp_query,
         timestamp=datetime.now()
     )
-    mongo_client.create("conversations", user_query_record)
+    mongo_client.create("messages", user_query_record)
     
     try:
         ai_msg = llm_with_tools.invoke(messages)
@@ -174,7 +182,8 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
                         tool_call_id=tool_call["id"],
                         timestamp=datetime.now()
                     )
-                    mongo_client.create("conversations", agent_response)
+                    mongo_client.create("messages", agent_response)
+                    ai_list_return.append(agent_response)
                     processed_tools.add(tool_name)
             except Exception as e:
                 print(f"Error invoking tool {tool_name}: {e}")
@@ -187,8 +196,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
             data=str(ai_msg.content),
             timestamp=datetime.now()
         )
-        mongo_client.create("conversations", agent_response)
-    
-    last_two_conversations = list(mongo_client.find_last_two("conversations", {"id": conversation_id}))
-    last_two_conversations.reverse()
-    return last_two_conversations
+        ai_list_return.append(agent_response)
+        mongo_client.create("messages", agent_response)
+
+    return ai_list_return

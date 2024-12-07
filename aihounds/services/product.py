@@ -8,20 +8,19 @@ from langchain_core.tools import tool
 @tool
 def generate_product(company, product):
     """
-    Generates detailed product information based on the provided company and product name.
+    Generate a rival product comparison dataset based on a given company and product.
 
-    This function uses a LangChain pipeline with a custom output parser to process
-    the input data and return structured product details, including product features,
-    pricing, and reviews.
+    This function uses a predefined template to analyze the given company name and product name.
+    It then generates a JSON structure that includes product information for the specified product 
+    and three rival products. Each product object includes pricing, key features, and sample reviews.
 
-    Args:
-        company (str): The name of the company offering the product.
-        product (str): The name of the product for which information is to be generated.
+    Parameters:
+        company (str): The name of the company for which the product analysis is to be performed.
+        product (str): The name of the product for which rival comparisons are to be generated.
 
     Returns:
-        dict: A dictionary containing product details, including the company name, 
-        product name, pricing, features, and reviews. Each review includes the reviewer's 
-        rating and comment, if available.
+        dict: A JSON-like dictionary containing product comparison data for the input company product 
+              and three rival products. The structure follows this format:
     """
     chain = PRODUCT_TEMPLATE | openai_llm | OutputFixingParser.from_llm(parser=JsonOutputParser(pydantic_object=Product), llm=openai_llm)
     

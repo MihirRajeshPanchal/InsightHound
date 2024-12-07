@@ -6,7 +6,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.tools import tool
 
 @tool
-def generate_segments(vision, mission, description, domain):
+def generate_segmentation(vision, mission, description, domain):
     """
     Generates market segments based on the provided inputs.
 

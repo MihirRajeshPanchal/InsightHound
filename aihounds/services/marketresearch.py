@@ -3,9 +3,7 @@ from aihounds.constants.hound import openai_llm
 from aihounds.models.marketresearch import QuestionnaireSchema
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
-from langchain_core.tools import tool
 
-@tool
 def generate_questionnaire(vision, mission, description, domain):
     """
     Generates a market research questionnaire based on the provided inputs.

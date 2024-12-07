@@ -1,7 +1,7 @@
 from aihounds.models.keywords import StartupRequest
 from aihounds.models.marketsegment import MarketSegmentMongoSchema, MarketSegmentSchema, Segment
 from aihounds.constants.hound import mongo_client
-from aihounds.services.marketsegment import generate_segments
+from aihounds.services.marketsegment import generate_segmentation
 from fastapi import APIRouter
 
 router = APIRouter()
@@ -13,7 +13,7 @@ async def get_marketsegement(request: StartupRequest):
         return MarketSegmentSchema(segments=segments_data[0]["segments"])
     else:
         segments_data = mongo_client.read("company", request.id)
-        segments = generate_segments(
+        segments = generate_segmentation(
             vision=segments_data["vision"],
             mission=segments_data["mission"],
             description=segments_data["description"],
