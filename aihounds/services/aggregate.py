@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 from typing import Any, Dict, List
 from langchain_core.messages import HumanMessage, ToolMessage, AIMessage
 from aihounds.constants.aggregate import TITLE_PROMPT
@@ -20,28 +21,45 @@ tools = [generate_news, generate_product,generate_heatmap, generate_mail, genera
 llm_with_tools = openai_llm.bind_tools(tools)
 
 selected_tool = {
-    "generate_news": generate_news, # working
-    "generate_product": generate_product, # working
-    "generate_heatmap": generate_heatmap, # working
-    "generate_mail": generate_mail, # working
-    "generate_linkedin": generate_linkedin, # working
-    "generate_segmentation": generate_segmentation, # working
-    "generate_kanban": generate_kanban, # working
-    "generate_typeform": generate_typeform,  # working
-    "get_typeform_responses": get_typeform_responses  # not working
+    "generate_news": generate_news, 
+    "generate_product": generate_product, 
+    "generate_heatmap": generate_heatmap, 
+    "generate_mail": generate_mail, 
+    "generate_linkedin": generate_linkedin, 
+    "generate_segmentation": generate_segmentation, 
+    "generate_kanban": generate_kanban, 
+    "generate_typeform": generate_typeform,  
+    "get_typeform_responses": get_typeform_responses  
 }
 
 mapping = {
-    "generate_news" : "feed", # working
-    "generate_product" : "product", # working
-    "generate_heatmap" : "heatmap", # working
-    "generate_mail" : "mail_init", # working
-    "generate_linkedin" : "linkedin", # working
-    "generate_segmentation" : "segmentation", # working
-    "generate_kanban" : "board", # working
-    "generate_typeform" : "questionnaire", # working
-    "get_typeform_responses" : "questionnaire_analysis", # not working
+    "generate_news" : "feed", 
+    "generate_product" : "product", 
+    "generate_heatmap" : "heatmap", 
+    "generate_mail" : "mail_init", 
+    "generate_linkedin" : "linkedin", 
+    "generate_segmentation" : "segmentation", 
+    "generate_kanban" : "board", 
+    "generate_typeform" : "questionnaire", 
+    "get_typeform_responses" : "questionnaire_analysis", 
 }
+
+def convert_to_json_string(data):
+    """
+    Converts data to a JSON string. Handles pydantic objects, dictionaries, and strings.
+    """
+    try:
+        if isinstance(data, str):
+            json.loads(data)
+            return data
+        elif hasattr(data, "dict"):  
+            return json.dumps(data.dict())
+        else:  
+            return json.dumps(data)
+    except (TypeError, ValueError) as e:
+        print(f"----------------->Error converting to JSON string: {e}")
+        return json.dumps({"error": "Unable to convert data to JSON", "original_data": str(data)})
+
 
 def create_tool_call(name: str, id: str, args: Any = None) -> Dict[str, Any]:
     """
@@ -171,6 +189,11 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
             try:
                 tool_output = selected_tool[tool_name].invoke(tool_args)
 
+                print("***********************************")
+                print(type(tool_output))
+                print(tool_output)
+                tool_output_json = convert_to_json_string(tool_output)
+                
                 tool_msg = ToolMessage(
                     content=str(tool_output), 
                     tool_call_id=tool_call["id"]
@@ -182,7 +205,7 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
                         conversation_id=conversation_id, 
                         role="ai", 
                         action=mapping.get(tool_name, "response_md_pending"), 
-                        data=str(tool_output), 
+                        data=tool_output_json,
                         tool_call_id=tool_call["id"],
                         timestamp=datetime.now()
                     )

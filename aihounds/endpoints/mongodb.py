@@ -4,8 +4,10 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
+
 class MongoRequest(BaseModel):
     query: str
+
 
 @router.post("/getObjects")
 async def get_marketsegement(request: MongoRequest):
@@ -18,7 +20,7 @@ async def get_marketsegement(request: MongoRequest):
                 "vision": segment.get("vision"),
                 "mission": segment.get("mission"),
                 "valuation": segment.get("valuation"),
-                "domain": segment.get("domain")
+                "domain": segment.get("domain"),
             }
             for segment in segments_data
         ]

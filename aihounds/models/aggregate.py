@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from datetime import datetime
 from pydantic import BaseModel
 from enum import Enum
-from typing import List, Optional, Union
+from typing import Any, List, Optional, Union
 
 class AgentRequest(BaseModel):
     """Agent Request schema"""
@@ -28,7 +28,7 @@ class Message(BaseModel):
     role: RoleEnum
     action: str
     query: Optional[Union[str, None]] = None
-    data: Optional[Union[str, None]] = None
+    data: Optional[Any] = None
     tool_call_id: Optional[Union[str, None]] = None
     insight: Optional[str] = None
     suggestions: Optional[List[str]] = None

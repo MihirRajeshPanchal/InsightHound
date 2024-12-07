@@ -11,7 +11,7 @@ class Question(BaseModel):
 
 class SurveyRequest(BaseModel):
     id: str
-    questions: List[Question]
+    questions: List[Dict[str, List[str]]]
     title: Optional[str] = "InsightHounds Survey"
 
 class TypeformResponse(BaseModel):
