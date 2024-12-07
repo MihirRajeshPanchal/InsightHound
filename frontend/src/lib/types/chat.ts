@@ -1,9 +1,7 @@
 import {
-	ArticlesApiResponse,
 	CompanyData,
 	CoordinateDataApiResponse,
 	FormUrlResponse,
-	KeywordsResponse,
 	MockResponse,
 	Product,
 	QuestionsData,
@@ -53,6 +51,11 @@ export type HeatmapData = {
 	query: string
 }
 
+export type NewsData = {
+	"company_name": string,
+	"news_url": string
+}
+
 export type AIResponse =
 	| {
 			action: ActionEnum.ABOUT
@@ -60,7 +63,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.FEED
-			data: ArticlesApiResponse
+			data: NewsData
 	  }
 	| {
 			action: ActionEnum.RIVAL
