@@ -38,6 +38,22 @@ class MongoDBClient:
             return result
         except Exception as e:
             return None
+    
+    def read_by_id(self, collection_name: str, key: str, value: Any) -> List[Dict[str, Any]]:
+        try:
+            collection = self._get_collection(collection_name)
+            
+            if key == "_id" and isinstance(value, str):
+                value = ObjectId(value)
+
+            documents = collection.find({key: value})
+            result = []
+            for doc in documents:
+                doc["_id"] = str(doc["_id"])  
+                result.append(doc)
+            return result
+        except Exception as e:
+            return None
         
     def read_multiple_by_key_value(self, collection_name: str, key1: str, value1: Any,  key2: str, value2: Any) -> List[Dict[str, Any]]:
         try:

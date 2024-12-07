@@ -1,9 +1,8 @@
 from pydantic import BaseModel
-from pymongo import MongoClient
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from enum import Enum
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 class AgentRequest(BaseModel):
     """Agent Request schema"""
@@ -24,15 +23,31 @@ class AIResponse(BaseModel):
 
 
 class Message(BaseModel):
-    id: str
+    conversation_id: str
     createdAt: datetime = datetime.now()
     role: RoleEnum
     action: str
     query: Optional[Union[str, None]] = None
     data: Optional[Union[str, None]] = None
     tool_call_id: Optional[Union[str, None]] = None
-
+    insight: Optional[str] = None
+    suggestions: Optional[List[str]] = None
+    
     class Config:
         json_encoders = {
             datetime: lambda v: v.isoformat()
         }
+        
+class CreateConversationRequest(BaseModel):
+    user_id: str
+    company_id: str
+    
+class ConversationResponse(BaseModel):
+    conversation_id: str
+
+class ConversationMongoStore(BaseModel):
+    user_id: str
+    company_id: str
+    title: str
+    summary: Optional[str] 
+    messages: Optional[List[dict]]

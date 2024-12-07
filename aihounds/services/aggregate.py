@@ -60,7 +60,7 @@ def create_tool_call(name: str, id: str, args: Any = None) -> Dict[str, Any]:
         tool_call["args"] = args
     return tool_call
 
-def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
+def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[str, Any]]:
     '''
     This function is used to aggregate the data from the AI Hounds and store messages.
     
@@ -73,6 +73,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
     '''
     ai_list_return = []
     temp_query = query
+    query = context + query
     previous_conversations = list(mongo_client.find(
         "conversations", 
         {"id": conversation_id}
@@ -136,7 +137,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
     messages.append(user_query)
     
     user_query_record = Message(
-        id=conversation_id, 
+        conversation_id=conversation_id, 
         role="user", 
         action="query", 
         query=temp_query,
@@ -175,7 +176,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
 
                 if tool_name not in processed_tools:
                     agent_response = Message(
-                        id=conversation_id, 
+                        conversation_id=conversation_id, 
                         role="ai", 
                         action=mapping.get(tool_name, "response_md_pending"), 
                         data=str(tool_output), 
@@ -190,7 +191,7 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
                 
     else:
         agent_response = Message(
-            id=conversation_id, 
+            conversation_id=conversation_id, 
             role="ai", 
             action="response_md_pending", 
             data=str(ai_msg.content),
