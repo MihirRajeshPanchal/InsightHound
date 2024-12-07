@@ -6,6 +6,10 @@ import { useRouter } from "next/navigation"
 import { useSidebar } from "../ui/sidebar"
 import { Textarea } from "../ui/textarea"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
+import { useMutation } from "@tanstack/react-query"
+import { fetchAPI } from "@/lib/utils/fetch-api"
+import { CreateConversationBody, CreateConversationResponse } from "@/lib/types/chat"
+import { TNoParams } from "@/lib/types/common"
 
 const messages: { message: string; tag: string }[] = [
 	{
@@ -39,14 +43,40 @@ const messages: { message: string; tag: string }[] = [
 	},
 ]
 const randomMessage = messages[Math.floor(Math.random() * messages.length)]
-export default function ChatInitial() {
+
+
+const useCreateConversationMutation = () => {
 	const { user } = useAuth()
+	const mutation = useMutation({
+		mutationKey: ["create-conversation"],
+		mutationFn: async (query: string) => {
+			if (!user?.companyId) return;
+			const response = await fetchAPI<CreateConversationResponse, TNoParams, CreateConversationBody>({
+				url: "/create_conversation",
+				method: "POST",
+				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
+				body: {
+					company_id: user.companyId,
+					query,
+					user_id: user.id
+				}
+			})
+			return response.data
+		},
+	})
+	return mutation;
+}
+
+export default function ChatInitial() {
 	const [query, setQuery] = React.useState<string>("")
+	const { mutateAsync } = useCreateConversationMutation()
 	const router = useRouter()
 	const { setOpen } = useSidebar()
-	function onSubmit() {
-		console.log({ user, query })
-		router.push(`/chat/1234`)
+	async function onSubmit() {
+		const resp = await mutateAsync(query)
+		if (resp?.conversation_id) {
+			router.push(`/chat/${resp.conversation_id}`)
+		}
 	}
 	useEffect(() => {
 		setOpen(false)

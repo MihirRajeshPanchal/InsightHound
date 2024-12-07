@@ -1,4 +1,4 @@
-// "use server"
+"use server"
 
 import { TNoParams } from "@/lib/types/common"
 

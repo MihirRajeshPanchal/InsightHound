@@ -85,7 +85,7 @@ export default function OnboardingForm() {
 					method: "GET",
 					baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 				})
-				router.push("/dashboard")
+				router.push("/chat")
 			}
 		} catch (error) {
 			console.error("Form submission error", error)

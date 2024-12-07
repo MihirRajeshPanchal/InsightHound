@@ -30,7 +30,7 @@ export default function Landing() {
 								</li>
 							</a>
 							<li>
-								<Link href="/dashboard">
+								<Link href="/chat">
 									<button className="text-lg font-medium bg-accent px-4 py-1 rounded-lg">
 										Get Started
 									</button>
@@ -66,7 +66,7 @@ export default function Landing() {
 							opportunities, analyze competitors, and connect with
 							your target audience like never before.
 						</p>
-						<Link href="/dashboard">
+						<Link href="/chat">
 							<button className="group | grid *:[grid-area:1/-1] border border-text/20 rounded-full">
 								<div className="grid h-full grid-cols-[calc(100%_-_55px)_1fr] group-hover:grid-cols-[0%_1fr] transition-[grid-template-columns] duration-300">
 									<span className="col-start-2 bg-accent rounded-full"></span>

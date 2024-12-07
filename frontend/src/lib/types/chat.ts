@@ -117,3 +117,13 @@ export interface Conversation {
 	updatedAt: Date
 	summary: Record<string, string>
 }
+
+export type CreateConversationResponse = {
+	conversation_id: string
+}
+
+export type CreateConversationBody = {
+	company_id : string,
+    user_id: string,
+	query: string
+}
