@@ -90,7 +90,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.SEGMENTATION
-			data: { segments: Segment[] }
+			data: Segment[]
 	  }
 	| {
 			action: ActionEnum.QUESTIONNAIRE
@@ -102,7 +102,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.BOARD
-			data: GetHoundBoardResponse
+			data: GetHoundBoardResponse["tasks"]
 	  }
 	| {
 			action: ActionEnum.REPORT
@@ -125,5 +125,10 @@ export type CreateConversationResponse = {
 export type CreateConversationBody = {
 	company_id : string,
     user_id: string,
+	query: string
+}
+
+export type MutateConversationBody = {
+	conversation_id : string,
 	query: string
 }

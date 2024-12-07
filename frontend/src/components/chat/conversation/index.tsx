@@ -29,8 +29,11 @@ import Board from "../hound-board/board"
 import CompetitorMapping from "../competitor-mapping"
 import SendPage from "../certisend/send-page"
 import LinkedinForm from "../audience-outreach/form"
+import useAgent from "@/hooks/use-agent"
+import { toast } from "sonner"
+import Loader from "../loader"
 
-const sampleConversation: Message[] = [
+const sampleConversationMessages: Message[] = [
 	{
 		id: "123",
 		createdAt: new Date(),
@@ -99,7 +102,7 @@ const sampleConversation: Message[] = [
 		createdAt: new Date(),
 		role: RoleEnum.AI,
 		action: ActionEnum.SEGMENTATION,
-		data: sampleSegment,
+		data: sampleSegment.segments,
 	},
 	{
 		id: "133",
@@ -127,7 +130,7 @@ const sampleConversation: Message[] = [
 		createdAt: new Date(),
 		role: RoleEnum.AI,
 		action: ActionEnum.BOARD,
-		data: sampleBoardResponse,
+		data: sampleBoardResponse.tasks,
 	},
 	{
 		id: "137",
@@ -171,9 +174,9 @@ const sampleConversation: Message[] = [
 		data: sampleLinkedinData,
 	},
 ]
-const conversation: Conversation = {
+const sampleConversation: Conversation = {
 	id: "123",
-	messages: sampleConversation,
+	messages: sampleConversationMessages,
 	createdAt: new Date(),
 	summary: {},
 	title: "Customer Support in metropolitian areas during weekends",
@@ -257,24 +260,69 @@ function AIMessage({ message }: { message: Message }) {
 	)
 }
 
-function Messages({ messages }: { messages: Message[] }) {
-	return messages.map((message) => (
-		<div key={message.id}>
+function Messages({ messages, isPending }: { messages: Message[], isPending: boolean }) {
+	return messages.map((message, idx) => (
+		<div key={idx} id={`message-${idx}`}>
 			<UserMessage message={message} />
 			<AIMessage message={message} />
+			{(isPending && idx === messages.length - 1) &&
+				<div className="flex justify-center gap-2 flex-col items-center [--loaderWidth:100px] [--loaderTextWidth:100px] [--loaderDuration:1.5s] p-4">
+					<Loader />
+				</div>
+			}
 		</div>
 	))
 }
 
-export default function ConversationPage({ id }: { id: string }) {
-	console.log(id)
+export default function ConversationPage({ id, conversation }: { id: string, conversation: Conversation }) {
+
+	console.log(conversation, id, sampleConversation)
+	const [messages, setMessages] = React.useState<Message[]>(conversation?.messages || [])
 	const [query, setQuery] = React.useState<string>("")
 	const { setOpen } = useSidebar()
+	const { mutateAsync, isPending } = useAgent()
+
 	useEffect(() => {
 		setOpen(true)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-	function onSubmit() { }
+	function addMessage(message: Message) {
+		setMessages((prev) => [...prev, message])
+	}
+	useEffect(() => {
+		const messageEl = document.getElementById(`message-${messages.length - 1}`)
+		console.log(messageEl)
+		if (messageEl) {
+			messageEl.scrollIntoView({ behavior: "smooth" })
+		}
+	}, [messages])
+
+	async function onSubmit() {
+		addMessage({
+			id: Math.random().toString(),
+			createdAt: new Date(),
+			role: RoleEnum.USER,
+			action: ActionEnum.QUERY,
+			query,
+		})
+		setQuery("")
+		// return;
+		const response = await mutateAsync({ query, conversation_id: id })
+		if (!response) {
+			toast.error("Failed to chat. Please try again.")
+			addMessage({
+				id: Math.random().toString(),
+				createdAt: new Date(),
+				role: RoleEnum.AI,
+				action: ActionEnum.RESPONSE_MD,
+				data: "Sorry, I am not able to process your request at the moment.",
+			})
+			return;
+		}
+		response.forEach((msg) => addMessage(msg))
+	}
+
+
 	return (
 		<div className="px-4">
 			<div className="">
@@ -282,7 +330,7 @@ export default function ConversationPage({ id }: { id: string }) {
 				<hr />
 			</div>
 			<ScrollArea className="h-[79vh] *:pt-4">
-				<Messages messages={conversation.messages} />
+				<Messages messages={messages} isPending={isPending} />
 			</ScrollArea>
 			<div className="flex gap-4 shadow-md pt-2">
 				<Textarea
@@ -290,6 +338,7 @@ export default function ConversationPage({ id }: { id: string }) {
 					placeholder="Type your message here..."
 					onKeyDown={(e) => {
 						if (e.key === "Enter") {
+							e.preventDefault()
 							onSubmit()
 						}
 					}}
@@ -298,7 +347,7 @@ export default function ConversationPage({ id }: { id: string }) {
 					onChange={(e) => setQuery(e.target.value)}
 				/>
 				<RainbowButton
-					// disabled={isPending}
+					disabled={isPending}
 					className="w-fit mt-2"
 					onClick={onSubmit}
 				>

@@ -1,6 +1,8 @@
 "use server"
 
 import { TNoParams } from "@/lib/types/common"
+import { parseConversation, parseMsg } from "./parse-msg"
+import { Conversation, Message } from "../types/chat"
 
 export type FetchRequestParams<
 	ResponseDataT = TNoParams,
@@ -18,7 +20,9 @@ export type FetchRequestParams<
 	throwOnError?: boolean
 	url: string
 	urlParams?: UrlParamsT
-	token?: string | null
+	token?: string | null,
+	isMessage?: boolean;
+	isConversation?: boolean;
 }
 
 export type FetchResponseResult<ResponseDataT = TNoParams> =
@@ -60,6 +64,8 @@ export async function fetchAPI<
 		throwOnError,
 		baseUrl,
 		token,
+		isMessage,
+		isConversation
 	} = params
 
 	const BASE_URL = baseUrl ?? process.env.NEXT_PUBLIC_BACKEND_URL
@@ -105,12 +111,13 @@ export async function fetchAPI<
 
 		console.log({ response: response.status })
 		const responseData = (await response.json()) as ResponseDataT
-		console.log({ responseData })
+		console.dir({ responseData }, {depth:null})
 
+		const data = isMessage ? Array.isArray(responseData) ? parseMsg(responseData) : parseMsg([responseData as Message]) : isConversation?  parseConversation(responseData as Conversation) : responseData
 		return {
 			success: true,
 			status: response.status,
-			data: responseData,
+			data: data as ResponseDataT,
 			error: null,
 		}
 	} catch (error) {

@@ -55,6 +55,22 @@ export function ChatSidebar({
 			<SidebarContent>
 				{/* We create a SidebarGroup for each parent. */}
 				<SidebarGroup>
+					<SidebarGroupContent>
+						<SidebarMenu>
+							<SidebarMenuItem>
+								<SidebarMenuButton
+									asChild
+									url="/chat"
+								>
+									<Link href="/chat">
+										New Chat
+									</Link>
+								</SidebarMenuButton>
+							</SidebarMenuItem>
+						</SidebarMenu>
+					</SidebarGroupContent>
+				</SidebarGroup>
+				<SidebarGroup>
 					<SidebarGroupLabel>Previous Chats</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>

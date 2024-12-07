@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label"
 export default function AudienceSegment({
 	data,
 }: {
-	data: { segments: Segment[] }
+	data: Segment[]
 }) {
 	const [selectedSegment, setSelectedSegment] = useState<number>(0)
 	return (
@@ -22,17 +22,17 @@ export default function AudienceSegment({
 			<Label className="pb-2">Select Segment</Label>
 			<Select onValueChange={(str) => setSelectedSegment(Number(str))}>
 				<SelectTrigger>
-					{data.segments[selectedSegment].segment}
+					{data[selectedSegment].segment}
 				</SelectTrigger>
 				<SelectContent>
-					{data?.segments.map((seg, idx) => (
+					{data?.map((seg, idx) => (
 						<SelectItem value={String(idx)} key={idx}>
 							{seg.segment}
 						</SelectItem>
 					))}
 				</SelectContent>
 			</Select>
-			<SegmentCard segmentData={data.segments[selectedSegment]} />
+			<SegmentCard segmentData={data[selectedSegment]} />
 		</div>
 	)
 }

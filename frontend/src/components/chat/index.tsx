@@ -10,6 +10,8 @@ import { useMutation } from "@tanstack/react-query"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import { CreateConversationBody, CreateConversationResponse } from "@/lib/types/chat"
 import { TNoParams } from "@/lib/types/common"
+import useAgent from "@/hooks/use-agent"
+import { toast } from "sonner"
 
 const messages: { message: string; tag: string }[] = [
 	{
@@ -57,8 +59,8 @@ const useCreateConversationMutation = () => {
 				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 				body: {
 					company_id: user.companyId,
-					query,
-					user_id: user.id
+					user_id: user.id,
+					query
 				}
 			})
 			return response.data
@@ -70,12 +72,18 @@ const useCreateConversationMutation = () => {
 export default function ChatInitial() {
 	const [query, setQuery] = React.useState<string>("")
 	const { mutateAsync } = useCreateConversationMutation()
+	const { mutateAsync: agentMutate } = useAgent()
 	const router = useRouter()
 	const { setOpen } = useSidebar()
 	async function onSubmit() {
 		const resp = await mutateAsync(query)
 		if (resp?.conversation_id) {
+			const response = await agentMutate({ query, conversation_id: resp.conversation_id })
+			if (!response)
+				toast.error("Failed to start conversation. Please try again.")
 			router.push(`/chat/${resp.conversation_id}`)
+		} else {
+			toast.error("Failed to create conversation. Please try again.")
 		}
 	}
 	useEffect(() => {
