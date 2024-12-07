@@ -71,10 +71,11 @@ export type AIResponse =
 	| {
 			action: ActionEnum.HEATMAP
 			data: {
-				coordinates: CoordinateDataApiResponse
-				keywords: KeywordsResponse
-				selectedKeyword: string
-				selectedRegion: string
+				geo: CoordinateDataApiResponse
+				query: string
+				// keywords: KeywordsResponse
+				// selectedKeyword: string
+				// selectedRegion: string
 			}
 	  }
 	| {

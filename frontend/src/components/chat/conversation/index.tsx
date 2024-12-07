@@ -13,6 +13,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import {
 	sampleBoardResponse,
 	sampleCompetitorMapping,
+	sampleHeatmapData,
 	sampleLinkedinData,
 	sampleMdResponse,
 	sampleNewsResponse,
@@ -32,6 +33,7 @@ import LinkedinForm from "../audience-outreach/form"
 import useAgent from "@/hooks/use-agent"
 import { toast } from "sonner"
 import Loader from "../loader"
+import MapComponent from "@/components/custom/map/client"
 
 const sampleConversationMessages: Message[] = [
 	{
@@ -173,6 +175,20 @@ const sampleConversationMessages: Message[] = [
 		action: ActionEnum.LINKEDIN,
 		data: sampleLinkedinData,
 	},
+	{
+		id: "143",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "How can i reach my potential employees?",
+	},
+	{
+		id: "144",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.HEATMAP,
+		data: sampleHeatmapData,
+	},
 ]
 const sampleConversation: Conversation = {
 	id: "123",
@@ -233,6 +249,8 @@ function RenderActionCard({ message }: { message: Message }) {
 			return <SendPage />
 		case ActionEnum.LINKEDIN:
 			return <LinkedinForm data={message.data} />
+		case ActionEnum.HEATMAP:
+			return <MapComponent data={message.data.geo} keyword={message.data.query} />
 		case ActionEnum.RESPONSE_MD:
 			return (
 				<div
@@ -276,7 +294,7 @@ function Messages({ messages, isPending }: { messages: Message[], isPending: boo
 
 export default function ConversationPage({ id, conversation }: { id: string, conversation: Conversation }) {
 
-	console.log(conversation, id, sampleConversation)
+	console.log({ conversation, id, sampleConversation })
 	const [messages, setMessages] = React.useState<Message[]>(conversation?.messages || [])
 	const [query, setQuery] = React.useState<string>("")
 	const { setOpen } = useSidebar()
@@ -291,7 +309,6 @@ export default function ConversationPage({ id, conversation }: { id: string, con
 	}
 	useEffect(() => {
 		const messageEl = document.getElementById(`message-${messages.length - 1}`)
-		console.log(messageEl)
 		if (messageEl) {
 			messageEl.scrollIntoView({ behavior: "smooth" })
 		}
