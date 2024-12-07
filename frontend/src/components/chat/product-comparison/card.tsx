@@ -5,7 +5,6 @@ import {
 	CardDescription,
 	CardContent,
 } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Product } from "@/lib/types/api"
 
@@ -28,7 +27,7 @@ export default function ProductCard({ data }: { data: Product }) {
 					</p>
 				</div>
 				<Separator className="my-4" />
-				<div>
+				{/* <div>
 					<h3 className="text-lg font-semibold mb-2">Reviews</h3>
 					{data.product_reviews.map((review, index) => (
 						<div key={index} className="mb-4 last:mb-0">
@@ -46,6 +45,21 @@ export default function ProductCard({ data }: { data: Product }) {
 							<p className="text-gray-600 dark:text-gray-300">
 								{review.reviewer_comment}
 							</p>
+							{index < data.product_reviews.length - 1 && (
+								<Separator className="my-4" />
+							)}
+						</div>
+					))}
+				</div> */}
+				<div>
+					<h3 className="text-lg font-semibold mb-2">Features</h3>
+					{data.product_features.map((feature, index) => (
+						<div key={index} className="mb-4 last:mb-0">
+							<div className="flex justify-between items-center mb-2">
+								<span className="font-medium">
+									{feature}
+								</span>
+							</div>
 							{index < data.product_reviews.length - 1 && (
 								<Separator className="my-4" />
 							)}

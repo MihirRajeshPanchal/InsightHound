@@ -5,9 +5,10 @@ import NewsCard from "./news-card"
 import { Button } from "@/components/ui/button"
 import { NewsData } from "@/lib/types/chat"
 import { useQuery } from "@tanstack/react-query"
+import Loader from "../loader"
 
 export default function News({ data }: { data: NewsData }) {
-	const { data: result } = useQuery({
+	const { data: result, isLoading } = useQuery({
 		queryKey: ["news", data.company_name],
 		queryFn: async () => {
 			if (!data?.news_url) return
@@ -26,6 +27,14 @@ export default function News({ data }: { data: NewsData }) {
 			setShown(Math.min(6, result.articles.length))
 		}
 	}, [result])
+
+	if (isLoading) {
+		return (
+			<div className="flex justify-center gap-2 flex-col items-center [--loaderWidth:100px] [--loaderTextWidth:100px] [--loaderDuration:1.5s] p-4">
+				<Loader />
+			</div>
+		)
+	}
 
 	return (
 		<div className="flex flex-col items-end">

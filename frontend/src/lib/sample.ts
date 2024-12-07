@@ -1,7 +1,7 @@
 import {
-	ArticlesApiResponse,
 	CompanyData,
 	FormUrlResponse,
+	Product,
 	QuestionsData,
 	Segment,
 } from "./types/api"
@@ -8151,7 +8151,7 @@ export const heatmapData = [
 	},
 ]
 
-export const sampleProductComparison = [
+export const sampleProductComparison: Product[] = [
 	{
 		company_name: "Google",
 		product_name: "Gemini",
@@ -8170,6 +8170,7 @@ export const sampleProductComparison = [
 					"A strong contender in the AI space, though pricing details are not transparent.",
 			},
 		],
+		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
 	},
 	{
 		company_name: "Microsoft",
@@ -8189,6 +8190,7 @@ export const sampleProductComparison = [
 					"Comprehensive AI solutions with flexible pricing, though can be complex for beginners.",
 			},
 		],
+		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
 	},
 	{
 		company_name: "Amazon",
@@ -8208,6 +8210,8 @@ export const sampleProductComparison = [
 					"Highly reliable and scalable AI services, but pricing can be high for extensive use.",
 			},
 		],
+		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
+
 	},
 	{
 		company_name: "IBM",
@@ -8227,6 +8231,7 @@ export const sampleProductComparison = [
 					"Strong analytical capabilities with a focus on enterprise solutions, but requires technical expertise.",
 			},
 		],
+		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
 	},
 ]
 

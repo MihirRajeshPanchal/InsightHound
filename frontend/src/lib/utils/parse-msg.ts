@@ -13,7 +13,7 @@ export function parseMsg(msg: Message[]): Message[] {
     return msg.map((m) => {
         return {
             ...m,
-            ...(m.role === RoleEnum.AI && m.action !== ActionEnum.MAIL_INITIATE ? {data: parse(m.data.toString().replace(/'/g, '"'))}: {}),
+            ...(m.role === RoleEnum.AI && m.action !== ActionEnum.MAIL_INITIATE ? {data: parse(m.data.toString())}: {}),
         }
     }).filter((m) => m.role !== RoleEnum.AI || m.action === ActionEnum.MAIL_INITIATE || m.data !== null)
 }
