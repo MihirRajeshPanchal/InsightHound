@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Any, Dict, List
 from langchain_core.messages import HumanMessage, ToolMessage, AIMessage
 from aihounds.constants.hound import openai_llm, mongo_client
@@ -63,40 +64,65 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
     Returns:
         List[Dict[str, Any]]: List of all conversations for the given conversation ID
     '''
+    temp_query = query
+    previous_conversations = list(mongo_client.find(
+        "conversations", 
+        {"id": conversation_id}
+    ))
     
-    past_conversations = list(mongo_client.find("conversations", {"id": conversation_id}))
+
+    context_parts = []
+    for conv in previous_conversations:
+        if conv.get('role') == 'user':
+            context_parts.append(f"User: {conv.get('query', '')}")
+        elif conv.get('role') == 'ai':
+            context_parts.append(f"AI: {conv.get('data', '')}")
+    
+
+    context = "Previous Conversation Context:\n" + "\n".join(context_parts)
+    query = context + "\n\nCurrent Query: " + query
+    
+
+    last_ai_response = mongo_client.find_one(
+        "conversations", 
+        {
+            "id": conversation_id, 
+            "role": "ai"
+        }, 
+        sort=[("timestamp", -1)]
+    )
 
     messages = []
-    for conversation in past_conversations:
-        try:
-            if conversation['role'] == "user":
-                messages.append(HumanMessage(content=conversation['query']))
-            elif conversation['role'] == "ai":
-                if conversation.get('tool_call_id'):
-                    try:
-                        tool_name = next(
-                            name for name, action in mapping.items() 
-                            if action == conversation.get('action', '')
-                        )
-                    except StopIteration:
-                        tool_name = conversation.get('action', 'unknown')
-                    
-                    tool_calls = [
-                        create_tool_call(
-                            name=tool_name, 
-                            id=conversation['tool_call_id']
-                        )
-                    ]
-                    ai_msg = AIMessage(
-                        content=conversation.get('data', ''),
-                        tool_calls=tool_calls
-                    )
-                    messages.append(ai_msg)
-                else:
-                    messages.append(AIMessage(content=conversation.get('data', '')))
-        except Exception as e:
-            print(f"Error processing conversation: {conversation}")
-            print(f"Error details: {e}")
+    
+    if last_ai_response and last_ai_response.get('action') == 'response_md_pending':
+        if last_ai_response.get('tool_call_id'):
+            try:
+                tool_name = next(
+                    name for name, action in mapping.items() 
+                    if action == last_ai_response.get('action', '')
+                )
+            except StopIteration:
+                tool_name = last_ai_response.get('action', 'unknown')
+            
+            tool_calls = [
+                create_tool_call(
+                    name=tool_name, 
+                    id=last_ai_response['tool_call_id']
+                )
+            ]
+            ai_msg = AIMessage(
+                content=last_ai_response.get('data', ''),
+                tool_calls=tool_calls
+            )
+            messages.append(ai_msg)
+        else:
+            messages.append(AIMessage(content=last_ai_response.get('data', '')))
+    
+    for conv in previous_conversations:
+        if conv.get('role') == 'user':
+            messages.append(HumanMessage(content=conv.get('query', '')))
+        elif conv.get('role') == 'ai' and not conv.get('tool_call_id'):
+            messages.append(AIMessage(content=conv.get('data', '')))
     
     user_query = HumanMessage(content=query)
     messages.append(user_query)
@@ -105,7 +131,8 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
         id=conversation_id, 
         role="user", 
         action="query", 
-        query=query
+        query=temp_query,
+        timestamp=datetime.now()
     )
     mongo_client.create("conversations", user_query_record)
     
@@ -119,6 +146,8 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
 
     processed_tools = set()
 
+    print("*****************************************************")
+    print(ai_msg.tool_calls)
     if ai_msg.tool_calls:
         for tool_call in ai_msg.tool_calls:
             tool_name = tool_call["name"].lower()
@@ -136,14 +165,14 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
                 )
                 messages.append(tool_msg)
 
-                # Only create a database entry if this tool hasn't been processed before
                 if tool_name not in processed_tools:
                     agent_response = Message(
                         id=conversation_id, 
                         role="ai", 
-                        action=mapping.get(tool_name, "response_md"), 
+                        action=mapping.get(tool_name, "response_md_pending"), 
                         data=str(tool_output), 
-                        tool_call_id=tool_call["id"]
+                        tool_call_id=tool_call["id"],
+                        timestamp=datetime.now()
                     )
                     mongo_client.create("conversations", agent_response)
                     processed_tools.add(tool_name)
@@ -154,10 +183,11 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
         agent_response = Message(
             id=conversation_id, 
             role="ai", 
-            action="query", 
-            data=str(ai_msg.content)
+            action="response_md_pending", 
+            data=str(ai_msg.content),
+            timestamp=datetime.now()
         )
         mongo_client.create("conversations", agent_response)
     
-    all_conversations = list(mongo_client.find("conversations", {"id": conversation_id}))
+    all_conversations = list(mongo_client.find_last_two("conversations", {"id": conversation_id}))
     return all_conversations

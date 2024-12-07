@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from pydantic import BaseModel
-from typing import Optional, TypeVar, Any, Dict, List
+from typing import Optional, Tuple, TypeVar, Any, Dict, List
 
 T = TypeVar("T", bound=BaseModel)
 
@@ -84,4 +84,39 @@ class MongoDBClient:
                 result.append(doc)
             return result
         except Exception as e:
+            return []
+        
+    def find_one(self, collection_name: str, query: Dict[str, Any], sort: List[Tuple[str, int]] = None) -> Optional[Dict[str, Any]]:
+        try:
+            collection = self._get_collection(collection_name)
+            if sort is None:
+                sort = [('created_at', -1)]
+            
+            document = collection.find_one(query, sort=sort)
+            
+            if document:
+                document["_id"] = str(document["_id"])
+            
+            return document
+        except Exception as e:
+            print(f"Error in find_one: {e}")
+            return None
+        
+    def find_last_two(self, collection_name: str, query: Dict[str, Any], sort: List[Tuple[str, int]] = None) -> List[Optional[Dict[str, Any]]]:
+        try:
+            collection = self._get_collection(collection_name)
+
+            if sort is None:
+                sort = [('created_at', -1)]
+
+            cursor = collection.find(query).sort(sort).limit(2)
+
+            documents = list(cursor)
+            for document in documents:
+                document["_id"] = str(document["_id"])
+            
+            return documents
+        
+        except Exception as e:
+            print(f"Error in find_last_two: {e}")
             return []
