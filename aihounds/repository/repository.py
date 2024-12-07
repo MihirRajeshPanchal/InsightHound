@@ -105,13 +105,19 @@ class MongoDBClient:
     def find_last_two(self, collection_name: str, query: Dict[str, Any], sort: List[Tuple[str, int]] = None) -> List[Optional[Dict[str, Any]]]:
         try:
             collection = self._get_collection(collection_name)
-
             if sort is None:
-                sort = [('created_at', -1)]
+                sort = [('_id', -1)]
 
             cursor = collection.find(query).sort(sort).limit(2)
-
             documents = list(cursor)
+
+            if len(documents) == 0:
+                return []
+            elif len(documents) == 1:
+                document = documents[0]
+                document["_id"] = str(document["_id"])
+                return [document, document]
+
             for document in documents:
                 document["_id"] = str(document["_id"])
             

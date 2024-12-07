@@ -189,5 +189,6 @@ def do_aggregate(conversation_id: str, query: str) -> List[Dict[str, Any]]:
         )
         mongo_client.create("conversations", agent_response)
     
-    all_conversations = list(mongo_client.find_last_two("conversations", {"id": conversation_id}))
-    return all_conversations
+    last_two_conversations = list(mongo_client.find_last_two("conversations", {"id": conversation_id}))
+    last_two_conversations.reverse()
+    return last_two_conversations
