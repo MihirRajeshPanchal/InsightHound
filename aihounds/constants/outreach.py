@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 
 LINKEDIN_PROMPT = ChatPromptTemplate.from_template("""
-Analyze the following vision, mission, description, domain of the startup and create a linkedin template {purpose} using this structure:
+Analyze and create a linkedin template {purpose} using this structure:
 {{
     "message": "linkedin message",
 }}
