@@ -73,4 +73,4 @@ def generate_heatmap(query,geo):
                                                  66
                                          }
                                      ])
-    return interest_by_region
+    return {"query": query, "geo": geo, "interest_by_region" : interest_by_region}
