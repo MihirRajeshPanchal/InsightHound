@@ -15,10 +15,9 @@ def generate_news(company_name:str):
     from_date = datetime.now() - relativedelta(months=1)
     from_date_str = from_date.strftime("%Y-%m-%d")
     url = f"{BASE_URL}?q={query}&from={from_date_str}&sortBy=publishedAt&apiKey={NEWS_API_KEY}&language=en"
-    print(url)
     response = requests.get(url)
 
     if response.status_code != 200:
         return None
 
-    return response.json()
+    return {"company_name": company_name,"news_url": url}
