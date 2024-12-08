@@ -47,9 +47,9 @@ mapping = {
     "generate_segmentation" : "segmentation", 
     "generate_kanban" : "board", 
     "generate_typeform" : "questionnaire", 
-    "generate_rivals" : "rivals",
+    "generate_rivals" : "rival",
     "generate_tavily_search": "response_md",
-    "generate_rivals_by_url": "rivals"
+    "generate_rivals_by_url": "rival"
 }
 
 def convert_to_json_string(data):
