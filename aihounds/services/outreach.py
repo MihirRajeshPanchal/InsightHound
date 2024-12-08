@@ -145,9 +145,9 @@ def get_company_profile(data, account_id="AZ2SmGEtRy67LoBqXB0KDQ"):
     print(id)
     posts_url = f"https://api2.unipile.com:13255/api/v1/users/{id}/posts?account_id={account_id}"
 
-    posts_data = requests.get(posts_url, headers=headers).json()
-    print(posts_data)
-    data["company_posts"] = posts_data.get("items", None)
+    # posts_data = requests.get(posts_url, headers=headers).json()
+    # print(posts_data)
+    # data["company_posts"] = posts_data.get("items", None)
     return data
 
 
