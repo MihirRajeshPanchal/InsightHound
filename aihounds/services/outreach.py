@@ -151,6 +151,28 @@ def get_company_profile(data, account_id="AZ2SmGEtRy67LoBqXB0KDQ"):
     return data
 
 
+def get_company_profile_from_url(linkedin_url, account_id="AZ2SmGEtRy67LoBqXB0KDQ"):
+
+    url = f"https://api2.unipile.com:13255/api/v1/linkedin/company/{identifier}?account_id={account_id}"
+    headers = {"accept": "application/json", "X-API-KEY": api_key}
+    data={}
+    company_linkedin_data = requests.get(url, headers=headers).json()
+    print(company_linkedin_data)
+    if "viewer_permissions" in company_linkedin_data:
+        del company_linkedin_data["viewer_permissions"]
+    if "localised_name" in company_linkedin_data:
+        del company_linkedin_data["localised_name"]
+    if "localised_tagline" in company_linkedin_data:
+        del company_linkedin_data["localised_tagline"]
+    if "localised_description" in company_linkedin_data:
+        del company_linkedin_data["localised_description"]
+    data["company_information"] = company_linkedin_data
+    id = company_linkedin_data.get("id")
+    print(id)
+    posts_url = f"https://api2.unipile.com:13255/api/v1/users/{id}/posts?account_id={account_id}"
+    return data
+
+
 @tool
 def get_rivals(
     num_employees_ranges: List[str],
@@ -191,6 +213,28 @@ def get_rivals(
         rivals_data.append(get_company_profile(company, "AZ2SmGEtRy67LoBqXB0KDQ"))
     return rivals_data
 
+@tool
+def get_rivals_by_url(
+linkedin_url: str,
+):
+    """
+    Retrieve rival companies based on specified criteria using LinkedIn company Url.
+
+    This tool function helps identify potential rival companies by searching through
+    company profiles based on linkedin url
+    Args:
+        linkedin_url (str): The LinkedIn URL of the company to search for rivals.
+
+    Returns:
+        Dict: A list of rival company profiles, where each profile includes:
+            - Basic company information
+            - Detailed LinkedIn company profile data
+            - Recent company posts
+            - Original search criteria match details
+        )
+    """
+
+    return get_company_profile_from_url(linkedin_url, "AZ2SmGEtRy67LoBqXB0KDQ")
 
 @tool
 def generate_linkedin(purpose):
