@@ -8170,7 +8170,11 @@ export const sampleProductComparison: Product[] = [
 					"A strong contender in the AI space, though pricing details are not transparent.",
 			},
 		],
-		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
+		product_features: [
+			"Natural Language Processing",
+			"Image Recognition",
+			"Predictive Analytics",
+		],
 	},
 	{
 		company_name: "Microsoft",
@@ -8190,7 +8194,11 @@ export const sampleProductComparison: Product[] = [
 					"Comprehensive AI solutions with flexible pricing, though can be complex for beginners.",
 			},
 		],
-		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
+		product_features: [
+			"Natural Language Processing",
+			"Image Recognition",
+			"Predictive Analytics",
+		],
 	},
 	{
 		company_name: "Amazon",
@@ -8210,8 +8218,11 @@ export const sampleProductComparison: Product[] = [
 					"Highly reliable and scalable AI services, but pricing can be high for extensive use.",
 			},
 		],
-		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
-
+		product_features: [
+			"Natural Language Processing",
+			"Image Recognition",
+			"Predictive Analytics",
+		],
 	},
 	{
 		company_name: "IBM",
@@ -8231,13 +8242,18 @@ export const sampleProductComparison: Product[] = [
 					"Strong analytical capabilities with a focus on enterprise solutions, but requires technical expertise.",
 			},
 		],
-		product_features: ["Natural Language Processing", "Image Recognition", "Predictive Analytics"],
+		product_features: [
+			"Natural Language Processing",
+			"Image Recognition",
+			"Predictive Analytics",
+		],
 	},
 ]
 
 export const sampleNewsResponse: NewsData = {
-	company_name: "OpenAI", 
-	news_url: "https://newsapi.org/v2/everything?q=OpenAI&from=2024-11-08&sortBy=publishedAt&apiKey=b8fafa8b81b54b97b20f4ddab5e2d3eb&language=en"
+	company_name: "OpenAI",
+	news_url:
+		"https://newsapi.org/v2/everything?q=OpenAI&from=2024-11-08&sortBy=publishedAt&apiKey=b8fafa8b81b54b97b20f4ddab5e2d3eb&language=en",
 }
 
 export const sampleReport = {
@@ -9994,7 +10010,7 @@ export const sampleCompetitorMapping: CompanyData[] = [
 ]
 
 export const sampleLinkedinData = {
-	message:`"Subject: Funding Proposal for 1M USD Investment
+	message: `"Subject: Funding Proposal for 1M USD Investment
 
 Dear [VC's Name],
 
@@ -10026,162 +10042,162 @@ Thank you for considering this opportunity. We look forward to the possibility o
 Sincerely,
 
 [Your Name]
-CEO, Google"`
+CEO, Google"`,
 }
 
-export const sampleHeatmapData:HeatmapData = {
+export const sampleHeatmapData: HeatmapData = {
 	interest_by_region: [
 		{
-			"coordinates": {
-				"lat": 37.36883,
-				"lng": -122.0363496
+			coordinates: {
+				lat: 37.36883,
+				lng: -122.0363496,
 			},
-			"location": "Sunnyvale",
-			"max_value_index": 0,
-			"value": "100",
-			"extracted_value": 100
+			location: "Sunnyvale",
+			max_value_index: 0,
+			value: "100",
+			extracted_value: 100,
 		},
 		{
-			"coordinates": {
-				"lat": 37.5482697,
-				"lng": -121.9885719
+			coordinates: {
+				lat: 37.5482697,
+				lng: -121.9885719,
 			},
-			"location": "Fremont",
-			"max_value_index": 0,
-			"value": "94",
-			"extracted_value": 94
+			location: "Fremont",
+			max_value_index: 0,
+			value: "94",
+			extracted_value: 94,
 		},
 		{
-			"coordinates": {
-				"lat": 33.1506744,
-				"lng": -96.8236116
+			coordinates: {
+				lat: 33.1506744,
+				lng: -96.8236116,
 			},
-			"location": "Frisco",
-			"max_value_index": 0,
-			"value": "87",
-			"extracted_value": 87
+			location: "Frisco",
+			max_value_index: 0,
+			value: "87",
+			extracted_value: 87,
 		},
 		{
-			"coordinates": {
-				"lat": 37.7749295,
-				"lng": -122.4194155
+			coordinates: {
+				lat: 37.7749295,
+				lng: -122.4194155,
 			},
-			"location": "San Francisco",
-			"max_value_index": 0,
-			"value": "85",
-			"extracted_value": 85
+			location: "San Francisco",
+			max_value_index: 0,
+			value: "85",
+			extracted_value: 85,
 		},
 		{
-			"coordinates": {
-				"lat": 29.9716905,
-				"lng": -95.6937856
+			coordinates: {
+				lat: 29.9716905,
+				lng: -95.6937856,
 			},
-			"location": "Cypress",
-			"max_value_index": 0,
-			"value": "85",
-			"extracted_value": 85
+			location: "Cypress",
+			max_value_index: 0,
+			value: "85",
+			extracted_value: 85,
 		},
 		{
-			"coordinates": {
-				"lat": 33.6839473,
-				"lng": -117.7946942
+			coordinates: {
+				lat: 33.6839473,
+				lng: -117.7946942,
 			},
-			"location": "Irvine",
-			"max_value_index": 0,
-			"value": "84",
-			"extracted_value": 84
+			location: "Irvine",
+			max_value_index: 0,
+			value: "84",
+			extracted_value: 84,
 		},
 		{
-			"coordinates": {
-				"lat": 42.3736158,
-				"lng": -71.1097335
+			coordinates: {
+				lat: 42.3736158,
+				lng: -71.1097335,
 			},
-			"location": "Cambridge",
-			"max_value_index": 0,
-			"value": "83",
-			"extracted_value": 83
+			location: "Cambridge",
+			max_value_index: 0,
+			value: "83",
+			extracted_value: 83,
 		},
 		{
-			"coordinates": {
-				"lat": 40.735657,
-				"lng": -74.1723667
+			coordinates: {
+				lat: 40.735657,
+				lng: -74.1723667,
 			},
-			"location": "Newark",
-			"max_value_index": 0,
-			"value": "82",
-			"extracted_value": 82
+			location: "Newark",
+			max_value_index: 0,
+			value: "82",
+			extracted_value: 82,
 		},
 		{
-			"coordinates": {
-				"lat": 37.3382082,
-				"lng": -121.8863286
+			coordinates: {
+				lat: 37.3382082,
+				lng: -121.8863286,
 			},
-			"location": "San Jose",
-			"max_value_index": 0,
-			"value": "79",
-			"extracted_value": 79
+			location: "San Jose",
+			max_value_index: 0,
+			value: "79",
+			extracted_value: 79,
 		},
 		{
-			"coordinates": {
-				"lat": 33.7455731,
-				"lng": -117.8678338
+			coordinates: {
+				lat: 33.7455731,
+				lng: -117.8678338,
 			},
-			"location": "Santa Ana",
-			"max_value_index": 0,
-			"value": "79",
-			"extracted_value": 79
+			location: "Santa Ana",
+			max_value_index: 0,
+			value: "79",
+			extracted_value: 79,
 		},
 		{
-			"coordinates": {
-				"lat": 37.5296593,
-				"lng": -122.0402399
+			coordinates: {
+				lat: 37.5296593,
+				lng: -122.0402399,
 			},
-			"location": "Newark",
-			"max_value_index": 0,
-			"value": "70",
-			"extracted_value": 70
+			location: "Newark",
+			max_value_index: 0,
+			value: "70",
+			extracted_value: 70,
 		},
 		{
-			"coordinates": {
-				"lat": 37.8043637,
-				"lng": -122.2711137
+			coordinates: {
+				lat: 37.8043637,
+				lng: -122.2711137,
 			},
-			"location": "Oakland",
-			"max_value_index": 0,
-			"value": "69",
-			"extracted_value": 69
+			location: "Oakland",
+			max_value_index: 0,
+			value: "69",
+			extracted_value: 69,
 		},
 		{
-			"coordinates": {
-				"lat": 35.9940329,
-				"lng": -78.898619
+			coordinates: {
+				lat: 35.9940329,
+				lng: -78.898619,
 			},
-			"location": "Durham",
-			"max_value_index": 0,
-			"value": "68",
-			"extracted_value": 68
+			location: "Durham",
+			max_value_index: 0,
+			value: "68",
+			extracted_value: 68,
 		},
 		{
-			"coordinates": {
-				"lat": 40.7281575,
-				"lng": -74.0776417
+			coordinates: {
+				lat: 40.7281575,
+				lng: -74.0776417,
 			},
-			"location": "Jersey City",
-			"max_value_index": 0,
-			"value": "68",
-			"extracted_value": 68
+			location: "Jersey City",
+			max_value_index: 0,
+			value: "68",
+			extracted_value: 68,
 		},
 		{
-			"coordinates": {
-				"lat": 30.267153,
-				"lng": -97.7430608
+			coordinates: {
+				lat: 30.267153,
+				lng: -97.7430608,
 			},
-			"location": "Austin",
-			"max_value_index": 0,
-			"value": "67",
-			"extracted_value": 67
-		}
+			location: "Austin",
+			max_value_index: 0,
+			value: "67",
+			extracted_value: 67,
+		},
 	],
 	query: "AI",
-	geo: "IN"
+	geo: "IN",
 }

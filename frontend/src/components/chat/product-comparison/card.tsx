@@ -56,9 +56,7 @@ export default function ProductCard({ data }: { data: Product }) {
 					{data.product_features.map((feature, index) => (
 						<div key={index} className="mb-4 last:mb-0">
 							<div className="flex justify-between items-center mb-2">
-								<span className="font-medium">
-									{feature}
-								</span>
+								<span className="font-medium">{feature}</span>
 							</div>
 							{index < data.product_reviews.length - 1 && (
 								<Separator className="my-4" />

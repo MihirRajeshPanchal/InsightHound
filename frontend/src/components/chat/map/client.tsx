@@ -35,7 +35,10 @@ const MapComponent = ({ data: response }: { data: HeatmapData }) => {
 				/>
 				<MapUtilities card={data[0]} />
 				<Marker
-					position={[data[0].coordinates.lat, data[0].coordinates.lng]}
+					position={[
+						data[0].coordinates.lat,
+						data[0].coordinates.lng,
+					]}
 					draggable={true}
 				>
 					<Popup>You&apos;re here</Popup>
@@ -51,7 +54,8 @@ const MapComponent = ({ data: response }: { data: HeatmapData }) => {
 							position={[d.coordinates.lat, d.coordinates.lng]}
 						>
 							<Popup>
-								{d.extracted_value.toFixed(2)}% people interested in {response.query} in {response.geo}
+								{d.extracted_value.toFixed(2)}% people
+								interested in {response.query} in {response.geo}
 							</Popup>
 						</Marker>
 					))}

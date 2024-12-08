@@ -58,13 +58,8 @@ export function ChatSidebar({
 					<SidebarGroupContent>
 						<SidebarMenu>
 							<SidebarMenuItem>
-								<SidebarMenuButton
-									asChild
-									url="/chat"
-								>
-									<Link href="/chat">
-										New Chat
-									</Link>
+								<SidebarMenuButton asChild url="/chat">
+									<Link href="/chat">New Chat</Link>
 								</SidebarMenuButton>
 							</SidebarMenuItem>
 						</SidebarMenu>

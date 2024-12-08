@@ -46,14 +46,14 @@ export type Message = {
 )
 
 export type HeatmapData = {
-	geo: string,
+	geo: string
 	interest_by_region: CoordinateDataApiResponse
 	query: string
 }
 
 export type NewsData = {
-	"company_name": string,
-	"news_url": string
+	company_name: string
+	news_url: string
 }
 
 export type LinkedinData = {
@@ -130,12 +130,12 @@ export type CreateConversationResponse = {
 }
 
 export type CreateConversationBody = {
-	company_id : string,
-    user_id: string,
+	company_id: string
+	user_id: string
 	query: string
 }
 
 export type MutateConversationBody = {
-	conversation_id : string,
+	conversation_id: string
 	query: string
 }

@@ -20,9 +20,9 @@ export type FetchRequestParams<
 	throwOnError?: boolean
 	url: string
 	urlParams?: UrlParamsT
-	token?: string | null,
-	isMessage?: boolean;
-	isConversation?: boolean;
+	token?: string | null
+	isMessage?: boolean
+	isConversation?: boolean
 }
 
 export type FetchResponseResult<ResponseDataT = TNoParams> =
@@ -65,7 +65,7 @@ export async function fetchAPI<
 		baseUrl,
 		token,
 		isMessage,
-		isConversation
+		isConversation,
 	} = params
 
 	const BASE_URL = baseUrl ?? process.env.NEXT_PUBLIC_BACKEND_URL
@@ -111,9 +111,15 @@ export async function fetchAPI<
 
 		console.log({ response: response.status })
 		const responseData = (await response.json()) as ResponseDataT
-		console.dir({ responseData }, {depth:null})
+		console.dir({ responseData }, { depth: null })
 
-		const data = isMessage ? Array.isArray(responseData) ? parseMsg(responseData) : parseMsg([responseData as Message]) : isConversation?  parseConversation(responseData as Conversation) : responseData
+		const data = isMessage
+			? Array.isArray(responseData)
+				? parseMsg(responseData)
+				: parseMsg([responseData as Message])
+			: isConversation
+				? parseConversation(responseData as Conversation)
+				: responseData
 		return {
 			success: true,
 			status: response.status,

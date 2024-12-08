@@ -4,7 +4,11 @@ import { Conversation } from "@/lib/types/chat"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import React from "react"
 
-export default async function Page({ params: { id } }: { params: { id: string } }) {
+export default async function Page({
+	params: { id },
+}: {
+	params: { id: string }
+}) {
 	const resp = await fetchAPI<Conversation>({
 		url: `/conversations?conversation_id=${id}`,
 		method: "GET",

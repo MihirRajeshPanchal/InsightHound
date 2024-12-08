@@ -278,24 +278,37 @@ function AIMessage({ message }: { message: Message }) {
 	)
 }
 
-function Messages({ messages, isPending }: { messages: Message[], isPending: boolean }) {
+function Messages({
+	messages,
+	isPending,
+}: {
+	messages: Message[]
+	isPending: boolean
+}) {
 	return messages.map((message, idx) => (
 		<div key={idx} id={`message-${idx}`}>
 			<UserMessage message={message} />
 			<AIMessage message={message} />
-			{(isPending && idx === messages.length - 1) &&
+			{isPending && idx === messages.length - 1 && (
 				<div className="flex justify-center gap-2 flex-col items-center [--loaderWidth:100px] [--loaderTextWidth:100px] [--loaderDuration:1.5s] p-4">
 					<Loader />
 				</div>
-			}
+			)}
 		</div>
 	))
 }
 
-export default function ConversationPage({ id, conversation }: { id: string, conversation: Conversation }) {
-
+export default function ConversationPage({
+	id,
+	conversation,
+}: {
+	id: string
+	conversation: Conversation
+}) {
 	console.log({ conversation, id, sampleConversation })
-	const [messages, setMessages] = React.useState<Message[]>(conversation?.messages || [])
+	const [messages, setMessages] = React.useState<Message[]>(
+		conversation?.messages || [],
+	)
 	const [query, setQuery] = React.useState<string>("")
 	const { setOpen } = useSidebar()
 	const { mutateAsync, isPending } = useAgent()
@@ -308,7 +321,9 @@ export default function ConversationPage({ id, conversation }: { id: string, con
 		setMessages((prev) => [...prev, message])
 	}
 	useEffect(() => {
-		const messageEl = document.getElementById(`message-${messages.length - 1}`)
+		const messageEl = document.getElementById(
+			`message-${messages.length - 1}`,
+		)
 		if (messageEl) {
 			messageEl.scrollIntoView({ behavior: "smooth" })
 		}
@@ -334,16 +349,17 @@ export default function ConversationPage({ id, conversation }: { id: string, con
 				action: ActionEnum.RESPONSE_MD,
 				data: "Sorry, I am not able to process your request at the moment.",
 			})
-			return;
+			return
 		}
 		response.forEach((msg) => addMessage(msg))
 	}
 
-
 	return (
 		<div className="px-4">
 			<div className="">
-				<h1 className="text-2xl font-bold">{conversation.title}</h1>
+				<h1 className="text-2xl font-bold pb-2">
+					{conversation.title}
+				</h1>
 				<hr />
 			</div>
 			<ScrollArea className="h-[79vh] *:pt-4">
@@ -364,7 +380,7 @@ export default function ConversationPage({ id, conversation }: { id: string, con
 					onChange={(e) => setQuery(e.target.value)}
 				/>
 				<RainbowButton
-					disabled={isPending}
+					disabled={isPending || query.trim().length === 0}
 					className="w-fit mt-2"
 					onClick={onSubmit}
 				>
