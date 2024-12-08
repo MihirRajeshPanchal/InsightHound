@@ -5,14 +5,31 @@ import { FormUrlResponse, QuestionsData } from "@/lib/types/api"
 import { Button } from "@/components/ui/button"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import SurveyResultsCharts from "./charts"
-import { generateMockResponses } from "@/lib/utils"
+import { cn } from "@/lib/utils"
+import { useQuery } from "@tanstack/react-query"
+import { fetchAPI } from "@/lib/utils/fetch-api"
+import { SurveyResponses } from "@/lib/types/chat"
 
 export default function QuestionnaireCard({
 	questions,
 	form_url,
-}: QuestionsData & FormUrlResponse) {
-	const data = questions ? generateMockResponses(questions) : []
+	messageId,
+}: QuestionsData & FormUrlResponse & { messageId: string }) {
 	const [showResults, setShowResults] = React.useState(false)
+	console.log("messageId", messageId)
+	const { data } = useQuery({
+		queryKey: ["questionnaire-responses", messageId],
+		queryFn: async () => {
+			const resp = await fetchAPI<SurveyResponses>({
+				url: `/typeform_aggregate_responses?message_id=${messageId}`,
+				method: "GET",
+				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
+			})
+			return resp.data
+		},
+		enabled: !!messageId,
+		staleTime: 0,
+	})
 	return (
 		<div className="w-full flex flex-col gap-4 px-4 items-end">
 			<Card className="w-full mx-auto bg-gradient-to-br from-purple-50 to-indigo-100 shadow-xl">
@@ -51,10 +68,13 @@ export default function QuestionnaireCard({
 					))}
 				</CardContent>
 			</Card>
-			<div className="flex justify-between items-center w-full">
+			<div className="flex justify-between items-center w-full transition-opacity duration-500">
 				<Button
 					onClick={() => setShowResults((prev) => !prev)}
-					className="px-6"
+					className={cn(
+						"px-6 transition-opacity duration-500",
+						data ? "opacity-100" : "opacity-0",
+					)}
 				>
 					{showResults ? "Hide Results" : "See results"}
 				</Button>
@@ -64,9 +84,9 @@ export default function QuestionnaireCard({
 					</Button>
 				</a>
 			</div>
-			{showResults && (
+			{showResults && data && (
 				<>
-					<SurveyResultsCharts surveyData={data} />
+					<SurveyResultsCharts data={data} />
 					<Button
 						onClick={() => setShowResults((prev) => !prev)}
 						className="px-6 w-fit"

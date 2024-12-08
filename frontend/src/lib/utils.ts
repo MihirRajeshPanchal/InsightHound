@@ -74,3 +74,8 @@ export function convertMarkdownToHtml(markdown: string): string {
 
 	return html
 }
+
+export const trim = (str: string, len = 30) => {
+	if (str.length <= len) return str
+	return str.slice(0, len) + "..."
+}

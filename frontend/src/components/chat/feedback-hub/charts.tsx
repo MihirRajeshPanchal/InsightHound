@@ -20,6 +20,7 @@ import {
 	ChartTooltipContent,
 } from "@/components/ui/chart"
 import { MockResponse } from "@/lib/types/api"
+import { SurveyResponses } from "@/lib/types/chat"
 
 const COLORS = [
 	"hsl(var(--chart-1))",
@@ -28,11 +29,28 @@ const COLORS = [
 	"hsl(var(--chart-4))",
 ]
 
+function convertSurveyData(input: SurveyResponses): MockResponse[] {
+	return input.map(({ question_text, options }) => {
+		const totalVotes = Object.values(options).reduce(
+			(sum, count) => sum + count,
+			0,
+		)
+		return {
+			questionText: question_text,
+			responses: Object.entries(options).map(([option, count]) => ({
+				option,
+				percentage: totalVotes > 0 ? (count / totalVotes) * 100 : 0,
+			})),
+		}
+	})
+}
+
 export default function SurveyResultsCharts({
-	surveyData,
+	data,
 }: {
-	surveyData: MockResponse[]
+	data: SurveyResponses
 }) {
+	const surveyData = convertSurveyData(data)
 	return (
 		<div className="space-y-8">
 			{surveyData.map((question, questionIndex) => {

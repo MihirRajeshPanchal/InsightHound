@@ -22,7 +22,12 @@ export function parseMsg(msg: Message[]): Message[] {
 		.map((m) => {
 			return {
 				...m,
-				...(isParseable(m) ? { data: parse(m.data.toString()) } : {}),
+				...(isParseable(m)
+					? {
+							data: parse(m.data.toString()),
+							suggestions: parse(m.suggestions.toString()),
+						}
+					: {}),
 			}
 		})
 		.filter((m) => !isParseable(m) || m.data !== null)

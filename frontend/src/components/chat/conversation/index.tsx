@@ -23,6 +23,7 @@ import { toast } from "sonner"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Lightbulb } from "lucide-react"
 
 const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -78,10 +79,16 @@ function RenderActionCard({ message }: { message: Message }) {
 				<QuestionnaireCard
 					questions={message.data.questions}
 					form_url={message.data.form_url}
+					messageId={message._id || message.id}
 				/>
 			)
 		case ActionEnum.BOARD:
-			return <Board data={message.data} />
+			return (
+				<Board
+					data={message.data}
+					messageId={message._id || message.id}
+				/>
+			)
 		case ActionEnum.RIVAL:
 			return (
 				<CompetitorMapping
@@ -125,9 +132,10 @@ function AIMessage({ message }: { message: Message }) {
 				<div className="flex flex-col gap-4 py-2 pl-0 md:pl-12">
 					<RenderActionCard message={message} />
 					{message.insight && (
-						<Card className="overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+						<Card className="overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 mx-4">
 							<CardHeader className="bg-gradient-to-r from-blue-900 to-purple-900 py-2 px-4">
-								<CardTitle className="text-lg font-semibold text-gray-200">
+								<CardTitle className="text-lg font-semibold text-gray-200 flex gap-2 items-center">
+									<Lightbulb size={24} />
 									Insight{" "}
 									{actionToInsightTitle[message.action]}
 								</CardTitle>
@@ -221,13 +229,17 @@ export default function ConversationPage({
 				role: RoleEnum.AI,
 				action: ActionEnum.RESPONSE_MD,
 				data: "Sorry, I am not able to process your request at the moment.",
+				suggestions:
+					messages.filter((m) => m.role === RoleEnum.AI).pop()
+						?.suggestions || [],
 			})
 			return
 		}
 		response.forEach((msg) => addMessage(msg))
 	}
 
-	const suggestions = [
+	const suggestions = messages.filter((m) => m.role === RoleEnum.AI).pop()
+		?.suggestions || [
 		"Tell me about my startup",
 		"Show me my competitors",
 		"Market trends in urban India",
@@ -249,7 +261,7 @@ export default function ConversationPage({
 			<div
 				className={cn(
 					"flex gap-2 mt-2 z-10 transition-opacity duration-700",
-					!suggestions ? "opacity-0" : "opacity-100",
+					!suggestions || isPending ? "opacity-0" : "opacity-100",
 				)}
 			>
 				{suggestions.slice(0, 4).map((suggestion, index) => (

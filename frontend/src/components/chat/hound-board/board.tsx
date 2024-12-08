@@ -6,39 +6,46 @@ import {
 	CardType,
 	ColumnTypeEnum,
 	GetHoundBoardResponse,
-	UpdateHoundBoardRequest,
 } from "@/lib/types/kanban"
 import { useMutation } from "@tanstack/react-query"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import { TNoParams } from "@/lib/types/common"
-import { useAuth } from "@/hooks/use-auth"
 
-async function updateCards(cards: CardType[], id: string | null | undefined) {
+type KanbanPutBody = { id: string; kanban_str: string }
+async function updateCards(cards: CardType[], id: string) {
+	console.log({ cards, id })
 	if (!id) return
-	const body: UpdateHoundBoardRequest = {
+	const body: KanbanPutBody = {
 		id,
-		tasks: cards.map((card) => ({
-			status: card.column,
-			task: card.title,
-		})),
+		kanban_str: JSON.stringify(
+			cards.map((card) => ({
+				status: card.column,
+				task: card.title,
+			})),
+		),
 	}
-	await fetchAPI<TNoParams, TNoParams, UpdateHoundBoardRequest>({
-		url: "/kanban_put",
+	await fetchAPI<TNoParams, TNoParams, KanbanPutBody>({
+		url: "/kanban_put_aggregate",
 		method: "PUT",
 		body,
 		baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 	})
 }
-function useCardChange() {
-	const { user } = useAuth()
+function useCardChange(messageId: string) {
 	const mutation = useMutation({
-		mutationKey: ["update-board", user?.companyId],
-		mutationFn: ({ cards }: { cards: CardType[] }) =>
-			updateCards(cards, user?.companyId),
+		mutationKey: ["update-board", messageId],
+		mutationFn: async ({ cards }: { cards: CardType[] }) =>
+			await updateCards(cards, messageId),
 	})
 	return mutation
 }
-const Board = ({ data }: { data: GetHoundBoardResponse["tasks"] }) => {
+const Board = ({
+	data,
+	messageId,
+}: {
+	data: GetHoundBoardResponse["tasks"]
+	messageId: string
+}) => {
 	const defaultData: CardType[] = data.map((task, idx) => ({
 		title: task.task,
 		id: idx.toString(),
@@ -46,7 +53,7 @@ const Board = ({ data }: { data: GetHoundBoardResponse["tasks"] }) => {
 	}))
 	const savedCards = useRef<string>(JSON.stringify(defaultData))
 	const [cards, setCards] = useState(defaultData)
-	const mutation = useCardChange()
+	const mutation = useCardChange(messageId)
 
 	useEffect(() => {
 		if (cards && savedCards.current !== JSON.stringify(cards)) {

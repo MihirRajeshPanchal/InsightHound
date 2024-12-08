@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 
 import { SearchForm } from "@/components/search-form"
@@ -14,32 +15,15 @@ import {
 	SidebarRail,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
+import useConversations from "@/hooks/use-conversations"
+import { SidebarConversation } from "@/lib/types/chat"
+import { trim } from "@/lib/utils"
 
-const conversations: { id: string; title: string }[] = [
-	{
-		id: "1223",
-		title: "Customer Support",
-	},
-	{
-		id: "1224",
-		title: "Sales",
-	},
-	{
-		id: "1225",
-		title: "Marketing",
-	},
-	{
-		id: "1226",
-		title: "Product",
-	},
-	{
-		id: "1227",
-		title: "Engineering",
-	},
-]
 export function ChatSidebar({
 	...props
 }: React.ComponentProps<typeof Sidebar>) {
+	const { data } = useConversations()
+	const conversations: SidebarConversation[] = data || []
 	return (
 		<Sidebar {...props}>
 			<SidebarHeader>
@@ -73,10 +57,12 @@ export function ChatSidebar({
 								<SidebarMenuItem key={item.title}>
 									<SidebarMenuButton
 										asChild
-										url={`/chat/${item.id}`}
+										url={`/chat/${item.conversation_id}`}
 									>
-										<Link href={`/chat/${item.id}`}>
-											{item.title}
+										<Link
+											href={`/chat/${item.conversation_id}`}
+										>
+											{trim(item.title)}
 										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>

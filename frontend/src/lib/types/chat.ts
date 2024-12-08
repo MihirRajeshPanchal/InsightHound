@@ -34,6 +34,7 @@ export enum ActionEnum {
 }
 export type Message = {
 	id: string
+	_id?: string
 	createdAt: Date
 } & (
 	| {
@@ -44,6 +45,7 @@ export type Message = {
 	| ({
 			role: RoleEnum.AI
 			insight?: string
+			suggestions: string[]
 	  } & AIResponse)
 )
 
@@ -145,3 +147,12 @@ export type MutateConversationBody = {
 	conversation_id: string
 	query: string
 }
+
+export type SidebarConversation = { title: string; conversation_id: string }
+
+type SurveyQuestion = {
+	question_text: string
+	options: Record<string, number>
+}
+
+export type SurveyResponses = SurveyQuestion[]
