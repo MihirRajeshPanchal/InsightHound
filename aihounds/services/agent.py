@@ -66,9 +66,4 @@ class LangGraphAgent:
         events = self.graph.invoke({"messages": [("user", message)],"user_id":user_id}, config, stream_mode="values")
         return events["messages"][-1].content
 
-# if __name__ == "__main__":
-# agent = LangGraphAgent()
-# response = agent.process_message("Can u tell me my rival companies?","6740df9530cf6d8215e9d5ef")
-# for event in response:
-    # ai_response = event["messages"][-1].content
-    # print(f"AI: {ai_response}")
+        

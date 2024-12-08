@@ -12,12 +12,12 @@ from aihounds.services.insights import generate_insight
 from aihounds.services.kanban import generate_kanban
 from aihounds.services.marketsegment import generate_segmentation
 from aihounds.services.news import generate_news
-from aihounds.services.outreach import generate_linkedin
+from aihounds.services.outreach import generate_linkedin,get_rivals
 from aihounds.services.product import generate_product
 from aihounds.services.suggestions import generate_suggestions
 from aihounds.services.trends import generate_heatmap
 from aihounds.services.typeform import generate_typeform
-tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform]
+tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform,get_rivals]
 
 llm_with_tools = openai_llm.bind_tools(tools)
 
@@ -30,6 +30,7 @@ selected_tool = {
     "generate_segmentation": generate_segmentation, #done
     "generate_kanban": generate_kanban, #changes but baadme
     "generate_typeform": generate_typeform,  #done
+    "generate_rivals": get_rivals
 }
 
 mapping = {
@@ -41,6 +42,7 @@ mapping = {
     "generate_segmentation" : "segmentation", 
     "generate_kanban" : "board", 
     "generate_typeform" : "questionnaire", 
+    "generate_rivals" : "rivals"
 }
 
 def convert_to_json_string(data):

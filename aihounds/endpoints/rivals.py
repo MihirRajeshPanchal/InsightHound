@@ -13,7 +13,7 @@ APOLLO_API_KEY = os.getenv("APOLLO_API_KEY")
 
 
 # @router.post("/search-companies/")
-async def search_companies(
+def search_companies(
     num_employees_ranges: List[str] = Query(default=["1,10"]),
     locations: List[str] = Query(default=["texas"]),
     keyword_tags: Optional[List[str]] = Query(default=None),
