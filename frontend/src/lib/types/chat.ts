@@ -1,9 +1,7 @@
 import {
-	ArticlesApiResponse,
 	CompanyData,
 	CoordinateDataApiResponse,
 	FormUrlResponse,
-	KeywordsResponse,
 	MockResponse,
 	Product,
 	QuestionsData,
@@ -23,6 +21,7 @@ export enum ActionEnum {
 	RIVAL = "rival", // rival company card
 	PRODUCT = "product", // product card
 	RESPONSE_MD = "response_md", // response message in markdown
+	RESPONSE_MD_PENDING = "response_md_pending", // response message in markdown
 	HEATMAP = "heatmap", // heatmap card
 	MAIL_INITIATE = "mail_init", // show mail sending table to insert data
 	MAIL = "mail", // mail sending email generated
@@ -44,9 +43,24 @@ export type Message = {
 	  }
 	| ({
 			role: RoleEnum.AI
+			insight?: string
 	  } & AIResponse)
 )
 
+export type HeatmapData = {
+	geo: string
+	interest_by_region: CoordinateDataApiResponse
+	query: string
+}
+
+export type NewsData = {
+	company_name: string
+	news_url: string
+}
+
+export type LinkedinData = {
+	message: string
+}
 export type AIResponse =
 	| {
 			action: ActionEnum.ABOUT
@@ -54,7 +68,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.FEED
-			data: ArticlesApiResponse
+			data: NewsData
 	  }
 	| {
 			action: ActionEnum.RIVAL
@@ -69,13 +83,12 @@ export type AIResponse =
 			data: string
 	  }
 	| {
+			action: ActionEnum.RESPONSE_MD_PENDING
+			data: string
+	  }
+	| {
 			action: ActionEnum.HEATMAP
-			data: {
-				coordinates: CoordinateDataApiResponse
-				keywords: KeywordsResponse
-				selectedKeyword: string
-				selectedRegion: string
-			}
+			data: HeatmapData
 	  }
 	| {
 			action: ActionEnum.MAIL_INITIATE
@@ -86,11 +99,11 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.LINKEDIN
-			data: string
+			data: LinkedinData
 	  }
 	| {
 			action: ActionEnum.SEGMENTATION
-			data: { segments: Segment[] }
+			data: Segment[]
 	  }
 	| {
 			action: ActionEnum.QUESTIONNAIRE
@@ -102,7 +115,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.BOARD
-			data: GetHoundBoardResponse
+			data: GetHoundBoardResponse["tasks"]
 	  }
 	| {
 			action: ActionEnum.REPORT
@@ -116,4 +129,19 @@ export interface Conversation {
 	title: string
 	updatedAt: Date
 	summary: Record<string, string>
+}
+
+export type CreateConversationResponse = {
+	conversation_id: string
+}
+
+export type CreateConversationBody = {
+	company_id: string
+	user_id: string
+	query: string
+}
+
+export type MutateConversationBody = {
+	conversation_id: string
+	query: string
 }

@@ -5,22 +5,11 @@ import { ActionEnum, Conversation, Message, RoleEnum } from "@/lib/types/chat"
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import React, { useEffect } from "react"
 import { CompanyCard } from "../market-intelligence/company-card"
-import { convertMarkdownToHtml } from "@/lib/utils"
+import { cn, convertMarkdownToHtml } from "@/lib/utils"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { RainbowButton } from "@/components/ui/rainbow-button"
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
-import {
-	sampleBoardResponse,
-	sampleCompetitorMapping,
-	sampleLinkedinData,
-	sampleMdResponse,
-	sampleNewsResponse,
-	sampleProductComparison,
-	sampleQuestions,
-	sampleSegment,
-	sampleSelf,
-} from "@/lib/sample"
 import News from "../market-intelligence/news"
 import ProductCards from "../product-comparison/cards"
 import AudienceSegment from "../audience-segments"
@@ -29,170 +18,47 @@ import Board from "../hound-board/board"
 import CompetitorMapping from "../competitor-mapping"
 import SendPage from "../certisend/send-page"
 import LinkedinForm from "../audience-outreach/form"
+import useAgent from "@/hooks/use-agent"
+import { toast } from "sonner"
+import Loader from "../loader"
+import MapComponent from "@/components/chat/map/client"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-const sampleConversation: Message[] = [
-	{
-		id: "123",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "Which emerging technologies should I be aware of?",
-	},
-	{
-		id: "124",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.RESPONSE_MD,
-		data: sampleMdResponse,
-	},
-	{
-		id: "125",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "What is our copany's current status?",
-	},
-	{
-		id: "126",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.ABOUT,
-		data: sampleSelf,
-	},
-	{
-		id: "127",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "Any treding news?",
-	},
-	{
-		id: "128",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.FEED,
-		data: sampleNewsResponse,
-	},
-	{
-		id: "129",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "Are there any products that are similar to Gemini?",
-	},
-	{
-		id: "130",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.PRODUCT,
-		data: sampleProductComparison,
-	},
-	{
-		id: "131",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "What would be my go to market segments for this product?",
-	},
-	{
-		id: "132",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.SEGMENTATION,
-		data: sampleSegment,
-	},
-	{
-		id: "133",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "How would i find the beachhead market for this?",
-	},
-	{
-		id: "134",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.QUESTIONNAIRE,
-		data: sampleQuestions,
-	},
-	{
-		id: "135",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "What should be my plan of action?",
-	},
-	{
-		id: "136",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.BOARD,
-		data: sampleBoardResponse,
-	},
-	{
-		id: "137",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "What are my rival companies?",
-	},
-	{
-		id: "138",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.RIVAL,
-		data: { rivals: sampleCompetitorMapping, self: sampleSelf },
-	},
-	{
-		id: "139",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "How can i reach my users?",
-	},
-	{
-		id: "140",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.MAIL_INITIATE,
-	},
-	{
-		id: "141",
-		createdAt: new Date(),
-		role: RoleEnum.USER,
-		action: ActionEnum.QUERY,
-		query: "How can i reach my potential employees?",
-	},
-	{
-		id: "142",
-		createdAt: new Date(),
-		role: RoleEnum.AI,
-		action: ActionEnum.LINKEDIN,
-		data: sampleLinkedinData,
-	},
-]
-const conversation: Conversation = {
-	id: "123",
-	messages: sampleConversation,
-	createdAt: new Date(),
-	summary: {},
-	title: "Customer Support in metropolitian areas during weekends",
-	updatedAt: new Date(),
+const actionToInsightTitle: Record<ActionEnum, string> = {
+	about: "on the company",
+	feed: "on the news",
+	product: "on the product",
+	segmentation: "on the audience",
+	questionnaire: "on the questionnaire",
+	board: "on the board",
+	rival: "on the competitors",
+	mail_init: "",
+	linkedin: "about linkedin",
+	heatmap: "on the trends",
+	mail: "",
+	query: "",
+	response_md: "from the response",
+	response_md_pending: "",
+	questionnaire_analysis: "on the feedback",
+	report: "on the report",
 }
 
 function UserMessage({ message }: { message: Message }) {
 	return (
 		message.role === RoleEnum.USER && (
-			<div className="flex gap-4 py-2">
-				<Avatar className="size-8 rounded-xl overflow-clip">
-					<AvatarImage
-						src={`https://avatar.vercel.sh/${"user1156" + message.id}.png`}
-						alt={"user"}
-					/>
-					<AvatarFallback>U</AvatarFallback>
-				</Avatar>
-				<h3 className="font-semibold">{message.query}</h3>
-			</div>
+			<>
+				<div className="flex gap-4 py-2">
+					<Avatar className="size-8 rounded-xl overflow-clip">
+						<AvatarImage
+							src={`https://avatar.vercel.sh/${"user1156" + message.id}.png`}
+							alt={"user"}
+						/>
+						<AvatarFallback>U</AvatarFallback>
+					</Avatar>
+					<h3 className="font-semibold">{message.query}</h3>
+				</div>
+				<Separator className="mt-2 opacity-40" />
+			</>
 		)
 	)
 }
@@ -226,8 +92,19 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.MAIL_INITIATE:
 			return <SendPage />
 		case ActionEnum.LINKEDIN:
-			return <LinkedinForm data={message.data} />
+			return <LinkedinForm data={message.data?.message || ""} />
+		case ActionEnum.HEATMAP:
+			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
+			return (
+				<div
+					className="whitespace-pre-wrap"
+					dangerouslySetInnerHTML={{
+						__html: convertMarkdownToHtml(message.data),
+					}}
+				/>
+			)
+		case ActionEnum.RESPONSE_MD_PENDING:
 			return (
 				<div
 					className="whitespace-pre-wrap"
@@ -245,8 +122,28 @@ function AIMessage({ message }: { message: Message }) {
 	return (
 		message.role === RoleEnum.AI && (
 			<>
-				<div className="flex gap-4 py-2 pl-0 md:pl-12">
+				<div className="flex flex-col gap-4 py-2 pl-0 md:pl-12">
 					<RenderActionCard message={message} />
+					{message.insight && (
+						<Card className="overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+							<CardHeader className="bg-gradient-to-r from-blue-900 to-purple-900 py-2 px-4">
+								<CardTitle className="text-lg font-semibold text-gray-200">
+									Insight{" "}
+									{actionToInsightTitle[message.action]}
+								</CardTitle>
+							</CardHeader>
+							<CardContent className="px-4 py-2">
+								<div
+									className=" text-gray-300"
+									dangerouslySetInnerHTML={{
+										__html: convertMarkdownToHtml(
+											message.insight,
+										),
+									}}
+								/>
+							</CardContent>
+						</Card>
+					)}
 				</div>
 				<Separator className="my-4" />
 			</>
@@ -254,39 +151,126 @@ function AIMessage({ message }: { message: Message }) {
 	)
 }
 
-function Messages({ messages }: { messages: Message[] }) {
-	return messages.map((message) => (
-		<div key={message.id}>
+function Messages({
+	messages,
+	isPending,
+}: {
+	messages: Message[]
+	isPending: boolean
+}) {
+	return messages.map((message, idx) => (
+		<div key={idx} id={`message-${idx}`}>
 			<UserMessage message={message} />
 			<AIMessage message={message} />
+			{isPending && idx === messages.length - 1 && (
+				<div className="flex justify-center gap-2 flex-col items-center [--loaderWidth:100px] [--loaderTextWidth:100px] [--loaderDuration:1.5s] p-10">
+					<Loader />
+				</div>
+			)}
 		</div>
 	))
 }
 
-export default function ConversationPage({ id }: { id: string }) {
-	console.log(id)
+export default function ConversationPage({
+	id,
+	conversation,
+}: {
+	id: string
+	conversation: Conversation
+}) {
+	console.log({ conversation, id })
+	const [messages, setMessages] = React.useState<Message[]>(
+		conversation?.messages || [],
+	)
 	const [query, setQuery] = React.useState<string>("")
 	const { setOpen } = useSidebar()
+	const { mutateAsync, isPending } = useAgent()
+
 	useEffect(() => {
 		setOpen(true)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-	function onSubmit() {}
+	function addMessage(message: Message) {
+		setMessages((prev) => [...prev, message])
+	}
+	useEffect(() => {
+		const messageEl = document.getElementById(
+			`message-${messages.length - 1}`,
+		)
+		if (messageEl) {
+			messageEl.scrollIntoView({ behavior: "smooth" })
+		}
+	}, [messages])
+
+	async function onSubmit() {
+		addMessage({
+			id: Math.random().toString(),
+			createdAt: new Date(),
+			role: RoleEnum.USER,
+			action: ActionEnum.QUERY,
+			query,
+		})
+		setQuery("")
+		// return;
+		const response = await mutateAsync({ query, conversation_id: id })
+		if (!response) {
+			toast.error("Failed to chat. Please try again.")
+			addMessage({
+				id: Math.random().toString(),
+				createdAt: new Date(),
+				role: RoleEnum.AI,
+				action: ActionEnum.RESPONSE_MD,
+				data: "Sorry, I am not able to process your request at the moment.",
+			})
+			return
+		}
+		response.forEach((msg) => addMessage(msg))
+	}
+
+	const suggestions = [
+		"Tell me about my startup",
+		"Show me my competitors",
+		"Market trends in urban India",
+		"Customer segmentation of AI market",
+	]
+
 	return (
 		<div className="px-4">
 			<div className="">
-				<h1 className="text-2xl font-bold">{conversation.title}</h1>
+				<h1 className="text-2xl font-bold pb-2">
+					{conversation.title}
+				</h1>
 				<hr />
 			</div>
-			<ScrollArea className="h-[79vh] *:pt-4">
-				<Messages messages={conversation.messages} />
+			<ScrollArea className="h-[74vh] *:pt-4">
+				<Messages messages={messages} isPending={isPending} />
 			</ScrollArea>
+			<div></div>
+			<div
+				className={cn(
+					"flex gap-2 mt-2 z-10 transition-opacity duration-700",
+					!suggestions ? "opacity-0" : "opacity-100",
+				)}
+			>
+				{suggestions.slice(0, 4).map((suggestion, index) => (
+					<button
+						type="button"
+						onClick={() => setQuery(suggestion)}
+						key={index}
+						className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
+					>
+						{suggestion}
+						<ArrowTopRightIcon className="w-3 h-3" />
+					</button>
+				))}
+			</div>
 			<div className="flex gap-4 shadow-md pt-2">
 				<Textarea
 					autoFocus
 					placeholder="Type your message here..."
 					onKeyDown={(e) => {
 						if (e.key === "Enter") {
+							e.preventDefault()
 							onSubmit()
 						}
 					}}
@@ -295,7 +279,7 @@ export default function ConversationPage({ id }: { id: string }) {
 					onChange={(e) => setQuery(e.target.value)}
 				/>
 				<RainbowButton
-					// disabled={isPending}
+					disabled={isPending || query.trim().length === 0}
 					className="w-fit mt-2"
 					onClick={onSubmit}
 				>

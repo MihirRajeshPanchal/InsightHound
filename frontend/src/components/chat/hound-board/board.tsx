@@ -38,8 +38,8 @@ function useCardChange() {
 	})
 	return mutation
 }
-const Board = ({ data }: { data: GetHoundBoardResponse }) => {
-	const defaultData: CardType[] = data.tasks.map((task, idx) => ({
+const Board = ({ data }: { data: GetHoundBoardResponse["tasks"] }) => {
+	const defaultData: CardType[] = data.map((task, idx) => ({
 		title: task.task,
 		id: idx.toString(),
 		column: task.status,

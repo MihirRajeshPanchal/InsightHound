@@ -201,6 +201,7 @@ export type Product = {
 	product_name: string
 	product_pricing: string
 	product_reviews: Review[]
+	product_features: string[]
 }
 
 export type Products = Product[]

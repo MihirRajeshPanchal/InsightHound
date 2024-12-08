@@ -62,7 +62,7 @@ export default function LinkedinForm({ data }: { data: string }) {
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSend)}
-					className="space-y-8 w-full mx-auto py-10"
+					className="space-y-8 w-full mx-auto"
 				>
 					<FormField
 						control={form.control}
