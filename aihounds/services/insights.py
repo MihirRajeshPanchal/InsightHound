@@ -8,7 +8,7 @@ from aihounds.models.insights import Insight
 def generate_insight(context: str):
     chain = INSIGHT_PROMPT | openai_llm | OutputFixingParser.from_llm(parser=JsonOutputParser(pydantic_object=Insight), llm=openai_llm)
     
-    result = chain.invoke({"context": context})
+    result = chain.stream({"context": context})
     print(result)
     
     insight = result.get("insight", [])

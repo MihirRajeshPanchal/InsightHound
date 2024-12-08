@@ -12,7 +12,7 @@ from aihounds.services.insights import generate_insight
 from aihounds.services.kanban import generate_kanban
 from aihounds.services.marketsegment import generate_segmentation
 from aihounds.services.news import generate_news
-from aihounds.services.outreach import generate_linkedin,get_rivals,get_rivals_by_url
+from aihounds.services.outreach import generate_linkedin,generate_rivals,generate_rivals_by_url
 from aihounds.services.product import generate_product
 from aihounds.services.suggestions import generate_suggestions
 from aihounds.services.trends import generate_heatmap
@@ -20,7 +20,7 @@ from aihounds.services.typeform import generate_typeform
 from langchain_community.tools.tavily_search import TavilySearchResults
 
 generate_tavily=TavilySearchResults(max_results=4)
-tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform,get_rivals,generate_tavily,get_rivals_by_url]
+tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform,generate_rivals,generate_tavily,generate_rivals_by_url]
 
 llm_with_tools = openai_llm.bind_tools(tools)
 
@@ -33,9 +33,9 @@ selected_tool = {
     "generate_segmentation": generate_segmentation, #done
     "generate_kanban": generate_kanban, #changes but baadme
     "generate_typeform": generate_typeform,  #done
-    "generate_rivals": get_rivals,
+    "generate_rivals": generate_rivals,
     "generate_tavily_search": generate_tavily,
-    "generate_rivals_by_url": get_rivals_by_url
+    "generate_rivals_by_url": generate_rivals_by_url
 }
 
 mapping = {
@@ -209,8 +209,12 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
                     tool_call_id=tool_call["id"]
                 )
                 messages.append(tool_msg)
-                
-                insight = generate_insight(tool_output_json)
+                print("***********************************")
+                try:
+                    insight = generate_insight(tool_output_json)
+                except Exception as e:
+                    print(f"Error generating insight: {e}")
+                    insight = None
                 
                 context +="\n\n" + tool_name + " Output: " + tool_output_json
                 

@@ -148,14 +148,16 @@ def get_company_profile(data, account_id="AZ2SmGEtRy67LoBqXB0KDQ"):
     # posts_data = requests.get(posts_url, headers=headers).json()
     # print(posts_data)
     # data["company_posts"] = posts_data.get("items", None)
-    return data
+    return company_linkedin_data
 
 
 def get_company_profile_from_url(linkedin_url, account_id="AZ2SmGEtRy67LoBqXB0KDQ"):
 
-    url = f"https://api2.unipile.com:13255/api/v1/linkedin/company/{identifier}?account_id={account_id}"
+    linkedin_url = extract_profile_identifier(linkedin_url)
+    print(linkedin_url, "Inside get company from url")
+    url = f"https://api2.unipile.com:13255/api/v1/linkedin/company/{linkedin_url}?account_id={account_id}"
     headers = {"accept": "application/json", "X-API-KEY": api_key}
-    data={}
+    data = {}
     company_linkedin_data = requests.get(url, headers=headers).json()
     print(company_linkedin_data)
     if "viewer_permissions" in company_linkedin_data:
@@ -170,11 +172,11 @@ def get_company_profile_from_url(linkedin_url, account_id="AZ2SmGEtRy67LoBqXB0KD
     id = company_linkedin_data.get("id")
     print(id)
     posts_url = f"https://api2.unipile.com:13255/api/v1/users/{id}/posts?account_id={account_id}"
-    return data
+    return company_linkedin_data
 
 
 @tool
-def get_rivals(
+def generate_rivals(
     num_employees_ranges: List[str],
     locations: List[str],
     keyword_tags: Optional[List[str]],
@@ -189,22 +191,17 @@ def get_rivals(
 
     Args:
         num_employees_ranges (List[str]): A list of employee count ranges to filter companies.
-            Example formats: ["1-10", "11-50", "51-200", "201-500", "501-1000", "1001-5000"]
 
         locations (List[str]): A list of geographic locations to search for companies.
             Can include cities, states, countries, or regions.
-            Example: ["San Francisco", "California", "United States"]
+
 
         keyword_tags (Optional[List[str]], optional): A list of keywords or tags to
             further refine the company search. Defaults to None.
-            Example: ["technology", "software", "startup", "AI"]
+
 
     Returns:
         List[Dict]: A list of rival company profiles, where each profile includes:
-            - Basic company information
-            - Detailed LinkedIn company profile data
-            - Recent company posts
-            - Original search criteria match details
         )
     """
     data = search_companies(num_employees_ranges, locations, keyword_tags)
@@ -213,9 +210,10 @@ def get_rivals(
         rivals_data.append(get_company_profile(company, "AZ2SmGEtRy67LoBqXB0KDQ"))
     return rivals_data
 
+
 @tool
-def get_rivals_by_url(
-linkedin_url: str,
+def generate_rivals_by_url(
+    linkedin_url: str,
 ):
     """
     Retrieve rival companies based on specified criteria using LinkedIn company Url.
@@ -226,15 +224,12 @@ linkedin_url: str,
         linkedin_url (str): The LinkedIn URL of the company to search for rivals.
 
     Returns:
-        Dict: A list of rival company profiles, where each profile includes:
-            - Basic company information
-            - Detailed LinkedIn company profile data
-            - Recent company posts
-            - Original search criteria match details
-        )
+        Dict: A rival company profiles, where each profile includes
+
     """
 
     return get_company_profile_from_url(linkedin_url, "AZ2SmGEtRy67LoBqXB0KDQ")
+
 
 @tool
 def generate_linkedin(purpose):
