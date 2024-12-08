@@ -15,3 +15,7 @@ class KanbanBoard(BaseModel):
 class KanbanBoardMongo(BaseModel):
     id: str
     tasks: List[Task]
+    
+class KanBanBoardAggregate(BaseModel):
+    id: str
+    kanban_str: str

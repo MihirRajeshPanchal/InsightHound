@@ -1,4 +1,4 @@
-from aihounds.models.kanban import KanbanBoard, KanbanBoardMongo, KanbanRequest
+from aihounds.models.kanban import KanBanBoardAggregate, KanbanBoard, KanbanBoardMongo, KanbanRequest
 from aihounds.services.kanban import generate_kanban
 from aihounds.constants.hound import mongo_client
 from fastapi import APIRouter, HTTPException
@@ -37,3 +37,20 @@ async def update_kanban(request: KanbanBoardMongo):
         raise HTTPException(status_code=500, detail="Failed to update Kanban board")
     
     return KanbanBoard(tasks=request.tasks)
+
+@router.put("/kanban_put_aggregate")
+async def update_kanban(request: KanBanBoardAggregate):
+    kanban_data = mongo_client.read_by_id("messages", key="_id", value=request.id)
+    if not kanban_data:
+        raise HTTPException(status_code=404, detail="Kanban board not found")
+    
+    update_success = mongo_client.update(
+        "messages",
+        document_id=kanban_data[0]["_id"],
+        update_data={"data": request.kanban_str}
+    )
+    
+    if not update_success:
+        raise HTTPException(status_code=500, detail="Failed to update Kanban board")
+    
+    return {"status": "success"}
