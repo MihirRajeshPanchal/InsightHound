@@ -87,7 +87,6 @@ export const TagsInput = React.forwardRef<HTMLDivElement, TagsInputProps>(
 				e.preventDefault()
 				const tags = e.clipboardData.getData("text")
 				const newValue = [...value, tags]
-				console.log({ tags, newValue })
 				onValueChange(newValue)
 				setInputValue("")
 			},

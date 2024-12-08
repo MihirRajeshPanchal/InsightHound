@@ -21,7 +21,6 @@ export default function AudienceInsights({ keywords }: KeywordsResponse) {
 		if (keywords.length > 0) setSelectedKeyword(keywords[0])
 	}, [keywords])
 
-	console.log(selectedKeyword, selectedLocation)
 	const { data: trendsData } = useQuery({
 		queryKey: ["audience-insights", selectedKeyword, selectedLocation],
 		queryFn: async () => {

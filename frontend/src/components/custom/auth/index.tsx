@@ -32,7 +32,6 @@ export const Auth = () => {
 		},
 	})
 	async function onSubmit(data: FormType) {
-		console.log({ data })
 		const resp = await fetchAPI<
 			{
 				token: string

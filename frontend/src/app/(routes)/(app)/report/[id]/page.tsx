@@ -5,8 +5,8 @@ import { fetchAPI } from "@/lib/utils/fetch-api"
 import dynamic from "next/dynamic"
 import React from "react"
 
-const ConversationPage = dynamic(
-	() => import("@/components/chat/conversation"),
+const ConversationReportPage = dynamic(
+	() => import("@/components/chat/conversation/report"),
 	{ ssr: false },
 )
 
@@ -26,7 +26,7 @@ export default async function Page({
 		if (process.env.NODE_ENV === "development") return <NotFound />
 	}
 	return (
-		<ConversationPage
+		<ConversationReportPage
 			id={id}
 			conversation={resp.data || sampleConversation}
 		/>

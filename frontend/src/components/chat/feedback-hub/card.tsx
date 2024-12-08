@@ -16,7 +16,6 @@ export default function QuestionnaireCard({
 	messageId,
 }: QuestionsData & FormUrlResponse & { messageId: string }) {
 	const [showResults, setShowResults] = React.useState(false)
-	console.log("messageId", messageId)
 	const { data } = useQuery({
 		queryKey: ["questionnaire-responses", messageId],
 		queryFn: async () => {

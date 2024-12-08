@@ -1,15 +1,10 @@
 "use client"
 import { Separator } from "@/components/ui/separator"
-import { useSidebar } from "@/components/ui/sidebar"
 import { ActionEnum, Conversation, Message, RoleEnum } from "@/lib/types/chat"
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import React, { useEffect } from "react"
 import { CompanyCard } from "../market-intelligence/company-card"
-import { cn, convertMarkdownToHtml } from "@/lib/utils"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { RainbowButton } from "@/components/ui/rainbow-button"
-import { Textarea } from "@/components/ui/textarea"
-import { ArrowTopRightIcon } from "@radix-ui/react-icons"
+import { convertMarkdownToHtml } from "@/lib/utils"
 import News from "../market-intelligence/news"
 import ProductCards from "../product-comparison/cards"
 import AudienceSegment from "../audience-segments"
@@ -18,12 +13,10 @@ import Board from "../hound-board/board"
 import CompetitorMapping from "../competitor-mapping"
 import SendPage from "../certisend/send-page"
 import LinkedinForm from "../audience-outreach/form"
-import useAgent from "@/hooks/use-agent"
-import { toast } from "sonner"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowDown, Lightbulb } from "lucide-react"
+import { Lightbulb } from "lucide-react"
 
 const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -179,137 +172,39 @@ function Messages({
 	))
 }
 
-export default function ConversationPage({
-	id,
+export default function ConversationReportPage({
 	conversation,
 }: {
 	id: string
 	conversation: Conversation
 }) {
-	const [messages, setMessages] = React.useState<Message[]>(
-		conversation?.messages || [],
-	)
-	const [query, setQuery] = React.useState<string>("")
-	const { setOpen } = useSidebar()
-	const { mutateAsync, isPending } = useAgent()
+	const messages = conversation.messages || []
 
 	const divRef = React.useRef<HTMLDivElement>(null)
 
-	const generatePDF = async () => {
-		window.open(`/report/${id}`, "_blank")
-	}
-
 	useEffect(() => {
-		setOpen(true)
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		setTimeout(() => {
+			window.print()
+		}, 3000)
 	}, [])
-	function addMessage(message: Message) {
-		setMessages((prev) => [...prev, message])
-	}
-	useEffect(() => {
-		const messageEl = document.getElementById(
-			`message-${messages.length - 1}`,
-		)
-		if (messageEl) {
-			messageEl.scrollIntoView({ behavior: "smooth" })
-		}
-	}, [messages])
-
-	async function onSubmit() {
-		addMessage({
-			id: Math.random().toString(),
-			createdAt: new Date(),
-			role: RoleEnum.USER,
-			action: ActionEnum.QUERY,
-			query,
-		})
-		setQuery("")
-		// return;
-		const response = await mutateAsync({ query, conversation_id: id })
-		if (!response) {
-			toast.error("Failed to chat. Please try again.")
-			addMessage({
-				id: Math.random().toString(),
-				createdAt: new Date(),
-				role: RoleEnum.AI,
-				action: ActionEnum.RESPONSE_MD,
-				data: "Sorry, I am not able to process your request at the moment.",
-				suggestions:
-					messages.filter((m) => m.role === RoleEnum.AI).pop()
-						?.suggestions || [],
-			})
-			return
-		}
-		response.forEach((msg) => addMessage(msg))
-	}
-
-	const suggestions = messages.filter((m) => m.role === RoleEnum.AI).pop()
-		?.suggestions || [
-		"Tell me about my startup",
-		"Show me my competitors",
-		"Market trends in urban India",
-		"Customer segmentation of AI market",
-	]
 
 	return (
-		<div className="px-4">
+		<div className="px-4 bg-white text-black">
 			<div className="flex justify-between items-center">
 				<h1 className="text-2xl font-bold pb-2">
 					{conversation.title}
 				</h1>
-				<RainbowButton
+				{/* <RainbowButton
 					// disabled={isPending || query.trim().length === 0}
 					className="w-fit !px-2 mx-4 !py-1 h-8"
 					onClick={generatePDF}
 				>
 					<ArrowDown size={16} className="" />
-				</RainbowButton>
+				</RainbowButton> */}
 			</div>
 			<hr />
-			<ScrollArea className="h-[74vh] *:pt-4">
-				<div ref={divRef} className="h-fit">
-					<Messages messages={messages} isPending={isPending} />
-				</div>
-			</ScrollArea>
-			<div
-				className={cn(
-					"flex gap-2 mt-2 z-10 transition-opacity duration-700",
-					!suggestions || isPending ? "opacity-0" : "opacity-100",
-				)}
-			>
-				{suggestions.slice(0, 4).map((suggestion, index) => (
-					<button
-						type="button"
-						onClick={() => setQuery(suggestion)}
-						key={index}
-						className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
-					>
-						{suggestion}
-						<ArrowTopRightIcon className="w-3 h-3" />
-					</button>
-				))}
-			</div>
-			<div className="flex gap-4 shadow-md pt-2">
-				<Textarea
-					autoFocus
-					placeholder="Type your message here..."
-					onKeyDown={(e) => {
-						if (e.key === "Enter") {
-							e.preventDefault()
-							onSubmit()
-						}
-					}}
-					className="w-full"
-					value={query}
-					onChange={(e) => setQuery(e.target.value)}
-				/>
-				<RainbowButton
-					disabled={isPending || query.trim().length === 0}
-					className="w-fit mt-2"
-					onClick={onSubmit}
-				>
-					<ArrowTopRightIcon className="" />
-				</RainbowButton>
+			<div ref={divRef} className="h-fit">
+				<Messages messages={messages} isPending={false} />
 			</div>
 		</div>
 	)

@@ -33,8 +33,6 @@ const HoundBoard = () => {
 		enabled: !!user,
 	})
 
-	console.log(data)
-
 	if (!user || !data) {
 		return <Loading />
 	}

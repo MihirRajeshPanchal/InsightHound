@@ -16,6 +16,7 @@ export default function useConversations() {
 			return res.data
 		},
 		enabled: !!user?.companyId,
+		staleTime: 0,
 	})
 	return query
 }

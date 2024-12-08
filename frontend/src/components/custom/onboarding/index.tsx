@@ -76,7 +76,6 @@ export default function OnboardingForm() {
 				},
 				token,
 			})
-			console.log({ res })
 			if (!res.data?.error) {
 				toast.success("Form submitted successfully")
 				toast.success("Cooking up your dashboard!")
@@ -108,7 +107,6 @@ export default function OnboardingForm() {
 				body: formData,
 			})
 			const data = (await res.json()) as FormValues
-			console.log({ data })
 			form.setValue("name", data.name)
 			form.setValue("vision", data.vision)
 			form.setValue("mission", data.mission)

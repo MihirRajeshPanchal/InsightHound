@@ -73,7 +73,6 @@ export function useChat() {
 				}
 
 				const text = await response.text()
-				console.log(text)
 				const modifiedText = convertMarkdownToHtml(text.slice(1, -1))
 
 				const updatedMessages = [...messages.current]

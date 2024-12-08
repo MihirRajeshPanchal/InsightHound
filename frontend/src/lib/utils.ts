@@ -46,7 +46,6 @@ export function generateMockResponses(questions: Question[]): MockResponse[] {
 }
 
 export function convertMarkdownToHtml(markdown: string): string {
-	console.log({ markdown })
 	let html = markdown
 		.replace(/^### (.+)$/gm, "<h3>$1</h3>")
 		.replace(/^## (.+)$/gm, "<h2>$1</h2>")

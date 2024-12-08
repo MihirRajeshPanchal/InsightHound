@@ -13,7 +13,6 @@ import { TNoParams } from "@/lib/types/common"
 
 type KanbanPutBody = { id: string; kanban_str: string }
 async function updateCards(cards: CardType[], id: string) {
-	console.log({ cards, id })
 	if (!id) return
 	const body: KanbanPutBody = {
 		id,
@@ -58,7 +57,6 @@ const Board = ({
 	useEffect(() => {
 		if (cards && savedCards.current !== JSON.stringify(cards)) {
 			savedCards.current = JSON.stringify(cards)
-			console.log("Cards changed:", cards)
 			mutation.mutate({ cards })
 		}
 	}, [cards, mutation])

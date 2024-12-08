@@ -35,7 +35,6 @@ export const useAuth = () => {
 				method: "GET",
 				token,
 			})
-			// console.log({ res })
 			if (res.data) {
 				setUser(res.data.user)
 			}

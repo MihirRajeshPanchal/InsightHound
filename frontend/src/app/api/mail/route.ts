@@ -18,7 +18,6 @@ export async function POST(req: NextRequest) {
 
 		const email = senderMail || ENV_MAIL
 		const password = senderPassword || ENV_PASSWORD
-		console.log({ email, password })
 		if (!email || !password) {
 			// return NextResponse.json({ error: 'Sender mail and app password are required.' }, { status: 400 });
 			console.error("Sender mail and app password are required.")
@@ -48,9 +47,7 @@ export async function POST(req: NextRequest) {
 			attachments: formattedAttachments,
 		}
 
-		const info = await transporter.sendMail(mailOptions)
-
-		console.log("Email sent: %s", info.messageId)
+		await transporter.sendMail(mailOptions)
 
 		return NextResponse.json({ message: "Email sent successfully!" })
 	} catch (error) {

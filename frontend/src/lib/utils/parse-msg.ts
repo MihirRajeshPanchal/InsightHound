@@ -9,7 +9,6 @@ function isParseable(m: Message) {
 	)
 }
 function parse(data: string) {
-	console.log({ data })
 	try {
 		return JSON.parse(data)
 	} catch (e) {

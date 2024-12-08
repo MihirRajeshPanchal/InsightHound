@@ -146,3 +146,10 @@ body {
 .dashed-logo {
 	animation: pulse-logo 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+@media print {
+	body {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

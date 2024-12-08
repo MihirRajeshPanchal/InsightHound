@@ -33,9 +33,7 @@ export default function ProductComparison() {
 	const [productName, setProductName] = React.useState<string>("")
 
 	const mutation = useProductComparison()
-	const { mutateAsync, data } = mutation
-
-	console.log(data)
+	const { mutateAsync } = mutation
 
 	async function onSubmit() {
 		if (!user?.companyId || productName.trim().length === 0) return
