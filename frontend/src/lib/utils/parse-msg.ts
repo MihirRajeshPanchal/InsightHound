@@ -8,11 +8,11 @@ function isParseable(m: Message) {
 		m.action !== ActionEnum.RESPONSE_MD_PENDING
 	)
 }
-function parse(data: string) {
+export function parse(data: string) {
 	try {
 		return JSON.parse(data)
 	} catch (e) {
-		console.error(e)
+		console.error({ data, e })
 		return null
 	}
 }

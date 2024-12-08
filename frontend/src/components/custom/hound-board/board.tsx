@@ -51,7 +51,6 @@ const Board = ({ data }: { data: GetHoundBoardResponse }) => {
 	useEffect(() => {
 		if (cards && savedCards.current !== JSON.stringify(cards)) {
 			savedCards.current = JSON.stringify(cards)
-			console.log("Cards changed:", cards)
 			mutation.mutate({ cards })
 		}
 	}, [cards, mutation])
