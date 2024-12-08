@@ -42,6 +42,7 @@ export type Message = {
 	  }
 	| ({
 			role: RoleEnum.AI
+			insight?: string
 	  } & AIResponse)
 )
 

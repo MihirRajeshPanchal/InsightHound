@@ -186,3 +186,42 @@ export const DashedLogo = (
 		/>
 	</svg>
 )
+
+export const NotFoundHound = (props: SVGAttributes<SVGElement>) => (
+	<svg
+		width="276"
+		height="447"
+		viewBox="0 0 276 447"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	>
+		<path
+			d="M0 162.783C0 140.811 17.8113 123 39.7826 123V123C42.6641 123 45 125.336 45 128.217V447H8C3.58172 447 0 443.418 0 439V162.783Z"
+			fill="#D9D9D9"
+		/>
+		<path d="M173 262L173 307L45 307L45 262L173 262Z" fill="#D9D9D9" />
+		<rect
+			x="173"
+			y="402"
+			width="45"
+			height="128"
+			transform="rotate(90 173 402)"
+			fill="#D9D9D9"
+		/>
+		<rect
+			x="131"
+			y="402"
+			width="45"
+			height="95"
+			transform="rotate(-180 131 402)"
+			fill="#D9D9D9"
+		/>
+		<path
+			d="M173 127.337C173 124.942 174.942 123 177.337 123V123C199.795 123 218 141.205 218 163.663V439C218 443.418 214.418 447 210 447H173V127.337Z"
+			fill="#D9D9D9"
+		/>
+		<path d="M240 0H276L269 226H245L240 0Z" fill="#D9D9D9" />
+		<rect x="245" y="238" width="24" height="24" fill="#D9D9D9" />
+	</svg>
+)

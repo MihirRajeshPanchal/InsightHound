@@ -1,8 +1,14 @@
-import ConversationPage from "@/components/chat/conversation"
 import NotFound from "@/components/chat/conversation/not-found"
+import { sampleConversation } from "@/lib/sample"
 import { Conversation } from "@/lib/types/chat"
 import { fetchAPI } from "@/lib/utils/fetch-api"
+import dynamic from "next/dynamic"
 import React from "react"
+
+const ConversationPage = dynamic(
+	() => import("@/components/chat/conversation"),
+	{ ssr: false },
+)
 
 export default async function Page({
 	params: { id },
@@ -17,7 +23,12 @@ export default async function Page({
 	})
 
 	if (!resp.data) {
-		return <NotFound />
+		if (process.env.NODE_ENV === "development") return <NotFound />
 	}
-	return <ConversationPage id={id} conversation={resp.data} />
+	return (
+		<ConversationPage
+			id={id}
+			conversation={resp.data || sampleConversation}
+		/>
+	)
 }

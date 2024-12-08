@@ -5,7 +5,14 @@ import {
 	QuestionsData,
 	Segment,
 } from "./types/api"
-import { HeatmapData, NewsData } from "./types/chat"
+import {
+	ActionEnum,
+	Conversation,
+	HeatmapData,
+	Message,
+	NewsData,
+	RoleEnum,
+} from "./types/chat"
 import { ColumnTypeEnum, GetHoundBoardResponse } from "./types/kanban"
 
 export const heatmapData = [
@@ -10200,4 +10207,170 @@ export const sampleHeatmapData: HeatmapData = {
 	],
 	query: "AI",
 	geo: "IN",
+}
+
+const sampleConversationMessages: Message[] = [
+	{
+		id: "123",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "Which emerging technologies should I be aware of?",
+	},
+	{
+		id: "124",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.RESPONSE_MD,
+		data: sampleMdResponse,
+	},
+	{
+		id: "125",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "What is our copany's current status?",
+	},
+	{
+		id: "126",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.ABOUT,
+		data: sampleSelf,
+		insight: "### Your company is doing great!",
+	},
+	{
+		id: "127",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "Any treding news?",
+	},
+	{
+		id: "128",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.FEED,
+		data: sampleNewsResponse,
+	},
+	{
+		id: "129",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "Are there any products that are similar to Gemini?",
+	},
+	{
+		id: "130",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.PRODUCT,
+		data: sampleProductComparison,
+	},
+	{
+		id: "131",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "What would be my go to market segments for this product?",
+	},
+	{
+		id: "132",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.SEGMENTATION,
+		data: sampleSegment.segments,
+	},
+	{
+		id: "133",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "How would i find the beachhead market for this?",
+	},
+	{
+		id: "134",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.QUESTIONNAIRE,
+		data: sampleQuestions,
+	},
+	{
+		id: "135",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "What should be my plan of action?",
+	},
+	{
+		id: "136",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.BOARD,
+		data: sampleBoardResponse.tasks,
+	},
+	{
+		id: "137",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "What are my rival companies?",
+	},
+	{
+		id: "138",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.RIVAL,
+		data: { rivals: sampleCompetitorMapping, self: sampleSelf },
+	},
+	{
+		id: "139",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "How can i reach my users?",
+	},
+	{
+		id: "140",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.MAIL_INITIATE,
+	},
+	{
+		id: "141",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "How can i reach my potential employees?",
+	},
+	{
+		id: "142",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.LINKEDIN,
+		data: sampleLinkedinData,
+	},
+	{
+		id: "143",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "How can i reach my potential employees?",
+	},
+	{
+		id: "144",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		action: ActionEnum.HEATMAP,
+		data: sampleHeatmapData,
+	},
+]
+
+export const sampleConversation: Conversation = {
+	id: "123",
+	messages: sampleConversationMessages,
+	createdAt: new Date(),
+	summary: {},
+	title: "Customer Support in metropolitian areas during weekends",
+	updatedAt: new Date(),
 }
