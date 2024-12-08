@@ -1,12 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+from typing import List, Optional
 import re
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.tools import tool
 from aihounds.constants.outreach import LINKEDIN_PROMPT
 from aihounds.models.outreach import LinkedInLLMResponse
+from aihounds.endpoints.rivals import search_companies
+
 load_dotenv()
 import os 
 from aihounds.constants.prompt import prompt_template,generate_message_prompt
@@ -102,7 +105,33 @@ class LinkedinOutreach:
             return "Messages sent successfully"
         except Exception as e:
             return e
-
+        
+        
+    def get_company_profile(self,data,account_id):
+        
+        identifier=self.extract_profile_identifier(data.get("linkedin_url"))
+        url=f'{self.url}/linkedin/company/{identifier}?account_id={account_id}'
+        headers = {
+            "accept": "application/json",
+            "X-API-KEY": self.api_key
+        }
+        
+        company_linkedin_data=requests.get(url,headers=headers).json()
+        data['company_information']=company_linkedin_data
+        id=company_linkedin_data.get('id')
+        posts_url=f'{self.url}/users/{id}/posts'
+        posts_data=requests.get(posts_url,headers=headers).json()
+        data['company_posts']=posts_data.get('items',None)
+        # self.mongoose_client.create("rivals",data)
+        return data
+    
+    def get_rivals(self,num_employees_ranges: List[str],locations: List[str],keyword_tags: Optional[List[str]]):
+       data= search_companies(num_employees_ranges,locations,keyword_tags)
+       rivals_data=[]
+       for company in data:
+            rivals_data.append(self.get_company_profile(company))
+       return rivals_data        
+        
 @tool
 def generate_linkedin(purpose):
     """
@@ -124,3 +153,4 @@ def generate_linkedin(purpose):
     
     message = result.get("message", [])
     return LinkedInLLMResponse(message=message).model_dump()
+
