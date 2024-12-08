@@ -24,6 +24,7 @@ import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowDown, Lightbulb } from "lucide-react"
+import { parse } from "@/lib/utils/parse-msg"
 
 const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -186,6 +187,7 @@ export default function ConversationPage({
 	id: string
 	conversation: Conversation
 }) {
+	console.log(conversation)
 	const [messages, setMessages] = React.useState<Message[]>(
 		conversation?.messages || [],
 	)
@@ -243,14 +245,19 @@ export default function ConversationPage({
 		response.forEach((msg) => addMessage(msg))
 	}
 
-	const suggestions = messages.filter((m) => m.role === RoleEnum.AI).pop()
+	const suggestionsRaw = messages.filter((m) => m.role === RoleEnum.AI).pop()
 		?.suggestions || [
 		"Tell me about my startup",
 		"Show me my competitors",
 		"Market trends in urban India",
 		"Customer segmentation of AI market",
 	]
+	const suggestions: string[] =
+		typeof suggestionsRaw === "string"
+			? parse(suggestionsRaw)
+			: suggestionsRaw
 
+	console.log(suggestions)
 	return (
 		<div className="px-4">
 			<div className="flex justify-between items-center">

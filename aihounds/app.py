@@ -5,6 +5,7 @@ from aihounds.endpoints.crunchbase import crunchbase_router
 from aihounds.endpoints.user import user_router
 from aihounds.endpoints.agent import api_router
 from aihounds.endpoints.outreach import outreach_router
+from aihounds.endpoints.rivals import router as rivals_router
 app = FastAPI()
 
 app.add_middleware(
@@ -34,6 +35,7 @@ app.include_router(report.router)
 app.include_router(news.router)
 app.include_router(vote.router)
 app.include_router(aggregate.router)
+app.include_router(rivals_router)
 
 @app.get("/")
 def root():
