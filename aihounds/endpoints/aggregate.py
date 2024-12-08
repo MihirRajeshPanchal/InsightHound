@@ -41,3 +41,20 @@ async def get_conversations(conversation_id: Optional[str] = Query(None, descrip
         return conversations[0]
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching conversations: {str(e)}")
+    
+@router.get('/sidebar_conversations')
+async def get_conversations(user_id: Optional[str] = Query(None, description="The user ID"),company_id: Optional[str] = Query(None, description="The company ID")):
+    try:
+        if not user_id and not company_id:
+            raise HTTPException(status_code=400, detail="conversation_id query parameter is required")
+
+        conversations = mongo_client.read_multiple_by_key_value("conversations", "user_id", user_id, "company_id", company_id)
+        result_response = []
+        for i in conversations:
+            result={}
+            result["title"] = i["title"]
+            result["conversation_id"] = i["_id"]
+            result_response.append(result)
+        return result_response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching conversations: {str(e)}")

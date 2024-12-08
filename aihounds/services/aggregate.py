@@ -21,15 +21,15 @@ tools = [generate_news, generate_product,generate_heatmap, generate_mail, genera
 llm_with_tools = openai_llm.bind_tools(tools)
 
 selected_tool = {
-    "generate_news": generate_news, 
-    "generate_product": generate_product, 
-    "generate_heatmap": generate_heatmap, 
-    "generate_mail": generate_mail, 
-    "generate_linkedin": generate_linkedin, 
-    "generate_segmentation": generate_segmentation, 
-    "generate_kanban": generate_kanban, 
-    "generate_typeform": generate_typeform,  
-    "get_typeform_responses": get_typeform_responses  
+    "generate_news": generate_news, #done
+    "generate_product": generate_product,  #done
+    "generate_heatmap": generate_heatmap,  #done
+    "generate_mail": generate_mail, # initialization_remain
+    "generate_linkedin": generate_linkedin, #done
+    "generate_segmentation": generate_segmentation, #done
+    "generate_kanban": generate_kanban, #changes but baadme
+    "generate_typeform": generate_typeform,  #done
+    "get_typeform_responses": get_typeform_responses  #done
 }
 
 mapping = {
