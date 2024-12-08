@@ -6,7 +6,7 @@ from aihounds.constants.aggregate import TITLE_PROMPT
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 from aihounds.constants.hound import openai_llm, mongo_client
-from aihounds.models import insights
+from aihounds.models import insights, suggestions
 from aihounds.models.aggregate import GenerateTitleResponse, Message
 from aihounds.services.email import generate_mail
 from aihounds.services.insights import generate_insight
@@ -15,6 +15,7 @@ from aihounds.services.marketsegment import generate_segmentation
 from aihounds.services.news import generate_news
 from aihounds.services.outreach import generate_linkedin
 from aihounds.services.product import generate_product
+from aihounds.services.suggestions import generate_suggestions
 from aihounds.services.trends import generate_heatmap
 from aihounds.services.typeform import generate_typeform, get_typeform_responses
 
@@ -168,6 +169,8 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
     )
     mongo_client.create("messages", user_query_record)
     
+    context += "\n\nCurrent Query: " + temp_query
+    
     try:
         ai_msg = llm_with_tools.invoke(messages)
     except Exception as e:
@@ -204,6 +207,11 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
                 
                 insight = generate_insight(tool_output_json)
                 
+                context +="\n\n" + tool_name + " Output: " + tool_output_json
+                
+                suggestions = generate_suggestions(context)
+                
+                suggestion_string = convert_to_json_string(suggestions)
                 
                 if tool_name not in processed_tools:
                     agent_response = Message(
@@ -212,6 +220,7 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
                         action=mapping.get(tool_name, "response_md_pending"), 
                         data=tool_output_json,
                         insight=insight,
+                        suggestions=suggestion_string,
                         tool_call_id=tool_call["id"],
                         timestamp=datetime.now()
                     )

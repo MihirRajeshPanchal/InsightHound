@@ -31,7 +31,7 @@ class Message(BaseModel):
     data: Optional[Any] = None
     tool_call_id: Optional[Union[str, None]] = None
     insight: Optional[str] = None
-    suggestions: Optional[List[str]] = None
+    suggestions: Optional[str] = None
     
     class Config:
         json_encoders = {
