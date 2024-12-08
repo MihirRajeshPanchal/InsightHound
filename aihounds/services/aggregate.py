@@ -6,7 +6,6 @@ from aihounds.constants.aggregate import TITLE_PROMPT
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 from aihounds.constants.hound import openai_llm, mongo_client
-from aihounds.models import insights, suggestions
 from aihounds.models.aggregate import GenerateTitleResponse, Message
 from aihounds.services.email import generate_mail
 from aihounds.services.insights import generate_insight
@@ -17,8 +16,8 @@ from aihounds.services.outreach import generate_linkedin
 from aihounds.services.product import generate_product
 from aihounds.services.suggestions import generate_suggestions
 from aihounds.services.trends import generate_heatmap
-from aihounds.services.typeform import generate_typeform, get_typeform_responses
-tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform, get_typeform_responses]
+from aihounds.services.typeform import generate_typeform
+tools = [generate_news, generate_product,generate_heatmap, generate_mail, generate_linkedin, generate_segmentation, generate_kanban, generate_typeform]
 
 llm_with_tools = openai_llm.bind_tools(tools)
 
