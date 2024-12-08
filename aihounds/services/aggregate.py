@@ -6,8 +6,10 @@ from aihounds.constants.aggregate import TITLE_PROMPT
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 from aihounds.constants.hound import openai_llm, mongo_client
+from aihounds.models import insights
 from aihounds.models.aggregate import GenerateTitleResponse, Message
 from aihounds.services.email import generate_mail
+from aihounds.services.insights import generate_insight
 from aihounds.services.kanban import generate_kanban
 from aihounds.services.marketsegment import generate_segmentation
 from aihounds.services.news import generate_news
@@ -199,13 +201,17 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
                     tool_call_id=tool_call["id"]
                 )
                 messages.append(tool_msg)
-
+                
+                insight = generate_insight(tool_output_json)
+                
+                
                 if tool_name not in processed_tools:
                     agent_response = Message(
                         conversation_id=conversation_id, 
                         role="ai", 
                         action=mapping.get(tool_name, "response_md_pending"), 
                         data=tool_output_json,
+                        insight=insight,
                         tool_call_id=tool_call["id"],
                         timestamp=datetime.now()
                     )
