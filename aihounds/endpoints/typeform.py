@@ -3,7 +3,7 @@ import json
 from typing import List
 from fastapi import HTTPException
 import httpx
-from aihounds.constants.hound import TYPEFORM_API_TOKEN, TYPEFORM_API_URL
+from aihounds.constants.hound import TYPEFORM_API_TOKEN, TYPEFORM_API_URL, WORKSPACE_ID
 from aihounds.constants.hound import mongo_client
 from aihounds.models.typeform import ResponseFrequency, ResponseTypeformFrequency, SurveyRequest, TypeFormAggregateRequest, TypeformMongo, TypeformResponse
 from aihounds.services.typeform import create_typeform_definition, generate_typeform_responses
@@ -89,7 +89,7 @@ async def get_typeform_responses(response_request: ResponseTypeformFrequency):
     try:
         async with httpx.AsyncClient() as client:
             response = await client.get(
-                f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z&workspace_id=QDcqdz",
+                f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z&workspace_id={WORKSPACE_ID}",
                 headers={
                     "Authorization": f"Bearer {TYPEFORM_API_TOKEN}",
                     "Content-Type": "application/json"

@@ -1,5 +1,5 @@
 import httpx
-from aihounds.constants.hound import TYPEFORM_API_TOKEN, TYPEFORM_API_URL
+from aihounds.constants.hound import TYPEFORM_API_TOKEN, TYPEFORM_API_URL, WORKSPACE_ID
 from aihounds.models.typeform import ResponseFrequency, SurveyRequest
 from aihounds.services.marketresearch import generate_questionnaire
 from langchain_core.tools import tool
@@ -14,7 +14,7 @@ def create_typeform_definition(survey_request: SurveyRequest) -> dict:
             "href": "https://api.typeform.com/themes/default"
         },
         "workspace": {
-            "href": "https://api.typeform.com/workspaces/QDcqdz"
+            "href": "https://api.typeform.com/workspaces/{WORKSPACE_ID}"
         },
         "settings": {
             "language": "en",
@@ -59,7 +59,7 @@ def create_typeform_aggregate_definition(survey_request: dict) -> dict:
             "href": "https://api.typeform.com/themes/default"
         },
         "workspace": {
-            "href": "https://api.typeform.com/workspaces/QDcqdz"
+            "href": "https://api.typeform.com/workspaces/{WORKSPACE_ID}"
         },
         "settings": {
             "language": "en",
@@ -162,7 +162,7 @@ async def generate_typeform_responses(questionnaire_data, form_id):
 
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z&workspace_id=QDcqdz",
+            f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z&workspace_id={WORKSPACE_ID}",
             headers={
                 "Authorization": f"Bearer {TYPEFORM_API_TOKEN}",
                 "Content-Type": "application/json"
