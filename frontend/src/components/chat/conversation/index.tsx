@@ -38,6 +38,7 @@ const actionToInsightTitle: Record<ActionEnum, string> = {
 	mail: "",
 	query: "",
 	response_md: "from the response",
+	response_md_pending: "",
 	questionnaire_analysis: "on the feedback",
 	report: "on the report",
 }
@@ -95,6 +96,15 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.HEATMAP:
 			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
+			return (
+				<div
+					className="whitespace-pre-wrap"
+					dangerouslySetInnerHTML={{
+						__html: convertMarkdownToHtml(message.data),
+					}}
+				/>
+			)
+		case ActionEnum.RESPONSE_MD_PENDING:
 			return (
 				<div
 					className="whitespace-pre-wrap"

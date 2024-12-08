@@ -21,6 +21,7 @@ export enum ActionEnum {
 	RIVAL = "rival", // rival company card
 	PRODUCT = "product", // product card
 	RESPONSE_MD = "response_md", // response message in markdown
+	RESPONSE_MD_PENDING = "response_md_pending", // response message in markdown
 	HEATMAP = "heatmap", // heatmap card
 	MAIL_INITIATE = "mail_init", // show mail sending table to insert data
 	MAIL = "mail", // mail sending email generated
@@ -79,6 +80,10 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.RESPONSE_MD
+			data: string
+	  }
+	| {
+			action: ActionEnum.RESPONSE_MD_PENDING
 			data: string
 	  }
 	| {

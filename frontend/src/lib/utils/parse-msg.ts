@@ -1,5 +1,13 @@
 import { ActionEnum, Conversation, Message, RoleEnum } from "../types/chat"
 
+function isParseable(m: Message) {
+	return (
+		m.role === RoleEnum.AI &&
+		m.action !== ActionEnum.MAIL_INITIATE &&
+		m.action !== ActionEnum.RESPONSE_MD &&
+		m.action !== ActionEnum.RESPONSE_MD_PENDING
+	)
+}
 function parse(data: string) {
 	console.log({ data })
 	try {
@@ -14,18 +22,10 @@ export function parseMsg(msg: Message[]): Message[] {
 		.map((m) => {
 			return {
 				...m,
-				...(m.role === RoleEnum.AI &&
-				m.action !== ActionEnum.MAIL_INITIATE
-					? { data: parse(m.data.toString()) }
-					: {}),
+				...(isParseable(m) ? { data: parse(m.data.toString()) } : {}),
 			}
 		})
-		.filter(
-			(m) =>
-				m.role !== RoleEnum.AI ||
-				m.action === ActionEnum.MAIL_INITIATE ||
-				m.data !== null,
-		)
+		.filter((m) => !isParseable(m) || m.data !== null)
 }
 
 export function parseConversation(conversation: Conversation): Conversation {
