@@ -140,8 +140,7 @@ def generate_typeform(vision, mission, description, domain):
         }
         return response
         
-@tool
-def get_typeform_responses(questionnaire_data, form_id):
+async def generate_typeform_responses(questionnaire_data, form_id):
     """
     Fetches responses to a Typeform survey and calculates the frequency of answers for each question.
 
@@ -161,8 +160,8 @@ def get_typeform_responses(questionnaire_data, form_id):
     """
     question_mapping = {str(idx): question for idx, question in enumerate(questionnaire_data)}
 
-    with httpx.AsyncClient() as client:
-        response = client.get(
+    async with httpx.AsyncClient() as client:
+        response = await client.get(
             f"{TYPEFORM_API_URL}/{form_id}/responses?page_size=50&since=2024-01-01T00:00:00Z&workspace_id=QDcqdz",
             headers={
                 "Authorization": f"Bearer {TYPEFORM_API_TOKEN}",

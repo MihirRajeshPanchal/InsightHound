@@ -1,10 +1,12 @@
+from email import message
+import json
 from typing import List
 from fastapi import HTTPException
 import httpx
 from aihounds.constants.hound import TYPEFORM_API_TOKEN, TYPEFORM_API_URL
 from aihounds.constants.hound import mongo_client
-from aihounds.models.typeform import ResponseFrequency, ResponseTypeformFrequency, SurveyRequest, TypeformMongo, TypeformResponse
-from aihounds.services.typeform import create_typeform_definition
+from aihounds.models.typeform import ResponseFrequency, ResponseTypeformFrequency, SurveyRequest, TypeFormAggregateRequest, TypeformMongo, TypeformResponse
+from aihounds.services.typeform import create_typeform_definition, generate_typeform_responses
 from fastapi import APIRouter
 
 router = APIRouter()
@@ -81,6 +83,7 @@ async def get_typeform_responses(response_request: ResponseTypeformFrequency):
     questionnaire_data = mongo_client.read_by_key_value("questionnaire", "id", response_request.id)
     questionnaire_data = questionnaire_data[0]["questions"]
 
+    print(questionnaire_data)
     question_mapping = {str(idx): question for idx, question in enumerate(questionnaire_data)}
 
     try:
@@ -150,3 +153,17 @@ async def get_typeform_responses(response_request: ResponseTypeformFrequency):
             status_code=500,
             detail=f"Unexpected error: {str(e)}"
         )
+        
+@router.get("/typeform_aggregate_responses")
+async def get_typeform_aggregate_responses(message_id: str):
+    message = mongo_client.read_by_id("messages", "_id", message_id)
+    
+    if not message:
+        raise HTTPException(
+            status_code=404,
+            detail="Message not found"
+        )
+    
+    data = message[0]["data"]
+    typeform_responses_data = json.loads(data)
+    return await generate_typeform_responses(typeform_responses_data["questions"], typeform_responses_data["form_id"])

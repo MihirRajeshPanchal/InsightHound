@@ -29,3 +29,6 @@ class ResponseFrequency(BaseModel):
     
 class ResponseTypeformFrequency(BaseModel):
     id: str
+    
+class TypeFormAggregateRequest(BaseModel):
+    message_id: str
