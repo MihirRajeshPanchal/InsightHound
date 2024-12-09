@@ -114,6 +114,7 @@ body {
 
 :root {
 	--background: 0 0% 8%;
+	--moving-grid-background: 0 0% 8%;
 	--text: 32 19% 87%;
 	--accent: 233 57% 60%;
 }
@@ -160,5 +161,74 @@ body {
 	}
 	to {
 		opacity: var(--opacityTo, 1);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: var(--opacityFrom, 0);
+	}
+	to {
+		opacity: var(--opacityTo, 1);
+	}
+}
+
+
+.gridBgWrapper {
+	--blockSize: calc(12.5vw);
+	--borderWidth: 1px;
+	--borderColor: hsl(0, 0%, 100%, 0.1);
+	--bgColor: hsl(var(--moving-grid-background));
+
+	/* perspective: calc(100vh / 2); */
+	perspective: 1400px;
+	overflow: hidden;
+
+	& * {
+		transform-style: preserve-3d;
+	}
+}
+
+.gridBg {
+	position: absolute;
+	/* inset: -200vmax; */
+	inset: 0 0 -10vmax 0;
+	background-attachment: fixed;
+	background-color: var(--bgColor);
+	background-image: linear-gradient(
+			transparent calc(var(--blockSize) - var(--borderWidth)),
+			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
+		),
+		linear-gradient(
+			90deg,
+			transparent calc(var(--blockSize) - var(--borderWidth)),
+			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
+		);
+
+	background-size: var(--blockSize) var(--blockSize),
+		var(--blockSize) var(--blockSize);
+	/* background-repeat: round; */
+	/* background-position-x: calc(var(--blockSize) * 0.5 * -1); */
+	animation: gridBgMove 3s infinite linear;
+	transform-origin: top;
+	transform: rotateX(45deg);
+}
+.gridBgFade {
+	--bgColor: hsl(var(--moving-grid-background));
+	background-image: linear-gradient(
+			0deg,
+			var(--bgColor) 10%,
+			transparent 25%
+		),
+		linear-gradient(-60deg, var(--bgColor) 15%, transparent 25%),
+		linear-gradient(-30deg, var(--bgColor) 15%, transparent 25%),
+		linear-gradient(60deg, var(--bgColor) 15%, transparent 25%),
+		linear-gradient(30deg, var(--bgColor) 15%, transparent 25%);
+}
+
+
+@keyframes gridBgMove {
+	to {
+		background-position-y: var(--blockSize), var(--blockSize);
 	}
 }
