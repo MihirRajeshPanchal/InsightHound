@@ -1,6 +1,6 @@
 // import { sampleNewsResponse } from '@/lib/sample';
 import { ArticlesApiResponse } from "@/lib/types/api"
-import React, { useEffect } from "react"
+import React from "react"
 import NewsCard from "./news-report-card"
 import { Button } from "@/components/ui/button"
 import { NewsData } from "@/lib/types/chat"
@@ -34,9 +34,11 @@ export default function News({ data }: { data: NewsData }) {
 	return (
 		<div className="flex flex-col items-end">
 			<div className="report | grid grid-cols-2 w-full *:w-full gap-4">
-				{result?.articles.slice(0, 20).map((article, index) => (
-					<NewsCard key={index} article={article} />
-				))}
+				{result?.articles
+					.slice(0, 20)
+					.map((article, index) => (
+						<NewsCard key={index} article={article} />
+					))}
 			</div>
 			<Button className="w-fit tems-end mt-4 ">Show more</Button>
 		</div>

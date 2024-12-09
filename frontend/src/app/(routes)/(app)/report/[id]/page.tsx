@@ -7,7 +7,7 @@ import React from "react"
 
 const ConversationReportPage = dynamic(
 	() => import("@/components/chat/conversation/reportTwo"),
-	{ ssr: false }
+	{ ssr: false },
 )
 
 export default async function Page({
@@ -15,17 +15,22 @@ export default async function Page({
 }: {
 	params: { id: string }
 }) {
-	// const resp = await fetchAPI<Conversation>({
-	// 	url: `/conversations?conversation_id=${id}`,
-	// 	method: "GET",
-	// 	baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
-	// 	isConversation: true,
-	// })
+	const resp = await fetchAPI<Conversation>({
+		url: `/conversations?conversation_id=${id}`,
+		method: "GET",
+		baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
+		isConversation: true,
+	})
 
-	// if (!resp.data) {
-	// 	if (process.env.NODE_ENV === "development") return <NotFound />
-	// }
-	return <ConversationReportPage id={id} conversation={sampleConversation} />
+	if (!resp.data) {
+		if (process.env.NODE_ENV === "development") return <NotFound />
+	}
+	return (
+		<ConversationReportPage
+			id={id}
+			conversation={resp.data || sampleConversation}
+		/>
+	)
 }
 
 export const revalidate = 0

@@ -125,6 +125,7 @@ export type AIResponse =
 
 export interface Conversation {
 	id: string
+	_id: string
 	messages: Message[]
 	createdAt: Date
 	title: string

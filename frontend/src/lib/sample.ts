@@ -10429,6 +10429,7 @@ const sampleConversationMessages: Message[] = [
 
 export const sampleConversation: Conversation = {
 	id: "123",
+	_id: "6756a4033bf2117c2bd53d18",
 	messages: sampleConversationMessages,
 	createdAt: new Date(),
 	summary: {},

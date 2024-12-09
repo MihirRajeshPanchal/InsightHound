@@ -22,7 +22,7 @@ export default function News({ data }: { data: NewsData }) {
 		},
 	})
 	const [shown, setShown] = React.useState<number>(
-		Math.min(6, result?.articles?.length || 0)
+		Math.min(6, result?.articles?.length || 0),
 	)
 	useEffect(() => {
 		if (result?.articles) {
@@ -41,15 +41,17 @@ export default function News({ data }: { data: NewsData }) {
 	return (
 		<div className="flex flex-col items-end">
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-				{result?.articles.slice(0, shown).map((article, index) => (
-					<NewsCard key={index} article={article} />
-				))}
+				{result?.articles
+					.slice(0, shown)
+					.map((article, index) => (
+						<NewsCard key={index} article={article} />
+					))}
 			</div>
 			<Button
 				className="w-fit tems-end mt-4 "
 				onClick={() =>
 					setShown((prev) =>
-						Math.min(prev + 6, result?.articles.length || 0)
+						Math.min(prev + 6, result?.articles.length || 0),
 					)
 				}
 			>
