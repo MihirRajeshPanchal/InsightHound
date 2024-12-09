@@ -7,6 +7,7 @@ import {
 } from "./types/api"
 import {
 	ActionEnum,
+	CompanyProfile,
 	Conversation,
 	HeatmapData,
 	Message,
@@ -14,6 +15,36 @@ import {
 	RoleEnum,
 } from "./types/chat"
 import { ColumnTypeEnum, GetHoundBoardResponse } from "./types/kanban"
+
+export const sampleCompany: CompanyProfile = {
+	object: "CompanyProfile",
+	id: "12345",
+	entity_urn: "urn:li:company:12345",
+	name: "Tech Innovators Inc.",
+	description:
+		"A leading company in AI-driven solutions, empowering businesses worldwide with cutting-edge technology.",
+	public_identifier: "tech-innovators",
+	profile_url: "https://www.linkedin.com/company/tech-innovators",
+	default_locale: "en_US",
+	followers_count: 250000,
+	is_following: true,
+	is_employee: false,
+	organization_type: "Public Company",
+	locations: [
+		{
+			is_headquarter: true,
+			city: "San Francisco",
+			country: "USA",
+			street: ["123 Innovation Drive", "Suite 500"],
+		},
+		{
+			is_headquarter: false,
+			city: "New York",
+			country: "USA",
+			street: ["456 Business Avenue"],
+		},
+	],
+}
 
 export const heatmapData = [
 	{
@@ -10226,6 +10257,21 @@ const sampleConversationMessages: Message[] = [
 		data: sampleMdResponse,
 	},
 	{
+		id: "123",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "Which emerging technologies should I be aware of?",
+	},
+	{
+		id: "124",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		suggestions: [],
+		action: ActionEnum.RESPONSE_MD,
+		data: sampleMdResponse,
+	},
+	{
 		id: "125",
 		createdAt: new Date(),
 		role: RoleEnum.USER,
@@ -10238,7 +10284,7 @@ const sampleConversationMessages: Message[] = [
 		role: RoleEnum.AI,
 		suggestions: [],
 		action: ActionEnum.ABOUT,
-		data: sampleSelf,
+		data: sampleCompany,
 		insight: "### Your company is doing great!",
 	},
 	{
@@ -10316,21 +10362,21 @@ const sampleConversationMessages: Message[] = [
 		action: ActionEnum.BOARD,
 		data: sampleBoardResponse.tasks,
 	},
-	// {
-	// 	id: "137",
-	// 	createdAt: new Date(),
-	// 	role: RoleEnum.USER,
-	// 	action: ActionEnum.QUERY,
-	// 	query: "What are my rival companies?",
-	// },
-	// {
-	// 	id: "138",
-	// 	createdAt: new Date(),
-	// 	role: RoleEnum.AI,
-	// 	suggestions: [],
-	// 	action: ActionEnum.RIVAL,
-	// 	data: { rivals: sampleCompetitorMapping, self: sampleSelf },
-	// },
+	{
+		id: "137",
+		createdAt: new Date(),
+		role: RoleEnum.USER,
+		action: ActionEnum.QUERY,
+		query: "What are my rival companies?",
+	},
+	{
+		id: "138",
+		createdAt: new Date(),
+		role: RoleEnum.AI,
+		suggestions: [],
+		action: ActionEnum.RIVAL,
+		data: [sampleCompany, sampleCompany, sampleCompany],
+	},
 	{
 		id: "139",
 		createdAt: new Date(),
