@@ -27,3 +27,9 @@ async def get_company_details_self_v2(id:str,data:Request):
         return {"message":"Added successfully"}
     else:
         return {"message":"Failed to add"}
+    
+    
+@crunchbase_router.get("/self/details/{id}")
+def get_company_details_self_v3(id:str):
+    data= crunchbase_service.get_company_details_self_v3(id)
+    return {"data":data}    

@@ -118,3 +118,7 @@ class CrunchBaseService:
         except Exception as e:
             print(f"Error: {e}")
             return None
+        
+    def get_company_details_self_v3(self,id:str):
+        data=self.mongoclient.read("company",id)
+        return data.get("props",None)
