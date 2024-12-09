@@ -95,7 +95,7 @@ export default function ChatInitial() {
 	} = useAgent()
 	const router = useRouter()
 	const { setOpen } = useSidebar()
-	async function onSubmit() {
+	async function onSubmit(query: string) {
 		if (!isValid) return
 		const resp = await mutateAsync(query)
 		if (resp?.conversation_id) {
@@ -157,7 +157,7 @@ export default function ChatInitial() {
 					onKeyDown={(e) => {
 						if (e.key === "Enter" && !e.shiftKey) {
 							e.preventDefault()
-							onSubmit()
+							onSubmit(query)
 						}
 					}}
 					className="w-full border-none outline-none focus-visible:ring-0 focus:ring-0 resize-none z-10 max-h-[500px]"
@@ -172,7 +172,7 @@ export default function ChatInitial() {
 				<RainbowButton
 					disabled={isLoading || !isValid}
 					className="px-2 z-10 mx-2 group transition-all hover:w-48 w-12 duration-700"
-					onClick={onSubmit}
+					onClick={() => onSubmit(query)}
 				>
 					<span className="w-0 group-hover:w-full opacity-0 group-hover:opacity-100 overflow-hidden transition-all duration-700 text-nowrap">
 						Start Conversation
@@ -189,7 +189,7 @@ export default function ChatInitial() {
 				{suggestions.slice(0, 4).map((suggestion, index) => (
 					<button
 						type="button"
-						onClick={() => setQuery(suggestion)}
+						onClick={() => onSubmit(suggestion)}
 						key={index}
 						className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
 					>

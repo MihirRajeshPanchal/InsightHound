@@ -25,6 +25,7 @@ import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowDown, Lightbulb } from "lucide-react"
 import { parse } from "@/lib/utils/parse-msg"
+import MdBlock from "@/components/ui/md-block"
 
 const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -104,23 +105,9 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.HEATMAP:
 			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
-			return (
-				<div
-					className="whitespace-pre-wrap"
-					dangerouslySetInnerHTML={{
-						__html: convertMarkdownToHtml(message.data),
-					}}
-				/>
-			)
+			return <MdBlock md={message.data} />
 		case ActionEnum.RESPONSE_MD_PENDING:
-			return (
-				<div
-					className="whitespace-pre-wrap"
-					dangerouslySetInnerHTML={{
-						__html: convertMarkdownToHtml(message.data),
-					}}
-				/>
-			)
+			return <MdBlock md={message.data} />
 		default:
 			return <div>HoundBot failed to cook</div>
 	}
@@ -217,7 +204,7 @@ export default function ConversationPage({
 		}
 	}, [messages])
 
-	async function onSubmit() {
+	async function onSubmit(query: string = "") {
 		addMessage({
 			id: Math.random().toString(),
 			createdAt: new Date(),
@@ -287,7 +274,7 @@ export default function ConversationPage({
 				{suggestions.slice(0, 4).map((suggestion, index) => (
 					<button
 						type="button"
-						onClick={() => setQuery(suggestion)}
+						onClick={() => onSubmit(suggestion)}
 						key={index}
 						className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
 					>
@@ -313,7 +300,7 @@ export default function ConversationPage({
 				<RainbowButton
 					disabled={isPending || query.trim().length === 0}
 					className="w-fit mt-2"
-					onClick={onSubmit}
+					onClick={() => onSubmit(query)}
 				>
 					<ArrowTopRightIcon className="" />
 				</RainbowButton>
