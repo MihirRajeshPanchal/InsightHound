@@ -14,7 +14,7 @@ def create_typeform_definition(survey_request: SurveyRequest) -> dict:
             "href": "https://api.typeform.com/themes/default"
         },
         "workspace": {
-            "href": "https://api.typeform.com/workspaces/{WORKSPACE_ID}"
+            "href": f"https://api.typeform.com/workspaces/{WORKSPACE_ID}"
         },
         "settings": {
             "language": "en",
@@ -59,7 +59,7 @@ def create_typeform_aggregate_definition(survey_request: dict) -> dict:
             "href": "https://api.typeform.com/themes/default"
         },
         "workspace": {
-            "href": "https://api.typeform.com/workspaces/{WORKSPACE_ID}"
+            "href": f"https://api.typeform.com/workspaces/{WORKSPACE_ID}"
         },
         "settings": {
             "language": "en",
