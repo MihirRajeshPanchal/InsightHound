@@ -9,7 +9,7 @@ from langchain_core.tools import tool
 from aihounds.constants.outreach import LINKEDIN_PROMPT
 from aihounds.models.outreach import LinkedInLLMResponse
 from aihounds.endpoints.rivals import search_companies
-
+from aihounds.constants.hound import mongo_client
 load_dotenv()
 import os
 from aihounds.constants.prompt import prompt_template, generate_message_prompt
@@ -298,3 +298,15 @@ def get_rivals_test(
     for company in data:
         rivals_data.append(get_company_profile(company, "Axq_BT2xSrilkSRtXGW8AQ"))
     return rivals_data
+
+
+def get_self(id,linkedin_url):
+    
+    try:
+        data=get_company_profile_from_url(linkedin_url, "Axq_BT2xSrilkSRtXGW8AQ")
+        return mongo_client.update("company",id,{"props" : data})
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+    
+    

@@ -49,7 +49,7 @@ mapping = {
     "generate_typeform" : "questionnaire", 
     "generate_rivals" : "rival",
     "generate_tavily_search": "response_md",
-    "generate_rivals_by_url": "rival"
+    "generate_rivals_by_url": "about"
 }
 
 def convert_to_json_string(data):
