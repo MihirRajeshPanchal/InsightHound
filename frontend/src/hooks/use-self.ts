@@ -2,17 +2,16 @@ import { useQuery } from "@tanstack/react-query"
 import { useAuth } from "./use-auth"
 import { CompanyProfile } from "@/lib/types/chat"
 import { fetchAPI } from "@/lib/utils/fetch-api"
-import { company } from "@prisma/client"
 
 export default function useSelfCompany() {
-	const { user, token } = useAuth()
+	const { user } = useAuth()
 	const query = useQuery({
 		queryKey: ["self-compnay", user?.companyId],
 		queryFn: async () => {
-			const res = await fetchAPI<company&{props:CompanyProfile}>({
-				url: `/company/${user?.companyId}`,
+			const res = await fetchAPI<{ data: CompanyProfile }>({
+				url: `/self/details/${user?.companyId}`,
 				method: "GET",
-                token
+				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 			})
 			return res.data
 		},

@@ -14,7 +14,7 @@ export default function CompetitorMapping({
 	data: CompanyProfile[]
 }) {
 	const { data: userData } = useSelfCompany()
-	const selfData = userData?.props || data[0]
+	const selfData = userData?.data || data[0]
 
 	console.log({ userData })
 	return (
