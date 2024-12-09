@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from aihounds.endpoints import aggregate, kanban, keywords, marketsegment, mongodb, news, onboard, trends, typeform, vote, youtube, marketresearch, email, product, report
+from aihounds.endpoints import aggregate, kanban, keywords, marketsegment, mongodb, news, onboard, summary, trends, typeform, vote, youtube, marketresearch, email, product, report
 from aihounds.endpoints.crunchbase import crunchbase_router 
 from aihounds.endpoints.user import user_router
 from aihounds.endpoints.agent import api_router
@@ -36,6 +36,7 @@ app.include_router(news.router)
 app.include_router(vote.router)
 app.include_router(aggregate.router)
 app.include_router(rivals_router)
+app.include_router(summary.router)
 
 @app.get("/")
 def root():

@@ -52,7 +52,7 @@ class ConversationMongoStore(BaseModel):
     company_id: str
     title: str
     summary: Optional[str] = None 
-    messages: Optional[List[dict]] = [] 
+    messages: Optional[List[dict]] = None 
     
 class GenerateQueryResponse(BaseModel):
     query: str

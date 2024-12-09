@@ -103,9 +103,10 @@ def do_aggregate(conversation_id: str, query: str, context: str) -> List[Dict[st
     ai_list_return = []
     temp_query = query
     query = context + query
-    previous_conversations = list(mongo_client.find(
-        "conversations", 
-        {"id": conversation_id}
+    previous_conversations = list(mongo_client.read_by_id(
+        "messages", 
+        "conversation_id",
+        conversation_id
     ))
     
 
