@@ -12,7 +12,7 @@ async def get_aggregator(request: AgentRequest):
     This endpoint is used to get the aggregated data from the AI Hounds
     '''
     conversations = mongo_client.read_by_id("conversations", "_id", request.conversation_id)
-    print(conversations)
+    print(conversations,"These are your conversations")
     companies = mongo_client.read_by_id("company", "_id", conversations[0]["company_id"])
     context =  "My company details are " + str(companies[0]["name"]) + " " + str(companies[0]["description"]) + " " + str(companies[0]["vision"]) + " " + str(companies[0]["mission"]) + str(companies[0]["valuation"]) + str(companies[0]["domain"])
     response  = do_aggregate(request.conversation_id,request.query, context)

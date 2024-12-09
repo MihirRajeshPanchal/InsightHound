@@ -21,9 +21,11 @@ from aihounds.services.product import generate_product
 from aihounds.services.suggestions import generate_suggestions
 from aihounds.services.trends import generate_heatmap
 from aihounds.services.typeform import generate_typeform
-from langchain_community.tools.tavily_search import TavilySearchResults
 
-generate_tavily = TavilySearchResults(max_results=4)
+# from langchain_community.tools.tavily_search import TavilySearchResults
+from aihounds.services.agent import tavily_tool
+
+# generate_tavily=TavilySearchResults(max_results=4)
 tools = [
     generate_news,
     generate_product,
@@ -34,7 +36,7 @@ tools = [
     generate_kanban,
     generate_typeform,
     generate_rivals,
-    generate_tavily,
+    tavily_tool,
     generate_rivals_by_url,
 ]
 
@@ -50,7 +52,7 @@ selected_tool = {
     "generate_kanban": generate_kanban,  # changes but baadme
     "generate_typeform": generate_typeform,  # done
     "generate_rivals": generate_rivals,
-    "tavily_search_results_json": generate_tavily,
+    "tavily_tool": tavily_tool,
     "generate_rivals_by_url": generate_rivals_by_url,
 }
 
@@ -64,7 +66,7 @@ mapping = {
     "generate_kanban": "board",
     "generate_typeform": "questionnaire",
     "generate_rivals": "rival",
-    "tavily_search_results_json": "response_md",
+    "tavily_tool": "response_md",
     "generate_rivals_by_url": "about",
 }
 
