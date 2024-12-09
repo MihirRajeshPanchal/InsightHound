@@ -5,14 +5,11 @@ from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.tools import tool
 
+
 @tool
 def generate_segmentation(vision, mission, description, domain):
     """
-    Generates market segments based on the provided inputs.
-
-    This function uses a LangChain pipeline with a custom output parser to process 
-    the input data and generate a detailed list of market segments, including various 
-    attributes such as unit size, urgency, utilization, and financial metrics.
+    Generates market segments or total addressable market based on the provided inputs only if asked to.
 
     Args:
         vision (str): The vision statement to guide the market segmentation.
@@ -21,14 +18,27 @@ def generate_segmentation(vision, mission, description, domain):
         domain (str): The domain or industry relevant to the market segmentation.
 
     Returns:
-        list[dict]: A list of market segments, where each segment includes details 
-        such as unit size, urgency, benefit, potential revenue, market share, growth rate, 
+        list[dict]: A list of market segments, where each segment includes details
+        such as unit size, urgency, benefit, potential revenue, market share, growth rate,
         competition index, and financial metrics like customer acquisition cost and profit margin.
     """
-    chain = MARKETSEGMENT_PROMPT | openai_llm | OutputFixingParser.from_llm(parser=JsonOutputParser(pydantic_object=MarketSegmentSchema), llm=openai_llm)
-    
-    result = chain.invoke({"vision": vision, "mission": mission, "description": description, "domain": domain})
+    chain = (
+        MARKETSEGMENT_PROMPT
+        | openai_llm
+        | OutputFixingParser.from_llm(
+            parser=JsonOutputParser(pydantic_object=MarketSegmentSchema), llm=openai_llm
+        )
+    )
+
+    result = chain.invoke(
+        {
+            "vision": vision,
+            "mission": mission,
+            "description": description,
+            "domain": domain,
+        }
+    )
     print(result)
-    
+
     segments = result.get("segments", [])
     return segments

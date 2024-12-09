@@ -2,12 +2,13 @@ from aihounds.constants.hound import SERPAPI_KEY
 from serpapi import GoogleSearch
 from langchain_core.tools import tool
 
-@tool
-def generate_heatmap(query,geo):
-    """
-    Fetches Google Trends data for a specific query and geographic region.
 
-    This function uses the SERP API with the `google_trends` engine to fetch 
+@tool
+def generate_heatmap(query, geo):
+    """
+    Fetches trends or searches for a specific query or domain with respect to a geographic region.
+
+    This function uses the SERP API with the `google_trends` engine to fetch
     data on regional interest levels for a given search query. The results
     include details about the location, interest value, and geographic coordinates.
 
@@ -32,45 +33,27 @@ def generate_heatmap(query,geo):
         "geo": geo,
         "region": "CITY",
         "data_type": "GEO_MAP_0",
-        "api_key": SERPAPI_KEY
+        "api_key": SERPAPI_KEY,
     }
     search = GoogleSearch(params)
     results = search.get_dict()
-    interest_by_region = results.get("interest_by_region",
-                                     [
-                                         {
-                                             "coordinates":
-                                                 {
-                                                     "lat":
-                                                         31.2539259,
-                                                     "lng":
-                                                         75.7240654
-                                                 },
-                                             "location":
-                                                 "Sapror",
-                                             "max_value_index":
-                                                 0,
-                                             "value":
-                                                 "100",
-                                             "extracted_value":
-                                                 100
-                                         },
-                                         {
-                                             "coordinates":
-                                                 {
-                                                     "lat":
-                                                         12.8109999,
-                                                     "lng":
-                                                         80.0305118
-                                                 },
-                                             "location":
-                                                 "Kattankulathur",
-                                             "max_value_index":
-                                                 0,
-                                             "value":
-                                                 "66",
-                                             "extracted_value":
-                                                 66
-                                         }
-                                     ])
-    return {"query": query, "geo": geo, "interest_by_region" : interest_by_region}
+    interest_by_region = results.get(
+        "interest_by_region",
+        [
+            {
+                "coordinates": {"lat": 31.2539259, "lng": 75.7240654},
+                "location": "Sapror",
+                "max_value_index": 0,
+                "value": "100",
+                "extracted_value": 100,
+            },
+            {
+                "coordinates": {"lat": 12.8109999, "lng": 80.0305118},
+                "location": "Kattankulathur",
+                "max_value_index": 0,
+                "value": "66",
+                "extracted_value": 66,
+            },
+        ],
+    )
+    return {"query": query, "geo": geo, "interest_by_region": interest_by_region}

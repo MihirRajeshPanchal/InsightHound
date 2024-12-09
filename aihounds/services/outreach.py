@@ -183,7 +183,7 @@ def generate_rivals(
     keyword_tags: Optional[List[str]],
 ):
     """
-    Retrieve rival companies based on specified criteria using LinkedIn company search.
+    Retrieve multiple other companies to compare them based on specified criteria using LinkedIn company search.
 
     This tool function helps identify potential rival companies by searching through
     company profiles based on employee count, geographical locations, and optional
@@ -235,8 +235,7 @@ def generate_rivals_by_url(
 @tool
 def generate_linkedin(purpose):
     """
-    Generates LinkedIn-related content, such as email templates and subjects,
-    based on the provided purpose.
+    Generates LinkedIn direct messages based on the provided purpose like reaching out, campaingn, pitching, etc.
 
     Parameters:
         purpose (str): The specific purpose for generating the LinkedIn content.
