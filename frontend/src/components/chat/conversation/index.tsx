@@ -11,19 +11,17 @@ import { RainbowButton } from "@/components/ui/rainbow-button"
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import News from "../market-intelligence/news"
-import ProductCards from "../product-comparison/cards"
 import AudienceSegment from "../audience-segments"
 import QuestionnaireCard from "../feedback-hub/card"
 import Board from "../hound-board/board"
 import CompetitorMapping from "../competitor-mapping"
 import SendPage from "../certisend/send-page"
-import LinkedinForm from "../audience-outreach/form"
 import useAgent from "@/hooks/use-agent"
 import { toast } from "sonner"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowDown, ArrowRight, Lightbulb } from "lucide-react"
+import { ArrowRight, Lightbulb } from "lucide-react"
 import { parse } from "@/lib/utils/parse-msg"
 import MdBlock from "@/components/ui/md-block"
 
@@ -53,9 +51,8 @@ function UserMessage({ message }: { message: Message }) {
 				<div className="flex gap-4 py-2">
 					<Avatar className="size-8 rounded-xl overflow-clip">
 						<AvatarImage
-							src={`https://avatar.vercel.sh/${
-								"user1156" + message.id
-							}.png`}
+							src={`https://avatar.vercel.sh/${"user1156" + message.id
+								}.png`}
 							alt={"user"}
 						/>
 						<AvatarFallback>U</AvatarFallback>
@@ -71,7 +68,7 @@ function UserMessage({ message }: { message: Message }) {
 function RenderActionCard({ message }: { message: Message }) {
 	switch (message.action) {
 		case ActionEnum.ABOUT:
-			return <CompanyCard company={message.data} />
+			return <CompanyCard company={message.data?.[0]} />
 		case ActionEnum.FEED:
 			return <News data={message.data} />
 		case ActionEnum.PRODUCT:
@@ -97,8 +94,7 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.RIVAL:
 			return (
 				<CompetitorMapping
-					data={message.data.rivals}
-					userData={message.data.self}
+					data={message.data}
 				/>
 			)
 		case ActionEnum.MAIL_INITIATE:
@@ -204,7 +200,8 @@ export default function ConversationPage({
 		}
 	}, [messages])
 
-	async function onSubmit(query: string = "") {
+	async function onSubmit(query: string) {
+		if (!query.trim().length) return
 		addMessage({
 			id: Math.random().toString(),
 			createdAt: new Date(),
@@ -234,11 +231,11 @@ export default function ConversationPage({
 
 	const suggestionsRaw = messages.filter((m) => m.role === RoleEnum.AI).pop()
 		?.suggestions || [
-		"Tell me about my startup",
-		"Show me my competitors",
-		"Market trends in urban India",
-		"Customer segmentation of AI market",
-	]
+			"Tell me about my startup",
+			"Show me my competitors",
+			"Market trends in urban India",
+			"Customer segmentation of AI market",
+		]
 	const suggestions: string[] =
 		typeof suggestionsRaw === "string"
 			? parse(suggestionsRaw)
@@ -262,11 +259,10 @@ export default function ConversationPage({
 				{/* Suggestions */}
 				<div className="~2xl:max-w-screen-2xl w-full mx-auto px-8">
 					<ScrollArea
-						className={`relative max-w-[100vw] w-full | after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
-							open
-								? "lg:max-w-[calc(100vw_-_2rem_-_16rem)]"
-								: "lg:max-w-[calc(100vw_-_2rem)]"
-						}`}
+						className={`relative max-w-[100vw] w-full | after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${open
+							? "lg:max-w-[calc(100vw_-_2rem_-_16rem)]"
+							: "lg:max-w-[calc(100vw_-_2rem)]"
+							}`}
 					>
 						<ScrollBar
 							orientation="horizontal"
@@ -306,7 +302,7 @@ export default function ConversationPage({
 						onKeyDown={(e) => {
 							if (e.key === "Enter") {
 								e.preventDefault()
-								onSubmit()
+								onSubmit(query)
 							}
 						}}
 						className="w-full resize-none"
