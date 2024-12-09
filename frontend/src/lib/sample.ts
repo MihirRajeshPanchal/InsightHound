@@ -10300,7 +10300,11 @@ const sampleConversationMessages: Message[] = [
 		role: RoleEnum.AI,
 		suggestions: [],
 		action: ActionEnum.FEED,
-		data: sampleNewsResponse,
+		data: {
+			company_name: "Google",
+			news_url:
+				"https://newsapi.org/v2/everything?q=Google%20latest%20news&from=2024-11-09&sortBy=publishedAt&apiKey=b8fafa8b81b54b97b20f4ddab5e2d3eb&language=en",
+		},
 	},
 	{
 		id: "129",
@@ -10340,7 +10344,7 @@ const sampleConversationMessages: Message[] = [
 		query: "How would i find the beachhead market for this?",
 	},
 	{
-		id: "134",
+		id: "6756c96b0296e4d71479a632",
 		createdAt: new Date(),
 		role: RoleEnum.AI,
 		suggestions: [],

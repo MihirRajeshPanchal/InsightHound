@@ -1,7 +1,7 @@
 // import { sampleNewsResponse } from '@/lib/sample';
 import { ArticlesApiResponse } from "@/lib/types/api"
 import React, { useEffect } from "react"
-import NewsCard from "./news-card"
+import NewsCard from "./news-report-card"
 import { Button } from "@/components/ui/button"
 import { NewsData } from "@/lib/types/chat"
 import { useQuery } from "@tanstack/react-query"
@@ -21,14 +21,7 @@ export default function News({ data }: { data: NewsData }) {
 			return resp.data
 		},
 	})
-	const [shown, setShown] = React.useState<number>(
-		Math.min(6, result?.articles?.length || 0)
-	)
-	useEffect(() => {
-		if (result?.articles) {
-			setShown(Math.min(6, result.articles.length))
-		}
-	}, [result])
+	console.log({ data })
 
 	if (isLoading) {
 		return (
@@ -40,21 +33,12 @@ export default function News({ data }: { data: NewsData }) {
 
 	return (
 		<div className="flex flex-col items-end">
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-				{result?.articles.slice(0, shown).map((article, index) => (
+			<div className="report | grid grid-cols-2 w-full *:w-full gap-4">
+				{result?.articles.slice(0, 20).map((article, index) => (
 					<NewsCard key={index} article={article} />
 				))}
 			</div>
-			<Button
-				className="w-fit tems-end mt-4 "
-				onClick={() =>
-					setShown((prev) =>
-						Math.min(prev + 6, result?.articles.length || 0)
-					)
-				}
-			>
-				Show more
-			</Button>
+			<Button className="w-fit tems-end mt-4 ">Show more</Button>
 		</div>
 	)
 }
