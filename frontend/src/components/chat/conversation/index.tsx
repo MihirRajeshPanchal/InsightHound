@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import useAgent from "@/hooks/use-agent"
 import { toast } from "sonner"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, StopCircle } from "lucide-react"
 import { parse } from "@/lib/utils/parse-msg"
 import { Messages } from "./components"
 
@@ -22,11 +22,11 @@ export default function ConversationPage({
 }) {
 	console.log(conversation)
 	const [messages, setMessages] = React.useState<Message[]>(
-		conversation?.messages || []
+		conversation?.messages || [],
 	)
 	const [query, setQuery] = React.useState<string>("")
 	const { open, setOpen } = useSidebar()
-	const { mutateAsync, isPending } = useAgent()
+	const { mutateAsync, isPending, reset } = useAgent()
 
 	const divRef = React.useRef<HTMLDivElement>(null)
 
@@ -39,7 +39,7 @@ export default function ConversationPage({
 	}
 	useEffect(() => {
 		const messageEl = document.getElementById(
-			`message-${messages.length - 1}`
+			`message-${messages.length - 1}`,
 		)
 		if (messageEl) {
 			messageEl.scrollIntoView({ behavior: "smooth" })
@@ -80,11 +80,11 @@ export default function ConversationPage({
 
 	const suggestionsRaw = messages.filter((m) => m.role === RoleEnum.AI).pop()
 		?.suggestions || [
-			"Tell me about my startup",
-			"Show me my competitors",
-			"Market trends in urban India",
-			"Customer segmentation of AI market",
-		]
+		"Tell me about my startup",
+		"Show me my competitors",
+		"Market trends in urban India",
+		"Customer segmentation of AI market",
+	]
 	const suggestions: string[] =
 		typeof suggestionsRaw === "string"
 			? parse(suggestionsRaw)
@@ -108,10 +108,11 @@ export default function ConversationPage({
 				{/* Suggestions */}
 				<div className="~2xl:max-w-screen-2xl w-full mx-auto px-8">
 					<ScrollArea
-						className={`relative max-w-[100vw] w-full | after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${open
-							? "lg:max-w-[calc(100vw_-_2rem_-_16rem)]"
-							: "lg:max-w-[calc(100vw_-_2rem)]"
-							}`}
+						className={`relative max-w-[100vw] w-full | after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
+							open
+								? "lg:max-w-[calc(100vw_-_2rem_-_16rem)]"
+								: "lg:max-w-[calc(100vw_-_2rem)]"
+						}`}
 					>
 						<ScrollBar
 							orientation="horizontal"
@@ -122,7 +123,7 @@ export default function ConversationPage({
 								"flex ~w-full gap-2 mt-2 z-10 transition-opacity duration-700 ~px-8 ~2xl:px-28",
 								!suggestions || isPending
 									? "opacity-0"
-									: "opacity-100"
+									: "opacity-100",
 							)}
 						>
 							{suggestions
@@ -159,11 +160,15 @@ export default function ConversationPage({
 						onChange={(e) => setQuery(e.target.value)}
 					/>
 					<RainbowButton
-						disabled={isPending || query.trim().length === 0}
+						disabled={!isPending && query.trim().length === 0}
 						className="w-fit mt-2"
-						onClick={() => onSubmit(query)}
+						onClick={() => (isPending ? reset() : onSubmit(query))}
 					>
-						<ArrowTopRightIcon className="~-rotate-45 w-6 h-6" />
+						{isPending ? (
+							<StopCircle className="size-6" />
+						) : (
+							<ArrowTopRightIcon className="size-6" />
+						)}
 					</RainbowButton>
 				</div>
 			</div>
