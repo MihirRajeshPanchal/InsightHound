@@ -10,6 +10,7 @@ from aihounds.constants.outreach import LINKEDIN_PROMPT
 from aihounds.models.outreach import LinkedInLLMResponse
 from aihounds.endpoints.rivals import search_companies
 from aihounds.constants.hound import mongo_client
+
 load_dotenv()
 import os
 from aihounds.constants.prompt import prompt_template, generate_message_prompt
@@ -216,15 +217,15 @@ def generate_rivals_by_url(
     linkedin_url: str,
 ):
     """
-    Retrieve rival companies based on specified criteria using LinkedIn company Url.
+    Retrieve a  company's information based on their  LinkedIn company Url.
 
-    This tool function helps identify potential rival companies by searching through
+    This tool function helps you get the company information by searching through
     company profiles based on linkedin url
     Args:
         linkedin_url (str): The LinkedIn URL of the company to search for rivals.
 
     Returns:
-        Dict: A rival company profiles, where each profile includes
+        Dict: A company profile
 
     """
 
@@ -300,13 +301,11 @@ def get_rivals_test(
     return rivals_data
 
 
-def get_self(id,linkedin_url):
-    
+def get_self(id, linkedin_url):
+
     try:
-        data=get_company_profile_from_url(linkedin_url, "Axq_BT2xSrilkSRtXGW8AQ")
-        return mongo_client.update("company",id,{"props" : data})
+        data = get_company_profile_from_url(linkedin_url, "Axq_BT2xSrilkSRtXGW8AQ")
+        return mongo_client.update("company", id, {"props": data})
     except Exception as e:
         print(f"Error: {e}")
         return None
-    
-    
