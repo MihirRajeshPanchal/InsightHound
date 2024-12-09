@@ -59,4 +59,16 @@ router.delete('/:id', authMiddleware, async (req, res) => {
   }
 });
 
+router.get('/:id', authMiddleware, async (req, res) => {
+  try {
+    const company = await prisma.company.findFirst({
+      where: { id: Number(id) },
+    });
+    res.json(company);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred while fetching companys' });
+  }
+});
+
 export default router;

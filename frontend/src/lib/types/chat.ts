@@ -1,5 +1,4 @@
 import {
-	CompanyData,
 	CoordinateDataApiResponse,
 	FormUrlResponse,
 	MockResponse,
@@ -66,7 +65,7 @@ export type LinkedinData = {
 export type AIResponse =
 	| {
 			action: ActionEnum.ABOUT
-			data: CompanyData
+			data: CompanyProfile
 	  }
 	| {
 			action: ActionEnum.FEED
@@ -74,7 +73,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.RIVAL
-			data: { rivals: CompanyData[]; self: CompanyData }
+			data: CompanyProfile[]
 	  }
 	| {
 			action: ActionEnum.PRODUCT
@@ -156,3 +155,37 @@ type SurveyQuestion = {
 }
 
 export type SurveyResponses = SurveyQuestion[]
+
+export type CompanyProfile = Partial<{
+	object: "CompanyProfile"
+	id: string
+	entity_urn: string
+	name: string
+	description: string
+	public_identifier: string
+	profile_url: string
+	default_locale: string
+	followers_count: number
+	is_following: boolean
+	is_employee: boolean
+	organization_type: string
+	locations: {
+		is_headquarter: boolean
+		city: string
+		country: string | null
+		street: string[]
+	}[]
+	messaging: {
+		is_enabled: boolean
+		entity_urn: string
+		id: string
+	}
+	tagline: string
+	activities: string[]
+	website: string
+	foundation_date: string
+	employee_count: number
+	industry: string[]
+	logo: string
+	logo_large: string
+}>

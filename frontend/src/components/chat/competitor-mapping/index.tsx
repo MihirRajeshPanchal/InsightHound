@@ -1,21 +1,26 @@
 "use client"
 
-import { CompanyData } from "@/lib/types/api"
 import { CompanyCard } from "../market-intelligence/company-card"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { CompanyProfile } from "@/lib/types/chat"
+import useSelfCompany from "@/hooks/use-self"
 
 export default function CompetitorMapping({
-	userData,
+	// userData,
 	data,
 }: {
-	userData: CompanyData
-	data: CompanyData[]
+	// userData: CompanyData
+	data: CompanyProfile[]
 }) {
+	const { data: userData } = useSelfCompany()
+	const selfData = userData?.data || data[0]
+
+	console.log({ userData })
 	return (
 		<section>
 			<div className="compareLtoR | group | overflow-hidden p-2 grid gap-0 grid-cols-[0fr_1fr] peer-checked:grid-cols-[0fr_1fr] has-[.compCard-company:checked]:gap-4 has-[.compCard-company:checked]:grid-cols-[1fr_1fr] transition-[grid-template-columns,gap] duration-500">
-				{userData && (
+				{selfData && (
 					<div className="overflow-hidden">
 						<div className="competitorCard-company w-max group-has-[.compCard-company:checked]:w-full [interpolate-size:allow-keywords] transition-[width] duration-500">
 							<button className="bg-foreground text-background font-medium rounded-md grid place-items-center w-full my-4">
@@ -26,7 +31,7 @@ export default function CompetitorMapping({
 									Back
 								</label>
 							</button>
-							<CompanyCard company={userData} />
+							<CompanyCard company={selfData} />
 
 							<input
 								type="radio"

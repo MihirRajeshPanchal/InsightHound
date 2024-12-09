@@ -96,7 +96,7 @@ export default function ChatInitial() {
 	const router = useRouter()
 	const { setOpen } = useSidebar()
 	async function onSubmit(query: string) {
-		if (!isValid) return
+		if (!query.trim().length) return
 		const resp = await mutateAsync(query)
 		if (resp?.conversation_id) {
 			agentMutate({ query, conversation_id: resp.conversation_id })
