@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import React, { useEffect } from "react"
 import { CompanyCard } from "../market-intelligence/company-card"
 import { cn, convertMarkdownToHtml } from "@/lib/utils"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { RainbowButton } from "@/components/ui/rainbow-button"
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
@@ -23,7 +23,7 @@ import { toast } from "sonner"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowDown, Lightbulb } from "lucide-react"
+import { ArrowDown, ArrowRight, Lightbulb } from "lucide-react"
 import { parse } from "@/lib/utils/parse-msg"
 import MdBlock from "@/components/ui/md-block"
 
@@ -53,7 +53,9 @@ function UserMessage({ message }: { message: Message }) {
 				<div className="flex gap-4 py-2">
 					<Avatar className="size-8 rounded-xl overflow-clip">
 						<AvatarImage
-							src={`https://avatar.vercel.sh/${"user1156" + message.id}.png`}
+							src={`https://avatar.vercel.sh/${
+								"user1156" + message.id
+							}.png`}
 							alt={"user"}
 						/>
 						<AvatarFallback>U</AvatarFallback>
@@ -73,7 +75,8 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.FEED:
 			return <News data={message.data} />
 		case ActionEnum.PRODUCT:
-			return <ProductCards data={message.data} />
+			// return <ProductCards data={message.data} />
+			return <></>
 		case ActionEnum.SEGMENTATION:
 			return <AudienceSegment data={message.data} />
 		case ActionEnum.QUESTIONNAIRE:
@@ -101,7 +104,8 @@ function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.MAIL_INITIATE:
 			return <SendPage />
 		case ActionEnum.LINKEDIN:
-			return <LinkedinForm data={message.data?.message || ""} />
+			// return <LinkedinForm data={message.data?.message || ""} />
+			return <></>
 		case ActionEnum.HEATMAP:
 			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
@@ -133,7 +137,7 @@ function AIMessage({ message }: { message: Message }) {
 									className=" text-gray-300"
 									dangerouslySetInnerHTML={{
 										__html: convertMarkdownToHtml(
-											message.insight,
+											message.insight
 										),
 									}}
 								/>
@@ -176,17 +180,13 @@ export default function ConversationPage({
 }) {
 	console.log(conversation)
 	const [messages, setMessages] = React.useState<Message[]>(
-		conversation?.messages || [],
+		conversation?.messages || []
 	)
 	const [query, setQuery] = React.useState<string>("")
-	const { setOpen } = useSidebar()
+	const { open, setOpen } = useSidebar()
 	const { mutateAsync, isPending } = useAgent()
 
 	const divRef = React.useRef<HTMLDivElement>(null)
-
-	const generatePDF = async () => {
-		window.open(`/report/${id}`, "_blank")
-	}
 
 	useEffect(() => {
 		setOpen(true)
@@ -197,7 +197,7 @@ export default function ConversationPage({
 	}
 	useEffect(() => {
 		const messageEl = document.getElementById(
-			`message-${messages.length - 1}`,
+			`message-${messages.length - 1}`
 		)
 		if (messageEl) {
 			messageEl.scrollIntoView({ behavior: "smooth" })
@@ -246,64 +246,81 @@ export default function ConversationPage({
 
 	console.log(suggestions)
 	return (
-		<div className="px-4">
-			<div className="flex justify-between items-center">
-				<h1 className="text-2xl font-bold pb-2">
-					{conversation.title}
-				</h1>
-				<RainbowButton
-					// disabled={isPending || query.trim().length === 0}
-					className="w-fit !px-2 mx-4 !py-1 h-8"
-					onClick={generatePDF}
-				>
-					<ArrowDown size={16} className="" />
-				</RainbowButton>
-			</div>
+		<div className="*:px-4 h-full overflow-auto grid grid-rows-[auto_1fr_auto]">
 			<hr />
-			<ScrollArea className="h-[74vh] *:pt-4">
-				<div ref={divRef} className="h-fit">
+			{/* Messages */}
+			<ScrollArea className="~h-[65vh] *:pt-4">
+				<div
+					ref={divRef}
+					className="h-fit max-w-screen-xl mx-auto bg-text/[2%] px-8 rounded-xl border-2 border-text/20"
+				>
 					<Messages messages={messages} isPending={isPending} />
 				</div>
 			</ScrollArea>
-			<div
-				className={cn(
-					"flex gap-2 mt-2 z-10 transition-opacity duration-700",
-					!suggestions || isPending ? "opacity-0" : "opacity-100",
-				)}
-			>
-				{suggestions.slice(0, 4).map((suggestion, index) => (
-					<button
-						type="button"
-						onClick={() => onSubmit(suggestion)}
-						key={index}
-						className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
+
+			<div className="~contents ~w-fit ~mx-auto ~bg-accent/5 !px-0 py-4 ~mb-2 ~rounded-xl">
+				{/* Suggestions */}
+				<div className="~2xl:max-w-screen-2xl w-full mx-auto px-8">
+					<ScrollArea
+						className={`relative max-w-[100vw] w-full | after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
+							open
+								? "lg:max-w-[calc(100vw_-_2rem_-_16rem)]"
+								: "lg:max-w-[calc(100vw_-_2rem)]"
+						}`}
 					>
-						{suggestion}
-						<ArrowTopRightIcon className="w-3 h-3" />
-					</button>
-				))}
-			</div>
-			<div className="flex gap-4 shadow-md pt-2">
-				<Textarea
-					autoFocus
-					placeholder="Type your message here..."
-					onKeyDown={(e) => {
-						if (e.key === "Enter") {
-							e.preventDefault()
-							onSubmit()
-						}
-					}}
-					className="w-full"
-					value={query}
-					onChange={(e) => setQuery(e.target.value)}
-				/>
-				<RainbowButton
-					disabled={isPending || query.trim().length === 0}
-					className="w-fit mt-2"
-					onClick={() => onSubmit(query)}
-				>
-					<ArrowTopRightIcon className="" />
-				</RainbowButton>
+						<ScrollBar
+							orientation="horizontal"
+							className="opacity-0 pointer-events-none ~lg:pointer-events-auto"
+						/>
+						<div
+							className={cn(
+								"flex ~w-full gap-2 mt-2 z-10 transition-opacity duration-700 ~px-8 ~2xl:px-28",
+								!suggestions || isPending
+									? "opacity-0"
+									: "opacity-100"
+							)}
+						>
+							{suggestions
+								.slice(0, 4)
+								.map((suggestion, index) => (
+									<button
+										type="button"
+										onClick={() => onSubmit(suggestion)}
+										key={index}
+										// className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-text text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
+										className="group flex items-center gap-2 transition-colors text-nowrap text-sm font-medium text-text/75 hover:text-text px-3 py-1.5 bg-[radial-gradient(hsl(var(--text)/20%),hsl(var(--text)/0%))] border border-text/20 rounded-full"
+									>
+										{suggestion}
+										<ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform" />
+									</button>
+								))}
+						</div>
+					</ScrollArea>
+				</div>
+				<hr className="my-3" />
+				{/* ChatBox */}
+				<div className="flex gap-4 shadow-md w-full ~max-w-screen-xl mx-auto px-8">
+					<Textarea
+						autoFocus
+						placeholder="Type your message here..."
+						onKeyDown={(e) => {
+							if (e.key === "Enter") {
+								e.preventDefault()
+								onSubmit()
+							}
+						}}
+						className="w-full resize-none"
+						value={query}
+						onChange={(e) => setQuery(e.target.value)}
+					/>
+					<RainbowButton
+						disabled={isPending || query.trim().length === 0}
+						className="w-fit mt-2"
+						onClick={() => onSubmit(query)}
+					>
+						<ArrowTopRightIcon className="~-rotate-45 w-6 h-6" />
+					</RainbowButton>
+				</div>
 			</div>
 		</div>
 	)
