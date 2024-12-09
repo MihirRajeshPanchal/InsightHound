@@ -68,7 +68,7 @@ function UserMessage({ message }: { message: Message }) {
 function RenderActionCard({ message }: { message: Message }) {
 	switch (message.action) {
 		case ActionEnum.ABOUT:
-			return <CompanyCard company={message.data?.[0]} />
+			return <CompanyCard company={message.data} />
 		case ActionEnum.FEED:
 			return <News data={message.data} />
 		case ActionEnum.PRODUCT:
@@ -225,6 +225,9 @@ export default function ConversationPage({
 						?.suggestions || [],
 			})
 			return
+		}
+		if (response.length === 0) {
+			toast.info("Please provide linkedin url of the desired company")
 		}
 		response.forEach((msg) => addMessage(msg))
 	}

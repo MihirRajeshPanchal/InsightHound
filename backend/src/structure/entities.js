@@ -45,6 +45,10 @@ export const companyEntity = {
     "type": "number"
   },
   {
+    "name": "linkedinUrl",
+    "type": "string"
+  },
+  {
     "name": "domain",
     "type": "string"
   },

@@ -1,5 +1,7 @@
-import OnboardingForm from "@/components/custom/onboarding"
+import dynamic from "next/dynamic"
 import React from "react"
+
+const OnboardingForm = dynamic(() => import("@/components/chat/onboarding"), { ssr: false })
 
 export default function Page() {
 	return (

@@ -32,6 +32,7 @@ import { useRouter } from "next/navigation"
 import { DOMAINS } from "@/lib/constants"
 import React from "react"
 import { useAuth } from "@/hooks/use-auth"
+import { company } from "@prisma/client"
 
 const formSchema = z.object({
 	name: z.string(),
@@ -41,6 +42,7 @@ const formSchema = z.object({
 	domain: z.string(),
 	description: z.string(),
 	document: z.string().optional(),
+	linkedinUrl: z.string(),
 })
 
 type FormValues = z.infer<typeof formSchema>
@@ -65,7 +67,7 @@ export default function OnboardingForm() {
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const { document, ...rest } = values
 			const res = await fetchAPI<
-				TNoParams,
+				company & { _id: string },
 				TNoParams,
 				Partial<FormValues>
 			>({
@@ -76,12 +78,15 @@ export default function OnboardingForm() {
 				},
 				token,
 			})
-			if (!res.data?.error) {
+			if (res.data) {
 				toast.success("Form submitted successfully")
 				toast.success("Cooking up your dashboard!")
-				await fetchAPI({
-					url: `/self/${user.id}`,
-					method: "GET",
+				await fetchAPI<TNoParams, TNoParams, { linkedin_url: string }>({
+					url: `/v2/self/${res.data._id || res.data.id}`,
+					method: "POST",
+					body: {
+						linkedin_url: form.getValues("linkedinUrl"),
+					},
 					baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
 				})
 				router.push("/chat")
@@ -193,6 +198,27 @@ export default function OnboardingForm() {
 							<FormDescription>
 								A concise statement outlining the startup&apos;s
 								purpose.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+
+				<FormField
+					control={form.control}
+					name="linkedinUrl"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Linkedin URL</FormLabel>
+							<FormControl>
+								<Input
+									placeholder="https://www.linkedin.com/company/technova-solutions"
+									type="url"
+									{...field}
+								/>
+							</FormControl>
+							<FormDescription>
+								Link to your startup&apos;s linkedin profile
 							</FormDescription>
 							<FormMessage />
 						</FormItem>

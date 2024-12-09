@@ -1,5 +1,4 @@
 import {
-	CompanyData,
 	CoordinateDataApiResponse,
 	FormUrlResponse,
 	MockResponse,
@@ -66,7 +65,7 @@ export type LinkedinData = {
 export type AIResponse =
 	| {
 			action: ActionEnum.ABOUT
-			data: CompanyProfile[]
+			data: CompanyProfile
 	  }
 	| {
 			action: ActionEnum.FEED
@@ -157,7 +156,7 @@ type SurveyQuestion = {
 
 export type SurveyResponses = SurveyQuestion[]
 
-export type CompanyProfile = {
+export type CompanyProfile = Partial<{
 	object: "CompanyProfile";
 	id: string;
 	entity_urn: string;
@@ -189,4 +188,4 @@ export type CompanyProfile = {
 	industry: string[];
 	logo: string;
 	logo_large: string;
-  };
+  }>;
