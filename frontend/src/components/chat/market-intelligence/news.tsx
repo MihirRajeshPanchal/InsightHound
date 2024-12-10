@@ -10,7 +10,7 @@ import { fetchAPI } from "@/lib/utils/fetch-api"
 
 export default function News({ data }: { data: NewsData }) {
 	const { data: result, isLoading } = useQuery({
-		queryKey: ["news", data.company_name],
+		queryKey: ["news", data.news_url],
 		queryFn: async () => {
 			if (!data?.news_url) return
 			const resp = await fetchAPI<ArticlesApiResponse>({
