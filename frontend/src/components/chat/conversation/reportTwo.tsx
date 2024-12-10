@@ -4,7 +4,7 @@ import { Conversation } from "@/lib/types/chat"
 import { Separator } from "@/components/ui/separator"
 import { ActionEnum, Message, RoleEnum } from "@/lib/types/chat"
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
-import React from "react"
+import React, { useEffect } from "react"
 import { CompanyCard } from "../market-intelligence/company-card"
 import News from "../market-intelligence/news-report"
 import ProductCards from "../product-comparison/cards-report"
@@ -15,9 +15,13 @@ import CompetitorMapping from "../competitor-mapping/index-report"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Lightbulb } from "lucide-react"
+import { Lightbulb, Loader2 } from "lucide-react"
 import MdBlock from "@/components/ui/md-block"
 import { convertMarkdownToHtml } from "@/lib/utils"
+import { useQuery } from "@tanstack/react-query"
+import { fetchAPI } from "@/lib/utils/fetch-api"
+import { TNoParams } from "@/lib/types/common"
+import { FaSpinner } from "react-icons/fa"
 
 export const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -107,9 +111,19 @@ export function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.HEATMAP:
 			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
-			return <MdBlock md={message.data.data} />
+			return (
+				<MdBlock
+					className="p-2 border bg-background/5 border-background/20 rounded-lg"
+					md={message.data.data}
+				/>
+			)
 		case ActionEnum.RESPONSE_MD_PENDING:
-			return <MdBlock md={message.data} />
+			return (
+				<MdBlock
+					className="p-2 border bg-background/5 border-background/20 rounded-lg"
+					md={message.data}
+				/>
+			)
 		default:
 			return <div>HoundBot failed to cook</div>
 	}
@@ -179,6 +193,31 @@ export default function ConversationReportPage({
 
 	const divRef = React.useRef<HTMLDivElement>(null)
 
+	const { data } = useQuery({
+		queryKey: ["conversation-report-summary", conversation._id],
+		queryFn: async () => {
+			const res = await fetchAPI<
+				{ summary: string },
+				TNoParams,
+				{ conversation_id: string }
+			>({
+				url: "/generate_summary",
+				method: "POST",
+				body: {
+					conversation_id: conversation._id,
+				},
+				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
+			})
+			return res.data
+		},
+	})
+	useEffect(() => {
+		if (!data) return
+		setTimeout(() => {
+			window.print()
+		}, 3000)
+	}, [data])
+
 	// useEffect(() => {
 	// 	setTimeout(() => {
 	// 		window.print()
@@ -200,6 +239,11 @@ export default function ConversationReportPage({
 					<h1 className="text-2xl font-bold pb-2">
 						{conversation.title}
 					</h1>
+					<img
+						src="/logo.png"
+						alt="Logo"
+						className="mix-blend-difference"
+					/>
 					{/* <RainbowButton
 					// disabled={isPending || query.trim().length === 0}
 					className="w-fit !px-2 mx-4 !py-1 h-8"
@@ -210,6 +254,25 @@ export default function ConversationReportPage({
 				</div>
 				<hr />
 				<div ref={divRef} className="h-fit">
+					{data?.summary ? (
+						<>
+							<h2 className="my-2 text-xl font-semibold text-background">
+								Summary
+							</h2>
+							<MdBlock
+								className="mb-4 p-2 border bg-background/5 border-background/20 rounded-lg"
+								md={data?.summary || ""}
+							/>
+							<hr />
+						</>
+					) : (
+						<h2 className="my-4 flex gap-2 items-center">
+							<span>
+								<Loader2 className="animate-spin" />
+							</span>
+							Generating Summary...{" "}
+						</h2>
+					)}
 					<Messages messages={messages} isPending={false} />
 				</div>
 			</div>
