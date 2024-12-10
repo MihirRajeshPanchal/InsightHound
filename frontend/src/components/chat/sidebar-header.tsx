@@ -32,7 +32,7 @@ export default function SidebarHeader() {
 		<div
 			className={cn(
 				"w-full flex justify-between items-center transition-opacity duration-500",
-				conversation ? "opacity-100" : "opacity-0 pointer-events-none"
+				conversation ? "opacity-100" : "opacity-0 pointer-events-none",
 			)}
 		>
 			<h1 className="lg:text-2xl font-bold">{conversation?.title}</h1>

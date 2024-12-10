@@ -22,7 +22,7 @@ export default function ConversationPage({
 }) {
 	console.log(conversation)
 	const [messages, setMessages] = React.useState<Message[]>(
-		conversation?.messages || []
+		conversation?.messages || [],
 	)
 	const [query, setQuery] = React.useState<string>("")
 	const { open, setOpen } = useSidebar()
@@ -39,7 +39,7 @@ export default function ConversationPage({
 	}
 	useEffect(() => {
 		const messageEl = document.getElementById(
-			`message-${messages.length - 1}`
+			`message-${messages.length - 1}`,
 		)
 		if (messageEl) {
 			messageEl.scrollIntoView({ behavior: "smooth" })
@@ -124,7 +124,7 @@ export default function ConversationPage({
 							"flex gap-2 z-10 transition-opacity duration-700 lg:justify-center overflow-auto",
 							!suggestions || isPending
 								? "opacity-0"
-								: "opacity-100"
+								: "opacity-100",
 						)}
 					>
 						{suggestions.slice(0, 4).map((suggestion, index) => (

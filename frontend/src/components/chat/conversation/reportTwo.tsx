@@ -12,8 +12,6 @@ import AudienceSegment from "../audience-segments"
 import QuestionnaireCard from "../feedback-hub/card"
 import Board from "../hound-board/board"
 import CompetitorMapping from "../competitor-mapping"
-import SendPage from "../certisend/send-page"
-import LinkedinForm from "../audience-outreach/form"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -135,7 +133,7 @@ export function AIMessage({ message }: { message: Message }) {
 									className=" text-gray-300"
 									dangerouslySetInnerHTML={{
 										__html: convertMarkdownToHtml(
-											message.insight
+											message.insight,
 										),
 									}}
 								/>

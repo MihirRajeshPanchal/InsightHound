@@ -184,7 +184,7 @@ export default function ChatInitial() {
 			<div
 				className={cn(
 					"flex gap-2 mt-4 z-10 transition-opacity duration-700 justify-center overflow-auto",
-					!suggestions ? "opacity-0" : "opacity-100"
+					!suggestions ? "opacity-0" : "opacity-100",
 				)}
 			>
 				{suggestions.slice(0, 4).map((suggestion, index) => (
