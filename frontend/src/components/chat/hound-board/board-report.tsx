@@ -19,7 +19,7 @@ async function updateCards(cards: CardType[], id: string) {
 			cards.map((card) => ({
 				status: card.column,
 				task: card.title,
-			}))
+			})),
 		),
 	}
 	await fetchAPI<TNoParams, TNoParams, KanbanPutBody>({

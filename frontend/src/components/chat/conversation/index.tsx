@@ -20,7 +20,6 @@ export default function ConversationPage({
 	id: string
 	conversation: Conversation
 }) {
-	console.log(conversation)
 	const [messages, setMessages] = React.useState<Message[]>(
 		conversation?.messages || [],
 	)
@@ -92,7 +91,6 @@ export default function ConversationPage({
 			? parse(suggestionsRaw)
 			: suggestionsRaw
 
-	console.log(suggestions)
 	return (
 		<div className="*:px-4 h-full overflow-auto grid grid-rows-[auto_1fr_auto]">
 			<hr />

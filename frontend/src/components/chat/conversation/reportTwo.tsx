@@ -21,7 +21,6 @@ import { convertMarkdownToHtml } from "@/lib/utils"
 import { useQuery } from "@tanstack/react-query"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import { TNoParams } from "@/lib/types/common"
-import { FaSpinner } from "react-icons/fa"
 
 export const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -149,7 +148,7 @@ export function AIMessage({ message }: { message: Message }) {
 									className=" text-gray-300"
 									dangerouslySetInnerHTML={{
 										__html: convertMarkdownToHtml(
-											message.insight
+											message.insight,
 										),
 									}}
 								/>

@@ -1,8 +1,6 @@
 "use client"
 
 import { CompanyCard } from "../market-intelligence/company-card"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
 import { CompanyProfile } from "@/lib/types/chat"
 import useSelfCompany from "@/hooks/use-self"
 
@@ -16,7 +14,6 @@ export default function CompetitorMapping({
 	const { data: userData } = useSelfCompany()
 	const selfData = userData?.data || data[0]
 
-	console.log({ userData })
 	return (
 		<section>
 			<div className="compareLtoR | group | overflow-hidden p-2 grid gap-0 grid-cols-[0fr_1fr] peer-checked:grid-cols-[0fr_1fr] has-[.compCard-company:checked]:gap-4 has-[.compCard-company:checked]:grid-cols-[1fr_1fr] transition-[grid-template-columns,gap] duration-500">

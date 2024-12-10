@@ -21,7 +21,6 @@ export default function News({ data }: { data: NewsData }) {
 			return resp.data
 		},
 	})
-	console.log({ data })
 
 	if (isLoading) {
 		return (
