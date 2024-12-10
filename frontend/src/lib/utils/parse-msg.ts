@@ -4,7 +4,7 @@ function isParseable(m: Message) {
 	return (
 		m.role === RoleEnum.AI &&
 		m.action !== ActionEnum.MAIL_INITIATE &&
-		m.action !== ActionEnum.RESPONSE_MD &&
+		// m.action !== ActionEnum.RESPONSE_MD &&
 		m.action !== ActionEnum.RESPONSE_MD_PENDING
 	)
 }

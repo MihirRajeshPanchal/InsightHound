@@ -81,7 +81,7 @@ export type AIResponse =
 	  }
 	| {
 			action: ActionEnum.RESPONSE_MD
-			data: string
+			data: { data: string }
 	  }
 	| {
 			action: ActionEnum.RESPONSE_MD_PENDING

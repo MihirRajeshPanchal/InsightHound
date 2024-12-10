@@ -92,7 +92,7 @@ export function RenderActionCard({ message }: { message: Message }) {
 		case ActionEnum.HEATMAP:
 			return <MapComponent data={message.data} />
 		case ActionEnum.RESPONSE_MD:
-			return <MdBlock md={message.data} />
+			return <MdBlock md={message.data.data} />
 		case ActionEnum.RESPONSE_MD_PENDING:
 			return <MdBlock md={message.data} />
 		default:

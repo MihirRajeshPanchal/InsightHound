@@ -65,7 +65,9 @@ export default function ConversationPage({
 				createdAt: new Date(),
 				role: RoleEnum.AI,
 				action: ActionEnum.RESPONSE_MD,
-				data: "Sorry, I am not able to process your request at the moment.",
+				data: {
+					data: "Sorry, I am not able to process your request at the moment.",
+				},
 				suggestions:
 					messages.filter((m) => m.role === RoleEnum.AI).pop()
 						?.suggestions || [],

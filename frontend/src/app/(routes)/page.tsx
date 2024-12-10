@@ -1,6 +1,7 @@
 import { RightArrow } from "@/assets/svgs"
 import FeatureCard from "@/components/custom/feature-card"
 import { features } from "@/components/custom/feature-card/features"
+import NavbarLanding from "@/components/custom/navbar/landing"
 import Lenis from "@/components/wrappers/lenis"
 import Link from "next/link"
 
@@ -8,37 +9,7 @@ export default function Landing() {
 	return (
 		<Lenis>
 			<div className="landingWrapper | relative scroll-smooth">
-				<header className="fixed z-50 top-7 left-1/2 -translate-x-1/2 w-[min(768px,100%_-_1rem)] px-8 py-3 flex justify-between rounded-full bg-black/20 backdrop-blur-xl backdrop-saturate-150 border border-text/20">
-					<img src="logo.png" alt="Logo" className="w-full max-w-6" />
-					<nav className="content-center">
-						<ul className="flex items-center gap-4 lg:gap-8">
-							<a href="#home" className="hidden md:block">
-								<li className="text-lg font-medium">Home</li>
-							</a>
-							<a
-								target="_blank"
-								className="hidden md:block"
-								href="https://varad.xyz/contact"
-							>
-								<li className="text-lg ~font-medium text-text/65">
-									Contact us
-								</li>
-							</a>
-							<a href="#features" className="hidden md:block">
-								<li className="text-lg ~font-medium text-text/65">
-									Services
-								</li>
-							</a>
-							<li>
-								<Link href="/chat">
-									<button className="text-lg font-medium bg-accent px-4 py-1 rounded-lg">
-										Get Started
-									</button>
-								</Link>
-							</li>
-						</ul>
-					</nav>
-				</header>
+				<NavbarLanding />
 				<main>
 					<section className="hero | relative overflow-clip px-4 min-h-svh grid gap-6 place-content-center justify-items-center">
 						<div className="ignoreThisDiv | absolute w-[15vw] min-w-40 aspect-[10] [--aspect:0.25] animate-[aspectAnimate_1.5s_forwards] rounded-[100%] skew-x-[30deg] top-0 -translate-y-1/2 left-0 -translate-x-1/2 bg-[radial-gradient(hsl(0,0%,100%,15%),hsl(0,0%,100%,0%))] blur-[96px]"></div>
