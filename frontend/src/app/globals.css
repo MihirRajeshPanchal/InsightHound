@@ -153,3 +153,12 @@ body {
 		print-color-adjust: exact;
 	}
 }
+
+@keyframes fadeIn {
+	from {
+		opacity: var(--opacityFrom, 0);
+	}
+	to {
+		opacity: var(--opacityTo, 1);
+	}
+}

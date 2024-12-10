@@ -18,6 +18,7 @@ import { toast } from "sonner"
 import { DashedLogo } from "@/assets/svgs"
 import LoadingOverlay from "./loading-overlay"
 import { cn } from "@/lib/utils"
+import { ArrowRight } from "lucide-react"
 
 const messages: { message: string; tag: string }[] = [
 	{
@@ -137,12 +138,12 @@ export default function ChatInitial() {
 	const isValid = query.trim().length > 0
 
 	return (
-		<div className="flex flex-col items-center mx-4 justify-center min-h-[calc(100vh-156px)] relative">
+		<div className="grid place-content-center mx-4 min-h-[calc(100vh-156px)] relative">
 			<LoadingOverlay show={isLoading} handleStop={handleStop} />
 			<div className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
-				<DashedLogo className="h-[70vh] opacity-[0.05] ~dashed-logo" />
+				<DashedLogo className="h-[70vh] opacity-0 [--opacityTo:0.05] animate-[fadeIn_1s_0.5s_forwards] ~dashed-logo" />
 			</div>
-			<div className="py-2 pl-2 pr-4 bg-sidebar-accent/20 rounded-full mb-2 text-xs text-sidebar-accent flex items-center z-10">
+			<div className="place-self-center py-2 pl-2 pr-4 bg-sidebar-accent/20 rounded-full mb-2 text-xs text-sidebar-accent flex items-center z-10">
 				<span className="bg-sidebar-accent text-zinc-950 text-xs font-semibold px-2 py-0.5 rounded-full mr-2">
 					New!
 				</span>
@@ -151,7 +152,7 @@ export default function ChatInitial() {
 			<h1 className="text-center text-4xl font-semibold mb-10 max-md:text-2xl bg-clip-text bg-gradient-to-b from-white to-slate-500 text-transparent z-10">
 				{randomMessage.message}
 			</h1>
-			<div className="space-y-4 pb-2 w-full max-w-screen-md flex flex-col items-end z-10 relative bg-background border rounded-lg">
+			<div className="space-y-4 pb-2 w-full max-w-screen-lg mx-auto flex flex-col items-end z-10 relative bg-background border rounded-lg ring-1 ring-text/10 focus-within:ring-2 focus-within:ring-text/30 transition-shadow">
 				<Textarea
 					placeholder="Type your message here..."
 					onKeyDown={(e) => {
@@ -182,8 +183,8 @@ export default function ChatInitial() {
 			</div>
 			<div
 				className={cn(
-					"flex gap-2 mt-4 z-10 transition-opacity duration-700",
-					!suggestions ? "opacity-0" : "opacity-100",
+					"flex gap-2 mt-4 z-10 transition-opacity duration-700 justify-center overflow-auto",
+					!suggestions ? "opacity-0" : "opacity-100"
 				)}
 			>
 				{suggestions.slice(0, 4).map((suggestion, index) => (
@@ -191,10 +192,11 @@ export default function ChatInitial() {
 						type="button"
 						onClick={() => onSubmit(suggestion)}
 						key={index}
-						className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
+						// className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-zinc-950 text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
+						className="group flex items-center gap-2 transition-colors text-nowrap text-sm font-medium text-text/75 hover:text-text px-3 py-1.5 bg-[radial-gradient(hsl(var(--text)/20%),hsl(var(--text)/0%))] border border-text/20 rounded-full"
 					>
 						{suggestion}
-						<ArrowTopRightIcon className="w-3 h-3" />
+						<ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform" />
 					</button>
 				))}
 			</div>

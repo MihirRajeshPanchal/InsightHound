@@ -22,7 +22,7 @@ export default function ConversationPage({
 }) {
 	console.log(conversation)
 	const [messages, setMessages] = React.useState<Message[]>(
-		conversation?.messages || [],
+		conversation?.messages || []
 	)
 	const [query, setQuery] = React.useState<string>("")
 	const { open, setOpen } = useSidebar()
@@ -39,7 +39,7 @@ export default function ConversationPage({
 	}
 	useEffect(() => {
 		const messageEl = document.getElementById(
-			`message-${messages.length - 1}`,
+			`message-${messages.length - 1}`
 		)
 		if (messageEl) {
 			messageEl.scrollIntoView({ behavior: "smooth" })
@@ -104,48 +104,44 @@ export default function ConversationPage({
 				</div>
 			</ScrollArea>
 
-			<div className="~contents ~w-fit ~mx-auto ~bg-accent/5 !px-0 py-4 ~mb-2 ~rounded-xl">
+			<div className="!px-0 py-4 ~mb-2 ~rounded-xl">
 				{/* Suggestions */}
-				<div className="~2xl:max-w-screen-2xl w-full mx-auto px-8">
-					<ScrollArea
-						className={`relative max-w-[100vw] w-full | after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
-							open
-								? "lg:max-w-[calc(100vw_-_2rem_-_16rem)]"
-								: "lg:max-w-[calc(100vw_-_2rem)]"
-						}`}
+				<ScrollArea
+					className={`relative max-w-[100vw] w-full | px-8 after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
+						open
+							? "md:max-w-[calc(100vw_-_2rem_-_16rem)]"
+							: "md:max-w-[calc(100vw_-_2rem)]"
+					}`}
+				>
+					<ScrollBar
+						orientation="horizontal"
+						className="opacity-0 pointer-events-none ~lg:pointer-events-auto"
+					/>
+					<div
+						className={cn(
+							"flex gap-2 z-10 transition-opacity duration-700 lg:justify-center overflow-auto",
+							!suggestions || isPending
+								? "opacity-0"
+								: "opacity-100"
+						)}
 					>
-						<ScrollBar
-							orientation="horizontal"
-							className="opacity-0 pointer-events-none ~lg:pointer-events-auto"
-						/>
-						<div
-							className={cn(
-								"flex ~w-full gap-2 mt-2 z-10 transition-opacity duration-700 ~px-8 ~2xl:px-28",
-								!suggestions || isPending
-									? "opacity-0"
-									: "opacity-100",
-							)}
-						>
-							{suggestions
-								.slice(0, 4)
-								.map((suggestion, index) => (
-									<button
-										type="button"
-										onClick={() => onSubmit(suggestion)}
-										key={index}
-										// className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-text text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
-										className="group flex items-center gap-2 transition-colors text-nowrap text-sm font-medium text-text/75 hover:text-text px-3 py-1.5 bg-[radial-gradient(hsl(var(--text)/20%),hsl(var(--text)/0%))] border border-text/20 rounded-full"
-									>
-										{suggestion}
-										<ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform" />
-									</button>
-								))}
-						</div>
-					</ScrollArea>
-				</div>
+						{suggestions.slice(0, 4).map((suggestion, index) => (
+							<button
+								type="button"
+								onClick={() => onSubmit(suggestion)}
+								key={index}
+								// className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-text text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
+								className="group flex items-center gap-2 transition-colors text-nowrap text-sm font-medium text-text/75 hover:text-text px-3 py-1.5 bg-[radial-gradient(hsl(var(--text)/20%),hsl(var(--text)/0%))] border border-text/20 rounded-full"
+							>
+								{suggestion}
+								<ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform" />
+							</button>
+						))}
+					</div>
+				</ScrollArea>
 				<hr className="my-3" />
 				{/* ChatBox */}
-				<div className="flex gap-4 shadow-md w-full ~max-w-screen-xl mx-auto px-8">
+				<div className="flex gap-4 shadow-md w-full ~max-w-screen-2xl mx-auto px-8">
 					<Textarea
 						autoFocus
 						placeholder="Type your message here..."
@@ -155,13 +151,13 @@ export default function ConversationPage({
 								onSubmit(query)
 							}
 						}}
-						className="w-full resize-none"
+						className="w-full resize-none border focus:border-text/10 rounded-lg ring-1 ring-text/10 focus:ring-2 focus:ring-text/30 transition-shadow"
 						value={query}
 						onChange={(e) => setQuery(e.target.value)}
 					/>
 					<RainbowButton
 						disabled={!isPending && query.trim().length === 0}
-						className="w-fit mt-2"
+						className="~mt-2 px-4"
 						onClick={() => (isPending ? reset() : onSubmit(query))}
 					>
 						{isPending ? (

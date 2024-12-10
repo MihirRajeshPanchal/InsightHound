@@ -4,7 +4,7 @@ import { Conversation } from "@/lib/types/chat"
 import { Separator } from "@/components/ui/separator"
 import { ActionEnum, Message, RoleEnum } from "@/lib/types/chat"
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
-import React, { useEffect } from "react"
+import React from "react"
 import { CompanyCard } from "../market-intelligence/company-card"
 import News from "../market-intelligence/news-report"
 import ProductCards from "../product-comparison/cards"
@@ -12,15 +12,14 @@ import AudienceSegment from "../audience-segments"
 import QuestionnaireCard from "../feedback-hub/card"
 import Board from "../hound-board/board"
 import CompetitorMapping from "../competitor-mapping"
+import SendPage from "../certisend/send-page"
+import LinkedinForm from "../audience-outreach/form"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Lightbulb } from "lucide-react"
 import MdBlock from "@/components/ui/md-block"
 import { convertMarkdownToHtml } from "@/lib/utils"
-import { useQuery } from "@tanstack/react-query"
-import { fetchAPI } from "@/lib/utils/fetch-api"
-import { TNoParams } from "@/lib/types/common"
 
 export const actionToInsightTitle: Record<ActionEnum, string> = {
 	about: "on the company",
@@ -136,7 +135,7 @@ export function AIMessage({ message }: { message: Message }) {
 									className=" text-gray-300"
 									dangerouslySetInnerHTML={{
 										__html: convertMarkdownToHtml(
-											message.insight,
+											message.insight
 										),
 									}}
 								/>
@@ -178,33 +177,13 @@ export default function ConversationReportPage({
 }) {
 	const messages = conversation.messages || []
 
-	const { data } = useQuery({
-		queryKey: ["conversation-report-summary", conversation._id],
-		queryFn: async () => {
-			const res = await fetchAPI<
-				{ summary: string },
-				TNoParams,
-				{ conversation_id: string }
-			>({
-				url: "/generate_summary",
-				method: "POST",
-				body: {
-					conversation_id: conversation._id,
-				},
-				baseUrl: process.env.NEXT_PUBLIC_FLASK_URL,
-			})
-			return res.data
-		},
-	})
-
 	const divRef = React.useRef<HTMLDivElement>(null)
 
-	useEffect(() => {
-		if (!data) return
-		setTimeout(() => {
-			window.print()
-		}, 3000)
-	}, [data])
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		window.print()
+	// 	}, 3000)
+	// }, [])
 
 	return (
 		<>
@@ -231,8 +210,6 @@ export default function ConversationReportPage({
 				</div>
 				<hr />
 				<div ref={divRef} className="h-fit">
-					<MdBlock md={data?.summary || ""} />
-					<hr />
 					<Messages messages={messages} isPending={false} />
 				</div>
 			</div>
