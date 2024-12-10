@@ -10,21 +10,19 @@ import { Product } from "@/lib/types/api"
 
 export default function ProductCard({ data }: { data: Product }) {
 	return (
-		<Card className="w-full max-w-2xl overflow-hidden ~bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-text">
+		<Card className="w-full max-w-2xl overflow-hidden text-text bg-background">
 			<CardHeader className="bg-gradient-to-r from-accent/50 to-accent/50 text-text p-6">
 				<CardTitle className="text-2xl font-bold">
 					{data.product_name}
 				</CardTitle>
-				<CardDescription className="text-blue-100">
+				<CardDescription className="text-text/60">
 					by {data.company_name}
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="p-6">
 				<div className="mb-4">
 					<h3 className="text-lg font-semibold mb-2">Pricing</h3>
-					<p className="text-gray-600 dark:text-text">
-						{data.product_pricing}
-					</p>
+					<p className="text-text">{data.product_pricing}</p>
 				</div>
 				<Separator className="my-4" />
 				{/* <div>
@@ -56,7 +54,9 @@ export default function ProductCard({ data }: { data: Product }) {
 					{data.product_features.map((feature, index) => (
 						<div key={index} className="mb-4 last:mb-0">
 							<div className="flex justify-between items-center mb-2">
-								<span className="font-medium">{feature}</span>
+								<span className="font-medium text-text">
+									{feature}
+								</span>
 							</div>
 							{index < data.product_reviews.length - 1 && (
 								<Separator className="my-4" />

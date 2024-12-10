@@ -7,11 +7,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import React from "react"
 import { CompanyCard } from "../market-intelligence/company-card"
 import News from "../market-intelligence/news-report"
-import ProductCards from "../product-comparison/cards"
-import AudienceSegment from "../audience-segments"
+import ProductCards from "../product-comparison/cards-report"
+import AudienceSegment from "../audience-segments/index-report"
 import QuestionnaireCard from "../feedback-hub/card"
-import Board from "../hound-board/board"
-import CompetitorMapping from "../competitor-mapping"
+import Board from "../hound-board/board-report"
+import CompetitorMapping from "../competitor-mapping/index-report"
 import Loader from "../loader"
 import MapComponent from "@/components/chat/map/client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -52,9 +52,11 @@ export function UserMessage({ message }: { message: Message }) {
 						/>
 						<AvatarFallback>U</AvatarFallback>
 					</Avatar>
-					<h3 className="font-semibold">{message.query}</h3>
+					<h3 className="font-semibold bg-text px-4 py-2 rounded-md">
+						{message.query}
+					</h3>
 				</div>
-				<Separator className="mt-2 opacity-40" />
+				{/* <Separator className="" /> */}
 			</>
 		)
 	)
@@ -133,7 +135,7 @@ export function AIMessage({ message }: { message: Message }) {
 									className=" text-gray-300"
 									dangerouslySetInnerHTML={{
 										__html: convertMarkdownToHtml(
-											message.insight,
+											message.insight
 										),
 									}}
 								/>
