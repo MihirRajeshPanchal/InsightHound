@@ -112,7 +112,7 @@ def create_tool_call(name: str, id: str, args: Any = None) -> Dict[str, Any]:
 
 
 def do_aggregate(
-    conversation_id: str, query: str, context: str
+    conversation_id: str, query: str, company_context: str
 ) -> List[Dict[str, Any]]:
     """
     This function is used to aggregate the data from the AI Hounds and store messages.
@@ -126,20 +126,35 @@ def do_aggregate(
     """
     ai_list_return = []
     temp_query = query
-    query = context + query
+    # query = query + "\n\nCompany Context: " + context + "\n"
     previous_conversations = list(
         mongo_client.read_by_id("messages", "conversation_id", conversation_id)
     )
 
     context_parts = []
     for conv in previous_conversations:
-        if conv.get("role") == "user":
-            context_parts.append(f"User: {conv.get('query', '')}")
-        elif conv.get("role") == "ai":
-            context_parts.append(f"AI: {conv.get('data', '')}")
+        # if conv.get("role") == "user":
+        #     context_parts.append(f"User: {conv.get('query', '')}")
+        if conv.get("role") == "ai" and conv.get("insight") != "":
+            context_parts.append(f"{conv.get('data', '')}")
 
-    context = "Previous Conversation Context:\n" + "\n".join(context_parts)
-    query = context + "\n\nCurrent Query: " + query
+    context = (
+        "Previous messages summary (this is not a part of the current user query):\n"
+        + "\n".join(context_parts[-10:])
+        if len(context_parts) > 0
+        else ""
+    )
+    query = (
+        "Query Start: "
+        + query
+        + " :Query End\n"
+        + "\nCompany Context: "
+        + company_context
+        + "\n"
+        + context
+    )
+
+    print("****************************\n" + query + "\n****************************")
 
     last_ai_response = mongo_client.find_one(
         "conversations", {"id": conversation_id, "role": "ai"}, sort=[("timestamp", -1)]
@@ -189,7 +204,7 @@ def do_aggregate(
     context += "\n\nCurrent Query: " + temp_query
 
     try:
-        ai_msg = llm_with_tools.invoke(messages)
+        ai_msg = llm_with_tools.invoke(messages[-1:])
     except Exception as e:
         print(f"LLM invocation error: {e}")
         raise
@@ -222,10 +237,13 @@ def do_aggregate(
                 messages.append(tool_msg)
                 print("***********************************")
                 try:
-                    insight = generate_insight(tool_output_json)
+                    if tool_name == "generate_linkedin" or tool_name == "generate_mail":
+                        insight = ""
+                    else:
+                        insight = generate_insight(tool_output_json)
                 except Exception as e:
                     print(f"Error generating insight: {e}")
-                    insight = None
+                    insight = ""
 
                 context += "\n\n" + tool_name + " Output: " + tool_output_json
 

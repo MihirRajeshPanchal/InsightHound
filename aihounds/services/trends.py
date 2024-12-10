@@ -6,7 +6,7 @@ from langchain_core.tools import tool
 @tool
 def generate_heatmap(query, geo):
     """
-    Fetches trends or searches for a specific query or domain with respect to a geographic region.
+    Fetches trends or searches for a specific query or domain with respect to a geographic region with a HEATMAP data.
 
     This function uses the SERP API with the `google_trends` engine to fetch
     data on regional interest levels for a given search query. The results

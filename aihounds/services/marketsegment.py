@@ -9,7 +9,7 @@ from langchain_core.tools import tool
 @tool
 def generate_segmentation(vision, mission, description, domain):
     """
-    Generates market segments or total addressable market based on the provided inputs only if asked to.
+    Generates market segments or total addressable market.
 
     Args:
         vision (str): The vision statement to guide the market segmentation.
