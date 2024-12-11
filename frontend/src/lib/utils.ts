@@ -93,3 +93,15 @@ export const trim = (str: string, len = 30) => {
 	if (str.length <= len) return str
 	return str.slice(0, len) + "..."
 }
+
+export function getDateNDaysBack(daysBack: number): string {
+	const today = new Date()
+
+	today.setDate(today.getDate() - daysBack)
+
+	const year = today.getFullYear()
+	const month = String(today.getMonth() + 1).padStart(2, "0")
+	const day = String(today.getDate()).padStart(2, "0")
+
+	return `${year}-${month}-${day}`
+}

@@ -7,16 +7,19 @@ import { NewsData } from "@/lib/types/chat"
 import { useQuery } from "@tanstack/react-query"
 import Loader from "../loader"
 import { fetchAPIServer } from "@/lib/utils/fetch-api-server"
+import { getDateNDaysBack } from "@/lib/utils"
 
 export default function News({ data }: { data: NewsData }) {
 	const { data: result, isLoading } = useQuery({
 		queryKey: ["news", data.news_url],
 		queryFn: async () => {
 			if (!data?.news_url) return
+			const url = new URL(data.news_url)
+			url.searchParams.set("from", getDateNDaysBack(7))
 			const resp = await fetchAPIServer<ArticlesApiResponse>({
 				url: "",
 				method: "GET",
-				baseUrl: data.news_url,
+				baseUrl: url.href,
 			})
 			return resp.data
 		},
