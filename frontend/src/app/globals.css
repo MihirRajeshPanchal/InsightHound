@@ -124,7 +124,7 @@ body {
 	color: hsl(var(--text));
 }
 
-.compareLtoR:has(.compCard:checked)
+/* .compareLtoR:has(.compCard:checked)
 	.competitorCard:has(.compCard:not(:checked)) {
 	width: max-content;
 }
@@ -132,7 +132,8 @@ body {
 .compareLtoR:has(.compCard-company:checked)
 	.competitorCard-company:has(.compCard-company:not(:checked)) {
 	width: max-content;
-}
+} */
+
 @keyframes aspectAnimate {
 	to {
 		aspect-ratio: 0.25;
@@ -204,8 +205,7 @@ body {
 			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
 		);
 
-	background-size:
-		var(--blockSize) var(--blockSize),
+	background-size: var(--blockSize) var(--blockSize),
 		var(--blockSize) var(--blockSize);
 	/* background-repeat: round; */
 	/* background-position-x: calc(var(--blockSize) * 0.5 * -1); */
