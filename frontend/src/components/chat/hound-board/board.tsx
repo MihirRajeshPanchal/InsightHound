@@ -45,6 +45,7 @@ const Board = ({
 	data: GetHoundBoardResponse["tasks"]
 	messageId: string
 }) => {
+	console.log(messageId)
 	const defaultData: CardType[] = data.map((task, idx) => ({
 		title: task.task,
 		id: idx.toString(),
