@@ -205,7 +205,8 @@ body {
 			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
 		);
 
-	background-size: var(--blockSize) var(--blockSize),
+	background-size:
+		var(--blockSize) var(--blockSize),
 		var(--blockSize) var(--blockSize);
 	/* background-repeat: round; */
 	/* background-position-x: calc(var(--blockSize) * 0.5 * -1); */

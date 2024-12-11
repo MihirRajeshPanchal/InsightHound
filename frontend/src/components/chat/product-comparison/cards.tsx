@@ -21,7 +21,7 @@ export default function ProductCards({ data }: CardProps) {
 			id="product-comparison"
 			className={cn(
 				"grow transition-all delay-500 duration-500 ~min-h-[70vh]",
-				data ? "opacity-100" : "opacity-0"
+				data ? "opacity-100" : "opacity-0",
 			)}
 		>
 			<div
@@ -83,7 +83,7 @@ export default function ProductCards({ data }: CardProps) {
 									onClick={() => setSelected(i + 1)}
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare

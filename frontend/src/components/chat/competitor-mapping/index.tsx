@@ -88,7 +88,7 @@ export default function CompetitorMapping({
 									onClick={() => setSelected(i + 1)}
 									className={cn(
 										"bg-background my-4 w-full",
-										buttonVariants({ variant: "default" })
+										buttonVariants({ variant: "default" }),
 									)}
 								>
 									Compare
