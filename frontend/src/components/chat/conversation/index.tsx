@@ -1,17 +1,18 @@
 "use client"
 import { useSidebar } from "@/components/ui/sidebar"
 import { ActionEnum, Conversation, Message, RoleEnum } from "@/lib/types/chat"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { RainbowButton } from "@/components/ui/rainbow-button"
 import { Textarea } from "@/components/ui/textarea"
-import { ArrowTopRightIcon } from "@radix-ui/react-icons"
+import { ArrowTopRightIcon, ChatBubbleIcon } from "@radix-ui/react-icons"
 import useAgent from "@/hooks/use-agent"
 import { toast } from "sonner"
-import { ArrowRight, StopCircle } from "lucide-react"
+import { ArrowRight, StopCircle, X } from "lucide-react"
 import { parse } from "@/lib/utils/parse-msg"
 import { Messages } from "./components"
+import { Button } from "@/components/ui/button"
 
 export default function ConversationPage({
 	id,
@@ -26,6 +27,7 @@ export default function ConversationPage({
 	const [query, setQuery] = React.useState<string>("")
 	const { open, setOpen } = useSidebar()
 	const { mutateAsync, isPending, reset } = useAgent()
+	const [openChat, setOpenChat] = useState(true)
 
 	const divRef = React.useRef<HTMLDivElement>(null)
 
@@ -95,23 +97,27 @@ export default function ConversationPage({
 		<div className="*:px-4 h-full overflow-auto grid grid-rows-[auto_1fr_auto]">
 			<hr />
 			{/* Messages */}
-			<ScrollArea className="~h-[65vh] *:pt-4">
-				<div
-					ref={divRef}
-					className="h-fit max-w-screen-xl mx-auto bg-text/[2%] px-8 rounded-xl border-2 border-text/20"
-				>
-					<Messages messages={messages} isPending={isPending} />
-				</div>
-			</ScrollArea>
+			<div className="">
+				<ScrollArea className="~h-[65vh] *:pt-4 ">
+					<div ref={divRef} className="">
+						<Messages messages={messages} isPending={isPending} />
+					</div>
+				</ScrollArea>
+			</div>
 
-			<div className="!px-0 py-4 ~mb-2 ~rounded-xl">
+			<div className="!px-0 py-2 ~rounded-xl sticky left-0 bottom-0 z-[999]">
 				{/* Suggestions */}
 				<ScrollArea
-					className={`relative max-w-[100vw] w-full | px-8 after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
-						open
-							? "md:max-w-[calc(100vw_-_2rem_-_16rem)]"
-							: "md:max-w-[calc(100vw_-_2rem)]"
-					}`}
+					className={cn(
+						`relative max-w-[100vw] w-full | px-8 pb-2 after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
+							open
+								? "md:max-w-[calc(100vw_-_2rem_-_16rem)]"
+								: "md:max-w-[calc(100vw_-_2rem)]"
+						} transition-opacity pointer-events-none`,
+						!openChat
+							? "opacity-0 pointer-events-none"
+							: "opacity-100",
+					)}
 				>
 					<ScrollBar
 						orientation="horizontal"
@@ -131,7 +137,7 @@ export default function ConversationPage({
 								onClick={() => onSubmit(suggestion)}
 								key={index}
 								// className="bg-sidebar-accent border transition-all cursor-pointer flex-nowrap text-nowrap border-sidebar-accent hover:bg-transparent hover:text-sidebar-accent text-text text-xs px-2 py-0.5 rounded-full flex items-center gap-1"
-								className="group flex items-center gap-2 transition-colors text-nowrap text-sm font-medium text-text/75 hover:text-text px-3 py-1.5 bg-[radial-gradient(hsl(var(--text)/20%),hsl(var(--text)/0%))] border border-text/20 rounded-full"
+								className="group flex items-center gap-2 transition-colors text-nowrap text-xs font-medium text-text/75 hover:text-text px-2 py-1 bg-[radial-gradient(hsl(var(--background)/30%),hsl(var(--background)/100%))] backdrop-blur border border-text/20 rounded-full"
 							>
 								{suggestion}
 								<ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform" />
@@ -139,11 +145,22 @@ export default function ConversationPage({
 						))}
 					</div>
 				</ScrollArea>
-				<hr className="my-3" />
 				{/* ChatBox */}
-				<div className="flex gap-4 shadow-md w-full ~max-w-screen-2xl mx-auto px-8">
+				<div className="flex gap-4 shadow-md w-full ~max-w-screen-2xl mx-auto pl-4 pr-8">
+					<Button
+						onClick={() => setOpenChat((p) => !p)}
+						className="size-6 self-end bg-foreground/70 backdrop-blur"
+					>
+						{openChat ? (
+							<X />
+						) : (
+							<ChatBubbleIcon className="-scale-x-100" />
+						)}
+					</Button>
 					<Textarea
 						autoFocus
+						rows={1}
+						wrap="soft"
 						placeholder="Type your message here..."
 						onKeyDown={(e) => {
 							if (e.key === "Enter") {
@@ -151,13 +168,23 @@ export default function ConversationPage({
 								onSubmit(query)
 							}
 						}}
-						className="w-full resize-none border focus:border-text/10 rounded-lg ring-1 ring-text/10 focus:ring-2 focus:ring-text/30 transition-shadow"
+						className={cn(
+							"w-full resize-none border bg-background/70 backdrop-blur focus:border-text/10 rounded-lg ring-1 ring-text/10 focus:ring-2 focus:ring-text/30 transition-all duration-500",
+							!openChat
+								? "opacity-0 pointer-events-none"
+								: "opacity-100",
+						)}
 						value={query}
 						onChange={(e) => setQuery(e.target.value)}
 					/>
 					<RainbowButton
 						disabled={!isPending && query.trim().length === 0}
-						className="~mt-2 px-4"
+						className={cn(
+							"~mt-2 px-4 transition-opacity duration-500",
+							!openChat
+								? "!opacity-0 pointer-events-none"
+								: "opacity-100",
+						)}
 						onClick={() => (isPending ? reset() : onSubmit(query))}
 					>
 						{isPending ? (

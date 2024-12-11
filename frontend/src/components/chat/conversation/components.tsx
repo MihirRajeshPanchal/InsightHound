@@ -77,6 +77,7 @@ export function RenderActionCard({ message }: { message: Message }) {
 				/>
 			)
 		case ActionEnum.BOARD:
+			console.log(message)
 			return (
 				<Board
 					data={message.data}

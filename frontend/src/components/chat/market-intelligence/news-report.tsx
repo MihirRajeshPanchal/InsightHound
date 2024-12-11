@@ -34,7 +34,7 @@ export default function News({ data }: { data: NewsData }) {
 		<div className="flex flex-col items-end">
 			<div className="report | grid grid-cols-2 w-full *:w-full gap-4">
 				{result?.articles
-					.slice(0, 20)
+					.slice(0, 2)
 					.map((article, index) => (
 						<NewsCard key={index} article={article} />
 					))}
