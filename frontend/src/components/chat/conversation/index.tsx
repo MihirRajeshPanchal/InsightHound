@@ -109,11 +109,11 @@ export default function ConversationPage({
 				{/* Suggestions */}
 				<ScrollArea
 					className={cn(
-						`relative max-w-[100vw] w-full | px-8 pb-2 after:lg:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
+						`relative max-w-[100vw] w-full | px-8 pb-2 after:hidden after:absolute after:inset-0 after:pointer-events-none after:bg-[linear-gradient(to_right,hsl(var(--background))_5%,transparent_10%_90%,hsl(var(--background))_95%)] ${
 							open
 								? "md:max-w-[calc(100vw_-_2rem_-_16rem)]"
 								: "md:max-w-[calc(100vw_-_2rem)]"
-						} transition-opacity pointer-events-none`,
+						} transition-opacity `,
 						!openChat
 							? "opacity-0 pointer-events-none"
 							: "opacity-100",
