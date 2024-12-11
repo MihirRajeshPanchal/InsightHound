@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 import { NewsData } from "@/lib/types/chat"
 import { useQuery } from "@tanstack/react-query"
 import Loader from "../loader"
-import { fetchAPI } from "@/lib/utils/fetch-api"
+import { fetchAPIServer } from "@/lib/utils/fetch-api-server"
 
 export default function News({ data }: { data: NewsData }) {
 	const { data: result, isLoading } = useQuery({
 		queryKey: ["news", data.news_url],
 		queryFn: async () => {
 			if (!data?.news_url) return
-			const resp = await fetchAPI<ArticlesApiResponse>({
+			const resp = await fetchAPIServer<ArticlesApiResponse>({
 				url: "",
 				method: "GET",
 				baseUrl: data.news_url,

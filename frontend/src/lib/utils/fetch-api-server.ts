@@ -1,3 +1,5 @@
+"use server"
+
 import { TNoParams } from "@/lib/types/common"
 import { parseConversation, parseMsg } from "./parse-msg"
 import { Conversation, Message } from "../types/chat"
@@ -37,7 +39,7 @@ export type FetchResponseResult<ResponseDataT = TNoParams> =
 			success: false
 	  }
 
-export async function fetchAPI<
+export async function fetchAPIServer<
 	ResponseDataT = TNoParams,
 	UrlParamsT = TNoParams,
 	BodyParamsT = TNoParams,
