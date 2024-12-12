@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/1efe5fc7-465c-456b-852d-fa5e00dfa559
 
 ## 🌟 Overview
 
-**AI Market Edge Research Agent** is an advanced AI system designed to assist startups in solving critical business challenges. It provides **data-driven insights**, actionable strategies, and practical recommendations to help startups:  
+**AI Market Edge Research Agent** is an advanced AI system designed to assist startups in solving critical business challenges. It provides **data-driven insights**, unified chat flow,actionable strategies, and practical recommendations to help startups:  
 ✅ Gain competitive advantages  
 ✅ Achieve product-market fit  
 ✅ Optimize resources  
