@@ -28,6 +28,7 @@ export default function QuestionnaireCard({
 		},
 		enabled: !!messageId,
 		staleTime: 0,
+		retry: 3,
 	})
 	return (
 		<div className="w-full flex flex-col gap-4 px-4 items-end">

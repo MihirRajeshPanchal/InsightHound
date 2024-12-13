@@ -52,7 +52,7 @@ export default function SurveyResultsCharts({
 }) {
 	const surveyData = convertSurveyData(data)
 	return (
-		<div className="space-y-8">
+		<div className="space-y-8 w-full">
 			{surveyData.map((question, questionIndex) => {
 				const chartConfig = question.responses.reduce(
 					(acc, response, index) => {
