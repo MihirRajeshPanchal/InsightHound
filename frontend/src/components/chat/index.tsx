@@ -19,6 +19,7 @@ import { DashedLogo } from "@/assets/svgs"
 import LoadingOverlay from "./loading-overlay"
 import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
+import useConversations from "@/hooks/use-conversations"
 
 const messages: { message: string; tag: string }[] = [
 	{
@@ -96,6 +97,7 @@ export default function ChatInitial() {
 	} = useAgent()
 	const router = useRouter()
 	const { setOpen } = useSidebar()
+	const { refetch } = useConversations()
 	async function onSubmit(query: string) {
 		if (!query.trim().length) return
 		const resp = await mutateAsync(query)
@@ -113,8 +115,9 @@ export default function ChatInitial() {
 	useEffect(() => {
 		if (conversation?.conversation_id && agentResponse) {
 			router.push(`/chat/${conversation.conversation_id}`)
+			void refetch()
 		}
-	}, [conversation, agentResponse, router])
+	}, [conversation, agentResponse, router, refetch])
 
 	useEffect(() => {
 		if (agentError) {

@@ -16,6 +16,7 @@ import { user } from "@prisma/client"
 import { setToken } from "@/lib/utils/token"
 import BackButton from "@/components/ui/back-button"
 import Link from "next/link"
+import { Type } from "lucide-react"
 
 type FormType = {
 	email: string
@@ -23,7 +24,7 @@ type FormType = {
 }
 
 export const Auth = () => {
-	const [tab, setTab] = React.useState<0 | 1>(0)
+	const [tab, setTab] = React.useState<0 | 1>(1)
 	const router = useRouter()
 	const form = useForm<FormType>({
 		defaultValues: {
@@ -49,6 +50,14 @@ export const Auth = () => {
 			router.push(tab === 0 ? "/chat" : "/onboarding")
 		}
 	}
+
+	function onAutoFill() {
+		form.setValue(
+			"email",
+			"100x" + Math.ceil(Math.random() * 1000) + "@gmail.com",
+		)
+		form.setValue("password", "12345678")
+	}
 	return (
 		<>
 			<BackButton className="w-fit mt-4 lg:mt-24 ml-4 lg:ml-24" />
@@ -62,6 +71,13 @@ export const Auth = () => {
 					currentTab={tab}
 					setCurrentTab={setTab}
 				/>
+				<Button
+					type="button"
+					onClick={onAutoFill}
+					className="mt-2 self-end"
+				>
+					<Type />
+				</Button>
 			</form>
 		</>
 	)

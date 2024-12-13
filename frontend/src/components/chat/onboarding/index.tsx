@@ -23,7 +23,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { CloudUpload } from "lucide-react"
+import { CloudUpload, Type } from "lucide-react"
 import { FileInput, FileUploader } from "@/components/ui/file-input"
 import { fetchAPI } from "@/lib/utils/fetch-api"
 import { getToken } from "@/lib/utils/token"
@@ -131,6 +131,27 @@ export default function OnboardingForm() {
 		}
 	}
 
+	function autoFill() {
+		form.setValue("name", "100XEngineers")
+		form.setValue(
+			"description",
+			"100XEngineers is an elite developer community for engineers at the forefront of a new coding era. Join a network of driven professionals to seek mentorship, collaborate, and receive guidance as you navigate the rapidly evolving world of technology. Learn from the best with access to experienced mentors who have built real-world AI products. The platform offers an industry-relevant curriculum tailored to AI advancements and fast-changing technologies, with project-based learning to help you build a strong portfolio and practical skills. Members enjoy access to live classes, developer career coaching, exclusive events like hackathons and meetups, and a specialized job board.",
+		)
+		form.setValue(
+			"vision",
+			"To empower engineers globally to unlock their full potential by providing them with the knowledge, resources, and community to excel in their careers.",
+		)
+		form.setValue(
+			"mission",
+			"To create a platform where engineers can collaborate, learn, and grow through curated resources, mentorship, and opportunities to work on impactful projects.",
+		)
+		form.setValue("valuation", 100000)
+		form.setValue("domain", "Education")
+		form.setValue(
+			"linkedinUrl",
+			"https://www.linkedin.com/company/100xengineers/",
+		)
+	}
 	return (
 		<Form {...form}>
 			<form
@@ -138,7 +159,12 @@ export default function OnboardingForm() {
 				onSubmit={form.handleSubmit(onSubmit)}
 				className="space-y-8 max-w-3xl mx-auto py-10 px-6"
 			>
-				<h1 className="text-2xl font-bold py-2">Onboarding</h1>
+				<div className="flex justify-between items-center">
+					<h1 className="text-2xl font-bold py-2">Onboarding</h1>
+					<Button type="button" onClick={autoFill}>
+						<Type />
+					</Button>
+				</div>
 				<FormField
 					control={form.control}
 					name="name"
