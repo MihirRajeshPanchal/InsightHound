@@ -1,5 +1,7 @@
 20
-<h1 align="center" id="title">🐾 InsightHounds 🐾</h1>
+[!image](https://res.cloudinary.com/db670bhmc/image/upload/v1735874739/Screenshot_2025-01-03_at_8.54.34_AM_xxbmui.png)
+
+<h1 align="center" id="title">🐾 InsightHound 🐾</h1>
 
 <div align="center">
 
