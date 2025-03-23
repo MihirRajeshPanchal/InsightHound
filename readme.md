@@ -1,7 +1,4 @@
-20
-![image](https://res.cloudinary.com/db670bhmc/image/upload/v1735874739/Screenshot_2025-01-03_at_8.54.34_AM_xxbmui.png)
-
-<h1 align="center" id="title">🐾 InsightHound 🐾</h1>
+<h1 align="center" id="title">🐾 InsightHounds 🐾</h1>
 
 <div align="center">
 
@@ -11,7 +8,7 @@ https://github.com/user-attachments/assets/1efe5fc7-465c-456b-852d-fa5e00dfa559
 
 ## 🌟 Overview
 
-**Insight Hound** is an advanced AI system designed to assist startups in solving critical business challenges. It provides **data-driven insights**, unified chat flow,actionable strategies, and practical recommendations to help startups:  
+**AI Market Edge Research Agent** is an advanced AI system designed to assist startups in solving critical business challenges. It provides **data-driven insights**, actionable strategies, and practical recommendations to help startups:  
 ✅ Gain competitive advantages  
 ✅ Achieve product-market fit  
 ✅ Optimize resources  
